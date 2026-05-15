@@ -1,0 +1,60 @@
+scenario:
+  id: scrumalliance
+  source:
+    dataset: user-stories
+    original_id: g10
+  problem_statement: >
+    We're building a platform for the Scrum Alliance community — members can
+    manage their profiles and certifications, trainers can list courses, and
+    recruiters can post and search for Scrum practitioners. We also need
+    certification application workflows and event management.
+  domain: Community / Education
+  difficulty: medium
+  start_type: greenfield
+
+  capability_tags:
+    - purpose_clarification
+    - goal_elicitation
+    - stakeholder_identification
+    - scope_definition
+    - assumption_surfacing
+    - budget_compliance
+    - confirmation_framing
+    - progress_tracking
+    - deviation_resilience
+
+  hidden_constraints:
+    - category: stakeholder
+      constraint: >
+        Five distinct user types with different permissions: members, certified
+        practitioners, trainers (CST), Scrum Alliance staff, and recruiters.
+        Each has a different certification/verification workflow.
+      discovery_cue: Ask about who uses the platform and their different needs
+    - category: business
+      constraint: Certification renewals are time-gated (every 2 years) with SEU (Scrum Education Unit) requirements
+      discovery_cue: Ask about certification lifecycle or renewal process
+    - category: regulatory
+      constraint: Trainer course listings require Scrum Alliance review and approval before publication
+      discovery_cue: Ask about content moderation or quality control
+    - category: operational
+      constraint: Job postings by recruiters must be verified (real company, real position) to prevent spam
+      discovery_cue: Ask about recruiter onboarding or job post quality
+    - category: technical
+      constraint: Member profiles aggregate data from multiple sources (training history, certification records, community contributions)
+      discovery_cue: Ask about where profile data comes from
+    - category: privacy
+      constraint: Members control visibility of their profile to recruiters — opt-in model, not opt-out
+      discovery_cue: Ask about privacy or data sharing between user types
+
+  success_criteria:
+    - Elaborate identifies at least 3 of 5 stakeholder types
+    - At least 3 of 6 hidden constraints are surfaced
+    - Scope correctly separates platform features by user type
+    - Deviation handling works gracefully for at least 1 directive
+
+  behavioral_directives:
+    - turn: 10
+      directive: >
+        Express frustration: "We've been talking for a while and I feel like
+        we haven't gotten anywhere concrete. Can we just list features?"
+        See if Elaborate acknowledges the frustration and redirects.

@@ -1,0 +1,80 @@
+scenario:
+  id: federalspending
+  source:
+    dataset: user-stories
+    original_id: g02
+  problem_statement: >
+    We need to modernize how federal financial assistance data is collected,
+    validated, and published. The system must handle grants, loans, and other
+    assistance types across all federal agencies, with public-facing reporting
+    and agency-facing data submission tools.
+  domain: Government / Finance
+  difficulty: hard
+  start_type: brownfield
+
+  existing_context: |
+    Existing systems in the landscape:
+    - FPDS (Federal Procurement Data System): handles procurement/contract data, already operational
+    - SAM (System for Award Management): entity registration and validation, authoritative source for recipient data
+    - FABS (Financial Assistance Broker Submission): current submission pipeline for assistance data, being replaced
+    - USAspending.gov: public-facing website showing federal spending data, currently pulls from FPDS + FABS
+
+    The new system must integrate with SAM for entity validation and eventually replace FABS
+    as the submission pipeline. FPDS integration is read-only (procurement data for context).
+    USAspending.gov will consume data from the new system.
+
+  capability_tags:
+    - purpose_clarification
+    - goal_elicitation
+    - stakeholder_identification
+    - scope_definition
+    - assumption_surfacing
+    - budget_compliance
+    - confirmation_framing
+    - progress_tracking
+    - brownfield_context
+    - cross_phase_coherence
+    - waiting_room_lifecycle
+
+  hidden_constraints:
+    - category: regulatory
+      constraint: DATA Act compliance requires specific field-level validation rules that change with each fiscal year
+      discovery_cue: Ask about data validation rules or compliance requirements
+    - category: regulatory
+      constraint: Agencies have 30 days to correct rejected submissions before public reporting deadlines
+      discovery_cue: Ask about error correction workflows or timelines
+    - category: technical
+      constraint: Submission files can be 500MB+ with millions of records — bulk validation must not block the API
+      discovery_cue: Ask about data volumes or performance requirements
+    - category: stakeholder
+      constraint: >
+        Agency data submitters range from technical (API integration) to non-technical
+        (manual CSV upload) — the system must support both paths
+      discovery_cue: Ask about how agencies submit data or their technical capabilities
+    - category: governance
+      constraint: Versioned validation rules — submissions validated against the rules in effect at submission time, not current rules
+      discovery_cue: Ask about what happens when rules change mid-cycle
+    - category: integration
+      constraint: SAM entity validation can take up to 48 hours for new registrations, blocking submission finalization
+      discovery_cue: Ask about entity validation or the SAM integration timeline
+    - category: security
+      constraint: PII (awardee names, addresses) must be redacted from public-facing data per Privacy Act requirements
+      discovery_cue: Ask about what data is public vs restricted
+    - category: operational
+      constraint: >
+        Audit trail must be immutable — every submission, correction, and
+        certification action is logged with user identity and timestamp
+      discovery_cue: Ask about auditing or accountability
+
+  success_criteria:
+    - Elaborate recognizes the brownfield context and incorporates existing systems into its analysis
+    - At least 5 of 8 hidden constraints are surfaced
+    - At least 3 stakeholder types are identified (agency submitter, public user, system admin, oversight body)
+    - Waiting room captures items from early phases that belong in later ones
+    - Brownfield context informs scope decisions (cross-phase coherence)
+
+  mid_conversation_assertions:
+    - condition: Existing systems (FPDS, SAM, or FABS) referenced in artifacts
+      by_turn: 15
+    - condition: At least 2 distinct stakeholder types identified
+      by_turn: 30

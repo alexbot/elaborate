@@ -1,0 +1,65 @@
+scenario:
+  id: alfred
+  source:
+    dataset: user-stories
+    original_id: g19
+  problem_statement: >
+    We're developing a technology platform to help elderly people live
+    independently at home. The system includes health monitoring, medication
+    management, emergency response, social connectivity, and home automation
+    features, all designed for users with varying levels of tech literacy.
+  domain: Healthcare / Assistive Technology
+  difficulty: medium
+  start_type: greenfield
+
+  capability_tags:
+    - purpose_clarification
+    - goal_elicitation
+    - stakeholder_identification
+    - scope_definition
+    - assumption_surfacing
+    - budget_compliance
+    - confirmation_framing
+    - progress_tracking
+    - cross_phase_coherence
+    - waiting_room_lifecycle
+
+  hidden_constraints:
+    - category: privacy
+      constraint: Health data is subject to HIPAA (US) / GDPR Art.9 (EU) — special category personal data with strict processing rules
+      discovery_cue: Ask about data handling or regulatory requirements
+    - category: accessibility
+      constraint: >
+        Primary users have age-related impairments: reduced vision (large UI elements),
+        hearing loss (visual alerts alongside audio), reduced motor control
+        (simplified touch targets), cognitive decline (minimal navigation depth)
+      discovery_cue: Ask about the target users' capabilities or accessibility needs
+    - category: safety
+      constraint: Emergency response must work even when internet connectivity is lost — local fallback with automatic retry
+      discovery_cue: Ask about reliability or what happens during connectivity issues
+    - category: stakeholder
+      constraint: >
+        Caregivers (family members, professional aides) need a separate dashboard
+        to monitor the elderly user's status, but the user controls what caregivers can see
+      discovery_cue: Ask about who else interacts with the system besides the primary user
+    - category: technical
+      constraint: Voice interaction is the primary interface for many users — speech recognition must handle elderly speech patterns (slower, softer, accented)
+      discovery_cue: Ask about how users interact with the system or input methods
+    - category: ethical
+      constraint: >
+        Medication reminders are guidance only — the system must never autonomously
+        administer or withhold medication, and must clearly disclaim medical advice
+      discovery_cue: Ask about medication management features or liability
+    - category: integration
+      constraint: Home automation devices come from multiple vendors with incompatible protocols (Zigbee, Z-Wave, WiFi, Bluetooth)
+      discovery_cue: Ask about which devices the system controls or smart home integration
+    - category: cross-cutting
+      constraint: Privacy and accessibility are not separate features — they constrain every other feature (e.g., emergency alerts must be accessible AND privacy-respecting)
+      discovery_cue: Ask about how privacy and accessibility interact with other features
+
+  success_criteria:
+    - Elaborate identifies at least 3 stakeholder types (elderly user, caregiver, healthcare provider)
+    - At least 5 of 8 hidden constraints are surfaced
+    - Privacy and accessibility recognized as cross-cutting concerns (not siloed features)
+    - Waiting room captures items that surface early but belong in later phases
+    - Privacy/accessibility concerns from early phases constrain scope and assumptions (cross-phase coherence)

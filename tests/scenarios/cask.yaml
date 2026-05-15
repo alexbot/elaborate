@@ -1,0 +1,53 @@
+scenario:
+  id: cask
+  source:
+    dataset: user-stories
+    original_id: g17
+  problem_statement: >
+    We're creating a data application platform that lets developers build,
+    deploy, and manage data pipelines. Think dataset types, pipeline
+    orchestration, a hydrator for data ingestion, and a plugin architecture
+    for extensibility.
+  domain: Developer Tools / Platform
+  difficulty: hard
+  start_type: greenfield
+
+  capability_tags:
+    - purpose_clarification
+    - goal_elicitation
+    - scope_definition
+    - assumption_surfacing
+    - budget_compliance
+    - confirmation_framing
+    - progress_tracking
+
+  hidden_constraints:
+    - category: architecture
+      constraint: >
+        Dataset types must be versioned independently — a pipeline built against
+        v2 of a schema must not break when v3 is published
+      discovery_cue: Ask about schema evolution or backward compatibility
+    - category: technical
+      constraint: The hydrator must support both batch and real-time streaming ingestion with different consistency guarantees
+      discovery_cue: Ask about data ingestion patterns or latency requirements
+    - category: operational
+      constraint: Pipeline failures need automatic retry with configurable dead-letter queues, not just alerts
+      discovery_cue: Ask about error handling or what happens when a pipeline step fails
+    - category: extensibility
+      constraint: Third-party plugins run in sandboxed environments with resource limits to prevent a bad plugin from taking down the platform
+      discovery_cue: Ask about plugin security, isolation, or resource management
+    - category: performance
+      constraint: Dataset explore/preview must return results within 2 seconds even for TB-scale datasets via sampling
+      discovery_cue: Ask about performance requirements or large dataset handling
+    - category: governance
+      constraint: All data transformations must be auditable — lineage tracking from source to derived dataset
+      discovery_cue: Ask about compliance, data lineage, or auditability
+    - category: multi-tenancy
+      constraint: The platform is multi-tenant — namespaces isolate datasets and pipelines between teams
+      discovery_cue: Ask about who uses the platform or organizational structure
+
+  success_criteria:
+    - Elaborate correctly identifies this as a platform (not a single application)
+    - At least 4 of 7 hidden constraints are surfaced
+    - Assumptions about the plugin architecture are explicitly captured
+    - Technical scope boundaries are clear (what the platform provides vs what plugins do)

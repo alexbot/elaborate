@@ -1,0 +1,75 @@
+scenario:
+  id: neurohub
+  source:
+    dataset: user-stories
+    original_id: g18
+  problem_statement: >
+    We're building a neuroscience research data management platform. Researchers
+    need to store, share, and analyze brain imaging data, electrophysiology
+    recordings, and derived datasets, with strict provenance tracking and
+    access control.
+  domain: Research / Science
+  difficulty: hard
+  start_type: brownfield
+
+  existing_context: |
+    Existing infrastructure:
+    - Institutional file servers: researchers currently store raw data on lab file servers with ad-hoc folder structures
+    - LORIS (Longitudinal Online Research and Imaging System): used by some labs for clinical imaging data, but not all labs have adopted it
+    - Ethics/IRB approval system: tracks which datasets have consent for sharing and which are restricted
+    - HPC cluster: researchers run analysis pipelines on a shared compute cluster, results stored separately from source data
+
+    The new platform must integrate with the HPC cluster for analysis workflows and
+    respect IRB restrictions. LORIS data should be importable but the platform is not
+    replacing LORIS — it's complementary.
+
+  capability_tags:
+    - purpose_clarification
+    - goal_elicitation
+    - stakeholder_identification
+    - scope_definition
+    - assumption_surfacing
+    - budget_compliance
+    - confirmation_framing
+    - progress_tracking
+    - brownfield_context
+    - cross_phase_coherence
+    - waiting_room_lifecycle
+
+  hidden_constraints:
+    - category: governance
+      constraint: Data immutability — once a dataset version is published, it cannot be modified, only superseded by a new version
+      discovery_cue: Ask about data modification or correction workflows
+    - category: regulatory
+      constraint: IRB consent scopes vary per study — some allow sharing within institution, others allow public sharing, some prohibit any sharing
+      discovery_cue: Ask about data sharing permissions or consent
+    - category: technical
+      constraint: Brain imaging files (NIfTI, DICOM) can be 50GB+ per session — storage and transfer are non-trivial
+      discovery_cue: Ask about data sizes or storage requirements
+    - category: provenance
+      constraint: >
+        Full lineage from raw acquisition to derived dataset must be tracked —
+        which pipeline version, which parameters, which source files produced
+        each result
+      discovery_cue: Ask about reproducibility or how derived data relates to raw data
+    - category: access-control
+      constraint: Granular access at dataset level — a researcher may have access to study A's data but not study B's, even within the same lab
+      discovery_cue: Ask about who can see what data or access control granularity
+    - category: long-term
+      constraint: Datasets must remain accessible for 10+ years per funder requirements, surviving platform upgrades and format changes
+      discovery_cue: Ask about data retention or long-term preservation
+    - category: stakeholder
+      constraint: >
+        Lab PIs control access to their lab's data, but institutional data stewards
+        can override for compliance reasons (e.g., data retention violations)
+      discovery_cue: Ask about data ownership or governance hierarchy
+
+  success_criteria:
+    - Elaborate recognizes brownfield context and incorporates existing systems (LORIS, HPC, IRB)
+    - At least 4 of 7 hidden constraints are surfaced
+    - Data governance concerns appear across multiple phases (cross-phase coherence)
+    - Waiting room captures cross-cutting items (provenance, access control) that surface early but span phases
+
+  mid_conversation_assertions:
+    - condition: Existing systems referenced in artifacts
+      by_turn: 15

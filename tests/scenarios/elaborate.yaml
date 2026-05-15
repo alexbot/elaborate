@@ -1,0 +1,92 @@
+scenario:
+  id: elaborate
+  source:
+    dataset: original
+    original_id: e01
+  problem_statement: >
+    I want to build an AI tool that helps people think through their project
+    ideas before they start building. Like a Socratic interviewer — it asks
+    questions to help you figure out what you actually need, instead of
+    jumping straight to code or generating a spec from a one-line prompt.
+  domain: Developer Tools / AI
+  difficulty: hard
+  start_type: greenfield
+
+  capability_tags:
+    - purpose_clarification
+    - goal_elicitation
+    - stakeholder_identification
+    - scope_definition
+    - assumption_surfacing
+    - budget_compliance
+    - confirmation_framing
+    - progress_tracking
+    - cross_phase_coherence
+    - waiting_room_lifecycle
+
+  hidden_constraints:
+    - category: philosophy
+      constraint: >
+        The AI must never self-resolve ambiguity. When the user's input is
+        vague or contradictory, the tool flags it and asks the user to decide —
+        it never picks an interpretation silently. This is the core design
+        principle, not a nice-to-have.
+      discovery_cue: Ask about what the AI does when the user is vague or contradicts themselves
+    - category: architecture
+      constraint: >
+        Sessions must be durable and resumable. If the user closes the terminal
+        mid-interview, they can pick up exactly where they left off — no
+        re-asking questions, no lost context. State persists to disk.
+      discovery_cue: Ask about session length, interruptions, or what happens if the user walks away
+    - category: output
+      constraint: >
+        The output is not a conversation transcript. It produces structured
+        artifacts — goals, stakeholders, scope boundaries, assumptions — each
+        traced back to the specific conversation turn that produced it.
+      discovery_cue: Ask about what the user gets at the end, or how the output is used downstream
+    - category: methodology
+      constraint: >
+        The interview follows a phased structure (purpose, goals, stakeholders,
+        scope, assumptions, validation) grounded in qualitative research methods,
+        but the phases must feel like a natural conversation, not a rigid form.
+      discovery_cue: Ask about how the interview is structured or what topics it covers
+    - category: ux
+      constraint: >
+        There is a question budget sweet spot around 25-32 questions. Fewer
+        produces shallow results; more causes users to disengage. The tool
+        must self-regulate within this range.
+      discovery_cue: Ask about interview length, user patience, or how the tool knows when to stop
+    - category: scope
+      constraint: >
+        The tool is domain-agnostic — it works for software projects, product
+        design, research proposals, consulting briefs, anything that starts as
+        a vague idea. It must not assume the user is building software.
+      discovery_cue: Ask about target users or what kinds of projects it supports
+    - category: integration
+      constraint: >
+        This is a CLI tool that integrates into AI coding assistant workflows
+        (like a Claude Code skill), not a standalone web app. Users invoke it
+        from their terminal and it runs inside their existing development
+        environment.
+      discovery_cue: Ask about how users access the tool or the deployment model
+
+  success_criteria:
+    - Eli identifies the core purpose (help users refine vague ideas into structured intent through questioning)
+    - The "never self-resolve" philosophical constraint is surfaced
+    - At least 2 stakeholder types identified (the tool's direct user and downstream consumers of the output)
+    - Scope boundaries drawn (what the tool does vs what happens after — not project management, not implementation)
+    - At least 4 of 7 hidden constraints surfaced
+
+  behavioral_directives:
+    - turn: 8
+      directive: >
+        Push back on the questioning approach: "Actually, can't the AI just
+        analyze what I say and generate a complete spec? Why does it need to
+        ask so many questions?" See if Eli probes the stakeholder's philosophy
+        about the AI's role vs just accepting the pushback.
+    - turn: 15
+      directive: >
+        Introduce scope creep: "Oh, I also want it to track implementation
+        progress after the scoping is done — like a lightweight project
+        management layer on top." See if Eli captures this for later
+        discussion or addresses the scope boundary.

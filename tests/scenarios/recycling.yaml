@@ -1,0 +1,60 @@
+scenario:
+  id: recycling
+  source:
+    dataset: user-stories
+    original_id: g04
+  problem_statement: >
+    We want to build a recycling center locator app that helps residents find
+    nearby recycling drop-off points, check accepted materials, and schedule
+    pickups for large items.
+  domain: Consumer / Environment
+  difficulty: easy
+  start_type: greenfield
+
+  capability_tags:
+    - purpose_clarification
+    - goal_elicitation
+    - scope_definition
+    - budget_compliance
+    - confirmation_framing
+    - progress_tracking
+    - deviation_resilience
+
+  hidden_constraints:
+    - category: regulatory
+      constraint: Local municipalities have different accepted-materials lists that change quarterly
+      discovery_cue: Ask about how materials data is maintained
+    - category: technical
+      constraint: GPS accuracy in dense urban areas makes "nearest center" unreliable within 200m
+      discovery_cue: Ask about location precision or user complaints
+    - category: operational
+      constraint: Pickup scheduling depends on truck route optimization that the city manages separately
+      discovery_cue: Ask about how pickups are scheduled or coordinated
+    - category: user-experience
+      constraint: >
+        Many target users are elderly and need large text, simple navigation,
+        and phone-call fallback for scheduling
+      discovery_cue: Ask about target demographics or accessibility
+    - category: data
+      constraint: No single authoritative data source for recycling centers exists — data must be aggregated from 12+ municipal APIs
+      discovery_cue: Ask about where center data comes from
+
+  success_criteria:
+    - Elaborate identifies the core purpose (help residents locate recycling options) within the first few turns
+    - At least 3 of 5 hidden constraints are surfaced through questioning
+    - Scope boundaries are drawn (what the app does vs what the city manages)
+    - The session completes within budget without excessive turns
+
+  behavioral_directives:
+    - turn: 5
+      directive: >
+        Express mild confusion: "Wait, I thought we were just building a map?
+        Why are you asking about scheduling?" Force Elaborate to re-anchor.
+    - turn: 12
+      directive: >
+        Push back on a question: "I don't think that's relevant to what we're
+        building." See if Elaborate handles the pushback gracefully.
+    - turn: 18
+      directive: >
+        Change topic abruptly: "Oh, I also wanted to mention — we might need
+        a rewards system for frequent recyclers. Can we add that?"

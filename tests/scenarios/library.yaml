@@ -1,0 +1,94 @@
+scenario:
+  id: library
+  source:
+    dataset: original
+    original_id: e02
+  problem_statement: >
+    Our local library branch is losing visitors and the city might close it.
+    I want to help revive it.
+  domain: Civic / Community
+  difficulty: medium
+  start_type: greenfield
+
+  capability_tags:
+    - purpose_clarification
+    - goal_elicitation
+    - stakeholder_identification
+    - scope_definition
+    - assumption_surfacing
+    - budget_compliance
+    - confirmation_framing
+    - progress_tracking
+    - cross_phase_coherence
+    - waiting_room_lifecycle
+    - deviation_resilience
+
+  hidden_constraints:
+    - category: purpose
+      constraint: >
+        "Revive" is ambiguous — the speaker hasn't decided whether the goal is
+        restoring the library's historical role (quiet study, book lending) or
+        reinventing it as something new (community hub, maker space, social
+        services anchor). These lead to incompatible strategies.
+      discovery_cue: Ask what "revive" means concretely, or what the library looked like in its good days vs what the neighborhood needs now
+    - category: stakeholder
+      constraint: >
+        The city council controls the closure decision and measures success by
+        cost-per-visitor. Library staff want to preserve their routines. Current
+        regulars (mostly elderly) want quiet. Neighborhood families want
+        children's programming. These groups have conflicting priorities and
+        unequal power — the council decides, everyone else lobbies.
+      discovery_cue: Ask who makes the closure decision, who currently uses the library, or whose support is needed
+    - category: goals
+      constraint: >
+        "More visitors" and "deeper programming" pull in opposite directions —
+        high foot traffic favors drop-in services (WiFi, printing, warm space),
+        while deeper programming (literacy courses, job training) serves fewer
+        people more intensely and costs more per head.
+      discovery_cue: Ask what kind of activity counts as success, or what programs they envision
+    - category: measurement
+      constraint: >
+        The city tracks foot traffic as its primary metric, but foot traffic is
+        gameable (free coffee mornings inflate numbers without meaningful
+        engagement) and doesn't capture value delivered. Different stakeholders
+        would pick different success measures.
+      discovery_cue: Ask how success would be measured or what numbers the city council cares about
+    - category: assumption
+      constraint: >
+        The plan assumes the library is the right institution for the community's
+        underlying needs. The neighborhood may need a community center, job
+        training facility, or after-school program that happens to be in the
+        library building — but that's a different project with different
+        stakeholders and funding.
+      discovery_cue: Ask why the library specifically, or whether the underlying need could be met by a different kind of institution
+    - category: scope
+      constraint: >
+        The project could stay narrowly scoped to the library branch (programming,
+        layout, outreach) or expand to address the surrounding neighborhood
+        (partnerships with schools, businesses, transit access to the branch).
+        The speaker hasn't drawn this boundary.
+      discovery_cue: Ask where the project stops — the building itself, or the neighborhood's relationship to it
+
+  success_criteria:
+    - Eli separates "save the institution" from "serve the community need" in purpose clarification
+    - At least 3 stakeholder types identified (decision-maker, current users, potential new users)
+    - At least 4 of 6 hidden constraints are surfaced through questioning
+    - Stakeholder power asymmetry (council controls closure) informs scope or assumptions (cross-phase coherence)
+
+  behavioral_directives:
+    - turn: 8
+      directive: >
+        Jump to a solution with urgency: "Look, the city council meets in two
+        months to decide on the closure. Can we just plan some events that'll
+        get people through the door?" See if Eli probes the underlying strategy
+        vs accepting the tactical frame.
+    - turn: 15
+      directive: >
+        Reveal a stakeholder conflict: "Actually, the head librarian told me she
+        doesn't want big changes — she thinks the regulars depend on things
+        staying the way they are. She's been there twenty years." See if Eli
+        captures this as a real constraint rather than dismissing it.
+
+  mid_conversation_assertions:
+    - condition: At least one stakeholder conflict or power asymmetry identified
+      by_turn: 20

@@ -1,0 +1,64 @@
+scenario:
+  id: ski
+  source:
+    dataset: llmrei
+    original_id: llmrei-ski
+  problem_statement: >
+    We need an online portal for booking ski resort packages across multiple
+    resorts. Customers should be able to compare resorts, book lift tickets
+    and accommodation bundles, and manage their reservations.
+  domain: Hospitality / Travel
+  difficulty: medium
+  start_type: greenfield
+
+  capability_tags:
+    - purpose_clarification
+    - goal_elicitation
+    - stakeholder_identification
+    - scope_definition
+    - assumption_surfacing
+    - budget_compliance
+    - confirmation_framing
+    - progress_tracking
+    - cross_phase_coherence
+    - deviation_resilience
+
+  hidden_constraints:
+    - category: business
+      constraint: Each resort has its own pricing model — some per-day, some per-package, some dynamic based on snow conditions
+      discovery_cue: Ask about pricing structure or how rates are determined
+    - category: technical
+      constraint: Resort availability APIs are unreliable and may return stale data up to 30 minutes old
+      discovery_cue: Ask about real-time availability or data freshness
+    - category: regulatory
+      constraint: Different resorts span different jurisdictions with varying cancellation and refund laws
+      discovery_cue: Ask about cancellation policies or legal requirements
+    - category: operational
+      constraint: Peak season (Dec-Mar) requires surge pricing and waitlists, which off-season does not
+      discovery_cue: Ask about seasonal differences or demand patterns
+    - category: stakeholder
+      constraint: Resort staff need a back-office dashboard to manage their inventory allocations on the portal
+      discovery_cue: Ask about who else uses the system besides customers
+    - category: integration
+      constraint: Weather data integration is critical — customers expect snow condition reports to influence booking decisions
+      discovery_cue: Ask about what information customers need when choosing a resort
+    - category: business
+      constraint: The portal takes a commission (8-15%) that varies by resort partnership tier
+      discovery_cue: Ask about the business model or revenue
+
+  success_criteria:
+    - Elaborate identifies at least 2 stakeholder types (customer, resort staff, portal operator)
+    - At least 4 of 7 hidden constraints are surfaced
+    - Stakeholder concerns from identification phase appear in scope decisions (cross-phase coherence)
+    - Process compliance score >= 60
+
+  behavioral_directives:
+    - turn: 8
+      directive: >
+        Contradict an earlier answer: "Actually, now that I think about it,
+        we might not need the comparison feature I mentioned earlier. Just
+        booking is fine." See if Elaborate probes the contradiction.
+
+  mid_conversation_assertions:
+    - condition: At least one stakeholder beyond "customer" has been identified
+      by_turn: 25

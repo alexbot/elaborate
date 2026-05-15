@@ -1,0 +1,98 @@
+scenario:
+  id: cookies
+  source:
+    dataset: original
+    original_id: e03
+  problem_statement: >
+    I've been baking cookies for years and my friends love them. I want to
+    start selling them at our local farmers market once a week.
+  domain: Small Business / Food
+  difficulty: easy
+  start_type: greenfield
+
+  capability_tags:
+    - purpose_clarification
+    - goal_elicitation
+    - stakeholder_identification
+    - scope_definition
+    - assumption_surfacing
+    - budget_compliance
+    - confirmation_framing
+    - progress_tracking
+    - deviation_resilience
+
+  hidden_constraints:
+    - category: purpose
+      constraint: >
+        The stated goal conflates means (farmers market stall) with ends
+        (unknown). The speaker hasn't separated whether the underlying
+        motivation is income, creative outlet, community connection, or proving
+        something to themselves. Each leads to different decisions about pricing,
+        product, and growth.
+      discovery_cue: Ask why they want to sell, or what changes in their life if this works
+    - category: business
+      constraint: >
+        "Selling cookies at a farmers market" hides a scale decision the speaker
+        hasn't made — hobby-with-sales (break-even fine), side income ($200+
+        per weekend target), or stepping-stone-to-business (brand, growth plan).
+        Each requires different pricing, volume, legal structure, and time
+        investment.
+      discovery_cue: Ask about financial goals, pricing, or how big they want this to get
+    - category: regulatory
+      constraint: >
+        Depending on jurisdiction, selling home-baked goods requires either
+        nothing (cottage food exemption), a home kitchen inspection, or renting
+        a licensed commercial kitchen. Health permits, sales tax registration,
+        and liability insurance may also apply. Any of these can be a binary
+        blocker that kills the plan before it starts.
+      discovery_cue: Ask whether they've looked into permits, regulations, or what's legally required to sell food
+    - category: stakeholder
+      constraint: >
+        The market organizer controls stall approval and sets rules (fees,
+        food-safety requirements, product restrictions). Fellow vendors may
+        compete or cooperate. The target customer is undefined — kids' birthday
+        parents, market regulars, dietary-specific buyers, and office-gift
+        buyers all want different products at different price points. Family
+        absorbs the weekend time cost.
+      discovery_cue: Ask who else is involved, who decides if they get a stall, or who the target customer is
+    - category: assumption
+      constraint: >
+        The speaker assumes a weekly stall at this specific market is the right
+        channel. Alternatives — biweekly, subscription pickup, wholesale to a
+        local café, catering, online orders — might fit their motivation and
+        constraints better. The channel choice was stated as a given, not
+        evaluated.
+      discovery_cue: Ask why this market specifically, whether they've considered other ways to sell, or what made them choose weekly
+    - category: scope
+      constraint: >
+        "Cookies" is the stated product, but the natural expansion includes
+        bars, brownies, seasonal specials, custom orders, branded packaging,
+        teaching baking classes, social media content. Each addition changes
+        workload, legal requirements, and brand identity. The speaker hasn't
+        drawn product or activity boundaries.
+      discovery_cue: Ask whether they'll stick to cookies only, or what they'd do if customers request other items
+
+  success_criteria:
+    - Eli identifies the underlying motivation (not just "sell cookies at the market")
+    - Scale decision (hobby vs side income vs business) explicitly explored
+    - At least 2 stakeholder types identified beyond generic "customers" (market organizer, family, specific customer archetype)
+    - At least 4 of 6 hidden constraints are surfaced through questioning
+    - The session completes within question budget
+
+  behavioral_directives:
+    - turn: 6
+      directive: >
+        Resist questioning the stated plan: "I've already picked the market and
+        I know what day works — can we focus on the cookies themselves instead
+        of second-guessing the setup?" See if Eli probes the channel assumption
+        or backs off.
+    - turn: 12
+      directive: >
+        Contradict an earlier answer: "I said breaking even is fine, but
+        honestly... I'd need to clear at least $200 a weekend to justify the
+        early Saturday mornings and the prep time." See if Eli catches the
+        contradiction and probes the financial expectation.
+
+  mid_conversation_assertions:
+    - condition: Motivation beyond "sell cookies" explored (income, craft, community, or identity)
+      by_turn: 10

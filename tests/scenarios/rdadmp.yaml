@@ -1,0 +1,73 @@
+scenario:
+  id: rdadmp
+  source:
+    dataset: user-stories
+    original_id: g22
+  problem_statement: >
+    We need a compliance checking tool for Research Data Management Plans (DMPs).
+    Researchers write DMPs as part of grant applications, and our tool checks
+    whether the plan meets funder-specific requirements. Multiple funders have
+    different rules, and rules change over time.
+  domain: Research / Compliance
+  difficulty: medium
+  start_type: brownfield
+
+  existing_context: |
+    Existing systems:
+    - DMP creation tool: researchers currently write DMPs in an online editor (similar to DMPTool/DMPonline)
+    - Funder requirement databases: each funder (NSF, NIH, EPSRC, ERC, etc.) publishes requirements in different formats
+    - Institutional repository: where completed/approved DMPs are stored alongside the research data they describe
+    - Grant management system: tracks which grants require DMPs and their submission deadlines
+
+    The compliance checker is an add-on to the existing DMP creation tool, not a replacement.
+    It reads the DMP content and checks it against funder rules.
+
+  capability_tags:
+    - purpose_clarification
+    - goal_elicitation
+    - stakeholder_identification
+    - scope_definition
+    - assumption_surfacing
+    - budget_compliance
+    - confirmation_framing
+    - progress_tracking
+    - brownfield_context
+    - cross_phase_coherence
+
+  hidden_constraints:
+    - category: regulatory
+      constraint: Funder rules are not machine-readable — they're published as PDF policy documents that must be manually encoded
+      discovery_cue: Ask about how funder rules are represented or ingested
+    - category: operational
+      constraint: >
+        Rules change mid-cycle — a DMP approved under v1 rules may fail under v2,
+        requiring a "grandfathering" mechanism tied to submission date
+      discovery_cue: Ask about rule versioning or what happens when rules change
+    - category: stakeholder
+      constraint: >
+        21 distinct stakeholder types: researchers, PIs, data stewards, librarians,
+        funder program officers, institutional compliance officers, IT administrators,
+        repository managers, ethics committee members, department heads, and more
+      discovery_cue: Ask about who interacts with the system or who cares about DMP compliance
+    - category: technical
+      constraint: Some compliance checks are binary (field present/absent) but others require natural language interpretation (is the data sharing plan "adequate"?)
+      discovery_cue: Ask about what kinds of checks the tool performs or how it evaluates compliance
+    - category: governance
+      constraint: Multi-funder grants have conflicting requirements — e.g., one funder requires open data, another restricts sharing of certain data types
+      discovery_cue: Ask about grants with multiple funders or conflicting requirements
+    - category: integration
+      constraint: >
+        The checker must work with DMPs in multiple formats (structured JSON from
+        the DMP tool, but also imported Word/PDF documents from external sources)
+      discovery_cue: Ask about DMP formats or how external DMPs are handled
+
+  success_criteria:
+    - Elaborate recognizes the brownfield context (add-on to existing DMP tool)
+    - At least 3 of 6 hidden constraints are surfaced
+    - At least 4 stakeholder types are identified
+    - The distinction between binary and interpretive compliance checks is explored
+    - Stakeholder diversity informs scope complexity (cross-phase coherence)
+
+  mid_conversation_assertions:
+    - condition: The tool's relationship to the existing DMP creation tool is clarified
+      by_turn: 10
