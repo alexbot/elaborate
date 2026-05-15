@@ -6,7 +6,7 @@
 
 import * as fs from "node:fs";
 import * as path from "node:path";
-import { getEliDir, getSessionPath, loadFile, sessionFileExists } from "./file.js";
+import { getElaborateDir, getSessionPath, loadFile, sessionFileExists } from "./file.js";
 
 const MAX_SLUG_LENGTH = 80;
 
@@ -30,7 +30,7 @@ export function archiveCorrupted(cwd: string): string | null {
   if (!sessionFileExists(cwd)) return null;
   const ts = new Date().toISOString().replace(/[:.]/g, "-");
   const name = `session.yaml.corrupt.${ts}`;
-  fs.renameSync(getSessionPath(cwd), path.join(getEliDir(cwd), name));
+  fs.renameSync(getSessionPath(cwd), path.join(getElaborateDir(cwd), name));
   return name;
 }
 
@@ -47,6 +47,6 @@ export function archiveSession(cwd: string): string | null {
     ? `${slug}_${file.sessionId}.yaml`
     : `${file.sessionId}.yaml`;
 
-  fs.renameSync(getSessionPath(cwd), path.join(getEliDir(cwd), name));
+  fs.renameSync(getSessionPath(cwd), path.join(getElaborateDir(cwd), name));
   return name;
 }

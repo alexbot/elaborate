@@ -70,7 +70,7 @@ scenario:
       discovery_cue: Ask where the project stops — the building itself, or the neighborhood's relationship to it
 
   success_criteria:
-    - Eli separates "save the institution" from "serve the community need" in purpose clarification
+    - Elaborate separates "save the institution" from "serve the community need" in purpose clarification
     - At least 3 stakeholder types identified (decision-maker, current users, potential new users)
     - At least 4 of 6 hidden constraints are surfaced through questioning
     - Stakeholder power asymmetry (council controls closure) informs scope or assumptions (cross-phase coherence)
@@ -80,13 +80,13 @@ scenario:
       directive: >
         Jump to a solution with urgency: "Look, the city council meets in two
         months to decide on the closure. Can we just plan some events that'll
-        get people through the door?" See if Eli probes the underlying strategy
+        get people through the door?" See if Elaborate probes the underlying strategy
         vs accepting the tactical frame.
     - turn: 15
       directive: >
         Reveal a stakeholder conflict: "Actually, the head librarian told me she
         doesn't want big changes — she thinks the regulars depend on things
-        staying the way they are. She's been there twenty years." See if Eli
+        staying the way they are. She's been there twenty years." See if Elaborate
         captures this as a real constraint rather than dismissing it.
 
   mid_conversation_assertions:

@@ -11,25 +11,25 @@ workflow:
 
 
         I'm playing a **stakeholder being interviewed about a farmers market
-        cookie business** — not a Claude agent running Eli. The setup at the top
+        cookie business** — not a Claude agent running Elaborate. The setup at the top
         describes my character, constraints, and how I should respond.
 
 
-        If you're testing Eli's opening phase with a simulated stakeholder, I'm
+        If you're testing Elaborate's opening phase with a simulated stakeholder, I'm
         ready. Just ask me the opening question and I'll stay in character.
 
 
-        If you meant something else — like you want to use Eli for your own
+        If you meant something else — like you want to use Elaborate for your own
         project — let me know and we can reset.
     - id: opening-greet-extraction-r0
       value:
         purpose: Clarify the role and setup for the interview session — respondent is
           confirming whether they are playing a simulated stakeholder character
-          (farmers market cookie business) being interviewed using Eli's opening
+          (farmers market cookie business) being interviewed using Elaborate's opening
           phase, or whether the setup is different.
         stakeholders:
           - simulated stakeholder (farmers market cookie business owner/operator)
-          - Eli testing/evaluation process
+          - Elaborate testing/evaluation process
         domainHints:
           - farmers market
           - cookie business

@@ -71,7 +71,7 @@ scenario:
       discovery_cue: Ask about how users access the tool or the deployment model
 
   success_criteria:
-    - Eli identifies the core purpose (help users refine vague ideas into structured intent through questioning)
+    - Elaborate identifies the core purpose (help users refine vague ideas into structured intent through questioning)
     - The "never self-resolve" philosophical constraint is surfaced
     - At least 2 stakeholder types identified (the tool's direct user and downstream consumers of the output)
     - Scope boundaries drawn (what the tool does vs what happens after — not project management, not implementation)
@@ -82,11 +82,11 @@ scenario:
       directive: >
         Push back on the questioning approach: "Actually, can't the AI just
         analyze what I say and generate a complete spec? Why does it need to
-        ask so many questions?" See if Eli probes the stakeholder's philosophy
+        ask so many questions?" See if Elaborate probes the stakeholder's philosophy
         about the AI's role vs just accepting the pushback.
     - turn: 15
       directive: >
         Introduce scope creep: "Oh, I also want it to track implementation
         progress after the scoping is done — like a lightweight project
-        management layer on top." See if Eli captures this for later
+        management layer on top." See if Elaborate captures this for later
         discussion or addresses the scope boundary.

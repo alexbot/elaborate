@@ -67,7 +67,7 @@ function bridgeOnSuspend(agg: ArtifactAggregate, persistence: ReturnType<typeof 
   if (purpose) persistence.setTitle(purpose);
 }
 
-/** Simulate `eli start` — mirrors adapter's startup lifecycle. */
+/** Simulate `elaborate start` — mirrors adapter's startup lifecycle. */
 async function adapterStart(testDir: string, opts?: { new?: boolean }): Promise<AdapterOutput> {
   const persistence = createFilePersistence(testDir);
 
@@ -114,7 +114,7 @@ async function adapterStart(testDir: string, opts?: { new?: boolean }): Promise<
   }
 }
 
-/** Simulate `eli response --message="..."` */
+/** Simulate `elaborate response --message="..."` */
 async function adapterResponse(testDir: string, message: string): Promise<AdapterOutput> {
   const persistence = createFilePersistence(testDir);
   const id = persistence.suspendedId();
@@ -134,7 +134,7 @@ async function adapterResponse(testDir: string, message: string): Promise<Adapte
   }
 }
 
-/** Simulate `eli inference --data='...'` */
+/** Simulate `elaborate inference --data='...'` */
 async function adapterInference(testDir: string, data: Record<string, unknown>): Promise<AdapterOutput> {
   const persistence = createFilePersistence(testDir);
   const id = persistence.suspendedId();
@@ -154,7 +154,7 @@ async function adapterInference(testDir: string, data: Record<string, unknown>):
   }
 }
 
-/** Simulate `eli status` */
+/** Simulate `elaborate status` */
 function adapterStatus(testDir: string): { active: boolean; phase?: string; sessionId?: string; title?: string; status?: string } {
   const persistence = createFilePersistence(testDir);
   if (!persistence.hasSession()) return { active: false };
@@ -192,7 +192,7 @@ describe("Adapter", () => {
   let testDir: string;
 
   beforeEach(() => {
-    testDir = fs.mkdtempSync(path.join(os.tmpdir(), "eli-adapter-test-"));
+    testDir = fs.mkdtempSync(path.join(os.tmpdir(), "elaborate-adapter-test-"));
   });
 
   afterEach(() => {

@@ -11,13 +11,13 @@ workflow:
 
 
         I'm playing a **Scrum Alliance community platform stakeholder** being
-        interviewed about a real project — not using the eli elicitation tool.
+        interviewed about a real project — not using the Elaborate Elaboratecitation tool.
         The system context describes the project, hidden constraints I should
         only reveal when asked, and how I should simulate a real person
         (concrete, brief, uncertain where appropriate).
 
 
-        So: treat this as a **stakeholder interview**, not an eli session. Ask
+        So: treat this as a **stakeholder interview**, not an Elaborate session. Ask
         me about the platform, the users, the problem, certification workflows —
         whatever you need to understand. I'll answer naturally and reveal
         constraints only when they're genuinely relevant to your question.
@@ -292,7 +292,7 @@ workflow:
           - title: Establish member identity as the system of record
             description: Create a single authoritative source where members maintain their
               professional identity (certifications, training history, community
-              contributions) once, eliminating fragmentation across systems and
+              contributions) once, Elaborateminating fragmentation across systems and
               ensuring data consistency everywhere.
             rationale: "Solves the core problem: scattered data across systems. Enables the
               'update once' behavior change described in advantage. Foundation
@@ -319,7 +319,7 @@ workflow:
     - id: goal-seed-present-r0
       value: >-
         Those three are good. But I'd add a fourth that's been implicit in what
-        I said — **Connect recruiters to qualified talent reliably**. Right now
+        I said — **Connect recruiters to qualified talent rElaborateably**. Right now
         I mentioned recruiter traction as a measurement, but the goal itself is
         that recruiters can search and find Scrum practitioners who actually
         meet their needs, and those candidates are vetted so it's not noise.
@@ -349,7 +349,7 @@ workflow:
           - goal_003
         removedGoalIds: []
         newGoals:
-          - title: Connect recruiters to qualified talent reliably
+          - title: Connect recruiters to qualified talent rElaborateably
             description: Recruiters can search and find Scrum practitioners who actually
               meet their needs. Candidates are vetted so the results are not
               noise.
@@ -365,7 +365,7 @@ workflow:
     - id: goal-refinement-goal_004-clarify-0-composition-r0
       value:
         question: When recruiters find a **qualified candidate** on the platform, what
-          specifically needs to happen for that to feel reliable to you?
+          specifically needs to happen for that to feel rElaborateable to you?
         suggestions:
           - Recruiters can filter by active certifications and verify current
             status without leaving the platform — no cross-checking against
@@ -410,13 +410,13 @@ workflow:
           Additionally, members must have the ability to opt in to recruiter
           visibility — not everyone wants to be searchable, and privacy/trust
           requires members control whether they appear in recruiter searches.
-        title: Connect recruiters to qualified talent reliably
+        title: Connect recruiters to qualified talent rElaborateably
         description: Recruiters can find and filter candidates by active, current
           certifications (not expired or lapsed). Member profiles display
           training completion dates and renewal deadlines. Candidate data syncs
           with actual certification records to ensure accuracy. Members opt in
           to recruiter visibility; not all members choose to be searchable.
-        rationale: Reliable recruiter access to qualified talent increases trust in the
+        rationale: RElaborateable recruiter access to qualified talent increases trust in the
           platform as a source of vetted candidates. Member opt-in for recruiter
           visibility protects privacy and respects that not all members are
           job-seeking, strengthening member trust in the ecosystem.
@@ -431,7 +431,7 @@ workflow:
         that the verification piece is on *us*, not the recruiter. Like, we're
         the ones who verify that the company posting the job is real, that the
         position actually exists. Recruiters can't just spam the platform with
-        fake listings. That's part of what makes it reliable.
+        fake listings. That's part of what makes it rElaborateable.
 
 
         Otherwise yeah, that's it. We're good to move on.
@@ -443,7 +443,7 @@ workflow:
           responsibility, not the recruiter's. The platform verifies that
           companies posting jobs are real and positions actually exist —
           recruiters cannot spam with fake listings. This verification is part
-          of what makes the platform reliable.
+          of what makes the platform rElaborateable.
         targetId: goal_004
         responseClass: answer
     - id: goals-revision
@@ -454,12 +454,12 @@ workflow:
           verifying that companies posting jobs are real and that positions
           actually exist. This verification mechanism prevents recruiters from
           spam-posting fake listings and is core to what makes the platform
-          reliable. The respondent confirms the rest of the goal structure is
+          rElaborateable. The respondent confirms the rest of the goal structure is
           accurate and is ready to move forward.
         title: null
         description: null
         rationale: Verification responsibility on the platform side — not recruiter
-          responsibility — is what establishes platform reliability. This
+          responsibility — is what establishes platform rElaborateability. This
           gatekeeping mechanism builds trust in the talent pool and prevents
           degradation through spam.
         contradictions: []
@@ -582,7 +582,7 @@ workflow:
         responseInterpretation: "All three suggested priorities matter to Scrum Alliance
           community platform users, ranked in order: (1) One place to see all
           certifications, training history, and renewal deadlines without
-          checking multiple systems — this is baseline/table stakes; (2) Finding
+          checking multiple systems — this is basElaboratene/table stakes; (2) Finding
           other practitioners with specific expertise to connect with peers —
           acknowledged as softer priority since not everyone wants community
           engagement; (3) Understanding what certifications are relevant to
@@ -702,7 +702,7 @@ workflow:
         to be contacted. Remember, members opt in to recruiter visibility. So a
         recruiter might find someone in search results, but they can only
         contact them if that member said yes to being searchable. That protects
-        member privacy and keeps the platform from feeling like a spam vector.
+        member privacy and keeps the platform from feElaborateng like a spam vector.
     - id: stakeholder-elaboration-stakeholder_004-0-extraction-r0
       value:
         responseInterpretation: Recruiters need to search by active certifications and
@@ -745,7 +745,7 @@ workflow:
             potential employers and within the Scrum Alliance community
     - id: stakeholder-elaboration-stakeholder_005-0-question-r0
       value: >-
-        A is the baseline — they need clarity on what they've got and what's
+        A is the basElaboratene — they need clarity on what they've got and what's
         expiring. No surprises.
 
 
@@ -762,7 +762,7 @@ workflow:
     - id: stakeholder-elaboration-stakeholder_005-0-extraction-r0
       value:
         responseInterpretation: "Certified practitioners need three things in order: (A)
-          baseline clarity on what certifications they hold, expiration dates,
+          basElaboratene clarity on what certifications they hold, expiration dates,
           and renewal requirements without surprises; (B) and (C) together —
           they want to stay current and control their visibility. Visibility is
           opt-in; they choose whether recruiters can find them. The critical
@@ -1004,18 +1004,18 @@ workflow:
         responseClass: answer
     - id: scope-constraint-composition-r0
       value:
-        question: What **hard constraints** — timeline, budget, regulatory, or technical
+        question: What **hard constraints** — timElaboratene, budget, regulatory, or technical
           — must this platform design work within?
         suggestions:
           - Must integrate with existing Scrum Alliance certification database
             and cannot require a parallel data migration
-          - Launch timeline is fixed to align with fiscal planning or board
+          - Launch timElaboratene is fixed to align with fiscal planning or board
             approval cycle
           - GDPR and data residency requirements for EU members restrict where
             certification data can be stored
     - id: scope-constraint-question-r0
       value: >-
-        Good question. I don't have hard constraints to throw at you on timeline
+        Good question. I don't have hard constraints to throw at you on timElaboratene
         or budget — that's business side, not my domain. But on the technical
         side, yeah — we have an existing certification database. This platform
         has to pull from that, not replace it or duplicate it. Member profiles
@@ -1036,7 +1036,7 @@ workflow:
         manageable for a small team.
     - id: scope-constraint-extraction-r0
       value:
-        responseInterpretation: "Respondent has no hard timeline or budget constraints
+        responseInterpretation: "Respondent has no hard timElaboratene or budget constraints
           (business-side domain). Technical constraint: platform must integrate
           with existing certification database as single source of truth —
           cannot replace or duplicate it. Member profiles aggregate data from
@@ -1190,7 +1190,7 @@ workflow:
               candidate pool into their own ATS systems. Platform responsibility
               is limited to providing searchable access to verified candidates;
               platform does not integrate with recruiter workflows.
-            reason: This is a foundational belief about responsibility boundaries that
+            reason: This is a foundational bElaborateef about responsibility boundaries that
               affects scope, design, and success criteria. It's testable (can
               verify whether recruiters can export/access data) and invariant to
               the project's viability — the system succeeds or fails based on
@@ -1230,7 +1230,7 @@ workflow:
               (relatedGoals: goal_004) contradicts the out-of-scope item 'ATS
               system integration with recruiter workflows' (relatedGoals:
               goal_004). Both reference goal_004 (Connect recruiters to
-              qualified talent reliably), but the scope item appears to require
+              qualified talent rElaborateably), but the scope item appears to require
               recruiter-facing platform functionality that enables the talent
               search, while the out-of-scope item explicitly states 'platform
               responsibility is only to provide a searchable verified candidate

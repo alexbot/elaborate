@@ -8,8 +8,8 @@ let markerDir: string;
 let logDir: string;
 
 beforeEach(() => {
-  markerDir = fs.mkdtempSync(path.join(os.tmpdir(), "eli-marker-"));
-  logDir = fs.mkdtempSync(path.join(os.tmpdir(), "eli-log-"));
+  markerDir = fs.mkdtempSync(path.join(os.tmpdir(), "elaborate-marker-"));
+  logDir = fs.mkdtempSync(path.join(os.tmpdir(), "elaborate-log-"));
 });
 
 afterEach(() => {
@@ -17,17 +17,17 @@ afterEach(() => {
   fs.rmSync(logDir, { recursive: true, force: true });
 });
 
-function eliDir(): string {
+function elaborateDir(): string {
   return path.join(logDir, ".elaborate");
 }
 
 function enableLogging(): void {
   fs.writeFileSync(path.join(markerDir, ".log"), "");
-  fs.mkdirSync(eliDir(), { recursive: true });
+  fs.mkdirSync(elaborateDir(), { recursive: true });
 }
 
 function readEntries(): Record<string, unknown>[] {
-  const content = fs.readFileSync(path.join(eliDir(), "log.jsonl"), "utf-8");
+  const content = fs.readFileSync(path.join(elaborateDir(), "log.jsonl"), "utf-8");
   return content.trim().split("\n").map((line) => JSON.parse(line));
 }
 
@@ -35,14 +35,14 @@ describe("createLogger", () => {
   it("returns noop when .log marker is absent", () => {
     const log = createLogger(markerDir, logDir, null);
     log.info({ event: "test" });
-    expect(fs.existsSync(path.join(eliDir(), "log.jsonl"))).toBe(false);
+    expect(fs.existsSync(path.join(elaborateDir(), "log.jsonl"))).toBe(false);
   });
 
   it("returns active logger when .log marker is present", () => {
     enableLogging();
     const log = createLogger(markerDir, logDir, null);
     log.info({ event: "test" });
-    expect(fs.existsSync(path.join(eliDir(), "log.jsonl"))).toBe(true);
+    expect(fs.existsSync(path.join(elaborateDir(), "log.jsonl"))).toBe(true);
   });
 
   it("marker dir and log dir are independent", () => {
@@ -51,7 +51,7 @@ describe("createLogger", () => {
     log.info({ event: "test" });
     // marker lives in markerDir, log lives in logDir/.elaborate/
     expect(fs.existsSync(path.join(markerDir, ".log"))).toBe(true);
-    expect(fs.existsSync(path.join(eliDir(), "log.jsonl"))).toBe(true);
+    expect(fs.existsSync(path.join(elaborateDir(), "log.jsonl"))).toBe(true);
     expect(fs.existsSync(path.join(markerDir, ".elaborate", "log.jsonl"))).toBe(false);
   });
 });
@@ -163,12 +163,12 @@ describe("active logger", () => {
   it("creates .elaborate directory when missing", () => {
     fs.writeFileSync(path.join(markerDir, ".log"), "");
     // Do NOT create .elaborate dir — logger should create it via mkdirSync
-    expect(fs.existsSync(eliDir())).toBe(false);
+    expect(fs.existsSync(elaborateDir())).toBe(false);
 
     const log = createLogger(markerDir, logDir, null);
     log.info({ event: "test" });
 
-    expect(fs.existsSync(eliDir())).toBe(true);
-    expect(fs.existsSync(path.join(eliDir(), "log.jsonl"))).toBe(true);
+    expect(fs.existsSync(elaborateDir())).toBe(true);
+    expect(fs.existsSync(path.join(elaborateDir(), "log.jsonl"))).toBe(true);
   });
 });

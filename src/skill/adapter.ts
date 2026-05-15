@@ -294,14 +294,14 @@ async function main(): Promise<void> {
         break;
       default:
         error(
-          `Unknown command: ${command ?? "(none)"}\n\nUsage:\n  eli start [--new]             Create session (--new: archive existing)\n  eli response --message="..."  Process stakeholder message\n  eli inference --data='{...}'  Provide extraction results\n  eli status                    Query session state`
+          `Unknown command: ${command ?? "(none)"}\n\nUsage:\n  elaborate start [--new]             Create session (--new: archive existing)\n  elaborate response --message="..."  Process stakeholder message\n  elaborate inference --data='{...}'  Provide extraction results\n  elaborate status                    Query session state`
         );
     }
   } catch (e) {
     const err = e instanceof Error ? e : new Error(String(e));
     logger.error({ event: "error", class: err.constructor.name }, err.message);
     if (err instanceof CorruptedSessionError) {
-      error(`${err.message}\n\nRun 'eli start --new' to archive the corrupt file and start fresh.`);
+      error(`${err.message}\n\nRun 'elaborate start --new' to archive the corrupt file and start fresh.`);
     }
     if (isDeviationError(err)) {
       output({ error: "deviation_exhausted", deviation: err.name, response: err.response });

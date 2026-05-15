@@ -1,5 +1,5 @@
 /**
- * Scenario runner — drives an Eli session through the adapter API.
+ * Scenario runner — drives an Elaborate session through the adapter API.
  *
  * The runner accepts a SessionDriver that resolves adapter outputs.
  * Level 2 (default): mechanical routing based on adapter target type.
@@ -97,7 +97,7 @@ export async function runScenario(config: RunConfig): Promise<RunResult> {
     onMessage,
   } = config;
 
-  const sessionDir = fs.mkdtempSync(path.join(os.tmpdir(), `eli-eval-${scenario.id}-`));
+  const sessionDir = fs.mkdtempSync(path.join(os.tmpdir(), `elaborate-eval-${scenario.id}-`));
   const stakeholder = createStakeholder(stakeholderDriver, scenario);
   const driver = config.driver ?? createAdapterDriver(generationDriver, stakeholder);
   const transcript: Message[] = [];
@@ -122,8 +122,8 @@ export async function runScenario(config: RunConfig): Promise<RunResult> {
     let output = await withRetry(() => adapterStart(sessionDir), 3, log);
     if (output.target === "user") questionCount++;
     currentPhase = parsePhase(output.message);
-    log.log({ event: "eli", turn: 0, question: questionCount, phase: currentPhase, target: output.target, messageLen: output.message.length, message: output.message });
-    onMessage?.({ role: "eli", content: output.message, turn: 0 });
+    log.log({ event: "elaborate", turn: 0, question: questionCount, phase: currentPhase, target: output.target, messageLen: output.message.length, message: output.message });
+    onMessage?.({ role: "elaborate", content: output.message, turn: 0 });
 
     while (output.target !== "end") {
       turnCount++;
@@ -158,7 +158,7 @@ export async function runScenario(config: RunConfig): Promise<RunResult> {
         output = await withRetry(() => adapterInference(sessionDir, data), 3, log);
         if (output.target === "user") questionCount++;
         currentPhase = parsePhase(output.message);
-        log.log({ event: "eli", turn: turnCount, question: questionCount, phase: currentPhase, target: output.target, messageLen: output.message.length, message: output.message });
+        log.log({ event: "elaborate", turn: turnCount, question: questionCount, phase: currentPhase, target: output.target, messageLen: output.message.length, message: output.message });
       } else if (output.target === "user") {
         const t0 = Date.now();
         const historyLen = stakeholder.history.length;
@@ -172,7 +172,7 @@ export async function runScenario(config: RunConfig): Promise<RunResult> {
         output = await withRetry(() => adapterResponse(sessionDir, response), 3, log);
         if (output.target === "user") questionCount++;
         currentPhase = parsePhase(output.message);
-        log.log({ event: "eli", turn: turnCount, question: questionCount, phase: currentPhase, target: output.target, messageLen: output.message.length, message: output.message });
+        log.log({ event: "elaborate", turn: turnCount, question: questionCount, phase: currentPhase, target: output.target, messageLen: output.message.length, message: output.message });
       } else {
         error = `Unexpected target: ${output.target}`;
         status = "error";
@@ -180,7 +180,7 @@ export async function runScenario(config: RunConfig): Promise<RunResult> {
         break;
       }
 
-      onMessage?.({ role: "eli", content: output.message, turn: turnCount });
+      onMessage?.({ role: "elaborate", content: output.message, turn: turnCount });
     }
 
     if (status === "completed" && output.message.startsWith("[deviation_exhausted]")) {
@@ -213,15 +213,15 @@ export async function runScenario(config: RunConfig): Promise<RunResult> {
   fs.writeFileSync(runFilePath, JSON.stringify(result, null, 2));
 
   // Copy session YAML alongside the run file. archiveSession() renames
-  // session.yaml on completion, so fall back to the first .yaml in .eli/.
-  const eliDir = path.join(sessionDir, ".eli");
+  // session.yaml on completion, so fall back to the first .yaml in .elaborate/.
+  const elaborateDir = path.join(sessionDir, ".elaborate");
   let sessionSrc: string | undefined;
-  const directPath = path.join(eliDir, "session.yaml");
+  const directPath = path.join(elaborateDir, "session.yaml");
   if (fs.existsSync(directPath)) {
     sessionSrc = directPath;
-  } else if (fs.existsSync(eliDir)) {
-    const yamlFile = fs.readdirSync(eliDir).find((f) => f.endsWith(".yaml"));
-    if (yamlFile) sessionSrc = path.join(eliDir, yamlFile);
+  } else if (fs.existsSync(elaborateDir)) {
+    const yamlFile = fs.readdirSync(elaborateDir).find((f) => f.endsWith(".yaml"));
+    if (yamlFile) sessionSrc = path.join(elaborateDir, yamlFile);
   }
   if (sessionSrc) {
     const sessionDest = log.filePath.replace(".log.jsonl", ".session.yaml");

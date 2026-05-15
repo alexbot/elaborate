@@ -23,21 +23,21 @@ export interface SessionFile {
   title?: string;
 }
 
-export function getEliDir(cwd: string): string {
+export function getElaborateDir(cwd: string): string {
   return path.join(cwd, ELABORATE_DIR);
 }
 
 export function getSessionPath(cwd: string): string {
-  return path.join(getEliDir(cwd), SESSION_FILE);
+  return path.join(getElaborateDir(cwd), SESSION_FILE);
 }
 
 function ensureDir(cwd: string): void {
-  const dir = getEliDir(cwd);
+  const dir = getElaborateDir(cwd);
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 }
 
 function getTmpPath(cwd: string): string {
-  return path.join(getEliDir(cwd), SESSION_TMP);
+  return path.join(getElaborateDir(cwd), SESSION_TMP);
 }
 
 /**

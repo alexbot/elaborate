@@ -8,7 +8,7 @@ describe("FilePersistence", () => {
   let testDir: string;
 
   beforeEach(() => {
-    testDir = fs.mkdtempSync(path.join(os.tmpdir(), "eli-persistence-test-"));
+    testDir = fs.mkdtempSync(path.join(os.tmpdir(), "elaborate-persistence-test-"));
   });
 
   afterEach(() => {

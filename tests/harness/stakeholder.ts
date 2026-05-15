@@ -2,7 +2,7 @@
  * Simulated stakeholder agent.
  *
  * Receives hidden constraints + behavioral directives from the scenario,
- * calls an LLM to generate in-character responses to Eli's questions.
+ * calls an LLM to generate in-character responses to Elaborate's questions.
  */
 
 import type { Scenario } from "./schema.js";
@@ -61,8 +61,8 @@ export function createStakeholder(driver: T3Driver, scenario: Scenario): Stakeho
 
   return {
     history,
-    async respond(eliMessage: string, turn: number): Promise<string> {
-      history.push({ role: "user", content: eliMessage });
+    async respond(message: string, turn: number): Promise<string> {
+      history.push({ role: "user", content: message });
 
       let activeSystem = systemPrompt;
       const directive = buildDirectiveInsert(scenario, turn);

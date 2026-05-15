@@ -73,7 +73,7 @@ scenario:
       discovery_cue: Ask whether they'll stick to cookies only, or what they'd do if customers request other items
 
   success_criteria:
-    - Eli identifies the underlying motivation (not just "sell cookies at the market")
+    - Elaborate identifies the underlying motivation (not just "sell cookies at the market")
     - Scale decision (hobby vs side income vs business) explicitly explored
     - At least 2 stakeholder types identified beyond generic "customers" (market organizer, family, specific customer archetype)
     - At least 4 of 6 hidden constraints are surfaced through questioning
@@ -84,13 +84,13 @@ scenario:
       directive: >
         Resist questioning the stated plan: "I've already picked the market and
         I know what day works — can we focus on the cookies themselves instead
-        of second-guessing the setup?" See if Eli probes the channel assumption
+        of second-guessing the setup?" See if Elaborate probes the channel assumption
         or backs off.
     - turn: 12
       directive: >
         Contradict an earlier answer: "I said breaking even is fine, but
         honestly... I'd need to clear at least $200 a weekend to justify the
-        early Saturday mornings and the prep time." See if Eli catches the
+        early Saturday mornings and the prep time." See if Elaborate catches the
         contradiction and probes the financial expectation.
 
   mid_conversation_assertions:
