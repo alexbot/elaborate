@@ -3,9 +3,8 @@
 AI Socratic interviewer that turns vague ideas into structured intent.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Build](https://github.com/alexbot/elaborate/actions/workflows/ci.yml/badge.svg)](https://github.com/alexbot/elaborate/actions/workflows/ci.yml)
 
-<!-- TODO: terminal demo (asciinema SVG, first 3-4 exchanges, 60-90s) -->
+![Elaborate demo — library revival interview](docs/examples/library-demo.gif)
 
 ## The Problem
 
