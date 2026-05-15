@@ -1,0 +1,33 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Node
+node_modules/
+npm-debug.log*
+dist/
+
+# Runtime state (generated per-session)
+.elaborate/
+
+# Environment files
+.env
+.env.local
+.env*.local
+
+# Logs
+*.log
+logs/
+
+# Evaluation results (generated per-run)
+tests/results/
+
+# Claude Code personal config
+.claude/
