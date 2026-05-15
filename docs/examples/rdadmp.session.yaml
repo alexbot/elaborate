@@ -1,0 +1,1766 @@
+sessionId: sess_2026-05-15_wejihr
+createdAt: 2026-05-15T08:23:56.003Z
+lastModified: 2026-05-15T08:32:18.079Z
+workflow:
+  status: completed
+  entries:
+    - id: opening-greet-r0
+      value: >-
+        I appreciate the greeting, but I should clarify: I'm playing a
+        stakeholder being interviewed *about* a research compliance project, not
+        the other way around. This is a roleplay scenario where you're gathering
+        information from me.
+
+
+        I'm ready to answer questions about our Data Management Plan (DMP)
+        compliance checker — the tool we're building to check whether
+        researchers' DMPs meet funder-specific requirements. Ask away.
+    - id: opening-greet-extraction-r0
+      value:
+        purpose: Build a tool to check whether researchers' Data Management Plans (DMPs)
+          meet funder-specific requirements
+        stakeholders:
+          - researchers
+          - funders
+        domainHints:
+          - research compliance
+          - data management
+          - funder requirements
+        responseClass: answer
+    - id: opening-brownfield-screen
+      value:
+        greenfieldConfidence: 8
+        rationale: User describes a tool to be built with no mention of existing
+          codebases, prior versions, legacy systems, or inherited artifacts. The
+          purpose statement and stakeholders are purely directional — no
+          reference to 'we have a prototype,' 'building on X,' 'integrating with
+          Y,' or 'replacing Z.' Domain context (research compliance, DMPs,
+          funder requirements) is problem-space knowledge, not existing work.
+          High confidence this is greenfield, with small reserve (2 points) for
+          possibility that user omitted mention of internal prototypes or
+          institutional systems during initial framing.
+    - id: opening-summary-r0
+      value: Mostly, yeah — but it's a bit more complex on the stakeholder side than
+        just researchers and funders. The compliance checker is an add-on to our
+        existing DMP creation tool, so researchers will definitely use it. But
+        there are other people involved too — institutional compliance officers
+        need to sign off, librarians might help researchers interpret feedback,
+        maybe department heads care about whether their grants are at risk. I'm
+        not sure we've mapped out everyone yet, honestly.
+    - id: opening-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: "Stakeholder map is incomplete. Researchers and funders
+          captured, but missing: institutional compliance officers (sign-off
+          role), librarians (interpretation/support role), department heads
+          (grant-risk concern). Respondent states uncertainty about full
+          stakeholder list."
+        targetId: stakeholders
+        responseClass: answer
+    - id: purpose-initial-extraction
+      value:
+        purpose: null
+        advantage: null
+        measurement: null
+        responseInterpretation: "The stakeholder confirmed that researchers will use the
+          compliance checker as an add-on to the existing DMP creation tool.
+          However, they identified additional stakeholders beyond researchers
+          and funders: institutional compliance officers who must sign off,
+          librarians who may help researchers interpret feedback, and department
+          heads who may be concerned about grant risk. The stakeholder
+          acknowledged uncertainty about whether all stakeholders have been
+          identified yet."
+        contradictions: []
+        responseClass: answer
+    - id: purpose-advantage-0-composition-r0
+      value:
+        question: What makes a **DMP checking tool** better than how researchers
+          currently handle funder requirements?
+        suggestions:
+          - Saves time by automatically comparing DMPs against requirements
+            instead of manual review
+          - Reduces errors from researchers missing specific funder policies or
+            compliance details
+          - Gives researchers earlier feedback so they can revise before
+            submission
+    - id: purpose-advantage-0-question-r0
+      value: >-
+        The time savings is real, but honestly the bigger thing for us is
+        consistency. Right now, a researcher might submit a DMP thinking it's
+        fine, then our compliance officer flags something they missed — or
+        worse, the funder rejects it after submission. If the checker catches
+        gaps early in the writing process, researchers can fix things before
+        they're locked in. That's the main win.
+
+
+        The other piece is that funder rules are scattered everywhere — PDFs,
+        web pages, sometimes just emails — and they change. A tool that
+        centralizes that and tells you "your data sharing plan doesn't address
+        NSF's openness requirement" is way better than a researcher googling
+        three different funder policies and guessing whether they got it right.
+    - id: purpose-advantage-0-extraction-r0
+      value:
+        purpose: null
+        advantage: Consistency — catching gaps early in the writing process before
+          researchers submit or funders reject. Centralizing scattered funder
+          rules (PDFs, web pages, emails that change) so researchers don't have
+          to guess whether they got policies right.
+        measurement: null
+        responseInterpretation: "Time savings matters, but the core value is preventing
+          the cycle where researchers submit thinking they're compliant, then
+          compliance officers or funders flag missing requirements after
+          submission. The tool's main win is catching those gaps during writing
+          so researchers can fix them before things are locked in. Secondary
+          value: funder requirements are fragmented across many sources that
+          change frequently; a tool that centralizes them and explicitly flags
+          what's missing (e.g., 'your data sharing plan doesn't address NSF's
+          openness requirement') beats researchers manually searching and
+          guessing across three different funder policies."
+        contradictions: []
+        responseClass: answer
+    - id: purpose-measurement-0-composition-r0
+      value:
+        question: How would you know if this tool actually **solved the problem** for
+          researchers?
+        suggestions:
+          - Researchers submit DMPs on the first try without rejection feedback
+            about missing funder requirements.
+          - Time spent checking funder policies drops from hours to minutes, and
+            researchers feel confident they've covered everything.
+          - Fewer revisions needed between researcher drafts and final
+            submission because gaps are caught early.
+    - id: purpose-measurement-0-question-r0
+      value: >-
+        I think it's a combination. If researchers are hitting fewer rejections
+        from funders for missing compliance stuff, that's the clearest signal.
+        But also — and this matters to us — if our compliance team spends less
+        time doing manual spot-checks before DMPs go out the door, that's real
+        operational value.
+
+
+        The confidence piece matters too. Right now researchers often aren't
+        sure if they've done enough. If the tool says "you're good on NSF
+        requirements" and they actually are, that's a win. Though I'll be honest
+        — some of our compliance checks are pretty binary (is this field filled
+        in?), but others are squishier. Like, is the data sharing plan actually
+        "adequate"? That's harder to automate, so we might not catch everything.
+    - id: purpose-measurement-0-extraction-r0
+      value:
+        purpose: null
+        advantage: null
+        measurement: Researchers submit DMPs on first try without rejection feedback for
+          missing funder requirements. Time spent checking funder policies drops
+          from hours to minutes. Researchers feel confident they've covered
+          everything. Fewer rejections from funders for missing compliance stuff
+          — clearest signal. Compliance team spends less time doing manual
+          spot-checks before DMPs go out the door. Tool says 'you're good on NSF
+          requirements' and researchers actually are.
+        responseInterpretation: "Success is a combination: fewest rejections from
+          funders for missing compliance stuff is the clearest signal;
+          compliance team spending less time on manual spot-checks before DMPs
+          go out is real operational value; researchers feeling confident the
+          tool has verified they meet requirements matters. Some funder checks
+          are binary (field filled in), others are harder to automate ('is the
+          data sharing plan adequate?'), so the tool might not catch
+          everything."
+        contradictions: []
+        responseClass: answer
+    - id: purpose-confirmation-r0
+      value: >-
+        That's pretty accurate. One thing I'd add though — and this might matter
+        later — is that we're not just checking against one funder. Researchers
+        apply to multiple funders, and sometimes those funders have conflicting
+        requirements. Like, one might require open data and another restricts
+        sharing of certain data types. The tool needs to handle that somehow, or
+        at least flag when there's a conflict.
+
+
+        Other than that, yeah, that captures it.
+    - id: purpose-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: Tool needs to handle researchers applying to multiple funders
+          with conflicting requirements. Should flag when funder requirements
+          conflict (e.g., one requires open data, another restricts sharing of
+          certain data types).
+        targetId: purpose
+        responseClass: answer
+    - id: purpose-revision
+      value:
+        purpose: null
+        advantage: null
+        measurement: null
+        responseInterpretation: "The captured artifacts are accurate. The respondent
+          adds a critical constraint: researchers apply to multiple funders
+          simultaneously, and those funders often have conflicting requirements
+          (e.g., one requires open data, another restricts sharing of certain
+          data types). The tool needs to either handle these conflicts or flag
+          them when they occur."
+        contradictions: []
+        responseClass: answer
+    - id: goal-seed-extraction
+      value:
+        goals:
+          - title: Enable researchers to self-serve compliance validation
+            description: Researchers can independently verify their DMPs against funder
+              requirements without manual review cycles, reducing dependency on
+              compliance staff and enabling faster iteration.
+            rationale: Current measurement focuses on rejection reduction and time savings,
+              but the underlying capability shift is from manual gatekeeping to
+              researcher autonomy. This goal captures the operational
+              independence outcome.
+          - title: Consolidate and maintain authoritative funder policies
+            description: Create a single source of truth for funder DMP requirements that
+              stays current as policies change, eliminating researcher guesswork
+              across scattered PDFs, web pages, and institutional email.
+            rationale: The advantage statement identifies policy fragmentation as a core
+              problem, but the measurement doesn't directly track whether the
+              tool successfully centralizes and maintains policies. This goal
+              makes policy governance explicit.
+          - title: Establish predictable compliance outcomes
+            description: Achieve deterministic alignment between tool validation and funder
+              acceptance—when the tool says a DMP passes, it actually passes
+              without surprise rejections for missing requirements.
+            rationale: "Measurement includes 'tool says you're good and researchers actually
+              are,' but this framing is reactive (catching mismatches). This
+              goal reframes it as an outcome: predictability itself becomes a
+              success criterion that builds researcher and compliance team
+              trust."
+        drainedWaitingRoomIds: []
+    - id: goal-seed-present-r0
+      value: >-
+        Those three are good. But I want to flag something about (c) —
+        "deterministic alignment" is the dream, but I'm not sure it's fully
+        achievable. Some checks are straightforward (field present/absent), but
+        others require judgment calls. Like, is the data retention policy
+        "adequate"? The tool might say yes, but a funder program officer might
+        disagree. We should probably be honest about that limitation upfront
+        rather than promise perfect prediction.
+
+
+        The one thing I'd add: **Handle multi-funder grants gracefully**. When a
+        researcher is applying to NSF and NIH on the same project, and those
+        funders want different things, the tool should either flag the conflict
+        or somehow help them navigate it. Right now that's just a manual
+        headache.
+    - id: goal-seed-classification-r0
+      value:
+        responseInterpretation: "The respondent confirmed the three goals are sound.
+          They flagged a limitation in goal_003 ('Establish predictable
+          compliance outcomes'): deterministic alignment is aspirational but not
+          fully achievable because some compliance checks require judgment
+          (e.g., whether data retention is 'adequate'). Funders may disagree
+          with the tool's assessment. They want this limitation acknowledged
+          upfront rather than overpromised. They also identified a new
+          operational need: the tool should handle multi-funder grants where NSF
+          and NIH have conflicting requirements, either by flagging conflicts or
+          helping researchers navigate them. Currently this is manual work."
+        confirmedGoalIds:
+          - goal_001
+          - goal_002
+          - goal_003
+        removedGoalIds: []
+        newGoals:
+          - title: Handle multi-funder grant conflicts
+            description: When a researcher applies to multiple funders with different DMP
+              requirements (e.g., NSF and NIH), the tool should flag conflicts
+              or provide guidance to help navigate them, rather than leaving it
+              as manual work.
+        waitingRoomItems:
+          - content: Deterministic alignment is the dream, but some checks are
+              straightforward (field present/absent), while others require
+              judgment calls. Like, is the data retention policy 'adequate'? The
+              tool might say yes, but a funder program officer might disagree.
+              This limitation should be stated upfront rather than promising
+              perfect prediction.
+        responseClass: answer
+    - id: goal-sort
+      value:
+        rankedGoalIds:
+          - goal_004
+          - goal_001
+          - goal_002
+          - goal_003
+    - id: goal-refinement-goal_004-clarify-0-composition-r0
+      value:
+        question: When you say 'handle multi-funder grant conflicts,' what would that
+          concretely look like — a researcher submitting one DMP to multiple
+          funders, or something else?
+        suggestions:
+          - A researcher gets flagged when they apply to NSF and NIH in the same
+            proposal, and the tool shows which requirements overlap and which
+            conflict (e.g., data retention rules differ).
+          - The tool lets a researcher pick multiple funders upfront and
+            highlights which requirements they can satisfy with one approach and
+            which need separate versions or workarounds.
+          - When requirements genuinely contradict, the tool explains the
+            conflict and suggests which funder's rule takes precedence or
+            recommends the researcher contact both funders.
+    - id: goal-refinement-goal_004-clarify-0-question-r0
+      value: >-
+        I think it's (a) mostly, but with a practical twist. A researcher would
+        select the funders they're applying to, and the tool shows overlaps and
+        conflicts. But here's the thing — I don't think we can tell them which
+        funder "wins" or what the right workaround is. That's above our pay
+        grade. What we *can* do is flag it clearly and say "NSF wants open data,
+        NIH restricts sharing of identifiable health info — you need to figure
+        out how to satisfy both or talk to the funders." 
+
+
+        We're not giving legal advice or making judgment calls for them. Just
+        surfacing the problem so they don't accidentally submit something that
+        violates one funder's rules while trying to satisfy the other's.
+    - id: goal-refinement-goal_004-clarify-0-extraction-r0
+      value:
+        responseInterpretation: A researcher selects the funders they're applying to,
+          and the tool shows overlaps and conflicts between their requirements.
+          The tool flags conflicts clearly (e.g., 'NSF wants open data, NIH
+          restricts sharing of identifiable health info') but does not advise
+          which funder's rule takes precedence or recommend specific
+          workarounds. The tool surfaces the problem so researchers don't
+          accidentally violate one funder's rules while satisfying another's.
+          The tool does not give legal advice or make judgment calls — that
+          responsibility stays with the researcher and the funders.
+        title: Flag and surface multi-funder requirement conflicts without resolving
+          them
+        description: When a researcher selects multiple funders, the tool identifies
+          overlapping requirements and genuine contradictions between funder
+          policies. It presents conflicts clearly with the specific rules in
+          tension (e.g., data sharing restrictions that differ) so the
+          researcher can decide how to proceed or contact the funders. The tool
+          does not recommend which funder's requirement takes precedence,
+          suggest workarounds, or provide legal/compliance advice.
+        rationale: Researchers applying to multiple funders need to know where their
+          policies conflict so they can make informed decisions about how to
+          satisfy both or seek clarification from the funders themselves. The
+          tool's role is to surface and explain the problem, not to resolve it —
+          that protects both the tool's liability and ensures researchers
+          maintain agency over compliance decisions.
+        contradictions: []
+        waitingRoomItems:
+          - content: Tool should not give legal advice or make judgment calls about
+              compliance — that responsibility stays with the researcher and the
+              funders
+          - content: Tool should flag conflicts clearly but let researchers decide how to
+              satisfy both requirements or contact the funders
+        responseClass: answer
+    - id: goals-confirmation-r0
+      value: >-
+        That's solid. I'd just tweak the third one slightly — it's not just
+        about researchers applying to multiple funders *at the same time*. We
+        also have cases where a researcher comes back with a revised DMP because
+        one funder's rules changed mid-cycle. A DMP that passed last month under
+        v1 of the NSF rules might fail under v2. We need to handle that somehow
+        — maybe grandfathering it based on submission date, or flagging which
+        version of the rules it was checked against. Right now I'm not sure how
+        we're solving that, but it's a real problem.
+
+
+        Other than that, yeah, those three goals work.
+    - id: goals-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: goal_004 needs to account for rule version changes mid-cycle,
+          not just simultaneous multi-funder applications. Researchers may need
+          to revalidate DMPs when funder rules change (e.g., NSF v1 to v2).
+          Current solution unclear — could use submission-date grandfathering or
+          rule-version tracking.
+        targetId: goal_004
+        responseClass: answer
+    - id: goals-revision
+      value:
+        responseInterpretation: "The respondent affirmed the three goals but identified
+          a gap in goal_004. The current framing of 'Flag and surface
+          multi-funder requirement conflicts' focuses on researchers applying to
+          multiple funders at the same time. However, researchers also face a
+          different scenario: they submit a DMP under one version of a funder's
+          rules, and later that funder updates their requirements mid-cycle. A
+          DMP that complied with NSF rules v1 last month may fail under NSF
+          rules v2 now. The tool needs to handle this version drift — either by
+          grandfathering DMPs based on submission date, or by tracking which
+          version of the rules each DMP was checked against. The respondent is
+          uncertain about the solution but confident this is a real problem the
+          tool must address."
+        title: null
+        description: Flag and surface multi-funder requirement conflicts without
+          resolving them — including both simultaneous multi-funder applications
+          AND requirement version changes mid-cycle that invalidate
+          previously-compliant DMPs
+        rationale: Researchers need visibility into where funder rules conflict (either
+          across funders or across time when rules change), so they can make
+          informed decisions about compliance. The tool surfaces and explains
+          the problem without resolving it, protecting researcher agency and the
+          tool's liability.
+        contradictions: []
+        waitingRoomItems:
+          - content: Handle DMP version drift when funder rules change mid-cycle — either
+              grandfathering based on submission date or flagging which version
+              of the rules a DMP was checked against
+        responseClass: answer
+    - id: stakeholder-seed-extraction
+      value:
+        stakeholders:
+          - name: funder program officers
+            type: primary
+          - name: compliance team / institutional reviewers
+            type: secondary
+          - name: legal / institutional risk management
+            type: external
+        drainedWaitingRoomIds:
+          - waiting_001
+          - waiting_003
+    - id: stakeholder-review-present-r0
+      value: >-
+        That's a start, but you're missing quite a few. We have librarians who
+        help researchers interpret feedback from the tool. Data stewards who
+        manage what gets into the institutional repository. Department heads who
+        care whether their grants are at risk. Ethics committees that sometimes
+        have their own data rules. IT administrators who have to maintain the
+        integration with the DMP tool. Repository managers. Maybe even grant
+        management system folks.
+
+
+        I said 21 distinct stakeholder types earlier — I might've been counting
+        too granularly, but the point is there's a lot more than five. The
+        compliance checker touches a bunch of different workflows, not just the
+        researcher writing the DMP.
+    - id: stakeholder-review-classification-r0
+      value:
+        responseInterpretation: "The existing stakeholder list is incomplete. The
+          respondent identifies additional stakeholder types: librarians who
+          help researchers interpret feedback, data stewards managing
+          institutional repository content, department heads concerned about
+          grant risk, ethics committees with their own data rules, IT
+          administrators maintaining DMP tool integration, repository managers,
+          and grant management system staff. The respondent previously
+          identified 21 distinct stakeholder types and emphasizes the compliance
+          checker affects multiple workflows beyond the researcher writing the
+          DMP."
+        updatedTypes: []
+        removedIds: []
+        newStakeholders:
+          - name: librarians
+            type: secondary
+          - name: data stewards
+            type: secondary
+          - name: department heads
+            type: secondary
+          - name: ethics committees
+            type: external
+          - name: IT administrators
+            type: secondary
+          - name: repository managers
+            type: secondary
+          - name: grant management system staff
+            type: secondary
+        responseClass: answer
+    - id: stakeholder-respondent-present-r0
+      value: "I'm on the compliance team — institutional reviewer side. So I see the
+        pain from our end: researchers submit DMPs, we manually spot-check them
+        against funder requirements, flag issues, send them back for revision.
+        That's the workflow I'm trying to improve with this tool."
+    - id: stakeholder-respondent-present-extraction-r0
+      value:
+        responseInterpretation: The respondent identifies as a member of the compliance
+          team from the institutional reviewer side. Their role involves
+          receiving researcher-submitted DMPs, manually spot-checking them
+          against funder requirements, flagging issues, and sending them back
+          for revision. They are working to improve this workflow with the tool.
+        respondentId: stakeholder_004
+        responseClass: answer
+    - id: stakeholder-sort-secondary
+      value:
+        rankedStakeholderIds:
+          - stakeholder_006
+          - stakeholder_007
+          - stakeholder_004
+          - stakeholder_008
+          - stakeholder_011
+          - stakeholder_010
+          - stakeholder_012
+    - id: stakeholder-elaboration-stakeholder_001-0-composition-r0
+      value:
+        question: What would **researchers** need from this tool to actually use it when
+          they're writing a DMP?
+        suggestions:
+          - A checklist they can work through step-by-step that shows which
+            funder requirements apply to their grant
+          - Confidence that it covers all the funders they're submitting to, so
+            they're not missing policies somewhere else
+          - Something fast enough to use while writing, not a separate review
+            step they do after
+    - id: stakeholder-elaboration-stakeholder_001-0-question-r0
+      value: >-
+        All of those matter, but the biggest one is speed and integration.
+        Researchers are already in the DMP tool writing their plan — they don't
+        want to export it, run it through some separate checker, wait for
+        results, then come back and edit. It needs to be built in, real-time or
+        near-real-time feedback as they write. "You haven't addressed NSF's data
+        retention requirement yet" while they're still drafting is way more
+        useful than finding that out after they're done.
+
+
+        The checklist idea is good too, but only if it's tied to *their specific
+        funders*. A generic checklist of every funder requirement under the sun
+        isn't helpful. And confidence — yeah, they need to trust that if the
+        tool says they're good, they actually are. Though like I said earlier,
+        that's tricky for the judgment-call stuff.
+    - id: stakeholder-elaboration-stakeholder_001-0-extraction-r0
+      value:
+        responseInterpretation: Researchers need the tool integrated directly into their
+          DMP writing environment with real-time or near-real-time feedback on
+          missing requirements as they draft — not a separate post-hoc checker
+          they run after finishing. A checklist matters but only if it's
+          customized to their specific funders, not a generic list of all
+          possible requirements. They also need to trust the tool's judgment,
+          though the respondent acknowledges this is difficult for subjective
+          compliance calls.
+        role: researchers are already in the DMP tool writing their plan and need
+          integrated, real-time feedback rather than a separate workflow step
+        concerns:
+          - Speed and integration — researchers don't want to export, run
+            through separate checker, wait for results, then return to edit
+          - Real-time or near-real-time feedback while drafting, not after
+            completion
+          - Funder-specific checklists, not generic lists of all requirements
+          - Trust that tool judgment is accurate — if it says they're good on
+            requirements, they actually are
+        contradictions: []
+        waitingRoomItems:
+          - content: The tool needs to be built-in to the DMP writing tool, not a standalone
+              external checker
+          - content: Judgment-call requirements are tricky to validate with confidence
+        responseClass: answer
+    - id: stakeholder-followup-assessment-stakeholder_001
+      value:
+        needed: false
+        question: null
+        suggestions: null
+    - id: stakeholder-elaboration-stakeholder_002-0-composition-r0
+      value:
+        question: From the funder's perspective, what **role** do you see them playing
+          in a DMP compliance tool, and what outcomes would matter most to them?
+        suggestions:
+          - Funders want to reduce the number of incomplete or non-compliant
+            DMPs they receive — fewer rejections means less back-and-forth with
+            researchers.
+          - Funders care that their requirements are represented accurately in
+            the tool so researchers actually follow them, not just pass a
+            checkbox.
+          - Funders want visibility into whether researchers understand their
+            policies — the tool should help them track compliance trends across
+            submissions.
+    - id: stakeholder-elaboration-stakeholder_002-0-question-r0
+      value: >-
+        (b) is the big one for us — and it's a headache. Funder rules aren't
+        machine-readable. They publish them as PDF policy documents, web pages,
+        sometimes just buried in grant guidance. Someone has to manually read
+        those PDFs, figure out what the actual requirements are, and encode them
+        into the tool. And when NSF updates their data management policy, we
+        have to do that again.
+
+
+        So from the funder side, they probably care that we're representing
+        their rules correctly. But they also need to *tell us* when rules
+        change. Right now there's no formal mechanism for that — we just have to
+        monitor their websites and hope we catch updates before researchers
+        submit under outdated requirements.
+
+
+        (a) makes sense too — fewer incomplete DMPs means less work for them.
+        (c) is interesting but I'm not sure that's our problem to solve. That's
+        more of a funder analytics thing.
+    - id: stakeholder-elaboration-stakeholder_002-0-extraction-r0
+      value:
+        responseInterpretation: "The respondent identified funder requirements
+          representation as the primary concern: funders need their rules
+          accurately encoded in the tool, but face a major operational problem —
+          funder rules exist as scattered, unstructured documents (PDFs, web
+          pages, grant guidance) that require manual interpretation and
+          encoding. When funders update policies, there is no formal
+          notification mechanism; the team must monitor websites and hope to
+          catch changes before researchers submit under outdated requirements.
+          The respondent also acknowledged that reducing incomplete DMPs (fewer
+          rejections) makes sense for funders, but questioned whether tracking
+          compliance trends across submissions is the tool's responsibility
+          versus a funder analytics problem."
+        role: Funders need to communicate rule changes formally and keep their
+          requirements machine-readable and current in the tool; they also
+          benefit from receiving fewer incomplete or non-compliant DMPs,
+          reducing rejection workload.
+        concerns:
+          - Funder rules are not machine-readable — they are published as PDFs,
+            web pages, or scattered in grant guidance, requiring manual reading
+            and encoding
+          - No formal mechanism exists for funders to notify the tool when
+            policies change
+          - The team must manually monitor funder websites to catch policy
+            updates before researchers submit under outdated requirements
+          - Funder rules must be represented accurately in the tool so
+            researchers actually follow them
+          - Fewer incomplete or non-compliant DMPs reduces funder workload from
+            rejection and resubmission cycles
+        contradictions: []
+        waitingRoomItems:
+          - content: Funder analytics and compliance trend tracking — respondent noted this
+              is 'more of a funder analytics thing' and questioned whether it is
+              the tool's problem to solve
+        responseClass: answer
+    - id: stakeholder-followup-assessment-stakeholder_002
+      value:
+        needed: false
+        question: null
+        suggestions: null
+    - id: stakeholder-elaboration-stakeholder_003-0-composition-r0
+      value:
+        question: What role do **funder program officers** play in communicating or
+          updating requirements that researchers need to follow?
+        suggestions:
+          - They publish formal policy updates and announcements that get pushed
+            to institutions or posted on the funder website
+          - They handle researcher questions about requirement interpretation
+            but don't formally notify us when policies change
+          - They work directly with our compliance team to flag urgent changes,
+            but smaller updates sometimes slip through
+    - id: stakeholder-elaboration-stakeholder_003-0-question-r0
+      value: >-
+        It's messy. Formally, they publish updates on the funder website, press
+        releases, maybe email to program directors. But in practice? Program
+        officers also field researcher questions, sometimes give informal
+        guidance that contradicts what's on the website, or clarify edge cases
+        that aren't explicitly in the policy docs. We don't always know about
+        those conversations.
+
+
+        And yeah, smaller updates slip through. A funder might quietly update a
+        PDF on their site without announcing it loudly. We find out six months
+        later when a researcher's DMP gets flagged in review. There's no
+        reliable notification system — we have to actively monitor.
+
+
+        The bigger problem is interpretation. Two different program officers at
+        the same funder might give slightly different answers to "does this
+        satisfy your data retention requirement?" and we have no way to know
+        that's happening until it surfaces in a rejection.
+    - id: stakeholder-elaboration-stakeholder_003-0-extraction-r0
+      value:
+        responseInterpretation: "Funder program officers communicate requirements
+          through multiple channels: formally via funder website, press
+          releases, and email to program directors. But they also field
+          researcher questions informally and provide guidance that sometimes
+          contradicts what's published. This informal guidance is invisible to
+          the institution — they don't know those conversations happened.
+          Additionally, program officers sometimes update PDFs on the funder
+          website quietly without announcement, and institutions discover the
+          change months later when a researcher gets flagged. There's no
+          reliable notification system; active monitoring is required. The
+          biggest problem is inconsistency: different program officers at the
+          same funder give different answers to the same policy question (e.g.,
+          does this satisfy data retention requirement?), and the institution
+          has no way to detect this until a rejection surfaces it."
+        role: Funder program officers publish formal policy updates and field researcher
+          questions; they also provide informal guidance that may contradict
+          published policy and is not visible to institutions. They make
+          interpretation calls on policy edge cases that are inconsistent across
+          officers.
+        concerns:
+          - Informal guidance from program officers contradicts formal published
+            policy
+          - Researchers receive guidance directly from program officers that
+            institutions don't know about
+          - Policy updates posted on funder websites without announcement or
+            notification
+          - No reliable system to notify institutions when policies change
+          - Different program officers at the same funder interpret the same
+            policy requirement differently
+          - Inconsistent interpretations only surface when researchers get
+            rejected, after DMP submission
+        contradictions: []
+        waitingRoomItems:
+          - content: Institution must actively monitor funder websites to catch policy
+              changes rather than receiving proactive notification
+          - content: Researchers discover outdated policy six months later when DMP gets
+              flagged in review
+        responseClass: answer
+    - id: stakeholder-followup-assessment-stakeholder_003
+      value:
+        needed: false
+        question: null
+        suggestions: null
+    - id: stakeholder-elaboration-stakeholder_004-0-composition-r0
+      value:
+        question: What **compliance activities** does your team handle around researcher
+          DMPs before they go to funders?
+        suggestions:
+          - We spot-check DMPs against funder requirements and flag missing
+            sections before researchers submit
+          - We review DMPs for institutional policy compliance (data security,
+            ethics clearance, IP agreements) separately from funder requirements
+          - We don't currently review DMPs — researchers submit directly to
+            funders and we only see them if there's a rejection
+    - id: stakeholder-elaboration-stakeholder_004-0-question-r0
+      value: >-
+        We do (a) — that's the main thing. Researchers submit drafts or
+        near-final versions, we manually check them against funder requirements,
+        flag gaps, send them back for revision. It's time-consuming and
+        error-prone because we're doing it by hand, cross-referencing against
+        scattered policy docs.
+
+
+        We also do some of (b), though that's more ad hoc. If there's an ethics
+        issue or a data security concern, we might catch it. But that's not
+        really our lane — that's more the responsibility of the ethics committee
+        or the data stewards.
+
+
+        We don't wait for rejections to review — we catch things before they go
+        out. That's the whole point. But if something does slip through and a
+        funder rejects it, we see that rejection and learn we missed something.
+    - id: stakeholder-elaboration-stakeholder_004-0-extraction-r0
+      value:
+        responseInterpretation: The compliance team performs manual spot-checks of
+          researcher DMPs against funder requirements before submission,
+          flagging gaps and sending drafts back for revision. This is their main
+          activity (option a). They also occasionally catch ethics or data
+          security issues (option b), but view that as secondary to their
+          primary lane. They proactively review before rejection, not reactively
+          after rejection. The manual process is time-consuming and error-prone
+          because they cross-reference against scattered policy documents.
+        role: Compliance team manually spot-checks researcher DMPs against funder
+          requirements before submission, flags gaps, and returns drafts for
+          revision. Also occasionally catches ethics or data security concerns,
+          though views that as secondary responsibility.
+        concerns:
+          - Manual DMP checking is time-consuming
+          - Manual process is error-prone
+          - Funder policy documents are scattered and require cross-referencing
+          - Current process relies on hand-checking rather than systematic
+            approach
+          - Ethics and data security review responsibility is unclear — overlaps
+            with ethics committee and data stewards rather than being clearly
+            the compliance team's lane
+        contradictions: []
+        waitingRoomItems: []
+        responseClass: answer
+    - id: stakeholder-elaboration-stakeholder_005-0-composition-r0
+      value:
+        question: What **compliance or liability risks** concern your office most when
+          researchers submit Data Management Plans to external funders?
+        suggestions:
+          - Researchers submitting non-compliant DMPs that trigger funder
+            rejections, which then expose the institution to reputational damage
+            or funder scrutiny
+          - Lack of institutional oversight — we can't track what researchers
+            are committing to funders or catch gaps before submission
+          - Funder policies changing without our knowledge, so researchers
+            unknowingly submit under outdated requirements and the institution
+            gets blamed
+    - id: stakeholder-elaboration-stakeholder_005-0-question-r0
+      value: >-
+        All three, honestly. But if I'm being real about what keeps me up at
+        night, it's (c). A researcher submits a DMP under what they think are
+        the current NSF rules. Six months later NSF updated their policy and we
+        didn't know. The funder rejects it or — worse — accepts it and then
+        later audits the research and finds out the data wasn't managed
+        according to current NSF standards. That reflects badly on us as an
+        institution.
+
+
+        (a) is the daily grind — we catch stuff, send it back, researchers
+        revise. That's workable even if it's tedious. But (b) and (c) are the
+        systemic problems. We don't have good visibility into what researchers
+        are committing to, and we don't have a reliable way to stay on top of
+        changing requirements. The tool could help with both if we can solve the
+        "how do we know when rules change" problem.
+    - id: stakeholder-elaboration-stakeholder_005-0-extraction-r0
+      value:
+        responseInterpretation: Legal/institutional risk management is most concerned
+          with funder policy changes that the institution doesn't know about. A
+          researcher submits a DMP under what they believe are current NSF
+          rules. Six months later NSF updates their policy and the institution
+          was unaware. The funder either rejects the DMP or accepts it, then
+          audits the research later and discovers the data wasn't managed
+          according to current NSF standards. This reflects badly on the
+          institution. The respondent views (a) researcher non-compliance as
+          manageable — the team catches gaps, sends them back, researchers
+          revise. But (b) lack of visibility into researcher commitments and (c)
+          changing requirements without institutional knowledge are systemic
+          problems. The tool could help address both if it solves the 'how do we
+          know when rules change' problem.
+        role: Legal/institutional risk management office that monitors compliance risk
+          exposure and reputational damage from funder audits and policy
+          misalignment
+        concerns:
+          - Funder policy changes without institutional knowledge, exposing the
+            institution to audit findings and reputational damage
+          - Researchers submit DMPs under outdated funder requirements because
+            the institution wasn't aware policies had changed
+          - Funder audits post-acceptance discover data wasn't managed according
+            to current standards, reflecting badly on the institution
+          - Lack of visibility into what researchers are committing to funders
+          - No reliable way to stay on top of changing requirements across
+            multiple funders
+        contradictions: []
+        waitingRoomItems:
+          - content: The tool needs to solve the 'how do we know when rules change' problem
+              — requires a mechanism to detect and surface funder policy updates
+          - content: Manual spot-checking (task a) is workable even if tedious, but systemic
+              problems (b and c) require a different solution approach
+        responseClass: answer
+    - id: stakeholder-elaboration-stakeholder_006-0-composition-r0
+      value:
+        question: How do **librarians** currently interact with researchers' data
+          management planning?
+        suggestions:
+          - We help researchers find and cite data sources, and sometimes advise
+            on repository options when they ask.
+          - Librarians aren't typically involved — researchers work directly
+            with their department or the compliance team.
+          - We run training sessions on open data practices and help researchers
+            understand funder data sharing requirements.
+    - id: stakeholder-elaboration-stakeholder_006-0-question-r0
+      value: >-
+        It's a bit of (a) and (c). Some librarians do training on open data and
+        funder requirements. Others help researchers pick repositories or
+        understand what "data sharing plan" actually means. But it's not
+        systematic — it depends on whether the researcher knows to ask us and
+        which librarian they talk to.
+
+
+        If the tool flags an issue — like "your data sharing plan doesn't
+        address NSF's openness requirement" — a researcher might come to a
+        librarian and say "what do I do about this?" The librarian would then
+        help them figure out what NSF actually wants and how to document it in
+        the DMP. So librarians become a second-line support for interpretation,
+        not just policy compliance.
+    - id: stakeholder-elaboration-stakeholder_006-0-extraction-r0
+      value:
+        responseInterpretation: "Librarians provide a mix of training on open data
+          practices and funder requirements (option c) and help researchers
+          understand repositories and what data sharing plans mean (option a).
+          However, this support is inconsistent — it depends on whether
+          researchers know to ask librarians and which librarian they work with.
+          Librarians often serve as second-line support: when a tool or
+          compliance process flags an issue (e.g., 'your data sharing plan
+          doesn't address NSF's openness requirement'), researchers come to
+          librarians for interpretation help. Librarians then help researchers
+          understand what the funder actually requires and how to document it in
+          the DMP."
+        role: Librarians provide training on open data practices and funder
+          requirements; help researchers understand repository options and
+          interpret what 'data sharing plan' means; serve as second-line support
+          for funder requirement interpretation when issues are flagged
+        concerns:
+          - Support is not systematic — depends on whether the researcher knows
+            to ask librarians
+          - Support quality varies by which librarian the researcher talks to
+          - Librarians help with interpretation of flagged issues rather than
+            proactive validation
+        contradictions: []
+        waitingRoomItems: []
+        responseClass: answer
+    - id: stakeholder-elaboration-stakeholder_007-0-composition-r0
+      value:
+        question: When researchers are writing their **data management plan**, what role
+          do data stewards typically play, and what would matter most to you in
+          that process?
+        suggestions:
+          - Data stewards review the data handling and storage sections to
+            ensure compliance with institutional data governance policies — we'd
+            care most about having clear visibility into what researchers are
+            committing to funders so we can flag risks early.
+          - We consult informally when researchers ask questions about
+            repository options or data retention — we'd want the tool to reduce
+            those ad-hoc questions by surfacing requirements upfront so
+            researchers know what they need to plan for.
+          - Data stewards aren't typically involved — that's between researchers
+            and the compliance team — but we'd want to know if there are any
+            emerging gaps in how data is being managed across projects.
+    - id: stakeholder-elaboration-stakeholder_007-0-question-r0
+      value: >-
+        It's mostly (a). Data stewards need to know what researchers are
+        committing to in their DMPs so we can make sure those commitments are
+        actually feasible from an institutional standpoint. Like, if a
+        researcher promises NSF they'll store data in a specific repository for
+        seven years, we need to know that's something we can actually support.
+        If they promise open access but the data has confidentiality issues,
+        that's a problem we need to catch early.
+
+
+        Right now we find out about these commitments reactively — either the
+        researcher mentions it when they're writing the DMP, or we see it after
+        the fact when the DMP is approved and the researcher is actually trying
+        to manage the data. The tool could help by surfacing those commitments
+        earlier so we can flag institutional risks before the DMP gets locked
+        in.
+
+
+        The (b) stuff happens too, but that's more informal. We'd rather catch
+        issues proactively than field a dozen questions about "can we actually
+        do this?"
+    - id: stakeholder-elaboration-stakeholder_007-0-extraction-r0
+      value:
+        responseInterpretation: "Data stewards need visibility into what researchers are
+          committing to funders in their DMPs so they can verify those
+          commitments are feasible from an institutional standpoint. Key
+          examples: if a researcher promises NSF they'll store data in a
+          specific repository for seven years, data stewards need to confirm the
+          institution can actually support that; if researchers promise open
+          access but the data has confidentiality issues, that needs to be
+          flagged early. Currently data stewards find out about these
+          commitments reactively—either when researchers mention them during DMP
+          writing or after the DMP is approved when researchers start actually
+          managing the data. The tool could help by surfacing commitments
+          earlier so data stewards can flag institutional risks before the DMP
+          gets locked in. Informal consultation (option b) does happen but data
+          stewards would prefer to catch issues proactively rather than field
+          reactive questions about feasibility."
+        role: Data stewards need to know what researchers are committing to in their
+          DMPs so they can verify those commitments are actually feasible from
+          an institutional standpoint and flag institutional risks early.
+        concerns:
+          - Researchers make commitments in DMPs that the institution cannot
+            support (e.g., promised storage duration, repository choice)
+          - Open access promises conflict with confidentiality constraints in
+            the data
+          - Data stewards currently find out about commitments reactively —
+            either during DMP writing or after approval when the researcher is
+            trying to manage the data
+          - Lack of early visibility into commitments means institutional risks
+            are flagged late or not at all
+          - Ad-hoc questions from researchers about feasibility take staff time
+            and create reactive workflow rather than proactive validation
+        contradictions: []
+        waitingRoomItems: []
+        responseClass: answer
+    - id: stakeholder-elaboration-stakeholder_008-0-composition-r0
+      value:
+        question: How do **department heads** currently stay informed about funder
+          policy changes that affect your researchers?
+        suggestions:
+          - We rely on researchers to tell us, or we find out when they get
+            rejected by a funder.
+          - We monitor a few key funder websites ourselves, but it's
+            inconsistent and we sometimes miss updates.
+          - Our compliance team alerts us to major changes, but only after
+            they've already caught them during DMP review.
+    - id: stakeholder-elaboration-stakeholder_008-0-question-r0
+      value: >-
+        Honestly, it's mostly (a) and (c). Department heads aren't watching
+        funder websites. They find out when a researcher comes to them saying
+        "the funder rejected my DMP" or when the compliance team flags something
+        as a potential problem. Sometimes the compliance team will send out a
+        memo about a major policy shift, but that's after we've already spotted
+        it.
+
+
+        Department heads care because if their researchers keep submitting
+        non-compliant DMPs, it reflects on the department. But they're not
+        proactively monitoring policy changes themselves. They're counting on us
+        and the researchers to stay on top of it.
+    - id: stakeholder-elaboration-stakeholder_008-0-extraction-r0
+      value:
+        responseInterpretation: Department heads learn about funder policy changes
+          primarily when researchers come to them with rejection notices or when
+          the compliance team flags a problem during DMP review. Department
+          heads rarely monitor funder websites themselves. They care about
+          policy compliance because researcher non-compliance reflects on the
+          department, but they delegate responsibility for staying informed to
+          the compliance team and researchers.
+        role: Department heads do not proactively monitor funder policies themselves.
+          They respond reactively to compliance issues flagged by researchers or
+          the compliance team. They care about compliance outcomes because they
+          affect departmental reputation.
+        concerns:
+          - Department heads are not watching funder websites themselves
+          - They find out about policy changes only after problems surface —
+            when a researcher is rejected or compliance team flags an issue
+          - Departmental reputation is at risk if researchers repeatedly submit
+            non-compliant DMPs
+          - Department heads are counting on compliance team and researchers to
+            stay on top of policy changes
+        contradictions: []
+        waitingRoomItems: []
+        responseClass: answer
+    - id: stakeholder-elaboration-stakeholder_009-0-composition-r0
+      value:
+        question: What **role do ethics committees** play when researchers submit data
+          management plans at your institution?
+        suggestions:
+          - They review DMPs for human subjects protection and research ethics
+            compliance before submission to funders
+          - They're involved only if the research involves sensitive populations
+            or restricted data; most DMPs don't require their input
+          - They don't review DMPs directly — researchers consult them
+            separately if ethical concerns come up during the DMP writing
+            process
+    - id: stakeholder-elaboration-stakeholder_009-0-question-r0
+      value: >-
+        It's (b) mostly. If there's human subjects research or sensitive data
+        involved, the ethics committee needs to weigh in on the data management
+        plan — especially around data retention, anonymization, and who can
+        access it. But not every DMP goes through them. A lot of research
+        doesn't involve human subjects at all, so the ethics committee never
+        sees it.
+
+
+        When they do get involved, there can be tension with funder
+        requirements. Like, a funder might want open data, but the ethics
+        committee says "no, this data involves minors and needs to stay
+        confidential." Then we've got a conflict that needs sorting out —
+        similar to the multi-funder problem but internal.
+    - id: stakeholder-elaboration-stakeholder_009-0-extraction-r0
+      value:
+        responseInterpretation: Ethics committees are involved in DMP review primarily
+          when research involves human subjects or sensitive data (option b).
+          They weigh in on data retention, anonymization, and access controls.
+          Not all DMPs go through ethics review—research without human subjects
+          doesn't require their input. When ethics committees do get involved,
+          their requirements can conflict with funder requirements, such as
+          ethics committees requiring confidentiality for data involving minors
+          while funders request open data.
+        role: Ethics committees review DMPs for human subjects protection and research
+          ethics compliance when research involves human subjects or sensitive
+          data; they specify requirements around data retention, anonymization,
+          and access controls.
+        concerns:
+          - Ethics committee requirements can conflict with funder requirements
+            (e.g., funder wants open data, ethics committee requires
+            confidentiality for sensitive populations like minors)
+          - Conflicts between ethics requirements and funder requirements need
+            to be sorted out and resolved
+        contradictions: []
+        waitingRoomItems:
+          - content: Multi-funder problem is similar to the internal conflict between ethics
+              committee requirements and funder requirements—both involve
+              managing competing rule systems
+        responseClass: answer
+    - id: stakeholder-dedup
+      value:
+        duplicateGroups:
+          - keepId: stakeholder_002
+            removeIds:
+              - stakeholder_003
+          - keepId: stakeholder_004
+            removeIds:
+              - stakeholder_005
+              - stakeholder_009
+    - id: stakeholders-confirmation-r0
+      value: >-
+        This is solid. I'd just add a bit more detail on a couple of the
+        secondary ones you listed but didn't elaborate.
+
+
+        **IT administrators** — they're the ones who have to integrate the
+        compliance checker with the DMP tool and keep the whole system running.
+        They care about whether the checker can handle the data formats coming
+        from the DMP tool, whether it scales, whether it breaks when funder
+        rules get updated.
+
+
+        **Repository managers** — they need to know what data management
+        commitments researchers are making because those commitments affect what
+        gets stored in the institutional repo. If a researcher promises data
+        will be open for five years but the repo can only commit to three,
+        that's a problem.
+
+
+        **Grant management system staff** — they track which grants require DMPs
+        and their deadlines. They might need to flag when a DMP hasn't been
+        checked or approved yet before a grant goes out.
+
+
+        Those three are less central than researchers and compliance, but
+        they're part of the ecosystem and would probably have feedback on the
+        tool if we built it.
+    - id: stakeholders-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: "Add detail on three secondary stakeholders: IT
+          administrators (integration, scaling, policy updates), repository
+          managers (data commitment visibility, repo capacity conflicts), and
+          grant management system staff (tracking DMPs and approvals against
+          grant deadlines)"
+        targetId: null
+        responseClass: answer
+    - id: stakeholders-revision
+      value:
+        responseInterpretation: "The respondent affirmed the existing artifacts as solid
+          and provided elaboration on three secondary stakeholders that were
+          previously identified but not detailed: IT administrators (who
+          integrate the checker with the DMP tool, care about data format
+          compatibility, scalability, and handling funder rule updates),
+          repository managers (who need visibility into researcher data
+          management commitments because those commitments affect what the
+          institutional repo can support—e.g., conflicts between promised open
+          access periods and institutional repository retention limits), and
+          grant management system staff (who track which grants require DMPs and
+          deadlines, and may need to flag when a DMP hasn't been checked or
+          approved before a grant goes out). The respondent characterized these
+          three as less central than researchers and compliance but part of the
+          ecosystem with potential feedback."
+        role: null
+        concerns:
+          - "IT administrators: whether the checker can handle data formats
+            coming from the DMP tool"
+          - "IT administrators: whether the checker scales"
+          - "IT administrators: whether the checker breaks when funder rules get
+            updated"
+          - "Repository managers: need visibility into what data management
+            commitments researchers are making in their DMPs"
+          - "Repository managers: researcher commitments affect what gets stored
+            in institutional repo"
+          - "Repository managers: conflicts between promised data access periods
+            and institutional repo capability (e.g., researcher promises open
+            for five years, repo can only commit to three)"
+          - "Grant management system staff: track which grants require DMPs and
+            their deadlines"
+          - "Grant management system staff: need to flag when a DMP hasn't been
+            checked or approved before a grant goes out"
+        contradictions: []
+        waitingRoomItems: []
+        responseClass: answer
+    - id: scope-seed-extraction
+      value:
+        inScope:
+          - description: Real-time or near-real-time compliance feedback integrated into the
+              DMP writing tool (not standalone external checker)
+            relatedGoals:
+              - goal_001
+          - description: Funder-specific requirement validation — researchers see which
+              funder rules their DMP satisfies or violates
+            relatedGoals:
+              - goal_001
+              - goal_002
+          - description: Consolidation and maintenance of authoritative funder policy rules
+              in machine-readable form
+            relatedGoals:
+              - goal_002
+          - description: Detection and surfacing of multi-funder requirement conflicts
+              without resolving them — tool flags where rules collide and
+              explains the conflict
+            relatedGoals:
+              - goal_004
+          - description: Handling DMP version drift — track which version of funder rules a
+              DMP was checked against; grandfathering or flagging based on
+              submission date
+            relatedGoals:
+              - goal_002
+          - description: Mechanism to detect when funder policies change and surface those
+              updates so researchers and institutions don't operate under
+              outdated rules
+            relatedGoals:
+              - goal_002
+          - description: Validation accuracy sufficient that researchers trust the tool's
+              pass judgment — if tool says 'compliant,' the DMP actually passes
+              funder review
+            relatedGoals:
+              - goal_001
+        outOfScope:
+          - description: Funder analytics and compliance trend tracking (respondent flagged
+              as 'more of a funder analytics thing')
+            reason: Explicitly noted as outside the tool's problem scope during conversation
+            relatedGoals: []
+          - description: Resolving conflicts between ethics committee requirements and
+              funder requirements — tool surfaces conflicts but does not resolve
+              or recommend choices
+            reason: goal_004 explicitly states 'without resolving them'; researcher agency
+              and liability protection require tool to surface, not decide
+            relatedGoals:
+              - goal_004
+          - description: Proactive notification system to push funder policy changes to
+              institutions (e.g., email alerts, webhooks)
+            reason: Implied in conversation as institutional responsibility ('institution
+              must actively monitor'); tool can surface changes but not replace
+              active monitoring
+            relatedGoals: []
+        ambiguous:
+          - description: Validation of 'judgment-call' requirements — requirements that are
+              subjective or interpretable rather than binary (e.g., 'data should
+              be findable')
+            relatedGoals:
+              - goal_001
+            note: waiting_007 flags this as 'tricky to validate with confidence' but does
+              not clarify whether judgment calls are in scope, out of scope, or
+              require a different validation strategy
+          - description: Conflict resolution between researcher DMP commitments and
+              institutional capability (e.g., promised storage duration exceeds
+              institutional repo capability)
+            relatedGoals:
+              - goal_001
+            note: Data stewards need to validate feasibility, but unclear whether the tool
+              surfaces these institutional constraints or only funder-to-funder
+              conflicts
+          - description: Second-line support and interpretation help for flagged issues —
+              whether tool provides guidance or only surface-level flag
+            relatedGoals:
+              - goal_001
+            note: Librarian and compliance team roles suggest support beyond flagging, but
+              scope of explanation/guidance is unclear
+        drainedWaitingRoomIds:
+          - waiting_002
+          - waiting_004
+          - waiting_005
+          - waiting_006
+          - waiting_011
+    - id: scope-seed-present-r0
+      value: >-
+        This is good, but I want to flag the unclear ones because they're
+        actually important.
+
+
+        **(k) Judgment-call requirements** — Yeah, this is the hard part. Some
+        funder requirements are clear ("describe your data retention plan"), but
+        others are squishy ("ensure data is findable"). We need to be honest
+        about what the tool can and can't validate. Maybe it checks that
+        *something* is there in the relevant section, but it can't really judge
+        whether it's *adequate*. That's probably still a compliance officer
+        review.
+
+
+        **(l) Institutional capability conflicts** — This one should probably be
+        *in* scope, at least partially. The tool should flag when a researcher
+        commits to something in the DMP that might be infeasible from an
+        institutional standpoint (like "data will be stored for 10 years" when
+        our repo only guarantees 5). Not resolve it — just surface it so data
+        stewards can catch it early.
+
+
+        **(m) Second-line support** — Out of scope, I think. The tool flags
+        issues, researchers (and maybe librarians) figure out what to do. We're
+        not building an AI tutor here.
+
+
+        One more thing: I'd add to in-scope that the tool needs to handle DMPs
+        in multiple formats. Researchers use the online editor to create
+        structured DMPs, but sometimes they import Word documents or PDFs from
+        other sources. The checker needs to work with both.
+    - id: scope-seed-classification-r0
+      value:
+        responseInterpretation: "The respondent confirmed the overall scope direction
+          but highlighted three items that warrant clarification: (k)
+          judgment-call requirements need honest bounding about what the tool
+          can validate versus what requires human review; (l) institutional
+          capability conflicts should be in-scope as flagging/surfacing, not
+          resolving; (m) second-line support is out-of-scope. The respondent
+          also introduced a new constraint: the tool must handle DMPs in
+          multiple formats (structured from the editor, plus imported Word/PDF
+          documents)."
+        confirmedInScope:
+          - scope_001
+          - scope_002
+          - scope_003
+          - scope_004
+          - scope_005
+          - scope_006
+          - scope_007
+        confirmedOutOfScope:
+          - scope_008
+          - scope_009
+          - scope_010
+        removedIds: []
+        newItems:
+          - description: Handle DMP input from multiple formats — structured DMPs created in
+              the online editor, plus imported Word documents and PDFs from
+              other sources
+            classification: in
+          - description: Flag institutional capability conflicts — detect when researcher
+              commitments in the DMP (e.g., storage duration, access terms)
+              conflict with institutional repository or data steward
+              capabilities; surface for early resolution by data stewards, do
+              not resolve
+            classification: in
+          - description: Validate judgment-call requirements with honest bounds on tool
+              capability — tool can check that something is present in the
+              relevant DMP section (binary), but cannot judge adequacy; adequacy
+              assessment remains a compliance officer review responsibility
+            classification: in
+        waitingRoomItems: []
+        responseClass: answer
+    - id: scope-constraint-composition-r0
+      value:
+        question: What **constraints or limitations** must this tool work within at your
+          institution?
+        suggestions:
+          - Budget ceiling for tool licensing or integration work
+          - Compliance team capacity — tool must fit into existing review
+            workflow without requiring new staff
+          - Data security or privacy rules about storing funder policies in a
+            centralized system
+    - id: scope-constraint-question-r0
+      value: >-
+        Budget's probably a factor, but that's above my pay grade. The real
+        constraints I see are:
+
+
+        **Capacity** — Yeah, we can't hire new people to maintain this. Whoever
+        ends up owning the funder policy database has to do it alongside
+        existing work. That means the system for updating funder rules when they
+        change has to be lightweight, not a heavy manual process.
+
+
+        **Integration** — The DMP tool is already in production with researchers
+        using it. We can't break that workflow while adding the compliance
+        checker. It has to plug in cleanly.
+
+
+        **Data format chaos** — Like I said, researchers create DMPs in our
+        online editor (structured JSON or similar), but we also get Word
+        documents, PDFs from other institutions, sometimes even plain text. The
+        checker needs to handle that variety or we'll spend all our time
+        converting formats.
+
+
+        And here's one that might be ugly: **versioning and backfilling**. When
+        funder rules change, what happens to DMPs that were already approved
+        under the old rules? Do we re-check them? Do we grandfather them? Do we
+        flag them as "checked under v1.2 of NSF policy"? We need a clear policy
+        there or we'll either waste time re-checking everything or miss actual
+        compliance drift.
+    - id: scope-constraint-extraction-r0
+      value:
+        responseInterpretation: "The respondent identified four concrete constraints:
+          (1) Capacity — cannot hire new staff to maintain the funder policy
+          database; system must support lightweight, non-manual updates. (2)
+          Integration — must plug into the existing production DMP tool without
+          breaking researcher workflow. (3) Data format chaos — must handle
+          structured JSON from the online editor plus Word documents, PDFs, and
+          plain text from external sources, or the institution will spend
+          excessive time converting formats. (4) Versioning and backfilling —
+          needs a clear policy for handling DMPs approved under old funder rules
+          when rules change (re-check vs. grandfather vs. version-tag), or the
+          institution will either waste time re-checking everything or miss
+          compliance drift."
+        constraints:
+          - description: Cannot hire new staff to maintain funder policy database — whoever
+              owns it must do so alongside existing work; system for updating
+              funder rules when they change must be lightweight, not a heavy
+              manual process
+          - description: DMP tool is already in production with researchers using it;
+              compliance checker must plug in cleanly without breaking existing
+              workflow
+          - description: Must handle multiple DMP input formats — structured JSON from
+              online editor, Word documents, PDFs from other institutions, plain
+              text — or institution will spend excessive time converting formats
+          - description: Must establish and follow a clear versioning and backfilling policy
+              for DMPs approved under old funder rules when rules change; lack
+              of clarity will either waste time re-checking everything or create
+              compliance drift
+        waitingRoomItems: []
+        responseClass: answer
+    - id: scope-contrast-0-composition-r0
+      value:
+        question: Should the tool check whether subjective requirements like 'data
+          should be findable' are present in the DMP, or is judging whether
+          they're adequately written out of scope?
+        suggestions:
+          - "In scope: flag when the section exists but is vague or incomplete;
+            compliance team makes the final adequacy call"
+          - "Out of scope: tool only validates that required sections are
+            present; compliance team owns judgment about quality"
+          - "Hybrid: tool flags presence and offers a rubric for adequacy, but
+            does not block or fail the DMP"
+    - id: scope-contrast-0-question-r0
+      value: >-
+        I think it's (b) — tool validates that sections exist, compliance team
+        owns adequacy judgment. Here's why: if we try to build a rubric for "is
+        this findable plan adequate?", we're basically encoding our own
+        compliance judgment into the tool. That's risky. Different funders
+        interpret "adequate" differently, and even within a funder, program
+        officers disagree. The tool can't win that game.
+
+
+        What the tool *can* do is say "NSF requires a data findability plan —
+        you have a section labeled 'data discoverability' but it's pretty short.
+        You might want to expand it." That's a hint, not a judgment. Then the
+        compliance officer or researcher can decide if it's really adequate.
+
+
+        The binary stuff — field present/absent, required metadata filled in —
+        that's what the tool should own. The judgment calls stay with humans.
+    - id: scope-contrast-0-extraction-r0
+      value:
+        responseInterpretation: "Judgment-call requirements (like 'data should be
+          findable') should be OUT of the tool's validation scope. The tool
+          validates binary facts: required sections are present, fields are
+          filled. The compliance team owns adequacy judgment. The tool can
+          provide hints (e.g., 'section exists but is short') without making
+          pass/fail determinations. Different funders and program officers
+          interpret adequacy differently, so encoding a rubric into the tool
+          creates false authority and risk."
+        classification: in
+        reason: ""
+        relatedGoals:
+          - goal_001
+          - goal_002
+        waitingRoomItems: []
+        responseClass: answer
+    - id: scope-contrast-1-composition-r0
+      value:
+        question: Should the tool flag when a researcher's **promised data commitment**
+          (like five-year storage) exceeds what your institution can actually
+          support?
+        suggestions:
+          - Yes — flag it so data stewards can resolve the conflict early,
+            before the DMP goes to the funder
+          - No — that's a researcher-funder negotiation; the tool should only
+            check funder rules
+          - Yes, but only as a warning, not a compliance failure — researchers
+            can override after talking to data stewards
+    - id: scope-contrast-1-question-r0
+      value: >-
+        It should be (a), but with a caveat. The tool should absolutely flag it
+        — "you promised five-year storage but institutional repo only guarantees
+        three years." That's a real problem that needs catching early.
+
+
+        But here's the thing: the tool can't make that decision for the
+        researcher. It flags the conflict and says "you need to resolve this
+        with your data steward." The researcher might negotiate with the funder
+        to change the timeline, or they might find external storage that can
+        handle five years, or they might come back and revise the DMP. Not our
+        call.
+
+
+        So yeah, flag it — that's institutional risk management. But don't block
+        submission. Let the researcher and data steward work it out.
+    - id: scope-contrast-1-extraction-r0
+      value:
+        responseInterpretation: The tool should flag conflicts between
+          researcher-promised data commitments and institutional capabilities
+          (e.g., five-year storage promise vs. three-year institutional
+          guarantee). Flagging is institutional risk management and should
+          happen early, before DMP submission. However, the flag is a
+          notification to the researcher and data steward, not a blocking gate.
+          The researcher can resolve the conflict by negotiating with the
+          funder, finding external storage, or revising the DMP. The tool
+          surfaces the problem but does not resolve it or prevent submission.
+        classification: in
+        reason: ""
+        relatedGoals:
+          - goal_004
+        waitingRoomItems: []
+        responseClass: answer
+    - id: scope-contrast-2-composition-r0
+      value:
+        question: When the tool flags a requirement issue, should it just highlight the
+          problem, or should it also provide **interpretation help** — like
+          explaining what the funder means and how to fix it?
+        suggestions:
+          - Just flag it — the compliance team and librarians handle
+            interpretation
+          - Flag it plus provide basic guidance — e.g., 'NSF requires a data
+            retention plan; see section 2.3 of their guidelines'
+          - Flag it plus suggest how to revise the DMP to meet the requirement
+    - id: scope-contrast-2-question-r0
+      value: >-
+        I'd say (b) — flag it and provide basic guidance like pointing to the
+        actual policy doc or explaining what the requirement means in plain
+        language. Not prescriptive revision suggestions, but enough context that
+        researchers aren't totally lost.
+
+
+        Here's why: if the tool says "NSF requires a data retention plan"
+        without any explanation, researchers might still not know what that
+        means or where to look. But if it says "NSF requires you to describe how
+        long you'll keep the data and where — see section 2.3 of their policy,"
+        that's actionable without the tool trying to write the DMP for them.
+
+
+        The librarians can still step in for deeper interpretation help, but the
+        tool can at least point people in the right direction. That reduces some
+        of the ad-hoc questions and gives researchers a fighting chance to
+        self-serve.
+    - id: scope-contrast-2-extraction-r0
+      value:
+        responseInterpretation: "The respondent chose option (b): flag issues and
+          provide basic guidance (policy references, plain-language explanations
+          of requirements) without prescriptive revision suggestions. Guidance
+          should be actionable but not write the DMP for researchers. Librarians
+          remain available for deeper interpretation; the tool reduces ad-hoc
+          questions by giving researchers enough context to self-serve."
+        classification: in
+        reason: ""
+        relatedGoals:
+          - goal_001
+          - goal_004
+        waitingRoomItems:
+          - content: Tool guidance must be detailed enough to be actionable (e.g., 'NSF
+              requires you to describe how long you'll keep the data and where —
+              see section 2.3') but not prescriptive (does not suggest how to
+              revise the DMP)
+          - content: Librarians serve as second-line support for deeper interpretation help;
+              tool provides first-line context to reduce ad-hoc support volume
+        responseClass: answer
+    - id: scope-contradiction-check
+      value:
+        contradictions: []
+        orphans:
+          - scopeItemId: scope_011
+            description: "Handle DMP input from multiple formats (structured JSON, Word,
+              PDF, plain text) — no goal connection. Scope note says 'goals:
+              none'. This is an operational requirement driven by
+              constraint_003, not a goal objective."
+    - id: scope-dedup
+      value:
+        duplicateGroups:
+          - keepId: scope_013
+            removeIds:
+              - scope_014
+          - keepId: scope_012
+            removeIds:
+              - scope_015
+    - id: scope-confirmation-r0
+      value: >-
+        This is comprehensive. One thing I want to clarify on the multi-format
+        handling — that's not just an operational constraint, it's actually tied
+        to goal_001 (researcher self-serve). If researchers can only use the
+        tool with DMPs created in our online editor, we're limiting who can
+        benefit. Lots of researchers work with templates from other institutions
+        or collaborate with people at other schools who use different DMP tools.
+        If we can't handle those formats, we're forcing extra work on
+        researchers and they won't use the tool.
+
+
+        So yeah, that should probably connect to goal_001.
+
+
+        Also, on the versioning and backfilling policy — that's urgent. We need
+        to decide *before* we launch the tool, not after. If a funder updates
+        their policy mid-year and we don't have a clear answer about what
+        happens to already-approved DMPs, we're going to get caught in arguments
+        about compliance. I'd rather nail that down now as a constraint on tool
+        design.
+
+
+        Otherwise, yeah, that captures it pretty well.
+    - id: scope-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: Multi-format handling should be explicitly connected to
+          goal_001 (researcher self-serve) because limiting the tool to DMPs
+          created in the online editor restricts who can benefit — researchers
+          using templates from other institutions or collaborating across
+          schools with different DMP tools would be forced to do extra work and
+          won't use the tool. Also, versioning and backfilling policy for DMPs
+          approved under old funder rules when rules change must be decided
+          before launch, not after, to avoid compliance arguments if a funder
+          updates policy mid-year.
+        targetId: goal_001
+        responseClass: answer
+    - id: scope-revision
+      value:
+        responseInterpretation: "The respondent identified two critical connections: (1)
+          multi-format DMP handling is not just an operational constraint but
+          directly enables goal_001 (researcher self-serve) by removing barriers
+          for researchers using external DMP tools or collaborating across
+          institutions; (2) versioning and backfilling policy for rule changes
+          must be decided before launch as a design constraint, not a
+          post-launch operational decision, because mid-year funder policy
+          updates create compliance risk if the tool has no clear strategy for
+          handling previously-approved DMPs."
+        inScope:
+          - description: Multi-format DMP input handling (structured JSON from online
+              editor, Word documents, PDFs, plain text) — explicitly linked to
+              goal_001 because researchers cannot self-serve if limited to
+              institution's online editor; must support formats from external
+              DMP tools and cross-institutional collaboration
+            relatedGoals:
+              - goal_001
+          - description: Versioning and backfilling policy for DMP compliance when funder
+              rules change mid-year — must be established before tool launch;
+              determines whether previously-approved DMPs are grandfathered,
+              re-checked, or flagged; absence of policy creates compliance
+              ambiguity and institutional liability
+            relatedGoals:
+              - goal_002
+        outOfScope: []
+        removedIds: []
+        reclassifiedItems:
+          - id: Handle DMP input from multiple formats — structured DMPs created in the
+              online editor, plus imported Word documents and PDFs from other
+              sources
+            newClassification: in
+        waitingRoomItems: []
+        responseClass: answer
+    - id: scope-dedup-post-revision
+      value:
+        duplicateGroups:
+          - keepId: scope_011
+            removeIds:
+              - scope_017
+          - keepId: scope_006
+            removeIds:
+              - scope_018
+    - id: validation-wr-classify
+      value:
+        routed:
+          - id: waiting_007
+            target: assumption
+            content: Tool can validate binary presence of required elements (e.g., 'data
+              storage location is stated') but cannot judge adequacy or quality
+              of those elements; adequacy assessment remains a compliance
+              officer review responsibility.
+            reason: "This captures a core operational assumption: the tool's validation
+              scope has inherent bounds. Without this assumption holding true,
+              the tool's trust and usability collapse. It's testable (can
+              demonstrate what the tool can/cannot judge) and necessary for the
+              project to succeed."
+          - id: waiting_008
+            target: residual
+            content: Funder analytics and compliance trend tracking — respondent noted this
+              is 'more of a funder analytics thing' and questioned whether it is
+              the tool's problem to solve
+            reason: Already captured in outOfScope as 'Funder analytics and compliance trend
+              tracking' with explicit rationale. No new information or
+              actionable refinement here.
+          - id: waiting_009
+            target: assumption
+            content: Institution is responsible for actively monitoring funder websites to
+              catch policy changes; the tool surfaces detected changes but does
+              not replace active institutional monitoring.
+            reason: This defines the boundary of tool responsibility vs. institutional
+              responsibility. It's an implicit belief about who owns the
+              monitoring burden. Without it, the scope expands uncontrollably
+              (proactive push notifications, webhook systems, etc.). Testable
+              and central to project viability.
+          - id: waiting_010
+            target: finding
+            content: Policy change detection mechanism is critical — researchers currently
+              discover outdated policies six months post-submission when DMP
+              gets flagged in review, creating audit and reputational risk.
+            reason: This is a gap and risk observation. It demonstrates why policy-change
+              detection (already in inScope) is not optional; it's needed to
+              prevent a specific failure mode. Actionable as a priority signal
+              during implementation.
+          - id: waiting_012
+            target: assumption
+            content: Manual spot-checking of individual DMPs is workable (though tedious) as
+              a compliance process; systemic problems (policy fragmentation,
+              version drift, conflicting rules across funders) require
+              tool-driven solutions and cannot be solved by process discipline
+              alone.
+            reason: This assumption justifies the project's scope boundaries. It
+              acknowledges that some problems (manual checking) are solvable by
+              process, while others require automation. Without this, the tool
+              might over-promise to replace all compliance work or under-scope
+              critical systemic problems.
+          - id: waiting_013
+            target: residual
+            content: Multi-funder problem is similar to the internal conflict between ethics
+              committee requirements and funder requirements—both involve
+              managing competing rule systems
+            reason: "This is an observation about problem structure. Both are already
+              addressed in scope: goal_004 handles multi-funder conflicts, and
+              the outOfScope entry on ethics/funder conflicts explicitly states
+              the tool surfaces but does not resolve them. The observation is
+              absorbed; no new design guidance emerges."
+          - id: waiting_014
+            target: assumption
+            content: Tool guidance must be detailed enough to be actionable (e.g., 'NSF
+              requires you to describe how long you'll keep the data and where —
+              see section 2.3') but not prescriptive (does not suggest how to
+              revise the DMP). Librarians remain available for deeper
+              interpretation.
+            reason: This is a core assumption about guidance design and the division of
+              labor between tool and human expertise. It's testable (guidance
+              can be audited for actionability vs. prescriptiveness) and
+              essential — violating it either makes the tool unhelpful (too
+              vague) or causes it to write DMPs (outside scope, liability risk).
+          - id: waiting_015
+            target: assumption
+            content: Librarians serve as second-line support for deeper interpretation help;
+              tool provides first-line context to reduce ad-hoc support volume
+              rather than replace librarian involvement.
+            reason: This defines the tool's role in the institutional support ecosystem.
+              It's an implicit belief about feasible scope (tool doesn't subsume
+              librarian expertise) and resource impact (tool reduces burden
+              rather than eliminates it). Testable and necessary for stakeholder
+              buy-in and realistic success measurement.
+    - id: validation-consistency-check
+      value:
+        contradictions:
+          - description: "goal_004 states 'Flag and surface multi-funder requirement
+              conflicts without resolving them' and rationale emphasizes
+              protecting researcher agency. However, stakeholder_004 (compliance
+              team) has a concern: 'Ethics committee requirements can conflict
+              with funder requirements... Conflicts between ethics requirements
+              and funder requirements need to be sorted out and resolved.' This
+              creates a direct tension: goal_004 explicitly avoids resolution to
+              preserve agency, but a key stakeholder expects the tool or process
+              to resolve conflicts. The out-of-scope item acknowledges this
+              ('resolving conflicts... tool surfaces conflicts but does not
+              resolve'), but stakeholder_004's concern is never reconciled with
+              that decision."
+          - description: stakeholder_004 (compliance team) lists ethics and data security
+              review as overlapping responsibilities ('views that as secondary
+              responsibility... overlaps with ethics committee and data stewards
+              rather than being clearly the compliance team's lane'). Yet the
+              in-scope item 'Flag institutional capability conflicts' assigns
+              data steward validation to data stewards (stakeholder_007) with no
+              mention of compliance team involvement. This leaves
+              stakeholder_004's ethics review responsibility undefined in the
+              tool scope—whether the tool covers ethics conflicts or compliance
+              team continues handling them ad-hoc is unresolved.
+          - description: "constraint_001 states 'whoever owns it must do so alongside
+              existing work; system for updating funder rules must be
+              lightweight.' However, stakeholder_002 (funders) has a concern:
+              'No formal mechanism exists for funders to notify the tool when
+              policies change' and 'The team must manually monitor funder
+              websites.' This means the institution (not funders) is responsible
+              for the lightweight update mechanism. The constraint assumes the
+              update burden is manageable, but measurement and goals do not
+              include any target for how quickly or reliably policy changes are
+              detected and loaded into the tool. There is no success criteria
+              for 'lightweight maintenance' — it remains aspirational."
+    - id: validation-summary-present-r0
+      value: >-
+        This is solid work. The findings are fair — they're the real tensions
+        that'll come up later if we don't address them now.
+
+
+        On the unresolved findings: I want to be direct. The **ethics conflict**
+        one is the biggest. Yeah, goal_004 says "don't resolve conflicts," but
+        in practice, when an ethics committee says "this data stays
+        confidential" and NSF says "open data," someone has to decide. That
+        someone currently is me and my compliance team, working it out ad-hoc
+        with the ethics committee. The tool surfacing that conflict is helpful,
+        but pretending it doesn't need resolving isn't realistic.
+
+
+        I'm not saying the tool should resolve it — that's still a human call.
+        But we need to be explicit: *when* that conflict surfaces (and it will),
+        what's the escalation path? Does it go to me? To a compliance officer?
+        Do we have authority to tell a researcher "you can't make that
+        commitment to NSF"? Right now that's murky.
+
+
+        On the **lightweight maintenance** — yeah, constraint_001 is optimistic.
+        Monitoring funder websites manually is *not* lightweight. Someone has to
+        own that. Either we bite the bullet and assign it to someone on my team,
+        or we need a better solution (like formal funder notification, which is
+        out of scope but would solve the problem). Otherwise we're setting
+        ourselves up to fail.
+
+
+        The **ethics/data steward split** on validation — that's workable as
+        long as we're clear: tool flags institutional capability conflicts, data
+        stewards review them, compliance team handles ethics conflicts
+        separately. Not ideal, but it works if we document it.
+
+
+        Those are the real issues. Everything else tracks.
+    - id: validation-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: Explicit escalation path and decision authority for
+          ethics/funder conflicts; clarification of lightweight maintenance
+          ownership and feasibility; documented protocol for ethics/data steward
+          split validation workflow
+        targetId: null
+        responseClass: answer
+title: Build a tool to check whether researchers' Data Management Plans (DMPs)
+  meet funder-specific requirements
+userConcern: Explicit escalation path and decision authority for ethics/funder
+  conflicts; clarification of lightweight maintenance ownership and feasibility;
+  documented protocol for ethics/data steward split validation workflow

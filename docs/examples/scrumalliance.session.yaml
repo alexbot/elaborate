@@ -1,0 +1,1308 @@
+sessionId: sess_2026-05-15_f6tdxp
+createdAt: 2026-05-15T08:29:21.288Z
+lastModified: 2026-05-15T08:36:06.812Z
+workflow:
+  status: completed
+  entries:
+    - id: opening-greet-r0
+      value: >-
+        Thanks for the setup. I'm ready to go, but I should clarify my role
+        here.
+
+
+        I'm playing a **Scrum Alliance community platform stakeholder** being
+        interviewed about a real project — not using the eli elicitation tool.
+        The system context describes the project, hidden constraints I should
+        only reveal when asked, and how I should simulate a real person
+        (concrete, brief, uncertain where appropriate).
+
+
+        So: treat this as a **stakeholder interview**, not an eli session. Ask
+        me about the platform, the users, the problem, certification workflows —
+        whatever you need to understand. I'll answer naturally and reveal
+        constraints only when they're genuinely relevant to your question.
+
+
+        What would you like to know?
+    - id: opening-greet-extraction-r0
+      value:
+        purpose: ""
+        stakeholders:
+          - Scrum Alliance community platform users
+          - platform stakeholders
+        domainHints:
+          - Scrum Alliance
+          - community platform
+          - certification workflows
+        responseClass: answer
+    - id: opening-brownfield-screen
+      value:
+        greenfieldConfidence: 3
+    - id: opening-brownfield-r0
+      value: Skip. This is a greenfield platform — we're building it from scratch. No
+        existing codebase or docs to reference.
+    - id: opening-brownfield-extraction-r0
+      value:
+        isBrownfield: false
+        sourceIndicators: []
+        responseClass: answer
+    - id: opening-summary-r0
+      value: Yeah, that's the core of it. But "platform stakeholders" is a bit broad —
+        we've got pretty distinct groups using this thing differently. Members
+        managing their own stuff, trainers listing courses, recruiters hunting
+        for talent, and Scrum Alliance staff running the whole operation. Each
+        has their own needs and permissions.
+    - id: opening-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: "stakeholder_002 ('platform stakeholders') is too broad and
+          masks distinct user groups with different needs and permissions.
+          Should be broken into: Members managing their own stuff, Trainers
+          listing courses, Recruiters hunting for talent, and Scrum Alliance
+          staff running the operation."
+        targetId: stakeholder_002
+        responseClass: answer
+    - id: purpose-initial-extraction
+      value:
+        purpose: null
+        advantage: null
+        measurement: null
+        responseInterpretation: "The respondent affirms the core direction but
+          challenges the existing artifact's scope. They identify four distinct
+          user groups with separate needs and permissions: members managing
+          their own content, trainers listing courses, recruiters searching for
+          talent, and Scrum Alliance staff administering the platform. Each
+          group uses the platform differently and has different requirements."
+        contradictions: []
+        responseClass: answer
+    - id: purpose-classify-framing
+      value:
+        framing: problem
+        solutionDescription: null
+        responseClass: answer
+    - id: purpose-purpose-0-composition-r0
+      value:
+        question: What **problem** does this community platform need to solve for Scrum
+          Alliance users?
+        suggestions:
+          - Fragmented certification tracking across multiple roles and training
+            providers
+          - Users lack a central place to find peers, share experiences, and get
+            answers about Scrum practices
+          - Difficulty connecting learners with mentors or resources matched to
+            their certification level
+    - id: purpose-purpose-0-question-r0
+      value: >-
+        Good question. It's really a few problems tangled together.
+
+
+        Right now, members scattered across different systems — their training
+        history lives one place, certification records another, maybe some
+        community contributions elsewhere. There's no single view of "here's who
+        I am as a practitioner." For recruiters trying to find qualified people,
+        it's painful — no centralized talent pool. And trainers? They're posting
+        courses all over the place with no way to showcase them or build
+        credibility within the community.
+
+
+        The bigger thing though: Scrum Alliance doesn't have a modern home for
+        its community. We want members to actually engage — find each other, see
+        what certifications matter, understand what they need to stay current,
+        discover training opportunities. Right now that's scattered and
+        fragmented.
+    - id: purpose-purpose-0-extraction-r0
+      value:
+        purpose: Members scattered across different systems with no single view of their
+          practitioner identity. Training history, certification records, and
+          community contributions are fragmented. The platform should be a
+          modern central home where members can find each other, see what
+          certifications matter, understand what they need to stay current, and
+          discover training opportunities.
+        advantage: null
+        measurement: null
+        responseInterpretation: "The respondent identified three interconnected
+          problems: (1) fragmented certification tracking across multiple
+          systems with no unified practitioner profile, (2) lack of a central
+          place for members to find peers and engage with the community, and (3)
+          trainers scattered across platforms with no way to showcase courses or
+          build credibility. They emphasized the larger problem: Scrum Alliance
+          lacks a modern community home. They added two stakeholder concerns not
+          in the original suggestions — recruiters need a centralized talent
+          pool to find qualified people, and trainers need a platform to
+          showcase courses and build credibility within the community."
+        contradictions: []
+        responseClass: answer
+    - id: purpose-advantage-0-composition-r0
+      value:
+        question: What **advantage** does consolidating member profiles and
+          certifications into one system create compared to your current
+          fragmented setup?
+        suggestions:
+          - Members save time by updating credentials once instead of across
+            multiple platforms, reducing duplicate effort and sync errors.
+          - Community leaders can identify expertise gaps and skill patterns
+            across the membership to guide training priorities.
+          - Members discover relevant peers and training aligned to their career
+            path instead of stumbling onto them randomly.
+    - id: purpose-advantage-0-question-r0
+      value: >-
+        All three matter, honestly, but let me frame it differently.
+
+
+        For members: one place to own their professional identity within Scrum
+        Alliance. Update once, it's live everywhere. People can actually see
+        "okay, I'm certified in X, I need to renew in Y, here's what training
+        gets me there." That clarity changes behavior — right now people don't
+        know they're slipping out of compliance.
+
+
+        For the Alliance itself: we get a real picture of who we are as a
+        community. What certifications are trending, where the gaps are, where
+        trainers should focus. You can't make good decisions without that data.
+
+
+        For recruiters: they get a vetted talent pool instead of guessing. And
+        for trainers, they finally have a legitimate stage — their courses live
+        in the Alliance ecosystem, not scattered across their own sites.
+
+
+        The real win is member stickiness. Right now, people get certified and
+        disappear. We want them to stay engaged, renew on time, invest in the
+        community.
+    - id: purpose-advantage-0-extraction-r0
+      value:
+        purpose: null
+        advantage: Members own their professional identity in one place, update once and
+          it's live everywhere, gaining clarity on certification status and
+          renewal pathways that changes behavior. Alliance gets real data on
+          trending certifications and gaps to guide training focus and
+          decision-making. Recruiters access a vetted talent pool. Trainers get
+          a legitimate stage in the Alliance ecosystem. Member stickiness
+          increases — people stay engaged and renew on time instead of getting
+          certified and disappearing.
+        measurement: null
+        responseInterpretation: "The respondent affirmed all three suggestions (member
+          time savings, gap identification for leaders, peer discovery) but
+          reframed the advantages into four stakeholder perspectives: (1)
+          Members gain clarity on compliance status and renewal pathways, which
+          changes their behavior; (2) The Alliance itself gets data on
+          certification trends and gaps to guide training priorities and
+          decisions; (3) Recruiters gain access to a vetted talent pool instead
+          of guessing; (4) Trainers finally have a legitimate platform for their
+          courses within the Alliance ecosystem. The core win is member
+          stickiness — preventing the pattern where certified members disengage
+          and fail to renew on time."
+        contradictions: []
+        responseClass: answer
+    - id: purpose-measurement-0-composition-r0
+      value:
+        question: How would you know if this platform succeeded—what **measurable
+          changes** would you see?
+        suggestions:
+          - "Member engagement metrics: login frequency, profile completion
+            rates, or time spent exploring certifications and training"
+          - "Certification behavior: renewal rates increasing, members
+            discovering and pursuing new certifications they didn't know about"
+          - "Data quality for the Alliance: trends in which certifications are
+            popular, which gaps appear across the membership, better insight
+            into training demand"
+    - id: purpose-measurement-0-question-r0
+      value: >-
+        Renewal rates — that's the hard metric. Right now we're probably losing
+        people between cycles because they don't remember they need to renew, or
+        they don't know what SEUs they need to hit. If we see renewals go up, we
+        know it's working.
+
+
+        Trainer adoption matters too. If CSTs are actually using the platform to
+        list courses instead of their own sites, that tells us we've built
+        something they trust and want to be part of.
+
+
+        And recruiter traction. Are they finding people? Are the job postings
+        getting real applications from qualified candidates? If that loop works,
+        the whole thing validates.
+
+
+        But yeah — engagement metrics are secondary. Renewal rate is the north
+        star for us. Everything else supports that.
+    - id: purpose-measurement-0-extraction-r0
+      value:
+        purpose: null
+        advantage: null
+        measurement: Renewal rates increasing — members renewing at higher frequency
+          instead of dropping between cycles due to forgetting renewal needs or
+          being unclear on SEU requirements. Trainer adoption measured by CSTs
+          using the platform to list courses instead of their own sites,
+          indicating trust and willingness to participate. Recruiter traction
+          measured by job postings receiving real applications from qualified
+          candidates, validating the full recruiter-to-candidate loop.
+        responseInterpretation: "Renewal rate is the primary success metric ('the hard
+          metric', 'north star'). The respondent prioritizes this over
+          engagement metrics because it indicates behavioral change — members
+          remembering to renew and understanding SEU requirements, which is
+          currently a leakage point. Secondary validations: trainers adopting
+          the platform as their listing venue (demonstrating trust and ecosystem
+          participation), and recruiters finding qualified candidates through
+          postings (closing the hiring loop). These three metrics together
+          validate the core value: the platform becomes essential infrastructure
+          the Alliance ecosystem actually uses."
+        contradictions: []
+        responseClass: answer
+    - id: purpose-confirmation-r0
+      value: >-
+        That's solid. One thing to add on the measurement side though — we also
+        need to track that trainers are actually getting their courses
+        *approved* and published. Right now there's no gating, but we'll need
+        Scrum Alliance staff to review and sign off on course listings before
+        they go live. So adoption isn't just "trainers list courses," it's
+        "trainers list courses and they get published." That's a quality control
+        thing.
+
+
+        Otherwise yeah, that captures it. Let's move on.
+    - id: purpose-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: Measurement needs to include trainer course
+          approval/publication gating. Adoption metric should be 'trainers list
+          courses and they get published' not just 'trainers list courses.'
+          Scrum Alliance staff must review and sign off on course listings
+          before they go live as a quality control requirement.
+        targetId: measurement
+        responseClass: answer
+    - id: purpose-revision
+      value:
+        purpose: null
+        advantage: null
+        measurement: Trainer adoption measured by CSTs using the platform to list
+          courses instead of their own sites, AND courses being approved and
+          published by Scrum Alliance staff before going live. Adoption requires
+          both listing and publication — there's a quality control gate.
+        responseInterpretation: The existing measurement of trainer adoption is
+          incomplete. It captures course listing but misses the
+          approval/publication gate. Scrum Alliance staff must review and sign
+          off on course listings before they go live. Trainer adoption success
+          means courses are both listed AND published, not just listed.
+        contradictions: []
+        responseClass: answer
+    - id: goal-seed-extraction
+      value:
+        goals:
+          - title: Establish member identity as the system of record
+            description: Create a single authoritative source where members maintain their
+              professional identity (certifications, training history, community
+              contributions) once, eliminating fragmentation across systems and
+              ensuring data consistency everywhere.
+            rationale: "Solves the core problem: scattered data across systems. Enables the
+              'update once' behavior change described in advantage. Foundation
+              for all downstream outcomes (clarity, discovery, stickiness)."
+          - title: Enable trainer participation as a legitimate ecosystem function
+            description: Give trainers a platform to list and publish courses within
+              Alliance quality gates, positioning trainer contributions as
+              integral to the ecosystem rather than external competitors.
+            rationale: Addresses the second stakeholder value (trainers get a stage).
+              Trainer adoption (measured by CST course listings + publication
+              compliance) is a concrete adoption metric. Shifts trainers from
+              outside the system to inside it.
+          - title: Drive member engagement through certification clarity and renewal
+              behavior change
+            description: Surface certification status, renewal pathways, and training
+              opportunities in ways that prompt members to stay current, renew
+              on time, and maintain platform engagement instead of departing
+              after certification.
+            rationale: Directly targets member stickiness increase and behavior change (the
+              outcome that 'changes behavior'). Moves beyond feature
+              availability to behavioral outcomes. Measurable through retention
+              and renewal rates.
+        drainedWaitingRoomIds: []
+    - id: goal-seed-present-r0
+      value: >-
+        Those three are good. But I'd add a fourth that's been implicit in what
+        I said — **Connect recruiters to qualified talent reliably**. Right now
+        I mentioned recruiter traction as a measurement, but the goal itself is
+        that recruiters can search and find Scrum practitioners who actually
+        meet their needs, and those candidates are vetted so it's not noise.
+
+
+        That said, I'm not sure if that's a separate goal or if it falls under
+        "member identity" — like, the clearer the member profiles are, the
+        easier that recruiting connection happens naturally. I could see it
+        either way.
+
+
+        Keep a, b, and c. Add d, or fold it into a — your call on how you want
+        to structure it.
+    - id: goal-seed-classification-r0
+      value:
+        responseInterpretation: "The respondent confirmed goals a, b, and c are good.
+          They identified a fourth goal implicit in their earlier statements:
+          recruiters need to connect with qualified, vetted Scrum practitioners
+          through search and discovery. The respondent expressed uncertainty
+          about whether this is a separate goal or subsumes into goal_001
+          (member identity), noting that clearer member profiles enable
+          recruiting connections naturally. They deferred the structuring
+          decision to the interviewer."
+        confirmedGoalIds:
+          - goal_001
+          - goal_002
+          - goal_003
+        removedGoalIds: []
+        newGoals:
+          - title: Connect recruiters to qualified talent reliably
+            description: Recruiters can search and find Scrum practitioners who actually
+              meet their needs. Candidates are vetted so the results are not
+              noise.
+        waitingRoomItems: []
+        responseClass: answer
+    - id: goal-sort
+      value:
+        rankedGoalIds:
+          - goal_004
+          - goal_003
+          - goal_001
+          - goal_002
+    - id: goal-refinement-goal_004-clarify-0-composition-r0
+      value:
+        question: When recruiters find a **qualified candidate** on the platform, what
+          specifically needs to happen for that to feel reliable to you?
+        suggestions:
+          - Recruiters can filter by active certifications and verify current
+            status without leaving the platform — no cross-checking against
+            external systems.
+          - Member profiles show training completion dates and renewal deadlines
+            so recruiters know who's investment-ready versus who's
+            certification-lapsed.
+          - A candidate match shows up consistently in search results because
+            their profile data stays in sync across all systems — no stale or
+            conflicting information.
+    - id: goal-refinement-goal_004-clarify-0-question-r0
+      value: >-
+        All three matter, but the core thing is: the recruiter knows the person
+        is actually certified and current. Not expired, not lapsed, not "was
+        certified three years ago." That's the trust issue.
+
+
+        So yeah — they can see active certifications, renewal dates, what
+        training they've completed. And it's real data, not stale. If someone's
+        profile says they're CSM-certified, that status syncs with our actual
+        certification records, not just what they claimed on their profile.
+
+
+        Beyond that though — and this gets at something I haven't mentioned yet
+        — we need to make sure members actually *want* to be found by
+        recruiters. Not everyone does. Some people just want to be part of the
+        community, not job hunting. So there's a visibility control. Members opt
+        in to being searchable by recruiters, not the other way around. That's
+        how we protect privacy and trust.
+    - id: goal-refinement-goal_004-clarify-0-extraction-r0
+      value:
+        responseInterpretation: The stakeholder confirms all three suggestions matter
+          (recruiters filtering by active certifications and verifying current
+          status without external cross-checking; member profiles showing
+          training completion dates and renewal deadlines; candidate matches
+          appearing consistently because profile data stays in sync across
+          systems). The core trust issue is that recruiters must know a person
+          is actually certified and current — not expired, lapsed, or
+          historically certified. This requires active certification visibility,
+          renewal dates, training completion records, AND real-time data sync
+          with actual certification records (not self-reported claims).
+          Additionally, members must have the ability to opt in to recruiter
+          visibility — not everyone wants to be searchable, and privacy/trust
+          requires members control whether they appear in recruiter searches.
+        title: Connect recruiters to qualified talent reliably
+        description: Recruiters can find and filter candidates by active, current
+          certifications (not expired or lapsed). Member profiles display
+          training completion dates and renewal deadlines. Candidate data syncs
+          with actual certification records to ensure accuracy. Members opt in
+          to recruiter visibility; not all members choose to be searchable.
+        rationale: Reliable recruiter access to qualified talent increases trust in the
+          platform as a source of vetted candidates. Member opt-in for recruiter
+          visibility protects privacy and respects that not all members are
+          job-seeking, strengthening member trust in the ecosystem.
+        contradictions: []
+        waitingRoomItems:
+          - content: Members opt in to being searchable by recruiters, not the other way
+              around. Visibility control required to protect privacy and trust.
+        responseClass: answer
+    - id: goals-confirmation-r0
+      value: >-
+        That's right. One small thing — on the recruiter goal, I'd emphasize
+        that the verification piece is on *us*, not the recruiter. Like, we're
+        the ones who verify that the company posting the job is real, that the
+        position actually exists. Recruiters can't just spam the platform with
+        fake listings. That's part of what makes it reliable.
+
+
+        Otherwise yeah, that's it. We're good to move on.
+    - id: goals-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: On goal_004 (recruiter goal), emphasize that verification of
+          job authenticity and company legitimacy is the platform's
+          responsibility, not the recruiter's. The platform verifies that
+          companies posting jobs are real and positions actually exist —
+          recruiters cannot spam with fake listings. This verification is part
+          of what makes the platform reliable.
+        targetId: goal_004
+        responseClass: answer
+    - id: goals-revision
+      value:
+        responseInterpretation: The respondent is clarifying the recruiter goal by
+          emphasizing that verification responsibility belongs to the platform
+          (Scrum Alliance), not the recruiters. The platform is responsible for
+          verifying that companies posting jobs are real and that positions
+          actually exist. This verification mechanism prevents recruiters from
+          spam-posting fake listings and is core to what makes the platform
+          reliable. The respondent confirms the rest of the goal structure is
+          accurate and is ready to move forward.
+        title: null
+        description: null
+        rationale: Verification responsibility on the platform side — not recruiter
+          responsibility — is what establishes platform reliability. This
+          gatekeeping mechanism builds trust in the talent pool and prevents
+          degradation through spam.
+        contradictions: []
+        waitingRoomItems:
+          - content: Platform must verify that companies posting jobs are real and positions
+              actually exist (verification responsibility sits with platform,
+              not recruiters)
+        responseClass: answer
+    - id: stakeholder-seed-extraction
+      value:
+        stakeholders:
+          - name: Trainers / Certified Scrum Trainers (CSTs)
+            type: primary
+          - name: Recruiters
+            type: primary
+          - name: Companies posting job opportunities
+            type: secondary
+        drainedWaitingRoomIds:
+          - waiting_001
+          - waiting_002
+          - waiting_003
+    - id: stakeholder-review-present-r0
+      value: >-
+        Add members and certified practitioners as distinct. They're both users,
+        but certified practitioners have different capabilities — they can renew
+        certifications, they show up in recruiter searches differently. Members
+        might be working toward their first cert or just engaged in the
+        community.
+
+
+        And Scrum Alliance staff — they're definitely stakeholders. They approve
+        trainer courses before publication, manage the certification workflow,
+        handle disputes. Not secondary.
+
+
+        Remove "companies posting job opportunities" as a separate thing —
+        that's just recruiters doing their job. The recruiter is the person
+        posting on behalf of the company.
+
+
+        So: members, certified practitioners, trainers (CSTs), recruiters, Scrum
+        Alliance staff. Those are your five user types.
+    - id: stakeholder-review-classification-r0
+      value:
+        responseInterpretation: "The respondent is refining the stakeholder list by
+          distinguishing user types with different capabilities and
+          responsibilities. Members and certified practitioners are both users
+          but have different system interactions and benefits. Certified
+          practitioners can renew certifications and appear differently in
+          recruiter searches; members may be working toward certification or
+          engaged in community. Scrum Alliance staff are stakeholders (not
+          secondary) because they approve trainer courses, manage certification
+          workflows, and handle disputes. Companies posting job opportunities
+          should be removed as a separate stakeholder — recruiters represent
+          companies when posting jobs. The respondent proposes five
+          user/stakeholder types: members, certified practitioners, trainers
+          (CSTs), recruiters, and Scrum Alliance staff."
+        updatedTypes:
+          - id: stakeholder_002
+            type: primary
+          - id: stakeholder_005
+            type: primary
+        removedIds:
+          - stakeholder_005
+        newStakeholders:
+          - name: Certified practitioners
+            type: primary
+          - name: Scrum Alliance staff
+            type: primary
+        responseClass: answer
+    - id: stakeholder-respondent-present-r0
+      value: Scrum Alliance staff. I'm representing the organization's perspective on
+        what this platform needs to do — how we manage certifications, control
+        quality, keep the community healthy. Not speaking for a single user
+        type, but for the Alliance as the steward.
+    - id: stakeholder-respondent-present-extraction-r0
+      value:
+        responseInterpretation: Represents Scrum Alliance staff perspective on
+          organizational needs — certification management, quality control,
+          community health. Not a single user type, but the organization as
+          steward.
+        respondentId: stakeholder_006
+        responseClass: answer
+    - id: stakeholder-sort-primary
+      value:
+        rankedStakeholderIds:
+          - stakeholder_001
+          - stakeholder_003
+          - stakeholder_004
+          - stakeholder_005
+          - stakeholder_006
+          - stakeholder_002
+    - id: stakeholder-elaboration-stakeholder_001-0-composition-r0
+      value:
+        question: What matters most to **Scrum Alliance community platform users** when
+          they're managing their professional identity in the Scrum space?
+        suggestions:
+          - Having one place where I can see all my certifications, training
+            history, and renewal deadlines without checking multiple systems
+          - Finding other practitioners with specific expertise or experience so
+            I can connect with peers working on similar challenges
+          - Understanding what certifications are relevant to my role and what I
+            need to do to stay current in the field
+    - id: stakeholder-elaboration-stakeholder_001-0-question-r0
+      value: >-
+        All three, but in order. First — yeah, one place to see everything.
+        That's table stakes. Second is the peer discovery thing, but honestly
+        that's softer. Not everyone wants community; some just want their
+        credentials managed cleanly.
+
+
+        What really matters is clarity on what they need to do to stay current.
+        Most members don't know the renewal cycle works. They don't know SEUs
+        are a thing. They renew their cert and think they're done, then two
+        years later they're shocked it expired. If we surface "you need X SEUs
+        in the next 18 months, here's what training counts," that changes the
+        game. That's the behavior shift we're after.
+    - id: stakeholder-elaboration-stakeholder_001-0-extraction-r0
+      value:
+        responseInterpretation: "All three suggested priorities matter to Scrum Alliance
+          community platform users, ranked in order: (1) One place to see all
+          certifications, training history, and renewal deadlines without
+          checking multiple systems — this is baseline/table stakes; (2) Finding
+          other practitioners with specific expertise to connect with peers —
+          acknowledged as softer priority since not everyone wants community
+          engagement; (3) Understanding what certifications are relevant to
+          their role and what they need to do to stay current. The respondent
+          emphasizes that the third priority is the most impactful for behavior
+          change: most members don't understand the renewal cycle, don't know
+          what SEUs are, think they're done after renewing their cert, then get
+          shocked when it expires two years later. If the platform clearly
+          surfaces 'you need X SEUs in the next 18 months, here's what training
+          counts,' that drives the behavior shift the Alliance is after."
+        role: null
+        concerns:
+          - Don't know the renewal cycle works
+          - Don't know SEUs are a thing
+          - Renew their cert and think they're done, then two years later
+            they're shocked it expired
+          - Need clarity on what they need to do to stay current
+        contradictions: []
+        waitingRoomItems:
+          - content: Not everyone wants community; some just want their credentials managed
+              cleanly
+          - content: If we surface 'you need X SEUs in the next 18 months, here's what
+              training counts,' that changes the game
+        responseClass: answer
+    - id: stakeholder-followup-assessment-stakeholder_001
+      value:
+        needed: false
+        question: null
+        suggestions: null
+    - id: stakeholder-elaboration-stakeholder_003-0-composition-r0
+      value:
+        question: What would **Trainers / Certified Scrum Trainers (CSTs)** want to
+          accomplish by listing their courses on this platform instead of
+          managing them separately?
+        suggestions:
+          - Get direct access to qualified members who are actively looking for
+            training opportunities
+          - Reduce administrative overhead by managing course listings in one
+            place instead of multiple sites
+          - Build credibility and visibility within the Scrum Alliance ecosystem
+            through official course approval and publication
+    - id: stakeholder-elaboration-stakeholder_003-0-question-r0
+      value: >-
+        C is the big one. Trainers want legitimacy — they want their courses
+        stamped by the Alliance, not just floating on their own website. That
+        signals quality and trustworthiness to members. It's a credential for
+        the trainer.
+
+
+        A matters too — access to members actively seeking training. But that
+        only works if the Alliance ecosystem feels real and valuable to members.
+        If members aren't using the platform, trainers have no reason to list
+        there.
+
+
+        B — reducing overhead — that's nice but not the driver. Most CSTs
+        already have their own systems. They'll adopt this if it gives them
+        Alliance credibility and member reach.
+    - id: stakeholder-elaboration-stakeholder_003-0-extraction-r0
+      value:
+        responseInterpretation: Trainers want their courses stamped by the Scrum
+          Alliance — that gives them legitimacy and credibility, signaling
+          quality and trustworthiness to members. It's a credential for the
+          trainer. Access to members actively seeking training matters too, but
+          only if the Alliance ecosystem feels real and valuable to members and
+          members are actually using the platform — if they're not, trainers
+          have no reason to list there. Reducing administrative overhead is nice
+          but not the primary driver, since most CSTs already have their own
+          systems. They'll adopt the platform if it gives them Alliance
+          credibility and member reach.
+        role: Course listing provider seeking legitimacy and member reach within the
+          Alliance ecosystem
+        concerns:
+          - Want courses stamped by the Alliance to signal quality and
+            trustworthiness
+          - Want legitimate stage and credibility within the Scrum Alliance
+            ecosystem
+          - Want access to members actively seeking training
+          - Need the Alliance ecosystem to feel real and valuable to members for
+            listing to be worthwhile
+          - Need member adoption on the platform side — if members aren't using
+            it, trainers have no reason to list there
+        contradictions: []
+        waitingRoomItems: []
+        responseClass: answer
+    - id: stakeholder-followup-assessment-stakeholder_003
+      value:
+        needed: false
+        question: null
+        suggestions: null
+    - id: stakeholder-elaboration-stakeholder_004-0-composition-r0
+      value:
+        question: What would **Recruiters** need from this platform to actually use it
+          when hiring?
+        suggestions:
+          - A searchable directory of members filtered by current certifications
+            and renewal status, so they can quickly identify qualified
+            candidates
+          - Confidence that certification records are verified by the Alliance,
+            not self-reported — so they know the credentials are legitimate
+          - Integration with their existing hiring workflows, or at minimum, a
+            way to export candidate lists with certification details
+    - id: stakeholder-elaboration-stakeholder_004-0-question-r0
+      value: >-
+        A and B, definitely. They need to search by active certs and know those
+        certs are real — verified by us, not just claims on a profile. That's
+        the whole trust thing.
+
+
+        C — integration with their workflows — I'm not sure that's on us to
+        solve. Recruiters have their own ATS systems. We just need to make it
+        easy for them to find people and contact them through the platform. If
+        they want to pull data into their own systems, that's their problem.
+
+
+        One thing though — they also need to know the candidate actually *wants*
+        to be contacted. Remember, members opt in to recruiter visibility. So a
+        recruiter might find someone in search results, but they can only
+        contact them if that member said yes to being searchable. That protects
+        member privacy and keeps the platform from feeling like a spam vector.
+    - id: stakeholder-elaboration-stakeholder_004-0-extraction-r0
+      value:
+        responseInterpretation: Recruiters need to search by active certifications and
+          verify those certifications are real and verified by the Alliance, not
+          self-reported. They don't need the platform to integrate with their
+          ATS systems — that's the recruiters' responsibility. The platform
+          should make it easy for recruiters to find people and contact them
+          through the platform. Importantly, recruiters can only contact members
+          who have opted in to recruiter visibility. Members control whether
+          they're searchable and contactable, which protects member privacy and
+          prevents the platform from being a spam vector.
+        role: Job market talent sourcer who accesses verified candidate pools through
+          the platform
+        concerns:
+          - Need to search candidates by active certifications
+          - Need assurance that certifications are verified by the Alliance, not
+            self-reported claims
+          - Need easy way to find people and contact them through the platform
+          - Must respect member opt-in for recruiter visibility
+        contradictions: []
+        waitingRoomItems:
+          - content: Recruiters responsible for their own ATS system integration — not the
+              platform's responsibility to integrate with their workflows
+          - content: Member opt-in to recruiter visibility is a platform-level control
+              mechanism that protects privacy and prevents spam
+        responseClass: answer
+    - id: stakeholder-followup-assessment-stakeholder_004
+      value:
+        needed: false
+    - id: stakeholder-elaboration-stakeholder_005-0-composition-r0
+      value:
+        question: What would **certified practitioners** most want from a platform that
+          centralizes their certification and training information?
+        suggestions:
+          - Easy way to see which certifications they hold, when they expire,
+            and what they need to do to renew without surprises
+          - Access to training courses and resources that help them stay current
+            and discover new certifications relevant to their career
+          - A single place where their professional identity is visible to
+            potential employers and within the Scrum Alliance community
+    - id: stakeholder-elaboration-stakeholder_005-0-question-r0
+      value: >-
+        A is the baseline — they need clarity on what they've got and what's
+        expiring. No surprises.
+
+
+        B and C are connected. They want to stay current *and* be visible when
+        they're ready. But visibility is their choice — they control whether
+        recruiters can see them. So it's not "employers can always find me,"
+        it's "when I opt in, my professional identity is there and current."
+
+
+        The thing that ties it together though: they need *proof* that they're
+        current. Not just their own word. When they show their profile to a
+        recruiter or a prospective client, that certification status is backed
+        by the Alliance. That's what makes the profile credible.
+    - id: stakeholder-elaboration-stakeholder_005-0-extraction-r0
+      value:
+        responseInterpretation: "Certified practitioners need three things in order: (A)
+          baseline clarity on what certifications they hold, expiration dates,
+          and renewal requirements without surprises; (B) and (C) together —
+          they want to stay current and control their visibility. Visibility is
+          opt-in; they choose whether recruiters can find them. The critical
+          element that ties it together is proof: when they show their profile
+          to a recruiter or prospect, the certification status must be backed by
+          the Alliance, not self-reported. That's what makes the profile
+          credible."
+        role: Professional seeking to maintain current certifications, control
+          visibility in the job market, and prove certification status to
+          recruiters and prospective clients through an Alliance-verified
+          platform
+        concerns:
+          - Need clarity on what certifications they hold, expiration dates, and
+            renewal requirements
+          - Want assurance that their certification status is backed by the
+            Alliance, not self-reported
+          - Want visibility to be opt-in — they control whether recruiters can
+            find them
+          - Want to stay current and be visible when ready
+          - Need their professional identity to be credible when shown to
+            recruiters or prospective clients
+        contradictions: []
+        waitingRoomItems: []
+        responseClass: answer
+    - id: stakeholder-followup-assessment-stakeholder_005
+      value:
+        needed: false
+        question: null
+        suggestions: null
+    - id: stakeholder-elaboration-stakeholder_006-0-composition-r0
+      value:
+        question: What does **Scrum Alliance staff** need to oversee or control about
+          course listings and certifications on this platform?
+        suggestions:
+          - Approve courses before they go live to maintain quality standards
+          - Monitor which certifications are trending to inform training strategy
+          - Verify that trainer credentials and course content meet Alliance
+            standards
+    - id: stakeholder-elaboration-stakeholder_006-0-question-r0
+      value: >-
+        A is mandatory. Every course listing gets reviewed and approved by staff
+        before it's published. We can't have random stuff claiming to be Scrum
+        Alliance training. That destroys credibility.
+
+
+        B — yeah, we need that data. Trending certs tell us where member demand
+        is and where we should push trainers to develop new offerings.
+
+
+        C — verifying trainer credentials and content — that's part of the
+        approval process in A. We know who CSTs are, we verify they're in good
+        standing. Content review happens when they submit a course.
+
+
+        The other piece that matters: we need to be able to manage the
+        certification lifecycle itself. Renewals are time-gated — every two
+        years — with specific SEU requirements. Staff needs visibility and
+        control over that process. Members can't just renew whenever; there's a
+        window, there are requirements.
+    - id: stakeholder-elaboration-stakeholder_006-0-extraction-r0
+      value:
+        responseInterpretation: Scrum Alliance staff must approve all course listings
+          before publication to maintain credibility and prevent unauthorized
+          training claims. They need data on trending certifications to
+          understand member demand and guide trainer development priorities.
+          Trainer credential verification and content review are part of the
+          approval process — staff knows who CSTs are and verifies their
+          standing and course content during submission. Additionally, staff
+          must manage the certification lifecycle itself, including the two-year
+          renewal windows and SEU requirements. Members cannot renew outside the
+          designated timeframe or without meeting specific requirements.
+        role: Quality gatekeeper for course listings, certification lifecycle
+          administrator, and strategic data consumer on training trends
+        concerns:
+          - Must prevent unauthorized course listings that claim Scrum Alliance
+            training and damage credibility
+          - Need visibility and control over certification renewals, including
+            time-gated windows and SEU requirement enforcement
+          - Need data on which certifications are trending to inform training
+            strategy and guide trainers toward developing new offerings
+          - Must verify trainer credentials and content meet Alliance standards
+            as part of the approval process
+        contradictions: []
+        waitingRoomItems: []
+        responseClass: answer
+    - id: stakeholder-dedup
+      value:
+        duplicateGroups: []
+    - id: stakeholders-confirmation-r0
+      value: >-
+        That's accurate. One clarification on "platform stakeholders" — that's
+        vague. I'd replace it with something more specific, or just drop it.
+        Everyone I described *is* a stakeholder. We don't need a catch-all
+        bucket.
+
+
+        Otherwise yeah, that's right. Move on.
+    - id: stakeholders-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: Remove or replace 'platform stakeholders' stakeholder entry —
+          it is vague and redundant. All described stakeholders are already
+          specific. Do not need a catch-all bucket.
+        targetId: stakeholder_002
+        responseClass: answer
+    - id: stakeholders-revision
+      value:
+        responseInterpretation: The respondent confirmed the captured content is
+          accurate. They identified 'platform stakeholders' (stakeholder_002) as
+          too vague and suggested either replacing it with something more
+          specific or removing it entirely, because everyone they described is
+          already captured as a stakeholder. They approved moving forward.
+        role: null
+        concerns: []
+        contradictions: []
+        waitingRoomItems: []
+        responseClass: answer
+    - id: scope-seed-extraction
+      value:
+        inScope:
+          - description: Member identity system of record — central profile storing
+              certifications, expiration dates, renewal status, and SEU
+              requirements
+            relatedGoals:
+              - goal_001
+          - description: Certification clarity interface — show members their active
+              certifications, expiration dates, renewal windows, and SEU
+              requirements needed to stay current
+            relatedGoals:
+              - goal_003
+          - description: Renewal behavior enablement — surface renewal pathways and
+              time-gated windows to drive behavior change toward proactive
+              renewal
+            relatedGoals:
+              - goal_003
+          - description: Course discovery and listing — CSTs list courses on the platform;
+              Scrum Alliance staff approve and publish before going live
+            relatedGoals:
+              - goal_001
+              - goal_003
+          - description: Recruiter access to verified talent — searchable pool of candidates
+              filtered by active, verified certifications
+            relatedGoals:
+              - goal_004
+          - description: Member opt-in control for recruiter visibility — privacy mechanism
+              allowing members to control whether they appear in recruiter
+              searches
+            relatedGoals:
+              - goal_004
+          - description: Alliance verification of certifications — platform asserts
+              certification status is verified by the Alliance, not
+              self-reported
+            relatedGoals:
+              - goal_001
+              - goal_004
+          - description: Scrum Alliance staff gatekeeping — quality control over course
+              listings and certification lifecycle administration
+            relatedGoals:
+              - goal_001
+          - description: Training trend data visibility — staff access to data on which
+              certifications are trending to inform strategy
+            relatedGoals:
+              - goal_001
+        outOfScope:
+          - description: ATS system integration with recruiter workflows
+            reason: Recruiters own responsibility for their own ATS integration; platform
+              responsibility is only to provide a searchable verified candidate
+              pool
+            relatedGoals:
+              - goal_004
+          - description: General community features or social engagement tools
+            reason: "Clarified in waiting room: not everyone wants community; some members
+              only need credential management. Community is not a core outcome."
+            relatedGoals: []
+        ambiguous:
+          - description: Scope of 'member engagement' — is it limited to certification
+              clarity and renewal pathways, or does it include broader community
+              discovery features (finding other members, etc.)?
+            relatedGoals:
+              - goal_003
+          - description: Trainer legitimacy and credibility signals — what platform
+              mechanisms establish CST credibility beyond course listing and
+              Alliance approval? (e.g., member reviews, trainer profiles, course
+              ratings)
+            relatedGoals:
+              - goal_001
+        drainedWaitingRoomIds:
+          - waiting_001
+          - waiting_002
+          - waiting_004
+    - id: scope-seed-present-r0
+      value: >-
+        Good. I'd move L into out of scope — member engagement for us is just
+        about renewals and staying current. The peer discovery stuff is
+        nice-to-have but not core. We're not building a social network.
+
+
+        M — trainer credibility — that's in scope, but keep it simple. The
+        Alliance approval is the signal. We don't need member reviews or
+        ratings. If a course is published on this platform, that *is* the
+        credibility signal. That's enough.
+
+
+        One thing to add to in scope: **job posting verification by
+        recruiters**. Recruiters can't just spam the platform with fake
+        listings. We need to verify the company is real and the position
+        actually exists before their posting goes live. Same quality gate we
+        apply to courses.
+
+
+        Otherwise yeah, looks right.
+    - id: scope-seed-classification-r0
+      value:
+        responseInterpretation: "Respondent is refining scope: moving peer discovery out
+          of scope (member engagement is only about renewals/staying current,
+          not social networking); keeping trainer credibility in scope but
+          simplified (Alliance publication is the signal, no member reviews
+          needed); adding job posting verification by recruiters as a new
+          in-scope item with the same quality gate as courses."
+        confirmedInScope:
+          - scope_001
+          - scope_002
+          - scope_003
+          - scope_004
+          - scope_005
+          - scope_006
+          - scope_007
+          - scope_008
+          - scope_009
+        confirmedOutOfScope:
+          - scope_011
+        removedIds: []
+        newItems:
+          - description: Job posting verification by recruiters — recruiters cannot spam the
+              platform with fake listings; platform must verify the company is
+              real and the position actually exists before posting goes live
+            classification: in
+        waitingRoomItems: []
+        responseClass: answer
+    - id: scope-constraint-composition-r0
+      value:
+        question: What **hard constraints** — timeline, budget, regulatory, or technical
+          — must this platform design work within?
+        suggestions:
+          - Must integrate with existing Scrum Alliance certification database
+            and cannot require a parallel data migration
+          - Launch timeline is fixed to align with fiscal planning or board
+            approval cycle
+          - GDPR and data residency requirements for EU members restrict where
+            certification data can be stored
+    - id: scope-constraint-question-r0
+      value: >-
+        Good question. I don't have hard constraints to throw at you on timeline
+        or budget — that's business side, not my domain. But on the technical
+        side, yeah — we have an existing certification database. This platform
+        has to pull from that, not replace it or duplicate it. Member profiles
+        need to aggregate data from that system, training records, community
+        contributions if we capture those. It's all one source of truth.
+
+
+        On the regulatory side, nothing unusual that I know of. Standard privacy
+        stuff — we're handling member data, so GDPR compliance where applicable,
+        member consent for data sharing with recruiters. But nothing that's a
+        showstopper for the design.
+
+
+        The real constraint is organizational: Scrum Alliance staff has to have
+        bandwidth to review and approve courses and job postings. That's a
+        bottleneck. If we build something that requires heavy staff involvement
+        and staff is stretched, it breaks. So whatever we design has to be
+        manageable for a small team.
+    - id: scope-constraint-extraction-r0
+      value:
+        responseInterpretation: "Respondent has no hard timeline or budget constraints
+          (business-side domain). Technical constraint: platform must integrate
+          with existing certification database as single source of truth —
+          cannot replace or duplicate it. Member profiles aggregate data from
+          certification system, training records, and community contributions.
+          Regulatory: standard GDPR compliance and member consent for data
+          sharing with recruiters — nothing exceptional. Organizational
+          constraint: Scrum Alliance staff bandwidth is the real bottleneck.
+          Staff must review and approve courses and job postings. Platform
+          design must be manageable for a small team or it breaks
+          operationally."
+        constraints:
+          - description: Must integrate with existing Scrum Alliance certification database
+              as single source of truth. Cannot replace or duplicate the
+              database. Member profiles aggregate data from certification
+              system, training records, and community contributions.
+          - description: GDPR compliance required where applicable. Member consent required
+              for data sharing with recruiters.
+          - description: Platform design must be operationally manageable for a small Scrum
+              Alliance staff team. Staff must have bandwidth to review and
+              approve courses and job postings. Heavy staff involvement creates
+              a bottleneck that breaks the design if not accounted for.
+        waitingRoomItems: []
+        responseClass: answer
+    - id: scope-contrast-0-composition-r0
+      value:
+        question: Does **member engagement** focus on certification clarity and renewal,
+          or include broader features like finding other members?
+        suggestions:
+          - Certification clarity and renewal pathways only — members need to
+            understand what they hold and how to stay current.
+          - "Both: certification clarity plus community discovery — members
+            should be able to find and connect with other practitioners on the
+            platform."
+          - Certification clarity, renewal, and course discovery — members find
+            training opportunities, but not necessarily other members.
+    - id: scope-contrast-0-question-r0
+      value: >-
+        A — certification clarity and renewal only. That's the behavior we're
+        trying to change: people renewing on time instead of lapsing.
+
+
+        Finding other members is a nice vision for future, but it's not core to
+        solving the problem. Some members will never want that. We're not
+        building a LinkedIn for Scrum people. We're solving "I didn't know I
+        needed to renew" and "I want to stay current but didn't know what
+        training counted."
+
+
+        If we nail that, everything else is a feature request later.
+    - id: scope-contrast-0-extraction-r0
+      value:
+        responseInterpretation: Member engagement scope is limited to certification
+          clarity and renewal pathways only. Community discovery features like
+          finding other members are explicitly not in scope for the core problem
+          being solved. The respondent framed 'finding other members' as a
+          future nice-to-have, not core to solving the primary issue of members
+          not renewing on time due to lack of clarity.
+        classification: in
+        reason: ""
+        relatedGoals:
+          - goal_003
+        waitingRoomItems:
+          - content: Finding other members is a nice vision for future, but it's not core to
+              solving the problem. Some members will never want that.
+          - content: We're not building a LinkedIn for Scrum people.
+        responseClass: answer
+    - id: scope-contrast-1-composition-r0
+      value:
+        question: Is establishing **trainer credibility signals** — like member reviews,
+          detailed trainer profiles, and course ratings — in scope for this
+          project?
+        suggestions:
+          - In scope — trainers need these mechanisms to build legitimacy within
+            the Alliance ecosystem, and it directly supports member confidence
+            in course quality
+          - Out of scope — the platform's role is to approve courses and provide
+            listing; trainer reputation is their responsibility to build
+            independently
+          - Partially in scope — we'll show course approval status and basic
+            trainer info, but member reviews and ratings are future phases
+    - id: scope-contrast-1-question-r0
+      value: >-
+        B. Out of scope. The Alliance approval stamp is the credibility signal.
+        That's it. We're not building a review system or rating mechanism. If a
+        course is published on this platform, members can trust it because *we*
+        vetted it, not because it has five stars.
+
+
+        Trainers build their own reputation by offering good courses. That
+        happens naturally. We don't need to gamify it or create a rating system.
+    - id: scope-contrast-1-extraction-r0
+      value:
+        responseInterpretation: Trainer credibility signals through member reviews,
+          ratings, and gamification are out of scope. The Alliance approval
+          stamp itself is the credibility mechanism. Trainers build reputation
+          through course quality naturally, without platform-managed review or
+          rating systems.
+        classification: out
+        reason: "Respondent explicitly rejected option B: 'The Alliance approval stamp
+          is the credibility signal. That's it. We're not building a review
+          system or rating mechanism.' The platform's gatekeeping role (vetting
+          and publishing courses) replaces member-generated credibility signals.
+          Trainer reputation building is their independent responsibility."
+        relatedGoals: []
+        waitingRoomItems: []
+        responseClass: answer
+    - id: scope-contradiction-check
+      value:
+        contradictions: []
+        orphans:
+          - scopeItemId: scope_012
+            description: Job posting verification by recruiters — platform must verify
+              company legitimacy and position existence before posting goes
+              live. No goal connection; this is a quality control mechanism for
+              the recruiter pool, not tied to member identity, engagement, or
+              talent discovery outcomes.
+    - id: scope-dedup
+      value:
+        duplicateGroups:
+          - keepId: scope_001
+            removeIds:
+              - scope_002
+          - keepId: scope_005
+            removeIds:
+              - scope_006
+          - keepId: scope_004
+            removeIds:
+              - scope_008
+    - id: scope-confirmation-r0
+      value: >-
+        That's solid. On the job posting verification note — you're right, it
+        doesn't map to a stated goal, but it's still essential. It's quality
+        control for the recruiter pool, same way we approve courses. Without it,
+        the platform becomes a spam vector and members lose trust. I'd keep it
+        in scope but note it as a quality gate, not a goal-driven feature.
+
+
+        Otherwise, that captures it. We're good to move on.
+    - id: scope-confirmation-classification-0-r0
+      value:
+        approved: true
+        revisionRequested: null
+        targetId: null
+        responseClass: answer
+    - id: validation-wr-classify
+      value:
+        routed:
+          - id: waiting_003
+            target: assumption
+            content: Recruiters own responsibility for integrating the platform's verified
+              candidate pool into their own ATS systems. Platform responsibility
+              is limited to providing searchable access to verified candidates;
+              platform does not integrate with recruiter workflows.
+            reason: This is a foundational belief about responsibility boundaries that
+              affects scope, design, and success criteria. It's testable (can
+              verify whether recruiters can export/access data) and invariant to
+              the project's viability — the system succeeds or fails based on
+              whether this responsibility split holds in practice.
+          - id: waiting_004
+            target: residual
+            content: Finding other members is a nice vision for future, but it's not core to
+              solving the problem. Some members will never want that.
+            reason: "This content is already absorbed into the out-of-scope section: 'Member
+              engagement scope is limited to certification clarity and renewal
+              pathways only. Community discovery features like finding other
+              members are explicitly not in scope for the core problem being
+              solved.' The waiting room item restates the decision without
+              adding new constraints, findings, or assumptions. It is residual."
+          - id: waiting_005
+            target: residual
+            content: We're not building a LinkedIn for Scrum people.
+            reason: This is a negation-frame restatement that reiterates scope boundaries
+              already captured in the out-of-scope section ('General community
+              features or social engagement tools'). It adds no new information
+              about what is excluded, why, or what constraint or assumption
+              drives the decision. It is residual.
+    - id: validation-consistency-check
+      value:
+        contradictions:
+          - description: Scope item 'Job posting verification by recruiters' contradicts
+              constraint_003 (operational manageability). The item requires
+              staff to verify company legitimacy and position existence before
+              job postings go live — a gating mechanism identical to course
+              approval. However, constraint_003 flags that 'Staff must have
+              bandwidth to review and approve courses and job postings. Heavy
+              staff involvement creates a bottleneck.' Adding recruiter job
+              posting verification on top of course approval doubles the staff
+              review burden, directly violating the operational constraint.
+          - description: "Scope item 'Recruiter access to verified talent — searchable pool
+              of candidates filtered by active, verified certifications'
+              (relatedGoals: goal_004) contradicts the out-of-scope item 'ATS
+              system integration with recruiter workflows' (relatedGoals:
+              goal_004). Both reference goal_004 (Connect recruiters to
+              qualified talent reliably), but the scope item appears to require
+              recruiter-facing platform functionality that enables the talent
+              search, while the out-of-scope item explicitly states 'platform
+              responsibility is only to provide a searchable verified candidate
+              pool' and recruiter ATS integration is their responsibility. The
+              boundary between 'searchable pool provided by platform' and
+              'recruiter workflows' is unclear — if the in-scope item requires a
+              recruiter-facing search interface on the platform, this may
+              conflict with the intent of the out-of-scope constraint."
+    - id: validation-summary-present-r0
+      value: >-
+        I need to push back on a couple of the findings.
+
+
+        **Finding 2** — Job posting verification and the staff bottleneck. Yeah,
+        it's a real tension. But I said "verify the company is real and the
+        position actually exists" — that doesn't necessarily mean staff manually
+        reviews every posting. We could build automation for this. Check if the
+        company domain is legitimate, validate against public records, maybe ask
+        the recruiter to provide company registration info upfront. Staff only
+        steps in if something flags as suspicious. That's different from course
+        approval, where staff needs to actually read and evaluate content. So
+        it's not necessarily a doubling of review burden — it's a different kind
+        of gate.
+
+
+        **Finding 3** — The boundary between "searchable pool on the platform"
+        and "recruiter workflows." That's a non-issue. We're building a
+        recruiter-facing search interface on the platform. That's what
+        "searchable pool" means. Recruiters log in, search by cert, find
+        candidates. They don't integrate that search into their ATS — they do
+        their own thing with the candidate list they find. We're not building
+        connectors or API integrations to their ATS. That's what's out of scope.
+
+
+        The findings aren't wrong exactly, but they're treating as
+        contradictions what are actually just design details I haven't specified
+        yet. They'll resolve once we design the verification workflow and the
+        recruiter interface.
+
+
+        Otherwise, the summary is right. Let's wrap.
+    - id: validation-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: "Clarify Finding 2: Job posting verification does not
+          necessarily double staff review burden. Verification can be automated
+          (domain legitimacy checks, public records validation,
+          recruiter-provided registration info), with staff only reviewing
+          flagged items. This is different from course approval which requires
+          substantive staff evaluation. Also clarify Finding 3: 'Searchable pool
+          on the platform' means recruiter-facing search interface on the
+          platform itself. Recruiters do not integrate platform search into
+          their ATS — they manage their own workflows with the candidate list
+          they retrieve. Platform is not building ATS connectors or API
+          integrations. These are design details that will resolve during
+          verification workflow and recruiter interface design, not fundamental
+          contradictions."
+        targetId: null
+        responseClass: answer
+title: Members scattered across different systems with no single view of their
+  practitioner identity. Training history, certification records, and community
+  contributions are fragmented. The platform should be a modern central home
+  where members can find each other, see what certifications matter, understand
+  what they need to stay current, and discover training opportunities.
+userConcern: "Clarify Finding 2: Job posting verification does not necessarily
+  double staff review burden. Verification can be automated (domain legitimacy
+  checks, public records validation, recruiter-provided registration info), with
+  staff only reviewing flagged items. This is different from course approval
+  which requires substantive staff evaluation. Also clarify Finding 3:
+  'Searchable pool on the platform' means recruiter-facing search interface on
+  the platform itself. Recruiters do not integrate platform search into their
+  ATS — they manage their own workflows with the candidate list they retrieve.
+  Platform is not building ATS connectors or API integrations. These are design
+  details that will resolve during verification workflow and recruiter interface
+  design, not fundamental contradictions."

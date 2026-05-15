@@ -1,0 +1,1696 @@
+sessionId: sess_2026-05-15_l7xa4z
+createdAt: 2026-05-15T08:23:54.075Z
+lastModified: 2026-05-15T08:31:18.476Z
+workflow:
+  status: completed
+  entries:
+    - id: opening-greet-r0
+      value: >-
+        I appreciate the greeting, but I should clarify my role here. I'm a
+        stakeholder being interviewed *about* a neuroscience research data
+        management platform — not the person building it. The platform is
+        already in motion, and I'm here to discuss how it fits into our research
+        workflows and what we need from it.
+
+
+        What would you like to know about the project or our needs?
+    - id: opening-greet-extraction-r0
+      value:
+        purpose: neuroscience research data management platform
+        stakeholders:
+          - neuroscience researchers
+          - research teams
+        domainHints:
+          - neuroscience
+          - research
+          - data management
+          - research workflows
+        responseClass: answer
+    - id: opening-brownfield-screen
+      value:
+        greenfieldConfidence: 8
+        reasoning: User describes a neuroscience research data management platform with
+          stakeholder types (researchers, research teams) and domain context,
+          but provides no mention of existing codebases, prior versions, legacy
+          systems, institutional infrastructure, databases, or artifacts to
+          build on or integrate with. The description is purely domain-oriented
+          (problem space) rather than artifact-oriented (starting point). High
+          confidence this is greenfield, with minor uncertainty reserved for the
+          possibility that institutional or departmental infrastructure exists
+          but wasn't mentioned.
+    - id: opening-summary-r0
+      value: Yes, that's right. We need a platform for neuroscience researchers to
+        store, share, and analyze brain imaging data—things like fMRI scans,
+        electrophysiology recordings, and the datasets we derive from them. The
+        tricky part is tracking where everything came from and controlling who
+        can access what, especially since we have IRB restrictions on sharing.
+    - id: opening-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: "Added specificity on data types (fMRI scans,
+          electrophysiology recordings, derived datasets) and introduced
+          critical constraints: tracking data provenance and IRB-restricted
+          access control. The purpose statement is too general — it should
+          reflect these core requirements."
+        targetId: purpose
+        responseClass: answer
+    - id: purpose-initial-extraction
+      value:
+        purpose: platform for neuroscience researchers to store, share, and analyze
+          brain imaging data—things like fMRI scans, electrophysiology
+          recordings, and the datasets we derive from them
+        advantage: null
+        measurement: null
+        responseInterpretation: The respondent affirmed the captured purpose statement
+          and elaborated on specific data types (fMRI scans, electrophysiology
+          recordings, derived datasets). They identified tracking provenance and
+          access control as critical challenges, with IRB restrictions on
+          sharing as a key constraint.
+        contradictions: []
+        responseClass: answer
+    - id: purpose-advantage-0-composition-r0
+      value:
+        question: What **advantages** would this platform have over how you currently
+          store and share brain imaging data?
+        suggestions:
+          - Centralized access — no more scattered data across lab drives, cloud
+            folders, and external hard drives
+          - Built-in collaboration tools — researchers can annotate findings and
+            discuss results without emailing files back and forth
+          - Standardized metadata and processing pipelines — reduces time spent
+            reformatting data for analysis
+    - id: purpose-advantage-0-question-r0
+      value: >-
+        Good question. The biggest pain point is **provenance tracking**. Right
+        now, when someone derives a result from raw imaging data, we have no
+        reliable way to know which pipeline version was used, what parameters
+        were set, or which source files produced it. That's a compliance
+        nightmare and makes results hard to reproduce.
+
+
+        Second is **access control at the dataset level**. We've got multiple
+        studies with different consent scopes — some allow sharing within the
+        institution, others don't allow any sharing. Lab PIs control their own
+        data, but we need institutional oversight for compliance. Right now it's
+        all ad-hoc.
+
+
+        Centralized storage helps too, but honestly, that's the easy part. The
+        real value is being able to answer "where did this come from?" and
+        "who's allowed to see this?" reliably.
+    - id: purpose-advantage-0-extraction-r0
+      value:
+        purpose: null
+        advantage: Provenance tracking — reliably determine which pipeline version was
+          used, what parameters were set, and which source files produced
+          results. Access control at dataset level — enforce institutional
+          compliance by controlling who can see data based on consent scopes
+          across multiple studies, with institutional oversight rather than
+          ad-hoc lab PI control. Centralized storage reduces scattered data
+          across lab drives, cloud folders, and external hard drives.
+        measurement: null
+        responseInterpretation: "The respondent identified provenance tracking and
+          dataset-level access control as the platform's primary advantages over
+          current practice. They acknowledged that centralized storage
+          (suggestion a) is valuable but secondary — the core value is answering
+          'where did this come from?' and 'who's allowed to see this?' reliably.
+          Current pain points: no way to track which pipeline version,
+          parameters, or source files produced derived results (compliance and
+          reproducibility issue). Multiple studies with different consent scopes
+          require institutional oversight, but current system is ad-hoc with lab
+          PIs controlling their own data."
+        contradictions: []
+        responseClass: answer
+    - id: purpose-measurement-0-composition-r0
+      value:
+        question: What **metrics or signs** would tell you this platform is working well
+          for your research?
+        suggestions:
+          - Time saved per week locating or reconstructing dataset provenance
+            instead of emailing collaborators
+          - Number of data access requests we can approve/deny automatically
+            through compliance rules instead of manual review
+          - Reduction in duplicate datasets stored across lab drives and
+            external drives after migrating to centralized storage
+    - id: purpose-measurement-0-question-r0
+      value: >-
+        The clearest one is **audit trail completeness**. If a researcher
+        publishes a result, we should be able to reconstruct the full
+        lineage—raw acquisition → processing pipeline → parameters → final
+        dataset—without gaps or guesswork. Right now we can't.
+
+
+        Second is **compliance speed**. When an IRB request comes in asking "who
+        has access to study X's data?" we should answer in minutes, not days of
+        manual checking.
+
+
+        Third is **reduced friction for sharing**. Right now, sharing restricted
+        data across labs requires back-and-forth emails and manual permission
+        checks. If the platform enforces consent scopes automatically,
+        researchers spend less time on compliance overhead and more time on
+        science.
+
+
+        I wouldn't focus too much on storage consolidation—that's nice-to-have.
+        The real win is knowing what we have, where it came from, and who's
+        allowed to see it.
+    - id: purpose-measurement-0-extraction-r0
+      value:
+        purpose: null
+        advantage: null
+        measurement: "Audit trail completeness: ability to reconstruct full lineage of
+          published results (raw acquisition → processing pipeline → parameters
+          → final dataset) without gaps or guesswork. Compliance speed: answer
+          IRB access requests in minutes instead of days of manual checking.
+          Reduced friction for sharing: platform enforces consent scopes
+          automatically so researchers spend less time on compliance overhead
+          and more time on science."
+        responseInterpretation: "Respondent prioritizes three success metrics over the
+          suggested ones: (1) audit trail completeness—ability to fully
+          reconstruct data lineage for published results without gaps; (2)
+          compliance speed—IRB access questions answered in minutes rather than
+          days; (3) reduced sharing friction—automatic consent scope enforcement
+          eliminates back-and-forth emails and manual permission checks.
+          Respondent explicitly deprioritized storage consolidation as
+          'nice-to-have,' stating the real value is knowing what data exists,
+          where it came from, and who can access it."
+        contradictions: []
+        responseClass: answer
+    - id: purpose-confirmation-r0
+      value: >-
+        That's accurate. One thing to sharpen on measurement: the audit trail is
+        only useful if it's *immutable*. Once a dataset version is published, it
+        can't be modified retroactively—only superseded by a new version. That's
+        a hard requirement for compliance and reproducibility.
+
+
+        So maybe add: **Published datasets are immutable and versioned** — we
+        track when changes happen, never lose the history, and researchers know
+        they're working with a fixed snapshot.
+
+
+        Otherwise, you've got it right.
+    - id: purpose-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: "Add immutability requirement for published datasets:
+          Published datasets are immutable and versioned — we track when changes
+          happen, never lose the history, and researchers know they're working
+          with a fixed snapshot. This is a hard requirement for compliance and
+          reproducibility."
+        targetId: measurement
+        responseClass: answer
+    - id: purpose-revision
+      value:
+        purpose: null
+        advantage: null
+        measurement: "Audit trail completeness: ability to reconstruct full lineage of
+          published results (raw acquisition → processing pipeline → parameters
+          → final dataset) without gaps or guesswork. Compliance speed: answer
+          IRB access requests in minutes instead of days of manual checking.
+          Reduced friction for sharing: platform enforces consent scopes
+          automatically so researchers spend less time on compliance overhead
+          and more time on science. Published datasets are immutable and
+          versioned — we track when changes happen, never lose the history, and
+          researchers know they're working with a fixed snapshot."
+        responseInterpretation: "The respondent affirmed the measurement criteria as
+          accurate and added a critical constraint: published datasets must be
+          immutable and versioned. Once a dataset version is published, it
+          cannot be modified retroactively—only superseded by a new version.
+          This is a hard requirement for compliance and reproducibility. The
+          respondent emphasized that the platform must track when changes happen
+          and maintain complete history so researchers work with a fixed
+          snapshot."
+        contradictions: []
+        responseClass: answer
+    - id: goal-seed-extraction
+      value:
+        goals:
+          - title: Enable reproducible research through complete provenance tracking
+            description: Researchers can reconstruct the full lineage of any published
+              result—from raw acquisition through processing pipeline,
+              parameters, and final dataset—without gaps or guesswork. This
+              creates an auditable record that satisfies publication standards
+              and institutional oversight.
+            rationale: Provenance gaps undermine scientific credibility and make compliance
+              audits manual and slow. Complete lineage is a prerequisite for
+              reproducibility, which is a core obligation in neuroscience
+              publishing.
+          - title: Enforce consent compliance automatically across studies
+            description: The platform applies access control at the dataset level, enforcing
+              consent scopes across multiple studies automatically. Researchers
+              can answer IRB access requests in minutes rather than days of
+              manual checking, and institutional oversight replaces ad-hoc lab
+              PI decisions.
+            rationale: Manual compliance checking is slow, error-prone, and a major friction
+              point in sharing. Institutional oversight adds accountability;
+              automating it frees researcher time for science and reduces
+              compliance risk.
+          - title: Create a unified, immutable archive for research data
+            description: Centralize scattered data (lab drives, cloud folders, external hard
+              drives) into a single platform where published datasets are
+              versioned and immutable. Researchers always work with a fixed
+              snapshot; changes are tracked but never lost.
+            rationale: Data scattered across storage silos is hard to locate, share, or
+              audit. Immutability and versioning prevent accidental overwrites
+              and give researchers confidence in data stability for long-term
+              collaboration and publication.
+        drainedWaitingRoomIds: []
+    - id: goal-seed-present-r0
+      value: >-
+        Those three are solid. I'd add one more: **Integrate with existing
+        workflows without forcing migration**.
+
+
+        We've got LORIS already in use by some labs, and the HPC cluster where
+        researchers run their analysis pipelines. The new platform needs to work
+        *with* those systems, not replace them. Data should be importable from
+        LORIS, and analysis results from the HPC cluster should feed back into
+        provenance tracking automatically.
+
+
+        Otherwise, adoption stalls because labs see it as overhead instead of a
+        tool that fits how they already work.
+    - id: goal-seed-classification-r0
+      value:
+        responseInterpretation: "The respondent affirmed the three presented goals as
+          solid. They proposed adding a fourth goal: the platform must integrate
+          with existing systems (LORIS and HPC cluster) without forcing
+          migration. Data should be importable from LORIS, and HPC analysis
+          results should feed back into provenance tracking automatically.
+          Adoption depends on fitting into existing workflows rather than
+          replacing them."
+        confirmedGoalIds:
+          - goal_001
+          - goal_002
+          - goal_003
+        removedGoalIds: []
+        newGoals:
+          - title: Integrate with existing workflows without forcing migration
+            description: The platform must work with LORIS and HPC cluster systems already
+              in use, not replace them. Data should be importable from LORIS;
+              analysis results from HPC should feed back into provenance
+              tracking automatically. Adoption depends on reducing friction by
+              fitting how labs already work, not imposing overhead.
+        waitingRoomItems: []
+        responseClass: answer
+    - id: goal-sort
+      value:
+        rankedGoalIds:
+          - goal_004
+          - goal_001
+          - goal_002
+          - goal_003
+    - id: goal-refinement-goal_004-clarify-0-composition-r0
+      value:
+        question: When you say the platform should integrate with existing workflows,
+          what would that look like day-to-day—how would researchers interact
+          with it without disrupting how they currently work?
+        suggestions:
+          - Researchers continue using their current tools (MATLAB, Python
+            scripts, file systems) and the platform sits behind the scenes,
+            automatically capturing provenance when they run analyses
+          - The platform provides optional connectors or APIs so existing lab
+            pipelines can log metadata without rewriting code, but teams can opt
+            in gradually per project
+          - Researchers upload datasets and results through a web interface or
+            command-line tool that mirrors folder structures they already use,
+            so the learning curve is minimal
+    - id: goal-refinement-goal_004-clarify-0-question-r0
+      value: >-
+        It's mostly (a) with a bit of (b). 
+
+
+        Researchers keep using their Python scripts and MATLAB code. When they
+        submit a job to the HPC cluster, the platform automatically captures
+        what ran—which pipeline version, what parameters, which input files. We
+        integrate with the HPC job scheduler so provenance tracking happens
+        without researchers thinking about it.
+
+
+        For labs that have custom analysis workflows, we need an API so they can
+        log metadata themselves if they want. But that's optional—the default
+        case is "run your job on HPC like you always do, and we track it."
+
+
+        The one place they *do* need to interact with the platform directly is
+        when publishing a dataset or checking access permissions. That needs a
+        web interface or CLI, but it's rare enough that it doesn't disrupt their
+        day-to-day work.
+    - id: goal-refinement-goal_004-clarify-0-extraction-r0
+      value:
+        responseClass: answer
+        responseInterpretation: Integration should be primarily automatic—researchers
+          continue using Python scripts and MATLAB code as-is. The platform
+          integrates with the HPC job scheduler to automatically capture
+          provenance (pipeline version, parameters, input files) without
+          researcher action. For custom workflows, an optional API lets labs log
+          metadata themselves if they choose. The only required direct
+          interaction is a web interface or CLI for publishing datasets or
+          checking access permissions, which happens rarely enough not to
+          disrupt daily work.
+        title: null
+        description: Researchers run analyses through existing tools (Python, MATLAB)
+          and HPC cluster as usual. Platform automatically captures provenance
+          via HPC scheduler integration without requiring code changes. Optional
+          API available for custom workflows that want to log metadata. Direct
+          platform interaction (web UI or CLI) needed only for publishing
+          datasets and managing access permissions.
+        rationale: Minimizing adoption friction is essential—researchers won't adopt a
+          system that forces them to change established practices. Automatic
+          capture via HPC integration lets the platform deliver provenance value
+          without imposing workflow changes. Optional API accommodates teams
+          with non-standard pipelines without creating a path-dependent lock-in.
+        contradictions: []
+        waitingRoomItems:
+          - content: Platform must integrate with HPC job scheduler to capture provenance
+              automatically
+          - content: API for custom workflows should be optional, not mandatory
+          - content: Web interface or CLI for dataset publishing and access permission
+              checking is acceptable friction because it's infrequent
+    - id: goals-confirmation-r0
+      value: >-
+        That's solid. One clarification on the third goal: when we integrate
+        with the HPC cluster, we also need to handle the case where researchers
+        run analyses *locally* on their lab workstations—not everything goes
+        through the cluster. 
+
+
+        So the integration should be "HPC cluster *and* local analysis workflows
+        where feasible." We can't track everything perfectly, but we should
+        capture what we can.
+
+
+        Otherwise, this is right.
+    - id: goals-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: Goal 004 should clarify that HPC cluster integration must
+          also accommodate local analysis workflows on lab workstations—not
+          everything goes through the cluster. The integration should handle
+          both HPC and local analysis where feasible, with the understanding
+          that perfect tracking of all analysis isn't possible but the system
+          should capture what it can.
+        targetId: goal_004
+        responseClass: answer
+    - id: goals-revision
+      value:
+        responseInterpretation: Goal 004 should specify that HPC cluster integration and
+          local analysis workflows both need to be supported—researchers run
+          analyses locally on lab workstations as well as through the cluster.
+          The platform should capture provenance from both paths where feasible,
+          acknowledging that tracking everything perfectly isn't possible but
+          capturing what can be captured.
+        title: Integrate with existing workflows (HPC cluster and local analysis)
+          without forcing migration
+        description: null
+        rationale: null
+        contradictions: []
+        waitingRoomItems:
+          - content: Can't track everything perfectly, but should capture what we can
+        responseClass: answer
+    - id: stakeholder-seed-extraction
+      value:
+        stakeholders:
+          - name: HPC cluster administrators
+            type: secondary
+          - name: IRB / compliance officers
+            type: secondary
+          - name: institutional data governance teams
+            type: secondary
+          - name: research data curators / archivists
+            type: secondary
+        drainedWaitingRoomIds:
+          - waiting_002
+          - waiting_004
+    - id: stakeholder-review-present-r0
+      value: >-
+        Good list. I'd add **lab PIs** as primary—they control access to their
+        lab's data and make decisions about what gets shared. That's distinct
+        from individual researchers, and they have different concerns
+        (oversight, liability, publication control).
+
+
+        I'd also add **institutional data stewards** as secondary—they're the
+        ones who can override lab PI decisions for compliance reasons, like
+        enforcing data retention policies. That's a governance layer that
+        matters.
+
+
+        Remove research data curators—we're not doing active curation. The
+        archivists piece (long-term preservation) might matter down the line,
+        but it's not core to the initial platform.
+    - id: stakeholder-review-classification-r0
+      value:
+        responseInterpretation: "The respondent affirmed the stakeholder list as good
+          and made three structural changes: (1) Elevate lab PIs to primary
+          stakeholders because they control access to lab data and make sharing
+          decisions, with distinct concerns around oversight, liability, and
+          publication control separate from individual researchers. (2) Add
+          institutional data stewards as secondary stakeholders—they enforce
+          compliance by overriding lab PI decisions on data retention policies,
+          representing a governance layer. (3) Remove research data
+          curators/archivists because active curation is not part of the initial
+          platform scope; long-term preservation (archivists) may matter later
+          but is not core."
+        updatedTypes: []
+        removedIds:
+          - stakeholder_006
+        newStakeholders:
+          - name: lab PIs
+            type: primary
+          - name: institutional data stewards
+            type: secondary
+        responseClass: answer
+    - id: stakeholder-respondent-present-r0
+      value: I'm an **institutional data steward**. I oversee compliance and data
+        governance across multiple labs and studies. That's why provenance
+        tracking and access control matter to me—I need to ensure labs are
+        following IRB restrictions and data retention policies, and I need to be
+        able to intervene when there's a compliance issue, even if a lab PI
+        disagrees.
+    - id: stakeholder-respondent-present-extraction-r0
+      value:
+        responseInterpretation: The respondent is an institutional data steward who
+          oversees compliance and data governance across multiple labs and
+          studies. They emphasized that provenance tracking and access control
+          are critical to their role because they need to ensure labs follow IRB
+          restrictions and data retention policies, and they need the ability to
+          intervene on compliance issues even when a lab PI disagrees.
+        respondentId: stakeholder_007
+        responseClass: answer
+    - id: stakeholder-elaboration-stakeholder_001-0-composition-r0
+      value:
+        question: As someone who works with neuroscience data, what would **provenance
+          tracking and consent enforcement** mean for your day-to-day work?
+        suggestions:
+          - Being able to quickly answer 'where did this result come from'
+            without manually digging through lab notebooks or old emails
+          - Spending less time checking whether collaborators have consent to
+            see a dataset, and more time on actual analysis
+          - Having a central place to find datasets instead of asking around or
+            checking different lab drives and shared folders
+    - id: stakeholder-elaboration-stakeholder_001-0-question-r0
+      value: >-
+        For me, it's mostly (a) but from a governance angle. When a lab
+        publishes a result or shares data outside the institution, I need to
+        audit it—verify the consent scope actually allows that sharing, trace
+        back to the raw data and pipeline to make sure nothing got corrupted or
+        modified after publication.
+
+
+        Right now that's a manual nightmare. A researcher says "we used study
+        X's data," I dig through emails, lab wikis, sometimes call the PI
+        directly. With provenance tracking, I pull up the dataset, see exactly
+        what consent it has, what pipeline produced it, when it was
+        published—all in one place.
+
+
+        The other piece is **enforcement**. If a dataset has a consent scope
+        that prohibits sharing, the platform should block it automatically. Lab
+        PIs shouldn't have to remember; the system should make it impossible to
+        accidentally violate IRB restrictions.
+    - id: stakeholder-elaboration-stakeholder_001-0-extraction-r0
+      value:
+        responseInterpretation: "Institutional data stewards need provenance tracking
+          primarily from a governance and audit angle. When a lab publishes or
+          shares data outside the institution, they must verify that consent
+          scope permits that sharing and trace back through raw data and
+          pipeline to ensure nothing was corrupted or modified after
+          publication. Currently this is manual—researchers say they used study
+          X's data, and the steward digs through emails, lab wikis, and calls
+          PIs directly. With provenance tracking, they pull up a dataset and see
+          its consent scope, the pipeline that produced it, and publication date
+          in one place. The enforcement piece is critical: if a dataset has a
+          consent scope prohibiting sharing, the platform should block it
+          automatically rather than relying on lab PIs to remember IRB
+          restrictions."
+        role: institutional data steward responsible for audit and compliance
+          verification when labs publish or share data outside the institution
+        concerns:
+          - Manual audit process is time-consuming—digging through emails, lab
+            wikis, and direct PI calls to verify consent scope for data sharing
+          - Need to trace raw data and pipeline to verify nothing was corrupted
+            or modified after publication
+          - Consent scope violations can happen accidentally because lab PIs
+            must remember IRB restrictions
+          - No centralized place to quickly verify what consent a dataset has
+            and what pipeline produced it
+        contradictions: []
+        waitingRoomItems: []
+        responseClass: answer
+    - id: stakeholder-followup-assessment-stakeholder_001
+      value:
+        needed: false
+        question: null
+        suggestions: null
+    - id: stakeholder-elaboration-stakeholder_002-0-composition-r0
+      value:
+        question: What does a typical day look like for your team when you're working
+          with brain imaging data—from acquisition through analysis to sharing
+          results?
+        suggestions:
+          - We acquire fMRI scans on our scanner, run them through SPM or FSL
+            pipelines on the HPC cluster, then manually document parameters in a
+            shared lab wiki before sharing results with collaborators.
+          - We use custom Python scripts to preprocess electrophysiology
+            recordings locally, store intermediate files on our lab drive, and
+            email raw datasets to other labs when they ask—tracking consent is
+            mostly done through email threads.
+          - We pull preprocessed datasets from a shared institutional
+            repository, run our own statistical analyses in MATLAB, and version
+            results by renaming files; we're not sure what pipelines produced
+            the original data.
+    - id: stakeholder-elaboration-stakeholder_002-0-question-r0
+      value: >-
+        I don't run analyses myself—I'm on the governance side. But I can tell
+        you what I *see* across labs:
+
+
+        Some labs use LORIS for clinical imaging, which tracks metadata pretty
+        well. Others store raw data on institutional file servers with folder
+        structures that only make sense to whoever created them. When
+        electrophysiology data gets shared, it's often via email or Dropbox with
+        a README file that may or may not be accurate.
+
+
+        The real problem: when a lab wants to share data—either internally with
+        another lab or externally for a publication—I have to manually verify
+        consent, trace back to what IRB protocol approved it, sometimes dig into
+        old emails to confirm parameters. If the data's been through multiple
+        processing steps, I'm guessing at what the source files were.
+
+
+        That's where the friction is. I'm not the one running analyses. I'm the
+        one who has to say "yes, this can be shared" or "no, consent doesn't
+        permit that," and I'm doing it with incomplete information and a lot of
+        manual work.
+    - id: stakeholder-elaboration-stakeholder_002-0-extraction-r0
+      value:
+        responseInterpretation: "The respondent clarified they work on the
+          governance/compliance side, not on analysis directly. They described
+          what they observe across labs: some use LORIS for clinical imaging
+          with good metadata tracking, others use institutional file servers
+          with inconsistent folder structures, and electrophysiology data often
+          gets shared via email or Dropbox with potentially inaccurate README
+          files. The core problem they face is manual verification work when
+          labs want to share data—they must verify consent scope, trace IRB
+          protocol approval, search through emails for parameters, and guess at
+          source files when data has gone through multiple processing steps.
+          Their friction point is performing data-sharing approval without
+          complete information."
+        role: data governance officer responsible for verifying consent scope and
+          approving data sharing across labs
+        concerns:
+          - Manual verification of consent scope is required for each
+            data-sharing request
+          - Tracing back to IRB protocol approval is time-consuming and requires
+            searching through old emails
+          - Incomplete information about data parameters and source files when
+            data has been processed multiple times
+          - Inconsistent metadata and folder structures across labs make tracing
+            data lineage difficult
+          - Cannot reliably determine what processing steps and parameters were
+            applied to datasets before sharing
+          - Must approve or deny sharing decisions with incomplete provenance
+            information
+        contradictions: []
+        waitingRoomItems:
+          - content: Some labs use LORIS for clinical imaging, which tracks metadata well
+          - content: Others store raw data on institutional file servers with inconsistent
+              folder structures
+          - content: Electrophysiology data often shared via email or Dropbox with
+              potentially inaccurate README files
+        responseClass: answer
+    - id: stakeholder-followup-assessment-stakeholder_002
+      value:
+        needed: false
+        question: null
+        suggestions: null
+    - id: stakeholder-elaboration-stakeholder_003-0-composition-r0
+      value:
+        question: What role would **HPC cluster administrators** play in a system that
+          automatically captures provenance when researchers run pipelines on
+          your cluster?
+        suggestions:
+          - They'd need to integrate the system with our job scheduler and
+            monitor storage usage without manual intervention.
+          - They'd mainly help troubleshoot when provenance capture fails or
+            when researchers need help accessing their pipeline history.
+          - They'd have little involvement—researchers would handle it
+            themselves once the integration is set up.
+    - id: stakeholder-elaboration-stakeholder_003-0-question-r0
+      value: >-
+        It's mostly (a). The HPC admins would need to set up the integration
+        with the job scheduler so that when a job runs, metadata gets captured
+        automatically—job ID, pipeline version, input files, parameters, output
+        location. That's a one-time setup cost.
+
+
+        After that, they'd probably handle (b)—when provenance capture fails or
+        when a researcher has questions about how to query their pipeline
+        history. They'd also need to monitor whether the integration is working
+        reliably and alert us if it breaks.
+
+
+        But they're not gatekeepers. Once it's set up, researchers submit jobs
+        like normal, and the system captures provenance in the background. The
+        HPC admins just need to keep it running.
+    - id: stakeholder-elaboration-stakeholder_003-0-extraction-r0
+      value:
+        responseInterpretation: HPC admins would primarily handle one-time integration
+          setup with the job scheduler to capture metadata automatically (job
+          ID, pipeline version, input files, parameters, output location). After
+          setup, they'd troubleshoot when provenance capture fails and help
+          researchers query their pipeline history. They'd also monitor whether
+          the integration works reliably and alert when it breaks. However,
+          they're not gatekeepers—researchers submit jobs normally and the
+          system captures provenance in the background. Admins just need to keep
+          it running.
+        role: Set up and maintain integration between provenance capture system and HPC
+          job scheduler; troubleshoot capture failures; help researchers access
+          pipeline history; monitor integration health and alert on failures
+        concerns: []
+        contradictions: []
+        waitingRoomItems:
+          - content: One-time setup cost for scheduler integration
+          - content: System captures provenance in the background without researcher
+              workflow changes
+        responseClass: answer
+    - id: stakeholder-elaboration-stakeholder_004-0-composition-r0
+      value:
+        question: What **compliance tasks** does your office handle when researchers
+          want to share datasets outside the institution?
+        suggestions:
+          - Reviewing IRB protocol scope to confirm shared data fits within
+            original consent language
+          - Auditing data access logs and verifying no unauthorized downloads
+            occurred before sharing
+          - Checking that datasets are de-identified and meet regulatory
+            requirements before external transfer
+    - id: stakeholder-elaboration-stakeholder_004-0-question-r0
+      value: >-
+        All three, honestly. When a lab says "we want to share study X's data
+        publicly," I need to:
+
+
+        (a) Confirm the IRB protocol actually allows public sharing—some
+        protocols limit sharing to "within institution only" or "collaborators
+        on this specific grant." I have to read the protocol.
+
+
+        (c) Verify de-identification is adequate. Brain imaging data can be
+        re-identified from anatomical scans, so we have defacing standards and
+        other checks.
+
+
+        (b) is less about audit logs and more about **checking the dataset
+        itself**—making sure raw identifiers didn't accidentally get included,
+        that metadata doesn't expose subject info, that the provenance record is
+        complete enough that external researchers can understand what they're
+        getting.
+
+
+        The piece that eats time: tracing back to confirm the dataset really is
+        what the lab claims it is. If they say "this is the preprocessed fMRI
+        from study X," I need to verify that's actually the case—that it came
+        from the right consent protocol, the right acquisition parameters, the
+        right pipeline. Right now that's manual detective work. The platform
+        should make that instant.
+    - id: stakeholder-elaboration-stakeholder_004-0-extraction-r0
+      value:
+        responseInterpretation: "IRB/compliance officers handle all three tasks: (a)
+          confirming the IRB protocol allows public sharing, since some
+          protocols restrict sharing to within-institution or specific
+          collaborators only; (c) verifying de-identification is adequate—brain
+          imaging data can be re-identified from anatomical scans, so defacing
+          standards and other checks are applied; and (b) checking the dataset
+          itself to ensure raw identifiers weren't accidentally included,
+          metadata doesn't expose subject info, and the provenance record is
+          complete enough for external researchers to understand what they're
+          receiving. The most time-consuming piece is tracing back to confirm
+          the dataset matches what the lab claims—verifying it came from the
+          right consent protocol, right acquisition parameters, and right
+          pipeline. This is currently manual detective work and should be
+          instant on the platform."
+        role: Verify IRB protocol consent scope allows the type of data sharing
+          requested; confirm de-identification meets regulatory requirements;
+          audit the dataset contents and metadata to ensure no raw identifiers
+          were included and provenance is complete
+        concerns:
+          - Tracing back to verify a dataset is actually what the lab claims it
+            is—confirming it came from the right consent protocol, right
+            acquisition parameters, and right pipeline—requires manual detective
+            work
+          - Need to verify de-identification is adequate for brain imaging data,
+            which can be re-identified from anatomical scans
+          - Must check that raw identifiers didn't accidentally get included in
+            datasets before sharing externally
+          - Must verify metadata doesn't expose subject information
+          - Must confirm the provenance record is complete enough that external
+            researchers can understand what they're receiving
+          - Time spent on manual verification of dataset contents and lineage
+        contradictions: []
+        waitingRoomItems:
+          - content: The platform should make instant the manual detective work of tracing
+              datasets back to confirm they match what labs claim—verifying
+              consent protocol, acquisition parameters, and pipeline
+        responseClass: answer
+    - id: stakeholder-elaboration-stakeholder_005-0-composition-r0
+      value:
+        question: What **institutional policies** would institutional data governance
+          teams need the platform to enforce or track?
+        suggestions:
+          - Data retention schedules and when datasets must be archived or
+            deleted
+          - Approval workflows—who reviews and signs off on data sharing
+            requests before they leave the institution
+          - Audit logging for compliance reporting to leadership or external
+            regulators
+    - id: stakeholder-elaboration-stakeholder_005-0-question-r0
+      value: >-
+        (a) and (c) are critical. We have funder requirements that datasets stay
+        accessible for 10+ years. The platform needs to track retention dates
+        and flag when something's at risk of being deleted prematurely or
+        archived in a way that makes it inaccessible.
+
+
+        (c)—audit logging—is non-negotiable. We need to answer "who accessed
+        this dataset, when, and why?" for compliance reporting. That's partly
+        for internal audit but also for external regulators if there's ever a
+        data breach or privacy concern.
+
+
+        (b) is less about formal approval workflows and more about
+        **institutional override**. Lab PIs control their own data access, but
+        if we detect a retention violation or a consent scope violation, data
+        stewards need to step in and enforce it. That's not a workflow—it's an
+        emergency lever.
+
+
+        So add: **Institutional stewards can override lab PI decisions for
+        compliance violations**. If a lab is about to violate IRB restrictions
+        or retention policy, we can step in and block the action, and the system
+        logs why we did it.
+    - id: stakeholder-elaboration-stakeholder_005-0-extraction-r0
+      value:
+        responseInterpretation: Institutional data governance teams need the platform to
+          enforce data retention schedules (tracking retention dates and
+          flagging premature deletion or inaccessible archival) and provide
+          audit logging (answering who accessed data, when, and why for
+          compliance and breach reporting). Approval workflows are less
+          important than institutional override capability—data stewards need an
+          emergency lever to block lab PI decisions when retention violations or
+          consent scope violations are detected, with system logging of the
+          override reason.
+        role: Institutional data stewards responsible for enforcing compliance
+          violations (retention policy and IRB restrictions) by overriding lab
+          PI data access decisions and logging the enforcement action
+        concerns:
+          - Datasets must stay accessible for 10+ years to meet funder
+            requirements
+          - Need to track retention dates and flag when something is at risk of
+            being deleted prematurely or archived in a way that makes it
+            inaccessible
+          - Need to answer 'who accessed this dataset, when, and why?' for
+            internal audit and external regulator reporting in case of data
+            breach or privacy concern
+          - Lab PIs control their own data access but can accidentally violate
+            IRB restrictions or retention policy; data stewards need authority
+            to step in and enforce compliance
+        contradictions: []
+        waitingRoomItems: []
+        responseClass: answer
+    - id: stakeholder-elaboration-stakeholder_006-0-composition-r0
+      value:
+        question: What would **lab PIs** need most from a system like this — better
+          control over who accesses their data, automatic compliance checking,
+          or something else?
+        suggestions:
+          - Control over access — they want to decide who can see their lab's
+            data without going through multiple approval steps
+          - Automatic compliance checking — they want the system to enforce
+            consent rules so they don't accidentally share data outside IRB
+            scope
+          - Reduced administrative overhead — they want less time spent on
+            compliance paperwork and more time running experiments
+    - id: stakeholder-elaboration-stakeholder_006-0-question-r0
+      value: >-
+        It's (a) and (b) together. Lab PIs want **control without liability**.
+        They need to decide who accesses their data—that's their prerogative as
+        data owners. But they also want the system to catch mistakes before they
+        happen. If consent doesn't permit sharing with an external collaborator,
+        the platform should say "no" automatically, not put the burden on the PI
+        to remember.
+
+
+        (c) matters too, but it's secondary. The real tension is: PIs want
+        autonomy, but they also want guardrails so they don't accidentally
+        violate IRB restrictions and end up in compliance trouble.
+
+
+        That's why institutional override is important—it's the safety valve.
+        PIs run their labs, but if they're headed toward a violation, we step
+        in. Most PIs are fine with that because it protects them as much as it
+        protects the institution.
+    - id: stakeholder-elaboration-stakeholder_006-0-extraction-r0
+      value:
+        responseInterpretation: Lab PIs need control over data access decisions (who can
+          see their lab's data) combined with automatic compliance checking.
+          They want autonomy as data owners, but also want the system to enforce
+          consent rules automatically so they don't accidentally violate IRB
+          restrictions. Administrative overhead reduction matters but is
+          secondary. Institutional override is acceptable to PIs because it
+          serves as a safety valve—protecting them from compliance violations
+          while preserving their operational autonomy.
+        role: Data owners responsible for deciding who accesses their lab's data, with
+          accountability for IRB compliance and authorization to share datasets
+          with collaborators
+        concerns:
+          - Need autonomy to decide who can access their lab's data without
+            going through multiple approval steps
+          - Want system to automatically catch compliance mistakes before they
+            happen instead of bearing the burden of remembering IRB restrictions
+          - Risk of accidentally violating IRB restrictions and facing
+            compliance trouble
+          - Administrative overhead from compliance paperwork takes time away
+            from running experiments
+        contradictions: []
+        waitingRoomItems:
+          - content: Institutional override is important as a safety valve—PIs run their
+              labs, but if headed toward a violation, the institution steps in
+        responseClass: answer
+    - id: stakeholder-followup-assessment-stakeholder_006
+      value:
+        needed: false
+        question: null
+        suggestions: null
+    - id: stakeholder-elaboration-stakeholder_007-0-composition-r0
+      value:
+        question: When a lab requests to share data outside the institution, what
+          **compliance checks** do you currently perform to verify it's safe to
+          share?
+        suggestions:
+          - We manually check the IRB protocol approval and consent scope
+            documents, then ask the lab PI to confirm the data matches those
+            restrictions
+          - We review the dataset itself—checking metadata, file contents, and
+            asking the lab to document what processing was done before we can
+            authorize sharing
+          - We don't have a formal process yet; labs mostly self-certify and we
+            spot-check after the fact if there's a question
+    - id: stakeholder-elaboration-stakeholder_007-0-question-r0
+      value: >-
+        It's (a) and (b), but it's messy. I pull the IRB protocol, check what
+        consent allows, then ask the lab "is this dataset what you say it is?"
+        Usually they say yes, but sometimes they're not sure—they don't know
+        which pipeline version was used, or whether intermediate files got mixed
+        in.
+
+
+        Then I spot-check the dataset itself. I look at file names, metadata
+        headers, sometimes ask for a processing summary. But I'm not doing a
+        deep audit every time—that would take forever.
+
+
+        The real gap: there's no systematic way to verify the lab's claim that
+        "this is the preprocessed output from protocol X, pipeline version Y."
+        I'm taking their word for it, which is risky. If the platform had
+        immutable provenance tracking, I could just query it and get a
+        definitive answer in seconds instead of asking around and hoping they're
+        right.
+
+
+        We don't have a *formal* process yet, which is part of the problem. It's
+        ad-hoc, person-dependent, and slow. That's exactly what this platform
+        should fix.
+    - id: stakeholder-elaboration-stakeholder_007-0-extraction-r0
+      value:
+        responseInterpretation: Institutional data stewards currently use both manual
+          IRB protocol review (option a) and spot-check dataset inspection
+          (option b), but the process is messy and ad-hoc. They pull the IRB
+          protocol and check consent scope, then ask labs to confirm the dataset
+          matches those restrictions. Labs often cannot reliably answer because
+          they don't know which pipeline version was used or whether
+          intermediate files got mixed in. Stewards then spot-check the dataset
+          by examining file names, metadata headers, and requesting processing
+          summaries, but do not perform deep audits every time due to time
+          constraints. The critical gap is lack of systematic verification that
+          a lab's claim about dataset provenance (which protocol, which pipeline
+          version) is accurate—stewards currently take the lab's word for it,
+          which is risky. A formal process does not exist; the current approach
+          is ad-hoc, person-dependent, slow, and error-prone. The respondent
+          sees immutable provenance tracking as the platform solution to
+          eliminate manual verification.
+        role: Institutional data stewards responsible for verifying compliance when labs
+          request to share data outside the institution; they review IRB
+          protocol approvals and consent scope documents, ask labs to confirm
+          dataset contents match those restrictions, and spot-check datasets for
+          metadata and processing history to authorize sharing.
+        concerns:
+          - Lab PIs cannot reliably answer whether a dataset is what they claim
+            it is—they don't know which pipeline version was used or whether
+            intermediate files got mixed in
+          - No systematic way to verify a lab's claim that 'this is the
+            preprocessed output from protocol X, pipeline version Y'—stewards
+            must take labs' word for it, which is risky
+          - Manual verification process is slow and requires asking around and
+            hoping the lab is right
+          - Spot-checking datasets by examining file names and metadata is
+            time-consuming and cannot be done as a deep audit every time
+          - Current process is ad-hoc, person-dependent, and slow—no formal
+            process exists
+        contradictions: []
+        waitingRoomItems:
+          - content: Platform should implement immutable provenance tracking so stewards can
+              query provenance and get a definitive answer in seconds instead of
+              asking around
+          - content: Need a formal, systematic compliance verification process to replace
+              the current ad-hoc approach
+        responseClass: answer
+    - id: stakeholder-dedup
+      value:
+        duplicateGroups:
+          - keepId: stakeholder_001
+            removeIds:
+              - stakeholder_002
+          - keepId: stakeholder_005
+            removeIds:
+              - stakeholder_007
+    - id: stakeholders-confirmation-r0
+      value: >-
+        That's comprehensive and accurate. One thing to clarify in my role: I'm
+        the **institutional data steward**, but I'm not the only one. There are
+        multiple people on my team doing this work, and we coordinate with
+        IRB/compliance officers—sometimes they catch things we miss, sometimes
+        we catch things they miss.
+
+
+        So when you say "institutional data governance teams" and later
+        elaborate my specific concerns, make sure it's clear that my perspective
+        is *one person on that team*. We have shared concerns (retention
+        tracking, audit logging, override authority) but individual stewards
+        might weight them differently depending on which labs or studies they
+        oversee.
+
+
+        Otherwise, this is right. Let's move on.
+    - id: stakeholders-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: Clarify that the institutional data steward perspective is
+          one person on a team of multiple stewards. The concerns about
+          retention tracking, audit logging, and override authority are shared
+          across the team, but individual stewards may weight them differently
+          based on their labs or studies. Make it clear this is one person's
+          perspective, not the entire team's uniform perspective.
+        targetId: stakeholder_005
+        responseClass: answer
+    - id: stakeholders-revision
+      value:
+        responseInterpretation: "The respondent confirmed the captured artifacts are
+          accurate and comprehensive. They clarified their specific role and
+          perspective: they are one institutional data steward among multiple
+          people on a team that coordinates with IRB/compliance officers. They
+          emphasized that while the team shares concerns about retention
+          tracking, audit logging, and override authority, individual stewards
+          may weight these concerns differently depending on which labs or
+          studies they oversee. They asked that the artifacts make clear this is
+          one person's perspective on an institutional data governance team, not
+          a single-person role."
+        role: institutional data steward responsible for audit and compliance
+          verification; one member of a coordinated team that works with
+          IRB/compliance officers and sometimes catches things the others miss,
+          and vice versa
+        concerns: []
+        contradictions: []
+        waitingRoomItems: []
+        responseClass: answer
+    - id: scope-seed-extraction
+      value:
+        inScope:
+          - description: "Provenance tracking system that captures full lineage: raw
+              acquisition → processing pipeline → parameters → final dataset"
+            relatedGoals:
+              - goal_001
+          - description: Consent compliance enforcement at dataset level with automatic
+              access control based on IRB protocol scope
+            relatedGoals:
+              - goal_002
+          - description: HPC cluster integration for automatic provenance capture without
+              forcing workflow changes
+            relatedGoals:
+              - goal_004
+          - description: Optional API for custom analysis workflows (non-HPC pipelines)
+            relatedGoals:
+              - goal_004
+          - description: Immutable versioned archive for published datasets with change
+              tracking and history preservation
+            relatedGoals:
+              - goal_001
+          - description: Institutional override authority for data governance teams to
+              enforce compliance when lab PIs are headed toward violations
+            relatedGoals:
+              - goal_002
+          - description: Queryable provenance system enabling stewards to verify dataset
+              lineage (consent protocol, acquisition parameters, pipeline
+              version) in seconds
+            relatedGoals:
+              - goal_001
+              - goal_002
+          - description: "Access audit trail: tracking who accessed datasets, when, and why
+              for breach investigation and regulator reporting"
+            relatedGoals:
+              - goal_002
+          - description: Retention date tracking and alerts for datasets approaching
+              archival risk or premature deletion
+            relatedGoals: []
+        outOfScope:
+          - description: De-identification verification for brain imaging data
+            reason: Falls under IRB/compliance officer responsibility (verification
+              workflow), not platform capability. Platform can store de-id
+              metadata but assessing adequacy is regulatory, not technical.
+            relatedGoals:
+              - goal_002
+          - description: Integration with LORIS or other existing lab-specific metadata
+              systems
+            reason: Scope candidates mention LORIS exists in some labs but integration is
+              not stated as a requirement—platform should handle heterogeneous
+              metadata sources, not adopt existing systems.
+            relatedGoals: []
+          - description: Replacing lab PI data access decision-making
+            reason: PIs retain autonomy to decide who accesses their data; platform enforces
+              compliance boundaries, not controls decisions.
+            relatedGoals:
+              - goal_002
+        ambiguous:
+          - description: "Perfection of provenance capture: waiting_005 states 'can't track
+              everything perfectly, but should capture what we can'—boundary
+              between what the platform guarantees vs. tolerates as gaps is
+              undefined"
+            relatedGoals:
+              - goal_001
+          - description: "Scope of HPC integration: is integration limited to job scheduler
+              + pipeline capture, or does it extend to raw data ingest from
+              acquisition hardware (fMRI, electrophysiology)?"
+            relatedGoals:
+              - goal_004
+          - description: "Handling inconsistent metadata from distributed sources: platform
+              must accept data from LORIS, file servers with inconsistent
+              structures, and email/Dropbox shares—level of metadata
+              normalization required is unclear"
+            relatedGoals:
+              - goal_001
+              - goal_002
+        drainedWaitingRoomIds:
+          - waiting_001
+          - waiting_003
+          - waiting_010
+          - waiting_011
+          - waiting_012
+          - waiting_013
+          - waiting_014
+    - id: scope-seed-present-r0
+      value: >-
+        Good breakdown. A few adjustments:
+
+
+        On (k)—LORIS integration should be **in scope**. Some labs already use
+        it, and we need data to be importable from LORIS into the new platform.
+        Not replacing LORIS, but researchers shouldn't have to manually export
+        and re-upload. Make it an import capability, not a replacement.
+
+
+        On (m)—the boundary on provenance gaps: we need to track **everything
+        that goes through the HPC cluster reliably**. Local workstation analyses
+        are best-effort—we capture what we can via optional APIs, but we don't
+        guarantee completeness there. That's the realistic split.
+
+
+        On (n)—HPC integration is **job scheduler + pipeline capture only**. Raw
+        data ingest from acquisition hardware is out of scope. That's a separate
+        problem (scanner integration, electrophysiology rig integration) that
+        we're not solving in v1.
+
+
+        On (o)—we need **basic metadata normalization** to make datasets
+        searchable and comparable, but we're not forcing labs to reformat
+        existing data. Accept messy metadata, normalize enough to query it.
+
+
+        Everything else looks right.
+    - id: scope-seed-classification-r0
+      value:
+        responseInterpretation: "The respondent approved most of the scope but made four
+          specific corrections: (1) LORIS integration should move from
+          out-of-scope to in-scope as an import capability, not replacement—some
+          labs already use it and need to import data without manual
+          export/re-upload. (2) Provenance tracking scope should be refined: HPC
+          cluster tracking is reliable and in-scope; local workstation analyses
+          are best-effort via optional APIs with no completeness guarantee. (3)
+          HPC integration should be narrowed to job scheduler and pipeline
+          capture only; raw data ingest from acquisition hardware (scanner,
+          electrophysiology rig) is out of scope as a separate v1 problem. (4)
+          Metadata handling: accept messy metadata and normalize enough to make
+          datasets searchable/comparable, but don't force labs to reformat
+          existing data."
+        confirmedInScope:
+          - scope_001
+          - scope_002
+          - scope_003
+          - scope_004
+          - scope_005
+          - scope_006
+          - scope_007
+          - scope_008
+          - scope_009
+        confirmedOutOfScope:
+          - scope_010
+          - scope_012
+        removedIds:
+          - scope_011
+        newItems:
+          - description: LORIS data import capability — enable researchers to import
+              datasets from LORIS into the platform without manual export and
+              re-upload
+            classification: in
+          - description: "Provenance tracking with differential reliability: HPC cluster
+              tracking is reliable and guaranteed; local workstation analyses
+              are captured via optional APIs on best-effort basis with no
+              completeness guarantee"
+            classification: in
+          - description: "HPC integration scope: job scheduler integration and pipeline
+              capture only; raw data ingest from acquisition hardware (scanner
+              integration, electrophysiology rig integration) is out of scope"
+            classification: in
+          - description: Basic metadata normalization for searchability and comparability
+              without forcing labs to reformat existing data; accept messy
+              metadata and normalize enough to query it
+            classification: in
+        waitingRoomItems: []
+        responseClass: answer
+    - id: scope-constraint-composition-r0
+      value:
+        question: What **hard limits** — timeline, budget, technical infrastructure, or
+          regulatory requirements — must the platform work within?
+        suggestions:
+          - Data must remain accessible for 10+ years to meet funder retention
+            requirements
+          - System must integrate with existing HPC cluster without requiring
+            researchers to change their analysis workflows
+          - IRB and institutional compliance rules must be enforced
+            automatically — manual verification cannot be the fallback
+    - id: scope-constraint-question-r0
+      value: >-
+        (a) and (b) are hard constraints. Add one more:
+
+
+        **Brain imaging files are massive.** NIfTI and DICOM files can be 50GB+
+        per imaging session. Storage and data transfer aren't trivial—the
+        platform needs to handle that scale without becoming a bottleneck. That
+        affects how we design versioning, how we store provenance metadata
+        separately from raw data, and whether we can reasonably expect
+        researchers to upload datasets through a web interface.
+
+
+        On (c)—it's more nuanced. We *need* automatic enforcement for obvious
+        violations (consent scope check, retention date check). But there will
+        be edge cases where a steward needs to make a judgment call. So it's
+        "automatic enforcement as the default, with override authority for
+        exceptions," not "zero manual involvement."
+
+
+        Timeline and budget—I don't have those constraints to give you. That's
+        above my pay grade.
+    - id: scope-constraint-extraction-r0
+      value:
+        responseInterpretation: Respondent confirmed (a) and (b) as hard constraints.
+          Added storage and data transfer as a hard constraint due to massive
+          brain imaging file sizes (50GB+ per session), which affects versioning
+          design, metadata storage strategy, and upload feasibility. On (c),
+          clarified that automatic enforcement is required for routine
+          violations (consent scope, retention dates) but stewards must retain
+          override authority for edge cases requiring judgment calls. Declined
+          to provide timeline and budget constraints, citing lack of authority
+          over those decisions.
+        constraints:
+          - description: Data must remain accessible for 10+ years to meet funder retention
+              requirements
+          - description: System must integrate with existing HPC cluster without requiring
+              researchers to change their analysis workflows
+          - description: Brain imaging files are massive—NIfTI and DICOM files can be 50GB+
+              per imaging session. Storage and data transfer must not become a
+              bottleneck. This affects versioning design, provenance metadata
+              storage strategy, and upload feasibility.
+          - description: Automatic enforcement required for obvious compliance violations
+              (consent scope check, retention date check)
+          - description: Data governance stewards must retain override authority to make
+              judgment calls on compliance edge cases
+        waitingRoomItems: []
+        responseClass: answer
+    - id: scope-contrast-0-composition-r0
+      value:
+        question: Should the platform guarantee complete provenance capture for all
+          analysis pipelines, or is capturing lineage from HPC workflows with
+          best-effort coverage for local analyses acceptable?
+        suggestions:
+          - Guarantee complete capture everywhere — every analysis pipeline must
+            feed provenance data to the platform, or we need to extend
+            integration beyond HPC
+          - Guarantee HPC capture, accept gaps for local workstations — stewards
+            can query HPC lineage with confidence, but local analyses are
+            documented on best-effort basis
+          - Accept strategic gaps — capture what we can reliably, and stewards
+            verify compliance using access audit trail plus whatever lineage we
+            have
+    - id: scope-contrast-0-question-r0
+      value: >-
+        It's (b). Guarantee HPC capture—that's where most of our heavy lifting
+        happens and where we can integrate with the scheduler. Local
+        workstations are a gap we have to accept.
+
+
+        But here's the nuance: when a researcher wants to **publish** a result
+        or **share** a dataset, they have to declare what pipeline was used. If
+        it came from HPC, we have the full lineage. If it came from local
+        analysis, the researcher documents it (or we don't let them publish
+        without documentation). Stewards still verify it matches the consent
+        scope, but we're not pretending we captured provenance we didn't.
+
+
+        So it's not just "best-effort"—it's "HPC is guaranteed, local is
+        documented-or-blocked."
+    - id: scope-contrast-0-extraction-r0
+      value:
+        responseInterpretation: "The respondent chose option (b): guarantee complete
+          provenance capture for HPC workflows where the scheduler enables
+          integration; accept best-effort coverage for local workstation
+          analyses. However, they added a critical enforcement mechanism: when
+          researchers publish results or share datasets, they must declare the
+          pipeline source. If HPC-originated, full lineage is available. If
+          local-originated, the researcher must document it or publication is
+          blocked. This transforms local analysis from passive best-effort to
+          active documented-or-denied."
+        classification: in
+        reason: ""
+        relatedGoals:
+          - goal_001
+          - goal_002
+          - goal_004
+        waitingRoomItems:
+          - content: When a researcher wants to publish a result or share a dataset, they
+              have to declare what pipeline was used
+          - content: If it came from local analysis, the researcher documents it (or we
+              don't let them publish without documentation)
+          - content: Stewards still verify it matches the consent scope, but we're not
+              pretending we captured provenance we didn't
+        responseClass: answer
+    - id: scope-contrast-1-composition-r0
+      value:
+        question: Should the platform integrate only with the **HPC job scheduler** for
+          pipeline capture, or extend to raw data ingest from acquisition
+          hardware like fMRI scanners and electrophysiology rigs?
+        suggestions:
+          - HPC integration only — capture pipelines running on the cluster;
+            researchers manually upload raw acquisition data to the platform
+          - HPC + hardware integration — automatically ingest raw data directly
+            from scanners and rigs, then track processing through the cluster
+          - HPC integration with optional hardware connectors — start with the
+            scheduler; add scanner/rig integration later if adoption shows
+            demand
+    - id: scope-contrast-1-question-r0
+      value: >-
+        It's (a). HPC integration only for v1.
+
+
+        Raw data ingest from scanners and rigs is a separate infrastructure
+        problem—each piece of hardware has different export formats, different
+        network constraints, different IRB sensitivities around where the data
+        lands. We're not solving that in the first version.
+
+
+        Researchers upload raw data manually to the platform (or it gets staged
+        on the file server first, then imported). Once it's in the platform, we
+        track what happens to it through the HPC pipeline. That's sufficient for
+        provenance and compliance purposes.
+
+
+        If we tried to do hardware integration now, we'd delay the whole project
+        and overcomplicate the initial scope.
+    - id: scope-contrast-1-extraction-r0
+      value:
+        responseInterpretation: HPC integration only for v1. Raw data ingest from
+          scanners and rigs is out of scope—it's a separate infrastructure
+          problem with distinct challenges (format variations, network
+          constraints, IRB sensitivities). Researchers upload raw data manually
+          or stage it on file server first, then import to platform. Once in
+          platform, provenance tracking captures pipeline processing. This scope
+          is sufficient for provenance and compliance. Hardware integration
+          would delay the project and overcomplicate v1.
+        classification: in
+        reason: ""
+        relatedGoals:
+          - goal_001
+          - goal_002
+          - goal_004
+        waitingRoomItems:
+          - content: "Raw data ingest from scanners and rigs deferred to future versions;
+              cited reasons: different export formats across hardware, different
+              network constraints per device, different IRB sensitivities around
+              data landing zones"
+          - content: "Manual upload workflow for raw data: researchers upload directly to
+              platform, or data staged on file server first then imported"
+        responseClass: answer
+    - id: scope-contrast-2-composition-r0
+      value:
+        question: When researchers bring data from LORIS, file servers, or email—should
+          the platform normalize all metadata to a standard structure, or accept
+          messy metadata and normalize only what's needed for querying?
+        suggestions:
+          - Normalize everything to a standard schema upfront—labs must reformat
+            their metadata before import
+          - Accept metadata as-is and normalize only the fields we query
+            (consent scope, pipeline version, dataset name)—labs don't need to
+            change their records
+          - "Hybrid: require normalization for compliance-critical fields (IRB
+            protocol, acquisition date) but accept anything for descriptive
+            metadata"
+    - id: scope-contrast-2-question-r0
+      value: >-
+        It's (c). We need **compliance-critical fields normalized**—IRB protocol
+        ID, consent scope, acquisition date, dataset version. Those have to be
+        structured and queryable because stewards rely on them for audit and
+        access control decisions.
+
+
+        Everything else—lab-specific notes, processing documentation, folder
+        naming conventions—we accept as-is. Labs already have inconsistent ways
+        of organizing that stuff, and forcing them to reformat is friction we
+        don't need.
+
+
+        So the import process validates and normalizes the critical fields,
+        rejects the import if those are missing or malformed, and stores
+        everything else as unstructured metadata. Stewards can still search on
+        the structured fields without labs having to do heavy lifting to clean
+        up their records.
+    - id: scope-contrast-2-extraction-r0
+      value:
+        responseInterpretation: Respondent chose option (c) — hybrid approach.
+          Compliance-critical fields (IRB protocol ID, consent scope,
+          acquisition date, dataset version) must be normalized to a standard
+          structure and are required for import; missing or malformed critical
+          fields cause import rejection. All other metadata (lab-specific notes,
+          processing documentation, folder naming conventions) is accepted as-is
+          and stored unstructured. Import process validates and normalizes
+          critical fields; stewards can query on structured fields without
+          requiring labs to reformat their existing records.
+        classification: in
+        reason: ""
+        relatedGoals:
+          - goal_001
+          - goal_002
+        waitingRoomItems: []
+        responseClass: answer
+    - id: scope-contradiction-check
+      value:
+        contradictions: []
+        orphans:
+          - scopeItemId: scope_009
+            description: Retention date tracking and alerts for datasets approaching
+              archival risk or premature deletion — no linked goal. Serves
+              operational compliance (constraint_001) but not goal_001,
+              goal_002, or goal_004.
+          - scopeItemId: scope_013
+            description: "LORIS data import capability — no linked goal. Supports workflow
+              integration (relates to goal_004 loosely) but not explicitly
+              connected. Consider: is this a convenience feature or a path to
+              goal_004's 'existing workflows'?"
+          - scopeItemId: scope_016
+            description: Basic metadata normalization for searchability and comparability —
+              no linked goal. Supports queryability and compliance verification
+              (goal_001, goal_002) but not explicitly connected. Consider
+              linking to goal_001 (provenance queryability) or goal_002
+              (compliance verification requires normalized fields).
+    - id: scope-dedup
+      value:
+        duplicateGroups:
+          - keepId: scope_001
+            removeIds:
+              - scope_007
+              - scope_014
+          - keepId: scope_003
+            removeIds:
+              - scope_015
+              - scope_018
+          - keepId: scope_002
+            removeIds:
+              - scope_006
+          - keepId: scope_005
+            removeIds:
+              - scope_009
+          - keepId: scope_016
+            removeIds:
+              - scope_019
+    - id: scope-confirmation-r0
+      value: >-
+        This is right. On those three notes flagged without explicit goal
+        links—they're all real, and they support the goals even if the
+        connection isn't obvious:
+
+
+        - **Retention tracking** supports goal_002 (compliance enforcement)—we
+        can't enforce retention policy without tracking dates.
+
+        - **LORIS import** supports goal_004 (integrate existing
+        workflows)—researchers using LORIS shouldn't have to manually
+        export/re-upload.
+
+        - **Metadata normalization** supports goal_001 and goal_002—stewards
+        can't query provenance or verify compliance if the data is too messy to
+        search.
+
+
+        So link them explicitly if you want, or leave them as supporting
+        infrastructure. Either way, they're in scope and necessary.
+
+
+        Let's move on.
+    - id: scope-confirmation-classification-0-r0
+      value:
+        approved: true
+        revisionRequested: null
+        targetId: null
+        responseClass: answer
+    - id: validation-wr-classify
+      value:
+        routed:
+          - id: waiting_005
+            target: assumption
+            content: Perfect provenance tracking is impossible; the system must capture what
+              it can and accept incomplete lineage in cases where documentation
+              is missing or unavailable.
+            reason: This is a foundational belief about system scope and success criteria.
+              It directly constrains how 'complete provenance' is measured and
+              what level of incompleteness is acceptable. It's testable (audit
+              trail will show gaps) and invariant (the project cannot succeed if
+              it requires perfection).
+          - id: waiting_006
+            target: residual
+            content: Some labs use LORIS for clinical imaging, which tracks metadata well
+            reason: Already captured in inScope as 'LORIS data import capability.' This is a
+              concrete example supporting that requirement, not a separate
+              artifact.
+          - id: waiting_007
+            target: finding
+            content: Institutional file servers store raw data with inconsistent folder
+              structures, creating ambiguity in data lineage and no standardized
+              way to map files to provenance metadata.
+            reason: This is a gap / quality observation. It describes a current pain point
+              (inconsistent structure blocks lineage tracing) that the system
+              must handle. Relevant to metadata normalization and ingest
+              workflow design.
+          - id: waiting_008
+            target: finding
+            content: Electrophysiology data shared via email or Dropbox often includes
+              inaccurate or stale README files, making provenance unreliable
+              without independent verification.
+            reason: This is a risk and quality observation. It identifies a source of
+              provenance corruption and highlights why passive best-effort
+              capture is insufficient—external documentation cannot be trusted.
+              Supports the enforcement mechanism in waiting_010.
+          - id: waiting_009
+            target: residual
+            content: One-time setup cost for scheduler integration
+            reason: Too vague to classify and already implicit in inScope ('HPC cluster
+              integration'). The cost is a implementation detail, not a
+              requirement artifact or assumption about project success.
+          - id: waiting_010
+            target: residual
+            content: When a researcher wants to publish a result or share a dataset, they
+              have to declare what pipeline was used
+            reason: Already fully captured in inScope as the documented-or-denied
+              enforcement mechanism. This is the implementation rule, not a new
+              artifact.
+          - id: waiting_011
+            target: residual
+            content: If it came from local analysis, the researcher documents it (or we
+              don't let them publish without documentation)
+            reason: Already fully captured in inScope as the enforcement gate ('publication
+              is blocked' if local analysis is undocumented). This restates the
+              same rule.
+          - id: waiting_012
+            target: assumption
+            content: Steward verification of consent scope is sufficient; the system does
+              not guarantee end-to-end provenance for manual local analysis,
+              only that what was declared matches reality and consent is in
+              scope.
+            reason: "This is a foundational belief about where responsibility splits:
+              platform captures what it can, stewards verify declarations, and
+              the system accepts that some gaps will exist. It's invariant (the
+              project cannot enforce what was never captured) and testable
+              (audit shows who verified what)."
+          - id: waiting_013
+            target: finding
+            content: "Raw data ingest from scanners and rigs is deferred to future versions.
+              Current blockers: heterogeneous export formats across hardware,
+              network constraints per device, IRB sensitivities around data
+              landing zones."
+            reason: This is a gap and risk observation. It identifies scope boundaries (v1
+              does not cover direct scanner ingest) and documents the technical
+              and regulatory reasons. Relevant for roadmap planning and
+              understanding ingest workflow constraints.
+          - id: waiting_014
+            target: residual
+            content: "Manual upload workflow for raw data: researchers upload directly to
+              platform, or data staged on file server first then imported"
+            reason: This describes the current ingest workflow (workaround for deferred
+              scanner integration). It's too vague and already implicit in
+              inScope ('basic metadata normalization'). It's a detail of the
+              initial ingest interface, not a requirement artifact.
+    - id: validation-consistency-check
+      value:
+        contradictions:
+          - description: Constraint_001 (10+ year accessibility) conflicts with
+              constraint_003 (massive file sizes as bottleneck). Versioning
+              design must support immutable, versioned archive (in-scope) while
+              keeping 10+ years of historical versions accessible—this directly
+              contradicts the stated concern that 'Storage...must not become a
+              bottleneck.' No mitigation strategy exists in goals, scope, or
+              assumptions. Either retention window narrows, versioning strategy
+              changes (e.g., only latest + published versions kept online), or
+              storage cost acceptance must be explicit.
+            artifacts:
+              - "constraint_001: Data must remain accessible for 10+ years"
+              - "constraint_003: Storage and data transfer must not become a
+                bottleneck"
+              - "inScope: Immutable versioned archive for published datasets
+                with change tracking and history preservation"
+          - description: Assumption_002 states 'Steward verification of consent scope is
+              sufficient; the system does not guarantee end-to-end provenance
+              for manual local analysis.' This contradicts goal_001 (Enable
+              reproducible research through *complete* provenance tracking) when
+              applied to local analysis. The goal promises completeness; the
+              assumption accepts incompleteness for local workflows. In-scope
+              item 9 (documented-or-denied enforcement) bridges this but adds
+              friction that contradicts goal_004 (integrate without forcing
+              migration). The scope item enforces what goal_004 promised to
+              avoid.
+            artifacts:
+              - "goal_001: Complete provenance tracking"
+              - "goal_004: Integrate without forcing migration"
+              - "assumption_002: System does not guarantee end-to-end provenance
+                for manual local analysis"
+              - "inScope item 9: Researchers must declare pipeline source or
+                publication is blocked"
+          - description: "Stakeholder_001 (neuroscience researchers as institutional data
+              steward) and stakeholder_006 (lab PIs as data owners) have
+              conflicting authority scopes. Stakeholder_001 concerns include
+              'Lab PIs control their own data access but can accidentally
+              violate IRB restrictions or retention policy; data stewards need
+              authority to step in and enforce compliance.' This directly
+              contradicts the stated purpose of goal_002 (enforce compliance)
+              and the out-of-scope commitment: 'Replacing lab PI data access
+              decision-making / PIs retain autonomy to decide who accesses their
+              data.' The platform cannot both guarantee automatic compliance
+              enforcement and preserve PI autonomy when PIs' decisions violate
+              constraints. Constraint_005 (stewards retain override authority)
+              partially resolves this but introduces approval overhead that
+              conflicts with goal_002's promise ('Reduced friction for
+              sharing')."
+            artifacts:
+              - "stakeholder_001 concerns: stewards need authority to enforce
+                compliance over PI decisions"
+              - "stakeholder_006 role: PIs decide who accesses their data"
+              - "goal_002 measurement: Reduced friction for sharing"
+              - "outOfScope: Replacing lab PI data access decision-making"
+              - "constraint_005: Stewards must retain override authority"
+    - id: validation-summary-present-r0
+      value: >-
+        This is comprehensive, but I need to flag the conflicts directly.
+
+
+        On the **validation finding about goal_001 vs. assumption_002**:
+        goal_001 says "complete provenance tracking," but we can't guarantee
+        that for local analysis. That's a real tension. Either we narrow
+        goal_001 to say "complete for HPC, documented for local," or we accept
+        that the goal is aspirational and the platform does its best. I'd say
+        narrow goal_001—be honest about what we're guaranteeing.
+
+
+        On **constraint_001 vs. constraint_003** (10+ year retention vs. storage
+        as bottleneck): we're going to have to choose. Either we accept that
+        storage costs will grow, or we implement tiering—keep recent versions +
+        published versions online, archive older snapshots. I'd lean toward
+        tiering with archive access, but that's a design decision, not something
+        I can resolve in this conversation.
+
+
+        On **goal_002 vs. out-of-scope on PI autonomy**: this is the real
+        friction. We want automatic compliance enforcement *and* PI control.
+        Constraint_005 (steward override) is the answer, but it adds overhead.
+        I'm comfortable with that—PIs keep autonomy, stewards have emergency
+        override. That's the trade-off. But document it explicitly so there's no
+        false promise about "frictionless" sharing when compliance violations
+        are involved.
+
+
+        The documented-or-denied enforcement in scope item 9 isn't a breaking
+        conflict with goal_004—it's a reasonable gate. Researchers already
+        document their pipelines; we're just making it mandatory in the
+        platform. That's not a major workflow change.
+
+
+        So: fix goal_001 wording, decide on tiering strategy, and make clear
+        that "reduced friction" applies to *legitimate* sharing, not sharing
+        that violates IRB restrictions. Everything else holds.
+    - id: validation-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: "Multiple revisions requested: (1) Narrow goal_001 wording to
+          reflect realistic provenance guarantees—'complete for HPC, documented
+          for local' rather than absolute completeness; (2) Decide on storage
+          tiering strategy (keep recent + published online, archive older
+          snapshots) to address constraint_001 vs constraint_003 tension; (3)
+          Document the trade-off in goal_002 explicitly—'reduced friction'
+          applies only to legitimate sharing; compliance violations still
+          require steward override (constraint_005) and documentation, which
+          adds overhead; (4) Clarify that scope item 9 (documented-or-denied
+          enforcement for local analysis) is a reasonable gate, not a breaking
+          conflict with goal_004."
+        targetId: goal_001, constraint_001, constraint_003, goal_002, scope_item_9
+        responseClass: answer
+title: platform for neuroscience researchers to store, share, and analyze brain
+  imaging data—things like fMRI scans, electrophysiology recordings, and the
+  datasets we derive from them
+userConcern: "Multiple revisions requested: (1) Narrow goal_001 wording to
+  reflect realistic provenance guarantees—'complete for HPC, documented for
+  local' rather than absolute completeness; (2) Decide on storage tiering
+  strategy (keep recent + published online, archive older snapshots) to address
+  constraint_001 vs constraint_003 tension; (3) Document the trade-off in
+  goal_002 explicitly—'reduced friction' applies only to legitimate sharing;
+  compliance violations still require steward override (constraint_005) and
+  documentation, which adds overhead; (4) Clarify that scope item 9
+  (documented-or-denied enforcement for local analysis) is a reasonable gate,
+  not a breaking conflict with goal_004."

@@ -1,0 +1,2402 @@
+sessionId: sess_2026-05-15_p92k08
+createdAt: 2026-05-15T08:29:19.490Z
+lastModified: 2026-05-15T08:39:43.365Z
+workflow:
+  status: completed
+  entries:
+    - id: opening-greet-r0
+      value: >-
+        I appreciate the setup, but I need to be direct: I'm playing a federal
+        financial assistance stakeholder in an interview about a modernization
+        project that's already defined. I'm not the one with a vague idea
+        needing elicitation.
+
+
+        If you're running a scenario or simulation where I'm a subject matter
+        expert being interviewed about this system, I'm ready to answer
+        questions about grants, loans, data validation, agency workflows, public
+        reporting, or integration points with SAM, FPDS, and USAspending.gov.
+
+
+        What would you like to know?
+    - id: opening-greet-extraction-r0
+      value:
+        purpose: Modernization project involving federal financial assistance systems
+        stakeholders:
+          - federal financial assistance stakeholder
+          - grants administrators
+          - loans administrators
+          - data validation teams
+          - agency workflow operators
+          - public reporting consumers
+          - system integration teams
+        domainHints:
+          - federal financial assistance
+          - grants
+          - loans
+          - data validation
+          - agency workflows
+          - public reporting
+          - SAM integration
+          - FPDS integration
+          - USAspending.gov integration
+          - modernization
+        responseClass: answer
+    - id: opening-brownfield-screen
+      value:
+        greenfieldConfidence: 2
+    - id: opening-brownfield-r0
+      value: >-
+        I don't have existing code or docs to reference — I'm a stakeholder, not
+        the build team. I work with the current landscape of systems that'll
+        feed into or consume from this new one.
+
+
+        What I know operationally: FABS (the current submission pipeline) is
+        what agencies use to report assistance data, and it feeds into
+        USAspending.gov for public reporting. FPDS handles procurement
+        separately. SAM is where entities register and get validated.
+
+
+        The new system replaces FABS and has to play nice with all three. That's
+        the brownfield constraint — not greenfield.
+
+
+        Ready for your questions.
+    - id: opening-brownfield-extraction-r0
+      value:
+        isBrownfield: true
+        sourceIndicators:
+          - FABS (current submission pipeline)
+          - USAspending.gov
+          - FPDS (procurement system)
+          - SAM (entity registration and validation)
+        responseClass: answer
+        extractedContent:
+          operationalContext: FABS is the current submission pipeline agencies use to
+            report assistance data. It feeds into USAspending.gov for public
+            reporting. FPDS handles procurement separately. SAM is where
+            entities register and get validated.
+          systemScope: The new system replaces FABS and has to play nice with all three
+            existing systems.
+          constraint: Brownfield constraint — not greenfield. Must integrate with existing
+            systems.
+          respondentRole: Stakeholder working with the current landscape of systems that
+            will feed into or consume from the new one. Not part of the build
+            team.
+          respondentHasExistingDocs: false
+    - id: opening-brownfield-extraction
+      value:
+        items:
+          - FABS (Federal Assistance Awards and Breakdown System) is the current
+            submission pipeline for federal financial assistance data
+          - USAspending.gov is a public-facing reporting system that consumes
+            federal financial assistance data
+          - FPDS (Federal Procurement Data System) is the federal procurement
+            system that tracks contract awards
+          - SAM (System for Award Management) is the entity registration and
+            validation system for federal assistance recipients
+          - The modernization project must integrate with SAM for entity
+            validation and registration
+          - The modernization project must integrate with FPDS for procurement
+            data alignment
+          - The modernization project must support USAspending.gov as a
+            downstream consumer of published data
+          - FABS is the current submission pipeline that will be replaced or
+            modernized
+          - Data validation is a critical function in the current assistance
+            workflow
+          - Agency workflow operators depend on the assistance submission system
+          - Public reporting consumers require access to federal assistance data
+            through USAspending.gov
+          - Grants administrators submit financial assistance data through the
+            current FABS pipeline
+          - Loans administrators submit financial assistance data through the
+            current FABS pipeline
+          - The system must maintain data validation capabilities for accuracy
+            and compliance
+          - System integration teams require clear interfaces for connecting to
+            modernized components
+    - id: opening-summary-r0
+      value: >-
+        Yeah, that's the landscape. Though I'd separate out a couple things:
+
+
+        **Agencies submitting data** — they're the ones actually filling out
+        forms or pushing CSVs or calling APIs. They range from technical teams
+        to non-technical staff doing manual uploads. That's the pain point on
+        the input side.
+
+
+        **Public consumers** — folks checking USAspending.gov to see where
+        federal money went. They don't care how the sausage gets made.
+
+
+        **Us internally** — grant and loan program officers, data validation
+        teams, compliance folks making sure submissions meet DATA Act rules.
+        We're the ones who have to live with whatever gets built.
+
+
+        The integration teams matter too, yeah. But the real crux is: agencies
+        need a better way to submit, we need better validation and audit trails,
+        and the public needs accurate reporting without waiting weeks for data
+        to flow through the old system.
+
+
+        Does that match how you're thinking about the stakeholders?
+    - id: opening-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: "Separate stakeholders into distinct categories: (1) Agencies
+          submitting data — technical and non-technical staff filling forms,
+          pushing CSVs, calling APIs; (2) Public consumers — folks checking
+          USAspending.gov, don't care about internal process; (3) Internal staff
+          — grant and loan program officers, data validation teams, compliance
+          folks ensuring DATA Act compliance. Integration teams are secondary.
+          Core needs: agencies need better submission method, internal teams
+          need better validation and audit trails, public needs accurate
+          reporting without weeks of delay."
+        targetId: stakeholder_002, stakeholder_003, stakeholder_004, stakeholder_005,
+          stakeholder_006, stakeholder_007
+        responseClass: answer
+    - id: purpose-seed-extraction
+      value:
+        purpose: Modernize federal financial assistance systems by replacing or
+          upgrading the FABS submission pipeline while maintaining integration
+          with SAM (entity validation), FPDS (procurement alignment), and
+          USAspending.gov (public reporting)
+        advantage: null
+        measurement: null
+        drainedWaitingRoomIds:
+          - waiting_001
+          - waiting_005
+          - waiting_006
+          - waiting_007
+          - waiting_008
+    - id: purpose-initial-extraction
+      value:
+        purpose: null
+        advantage: agencies need a better way to submit, we need better validation and
+          audit trails, and the public needs accurate reporting without waiting
+          weeks for data to flow through the old system
+        measurement: null
+        responseInterpretation: "The respondent separated three distinct stakeholder
+          groups with different needs: agencies submitting data (ranging from
+          technical teams to non-technical staff doing manual uploads) face pain
+          on the input side; public consumers checking USAspending.gov care
+          about accurate reporting without delays, not implementation details;
+          internally, grant and loan program officers, data validation teams,
+          and compliance staff must ensure submissions meet DATA Act rules and
+          live with whatever gets built. Integration teams matter but are
+          secondary to the core crux: agencies need better submission methods,
+          internal teams need better validation and audit trails, and the public
+          needs accurate reporting without multi-week delays in the old system."
+        contradictions: []
+        responseClass: answer
+    - id: purpose-measurement-0-composition-r0
+      value:
+        question: How would you know if this modernized **submission system** actually
+          succeeded?
+        suggestions:
+          - Agencies submit data 50% faster with fewer validation errors caught
+            after submission
+          - The audit trail shows who changed what and when, and we can trace
+            discrepancies back to source
+          - USAspending.gov publishes data within 2 days instead of 2-3 weeks
+    - id: purpose-measurement-0-question-r0
+      value: >-
+        Good question. Here's what matters to me:
+
+
+        **Agencies stop getting stuck in rejection loops.** Right now, FABS
+        rejects a batch, they fix it, resubmit, hit a different validation error
+        they didn't know about. We need: clear error messages, upfront
+        validation so they know what's wrong before they submit, and fewer
+        surprises on the back end.
+
+
+        **We can actually audit what happened.** When a submission gets
+        corrected or certified, I need to know who did it, when, what changed,
+        and why. Right now that trail is fuzzy. If there's a discrepancy later,
+        I can't trace it back to the agency or to a specific person's action.
+
+
+        **Data flows to USAspending.gov without manual handoffs.** The current
+        system requires someone to babysit the pipeline between FABS and the
+        public site. If the new system publishes automatically once submissions
+        are validated and certified, that's a win.
+
+
+        And yeah — if agencies can submit via API *or* CSV upload depending on
+        their technical capability, instead of forcing everyone into one
+        channel, we see faster adoption and fewer workarounds.
+
+
+        The speed-of-publication thing (weeks to days) matters, but it's
+        downstream of getting submission right. Fix the submission experience
+        first, and the rest gets easier.
+    - id: purpose-measurement-0-extraction-r0
+      value:
+        purpose: null
+        advantage: null
+        measurement: Agencies stop getting stuck in rejection loops with clear error
+          messages and upfront validation so they know what's wrong before they
+          submit. When a submission gets corrected or certified, know who did
+          it, when, what changed, and why — the audit trail must be traceable
+          back to the agency or to a specific person's action. Data flows to
+          USAspending.gov without manual handoffs; the system publishes
+          automatically once submissions are validated and certified. Agencies
+          can submit via API or CSV upload depending on their technical
+          capability, enabling faster adoption and fewer workarounds. Speed of
+          publication from weeks to days matters but is downstream of getting
+          submission right.
+        responseInterpretation: "The respondent prioritized four success criteria: (1)
+          rejection-loop elimination — clear upfront validation and error
+          messages so agencies know what's wrong before submission, not after
+          hitting different errors on resubmit; (2) full auditability —
+          traceable records of who changed what, when, and why for each
+          submission correction or certification, enabling discrepancy
+          investigation; (3) automated publication — data flows from FABS to
+          USAspending.gov without manual pipeline babysitting, publishing
+          automatically post-validation; (4) submission-channel flexibility —
+          support both API and CSV upload so agencies adopt faster based on
+          their technical capability. The respondent reframed the
+          publication-speed suggestion (weeks to days) as downstream — fixing
+          the submission experience is the prerequisite that makes the rest
+          easier."
+        contradictions: []
+        responseClass: answer
+    - id: purpose-confirmation-r0
+      value: >-
+        That's solid. One thing I'd sharpen:
+
+
+        On the audit trail — it's not just "know who did it." We have a
+        regulatory requirement that every submission, correction, and
+        certification action gets logged with user identity and timestamp, and
+        that log has to be immutable. So it's not optional nice-to-have, it's
+        compliance. That might matter for how the team thinks about the
+        architecture.
+
+
+        Also add: **Agencies have 30 days to fix rejected submissions before
+        public reporting deadlines hit.** Right now that timeline is tight, and
+        if the system doesn't get corrections turned around fast, we miss
+        statutory deadlines. So turnaround time on validation feedback isn't
+        just convenience — it's a hard constraint.
+
+
+        Everything else tracks.
+    - id: purpose-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: "Audit trail requirement is not optional/nice-to-have — it is
+          a regulatory/compliance mandate requiring immutable logging of every
+          submission, correction, and certification action with user identity
+          and timestamp. Also add: agencies have 30 days to fix rejected
+          submissions before statutory reporting deadlines hit; turnaround time
+          on validation feedback is a hard constraint, not convenience."
+        targetId: measurement
+        responseClass: answer
+    - id: purpose-revision
+      value:
+        purpose: null
+        advantage: null
+        measurement: "Audit trail requirement: every submission, correction, and
+          certification action must be logged with user identity and timestamp,
+          and that log must be immutable — this is a regulatory compliance
+          requirement, not optional. Additionally, agencies have 30 days to fix
+          rejected submissions before public reporting deadlines hit; turnaround
+          time on validation feedback is a hard constraint tied to statutory
+          deadlines, not just convenience."
+        responseInterpretation: "The respondent affirmed the existing captured content
+          ('Everything else tracks') but sharpened two critical constraints: (1)
+          The audit trail is mandatory compliance, not a nice-to-have feature —
+          it requires immutable logging of user identity and timestamp for every
+          submission, correction, and certification action, and this matters for
+          architecture decisions; (2) The 30-day timeline for agencies to fix
+          rejected submissions before statutory reporting deadlines creates a
+          hard constraint on validation feedback turnaround, not merely a
+          convenience."
+        contradictions: []
+        responseClass: answer
+    - id: goal-seed-extraction
+      value:
+        goals:
+          - title: Enable agencies to resolve validation errors within statutory deadlines
+            description: Agencies receive validation feedback fast enough to correct
+              submissions and meet the 30-day deadline before public reporting
+              windows close. The system prioritizes rapid error detection and
+              clear remediation guidance over slow batch processing.
+            rationale: The measurement constraint ties turnaround time directly to
+              regulatory deadlines. Current slow feedback loops force agencies
+              to miss statutory windows. This goal captures the operational
+              outcome needed to satisfy the compliance requirement.
+          - title: Create an immutable audit trail for all submission lifecycle events
+            description: Every submission, correction, and certification action is logged
+              with user identity, timestamp, and action type. The log is
+              tamper-proof and queryable by auditors without requiring system
+              access or database snapshots.
+            rationale: Measurement specifies immutability as a regulatory compliance
+              requirement, not convenience. This goal separates the audit
+              capability from the submission pipeline itself — it's an outcome
+              that serves both internal validation teams and external oversight.
+          - title: Establish standardized integration contracts for SAM, FPDS, and
+              USAspending.gov
+            description: System integration teams have clear, documented APIs and data
+              contracts for entity validation (SAM), procurement alignment
+              (FPDS), and public data export (USAspending.gov). Integration
+              failures are detectable without manual intervention.
+            rationale: Purpose lists three systems that must remain integrated during
+              modernization. Current context shows integration teams as a
+              stakeholder but their success criteria are unstated. This goal
+              captures what must be true for the modernization to preserve—not
+              just maintain—existing integration paths.
+        drainedWaitingRoomIds:
+          - waiting_004
+          - waiting_014
+          - waiting_015
+    - id: goal-seed-present-r0
+      value: >-
+        Those three are good. I'd add one more:
+
+
+        **Support both API and CSV submission workflows without forcing agencies
+        into a single channel.** Right now we're treating technical and
+        non-technical submitters the same way, and it doesn't work. Some
+        agencies have the chops to integrate with an API; others need to upload
+        a file and get human feedback. The system has to handle both paths
+        cleanly, or we'll see workarounds and delays.
+
+
+        On goal (a) — yeah, that's right, but I want to flag something: entity
+        validation through SAM can take up to 48 hours for new registrations.
+        That's a blocking dependency we can't speed up. So when you're thinking
+        about rapid error detection and remediation, keep in mind that some
+        validation steps aren't in our control.
+
+
+        Otherwise those three track. They're the big moves.
+    - id: goal-seed-classification-r0
+      value:
+        responseInterpretation: "The respondent confirmed the three presented goals as
+          correct and significant. They added a fourth goal about supporting
+          both API and CSV submission workflows to accommodate agencies with
+          different technical capabilities. They also flagged a constraint: SAM
+          entity validation can take up to 48 hours for new registrations and is
+          outside the system's control, which affects goal_001's timeline
+          assumptions."
+        confirmedGoalIds:
+          - goal_001
+          - goal_002
+          - goal_003
+        removedGoalIds: []
+        newGoals:
+          - title: Support both API and CSV submission workflows
+            description: Enable agencies to submit through either API integration (for
+              technically capable organizations) or file upload (for
+              non-technical submitters) without forcing all agencies into a
+              single channel. The system must handle both paths cleanly to
+              prevent workarounds and delays.
+        waitingRoomItems:
+          - content: Entity validation through SAM can take up to 48 hours for new
+              registrations. That's a blocking dependency we can't speed up.
+        responseClass: answer
+    - id: goal-sort
+      value:
+        rankedGoalIds:
+          - goal_004
+          - goal_001
+          - goal_003
+          - goal_002
+    - id: goal-refinement-goal_004-clarify-0-composition-r0
+      value:
+        question: When you say agencies need to submit financial data through both API
+          and CSV, what would each submission path actually do?
+        suggestions:
+          - Grants administrators use CSV uploads for bulk corrections monthly;
+            loans teams use the API to push data continuously as payment
+            transactions occur.
+          - CSV for smaller agencies without technical staff; API for large
+            agencies integrating FABS into their existing financial systems.
+          - Both paths validate against the same rules and produce the same
+            audit trail, but CSV is a one-off file upload while API supports
+            real-time integrations.
+    - id: goal-refinement-goal_004-clarify-0-question-r0
+      value: >-
+        It's closer to (b), but with a wrinkle.
+
+
+        **CSV path**: Smaller agencies, regional offices, maybe grant managers
+        who don't have a dedicated IT team. They upload a file, get told what's
+        wrong, fix it locally, upload again. Human-readable feedback. They might
+        do this monthly or quarterly depending on their grant cycle.
+
+
+        **API path**: Larger agencies or ones with mature financial systems.
+        They integrate directly — could be real-time as transactions happen, or
+        daily batch syncs from their accounting system. Less friction, fewer
+        manual steps.
+
+
+        But here's the thing — both have to validate against the *same* rules
+        and produce the same audit trail. I don't want two different validation
+        engines. And both need to handle the same correction workflows. If an
+        API submission gets rejected, the agency needs clear feedback about what
+        to fix, just like a CSV user would.
+
+
+        The difference is operational, not technical. One's interactive (upload,
+        feedback, retry), one's programmatic (push, callback, update). Same
+        underlying validation and certification logic.
+
+
+        Does that land?
+    - id: goal-refinement-goal_004-clarify-0-extraction-r0
+      value:
+        responseInterpretation: "The respondent endorses option (b) with clarification:
+          CSV path serves smaller agencies, regional offices, and grant managers
+          without dedicated IT staff who upload files, receive human-readable
+          feedback, fix locally, and re-upload on monthly or quarterly cycles.
+          API path serves larger agencies or those with mature financial systems
+          that integrate directly, supporting real-time transaction pushes or
+          daily batch syncs from accounting systems. The critical constraint is
+          that both paths must validate against identical rules, produce the
+          same audit trail, and handle the same correction workflows. The
+          operational difference is interactive (upload, feedback, retry) versus
+          programmatic (push, callback, update), but the underlying validation
+          and certification logic must be unified. When API submissions are
+          rejected, agencies need the same clear feedback as CSV users."
+        title: null
+        description: Support both API and CSV submission workflows — CSV for smaller
+          agencies without dedicated IT, interactive upload/feedback/retry cycle
+          on monthly or quarterly schedule; API for larger agencies with mature
+          systems, supporting real-time or daily batch integration. Both
+          validate against identical rules, produce identical audit trails,
+          handle identical correction workflows. Operational difference is
+          interactive versus programmatic; technical validation layer is
+          unified.
+        rationale: Agencies operate with different technical maturity levels and
+          submission cadences. CSV addresses operational constraints of
+          smaller/regional teams without forcing them into API adoption; API
+          removes friction for agencies with existing financial system
+          integration. Unified validation and audit trail prevent regulatory
+          divergence and operational inconsistency.
+        contradictions: []
+        waitingRoomItems:
+          - content: Both paths must validate against the same rules and produce the same
+              audit trail — no separate validation engines
+          - content: Both paths must support correction workflows with clear feedback on
+              rejections
+          - content: CSV submission feedback is human-readable
+          - content: CSV submissions occur on monthly or quarterly schedule depending on
+              grant cycle
+          - content: API supports real-time submissions as transactions occur or daily batch
+              syncs from accounting systems
+        responseClass: answer
+    - id: goals-confirmation-r0
+      value: >-
+        That's sharp. I'd add one more thing to goal #1 — the validation rules
+        themselves change with each fiscal year per DATA Act compliance. So
+        "rapid error detection" has to account for the fact that what's valid in
+        FY25 might not be valid in FY26.
+
+
+        Agencies need to know *which version* of the rules they're validating
+        against at submission time, and we need to keep that versioned so
+        submissions validated under FY25 rules stay valid even after FY26 rules
+        go live. Otherwise we'll get agencies complaining their data passed
+        validation in September but fails in October because the rules changed.
+
+
+        That's a lurking constraint that affects how you architect the
+        validation engine.
+
+
+        Otherwise yeah, those four goals work.
+    - id: goals-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: "Goal #1 must account for rule versioning across fiscal years
+          per DATA Act compliance. Validation rules change annually (e.g., valid
+          in FY25 might not be valid in FY26). Agencies need to know which
+          version of rules they're validating against at submission time. The
+          system must keep rules versioned so submissions validated under FY25
+          rules remain valid after FY26 rules go live. Without this, agencies
+          will have submissions that passed validation in September but fail in
+          October when rules change."
+        targetId: goal_001
+        responseClass: answer
+    - id: goals-revision
+      value:
+        responseClass: answer
+        responseInterpretation: "The respondent affirmed the four goals but identified a
+          critical constraint for goal #1: validation rules change annually per
+          DATA Act compliance. Agencies must know which rule version they
+          validated against at submission time. The system must version rules so
+          submissions validated under FY25 rules remain valid even after FY26
+          rules take effect. Without this, agencies will experience validation
+          failures due to rule changes after initial acceptance, creating
+          compliance and operational friction."
+        title: null
+        description: null
+        rationale: "Validation rule versioning is a lurking constraint that affects
+          validation engine architecture. It's not optional—it's regulatory,
+          tied to DATA Act compliance and the statutory deadline pressure
+          already captured in goal #1."
+        contradictions: []
+        waitingRoomItems:
+          - content: Validation rules must be versioned by fiscal year per DATA Act
+              compliance; submissions must record which rule version they
+              validated against; rules from prior fiscal years must remain
+              immutable and applicable to submissions from that year even after
+              new rule versions go live
+    - id: stakeholder-seed-extraction
+      value:
+        stakeholders:
+          - name: USAspending.gov reporting system operators
+            type: secondary
+          - name: SAM (entity validation) maintainers
+            type: external
+          - name: FPDS (Federal Procurement Data System) integration teams
+            type: external
+          - name: Federal auditors / compliance reviewers
+            type: secondary
+          - name: Accounting system vendors (agency partners)
+            type: external
+        drainedWaitingRoomIds:
+          - waiting_002
+          - waiting_003
+          - waiting_011
+          - waiting_014
+          - waiting_015
+          - waiting_020
+    - id: stakeholder-review-present-r0
+      value: >-
+        This is pretty comprehensive. A couple tweaks:
+
+
+        **Remove or demote (f) — public reporting consumers.** They're end users
+        of USAspending.gov, but they're not stakeholders in *building* this
+        system. They care about the data being there and being accurate, but
+        they're not in the room making decisions. They're the beneficiary, not
+        the stakeholder.
+
+
+        **Add: agency data submitters as a distinct group from (e) agency
+        workflow operators.** Operators might be IT directors or data governance
+        folks. Submitters are the people actually filling out forms or uploading
+        files — grant managers, finance staff, regional coordinators. They have
+        different pain points and different levels of technical sophistication.
+        They're the ones who live with whether CSV upload or API integration
+        works for them.
+
+
+        **On (i) SAM maintainers — flag that they're a constraint, not a
+        collaborator.** We integrate with SAM, we don't control it. Entity
+        validation can take 48 hours. That's a dependency we have to design
+        around, but they're not a stakeholder in our project decisions.
+
+
+        Everything else tracks. Auditors and compliance folks matter — they're
+        the ones checking whether our audit trail actually works.
+    - id: stakeholder-review-classification-r0
+      value:
+        responseInterpretation: "The respondent critiqued the stakeholder list with four
+          specific structural changes: (1) remove or demote 'public reporting
+          consumers' (stakeholder_006) because they are end users/beneficiaries
+          of the data, not decision-makers in building the system; (2) split
+          'agency workflow operators' (stakeholder_005) into two distinct groups
+          — operators (IT directors, data governance) and submitters (grant
+          managers, finance staff, regional coordinators) who have different
+          pain points and technical sophistication; (3) reframe 'SAM
+          maintainers' (stakeholder_009) as a constraint/dependency rather than
+          a collaborator, since integration is one-directional and entity
+          validation timelines (48 hours) are design constraints, not
+          negotiable; (4) affirmed that auditors and compliance reviewers matter
+          as stakeholders because they validate the audit trail implementation."
+        updatedTypes:
+          - id: stakeholder_009
+            type: external
+        removedIds:
+          - stakeholder_006
+        newStakeholders:
+          - name: agency data submitters
+            type: primary
+        responseClass: answer
+    - id: stakeholder-respondent-present-r0
+      value: >-
+        I'm a **federal financial assistance stakeholder** — broadly speaking,
+        someone who oversees the grants and loans portfolio and cares whether
+        the system works operationally and meets compliance requirements.
+
+
+        But I've got visibility into the data validation side and the submission
+        workflows. So I'm speaking from that vantage point — not as a pure
+        policy person, but someone who has to live with the day-to-day friction
+        when submissions fail or audits go sideways.
+    - id: stakeholder-respondent-present-extraction-r0
+      value:
+        responseInterpretation: The respondent identifies as a federal financial
+          assistance stakeholder with oversight of grants and loans portfolio,
+          responsible for operational and compliance outcomes. They have
+          visibility into data validation and submission workflows, positioning
+          them between policy and day-to-day operational friction. They
+          experience the impact of submission failures and audit issues
+          directly.
+        respondentId: stakeholder_001
+        responseClass: answer
+    - id: stakeholder-sort-primary
+      value:
+        rankedStakeholderIds:
+          - stakeholder_013
+          - stakeholder_001
+          - stakeholder_002
+          - stakeholder_003
+          - stakeholder_005
+          - stakeholder_004
+          - stakeholder_007
+    - id: stakeholder-sort-external
+      value:
+        rankedStakeholderIds:
+          - stakeholder_009
+          - stakeholder_010
+          - stakeholder_012
+    - id: stakeholder-elaboration-stakeholder_001-0-composition-r0
+      value:
+        question: What **role and responsibilities** do you have within federal
+          financial assistance systems today?
+        suggestions:
+          - I oversee submission workflows for grants/loans across multiple
+            agencies and manage validation feedback turnaround
+          - I work on the technical side — designing or maintaining the FABS
+            pipeline, validation rules, or integrations with SAM and FPDS
+          - I review submissions for compliance and audit purposes, or I operate
+            the reporting systems that agencies and the public depend on
+    - id: stakeholder-elaboration-stakeholder_001-0-question-r0
+      value: >-
+        I oversee the submission workflows and validation landscape across the
+        assistance portfolio — grants, loans, other assistance types. When
+        agencies submit data, I'm responsible for making sure it gets validated,
+        flagged for errors, and cycled back to them with actionable feedback
+        before statutory deadlines hit.
+
+
+        I also sit in on compliance and audit reviews. We have to prove that
+        submissions were validated correctly, that corrections were tracked, and
+        that what got published was actually what agencies certified. Right now
+        that's messy because the audit trail is scattered across systems and
+        spreadsheets.
+
+
+        I'm not building the technical infrastructure — that's the integration
+        teams and the data validation engineers. But I'm the person who has to
+        explain to agency partners why their submission failed, or to auditors
+        why we can't find the chain of custody for a data correction. I live at
+        the intersection of operational reality and compliance requirements.
+
+
+        Does that land?
+    - id: stakeholder-elaboration-stakeholder_001-0-extraction-r0
+      value:
+        responseInterpretation: Stakeholder_001 oversees submission workflows and
+          validation across the assistance portfolio (grants, loans, other
+          assistance types). They are responsible for ensuring agencies submit
+          data that gets validated, flagged for errors, and cycled back with
+          actionable feedback before statutory deadlines. They also participate
+          in compliance and audit reviews, where they must prove submissions
+          were validated correctly, corrections were tracked, and published data
+          was certified by agencies. They are not building technical
+          infrastructure (that's integration teams and data validation
+          engineers), but they interface between operational reality and
+          compliance requirements—explaining submission failures to agency
+          partners and audit trail gaps to auditors.
+        role: Oversees submission workflows and validation landscape across grants,
+          loans, and other assistance types; responsible for validation feedback
+          turnaround to agencies before statutory deadlines; participates in
+          compliance and audit reviews to verify validation correctness,
+          correction tracking, and data certification; interfaces between
+          operational teams and auditors on audit trail and chain of custody
+          issues
+        concerns:
+          - Validation feedback must reach agencies before statutory deadlines
+            hit
+          - Audit trail is currently scattered across systems and spreadsheets
+          - Cannot reliably explain to auditors why the chain of custody for
+            data corrections is missing or incomplete
+          - Must prove submissions were validated correctly, corrections were
+            tracked, and published data matches what agencies certified
+        contradictions: []
+        waitingRoomItems:
+          - content: Audit trail is scattered across systems and spreadsheets — need
+              immutable logging of submission, correction, and certification
+              actions with user identity and timestamp
+          - content: 30-day window for agencies to fix rejected submissions before public
+              reporting deadlines is a hard constraint tied to statutory
+              deadlines
+        responseClass: answer
+    - id: stakeholder-elaboration-stakeholder_002-0-composition-r0
+      value:
+        question: What responsibilities do **grants administrators** have in your
+          organization's submission and validation workflow?
+        suggestions:
+          - We submit grant award documents and track corrections when
+            validation fails; we need faster feedback to meet our internal
+            reporting timelines.
+          - We manage the intake process from agency partners, validate
+            completeness before submission, and coordinate with auditors on
+            compliance documentation.
+          - We oversee the end-to-end grants lifecycle—from initial submission
+            through certification for public reporting—and we're responsible for
+            maintaining records if auditors ask questions about what was
+            submitted and when.
+    - id: stakeholder-elaboration-stakeholder_002-0-question-r0
+      value: >-
+        Grants administrators are the ones managing the actual grant programs —
+        they know what data should be there, they track what's been awarded, and
+        they're responsible for getting that data into the submission system
+        correctly.
+
+
+        They submit grant award data (who got the money, what it was for,
+        conditions), and when validation rejects something, they have to figure
+        out what's wrong and fix it. Right now they're doing a lot of manual
+        legwork — pulling data from their own systems, reformatting it,
+        uploading it, waiting days for feedback on why it failed, then starting
+        over.
+
+
+        They also have their own internal reporting deadlines that don't always
+        line up with our statutory windows. So if we're slow on validation
+        feedback, they miss *their* deadlines even if we technically meet ours.
+
+
+        And they need to be able to explain to auditors what they submitted and
+        when — if there's a question about a grant award six months later, they
+        need to show the submission history and any corrections they made.
+
+
+        The key thing: they're not IT. They're program managers. They need the
+        system to be straightforward, and they need feedback fast so they can
+        course-correct.
+    - id: stakeholder-elaboration-stakeholder_002-0-extraction-r0
+      value:
+        responseInterpretation: Grants administrators manage grant programs and are
+          responsible for submitting grant award data (who received funds,
+          purpose, conditions) into the submission system. When validation
+          fails, they must diagnose and fix errors. They face time pressure from
+          their own internal reporting deadlines that don't align with statutory
+          windows. Currently they perform manual work—extracting data from their
+          systems, reformatting, uploading, and waiting days for validation
+          feedback before they can correct and resubmit. They must maintain
+          submission history and correction records to explain to auditors what
+          was submitted and when. They are program managers, not IT staff, so
+          they need a straightforward system with fast validation feedback to
+          course-correct.
+        role: Manage grant programs and submit grant award data (recipient, purpose,
+          conditions) to the submission system; diagnose and resolve validation
+          failures; maintain submission history and correction records for audit
+          inquiries; operate under internal reporting deadlines that may not
+          align with statutory windows
+        concerns:
+          - Manual data extraction, reformatting, and upload processes create
+            operational friction
+          - Validation feedback delays (currently days) block their ability to
+            meet internal reporting deadlines
+          - Internal reporting deadlines don't always align with statutory
+            submission windows, creating conflicting time pressure
+          - Must be able to explain to auditors what was submitted and when,
+            including all corrections made
+          - Need a straightforward system designed for program managers, not IT
+            staff
+        contradictions: []
+        waitingRoomItems: []
+        responseClass: answer
+    - id: stakeholder-followup-assessment-stakeholder_002
+      value:
+        needed: false
+        question: null
+        suggestions: null
+    - id: stakeholder-elaboration-stakeholder_003-0-composition-r0
+      value:
+        question: What **loan submission workflows** does your team currently handle,
+          and where do validation delays cause the most friction?
+        suggestions:
+          - We submit loan data quarterly through a manual CSV upload process;
+            validation feedback that takes more than a few days blocks our
+            internal reporting deadlines.
+          - We manage both loan origination data and loan servicing updates;
+            different validation rules apply to each, and we struggle to track
+            which corrections were already submitted versus which still need to
+            be resubmitted.
+          - Our team coordinates with accounting systems vendors on data
+            mapping; validation errors often require back-and-forth
+            clarification that delays the whole submission cycle by a week or
+            more.
+    - id: stakeholder-elaboration-stakeholder_003-0-question-r0
+      value: >-
+        Loans teams submit data differently than grants — they have ongoing
+        transactions. Loan originations come through, then servicing updates
+        (payments, adjustments, defaults) flow continuously. Some teams do
+        quarterly batches, some push data more frequently if they've got the
+        technical infrastructure.
+
+
+        The friction point: validation rules for origination data are different
+        from servicing data, and teams often don't know which one failed or why.
+        They submit a batch, get told "validation failed," but the error message
+        doesn't clearly separate "your origination records have this problem"
+        from "your servicing records have that problem." So they end up guessing
+        at what to fix.
+
+
+        Also — when a servicing update gets rejected, they need to know if they
+        already submitted a correction for it or if they're resubmitting the
+        same bad data. Right now that's manual tracking in spreadsheets. If
+        you're pushing transactions weekly or daily, that becomes a nightmare.
+
+
+        And yeah, some teams work with vendors who handle data mapping for them.
+        When validation fails, the vendor and the agency go back and forth: "Is
+        this a data quality issue on your end or a mapping issue on ours?" That
+        back-and-forth can stretch a two-day turnaround into a week.
+
+
+        The core need: faster feedback, clearer error messages that distinguish
+        between origination and servicing issues, and better tracking so they
+        know what's already been resubmitted.
+    - id: stakeholder-elaboration-stakeholder_003-0-extraction-r0
+      value:
+        responseInterpretation: "Loans teams operate differently from grants due to
+          ongoing transactions. Loan originations arrive first, then servicing
+          updates (payments, adjustments, defaults) flow continuously—some teams
+          submit quarterly batches, others push data weekly or daily if they
+          have technical infrastructure. The validation feedback is unclear:
+          teams get told validation failed but error messages don't distinguish
+          whether origination records or servicing records have problems,
+          forcing teams to guess at fixes. When servicing updates are rejected,
+          teams don't know if they already submitted a correction or are
+          resubmitting the same bad data—currently manual spreadsheet tracking,
+          which becomes unmanageable at weekly or daily submission cadences.
+          Vendor-coordinated data mapping adds friction: when validation fails,
+          the back-and-forth between vendor and agency about whether the issue
+          is data quality or mapping takes a week instead of two days. The core
+          need is faster feedback, error messages that clearly separate
+          origination from servicing issues, and better tracking of what's
+          already been resubmitted."
+        role: Manage both loan origination data and loan servicing updates; handle
+          ongoing transaction flows (originations, then continuous servicing
+          updates like payments, adjustments, defaults); diagnose validation
+          failures and determine which data category failed; track which
+          corrections were already submitted to avoid duplicate submissions; may
+          coordinate with vendors on data mapping and validation error
+          clarification
+        concerns:
+          - Validation error messages don't distinguish between origination and
+            servicing record problems
+          - Teams must guess at what to fix when validation fails without clear
+            categorization
+          - Manual spreadsheet tracking of which corrections were already
+            submitted is unsustainable at frequent (weekly/daily) submission
+            cadences
+          - Confusion about whether rejected servicing updates are already
+            corrected or need resubmission
+          - Vendor back-and-forth on data quality versus mapping issues
+            stretches two-day turnaround into a week
+          - Servicing update rejection feedback doesn't clarify root cause (data
+            quality vs mapping issue)
+        contradictions: []
+        waitingRoomItems:
+          - content: Some teams submit quarterly batches; some push data weekly or daily if
+              they have technical infrastructure — submission cadence varies
+              based on technical maturity
+          - content: Validation rules for origination data differ from servicing data
+              validation rules
+        responseClass: answer
+    - id: stakeholder-followup-assessment-stakeholder_003
+      value:
+        needed: false
+    - id: stakeholder-elaboration-stakeholder_005-0-composition-r0
+      value:
+        question: Walk me through what **agency workflow operators** do day-to-day when
+          submissions need validation feedback or corrections.
+        suggestions:
+          - We receive validation error reports, triage them by category
+            (entity, amount, compliance), assign to program teams, track
+            corrections in a shared spreadsheet, and resubmit within our 30-day
+            window.
+          - Our operators monitor the submission portal, pull down rejection
+            notices, document what failed for each agency, coordinate with their
+            IT staff on fixes, and manage the resubmission queue—but we have no
+            centralized way to track what's been corrected.
+          - We handle intake from multiple agencies, validate the data ourselves
+            before official submission, but when the system rejects it, we're
+            unclear whether the error is in our mapping or their data, which
+            delays resolution.
+    - id: stakeholder-elaboration-stakeholder_005-0-question-r0
+      value: >-
+        We receive validation feedback from the system — error reports,
+        rejection notices — and have to get that back to the right people in
+        each agency. Some agencies have dedicated data teams; others, it's a
+        grants manager who's juggling five other things.
+
+
+        We triage by urgency and by type: entity validation issues (names,
+        addresses don't match SAM), amount discrepancies, compliance rule
+        violations. Then we assign to the program team or loop in the agency
+        directly with "here's what's wrong, here's what you need to fix."
+
+
+        The real problem: we have no centralized tracking. Right now it's email,
+        spreadsheets, sometimes a shared drive nobody can quite find. If an
+        agency submits a correction, we don't have a clean way to confirm it
+        actually made it into the system versus sitting in a queue somewhere.
+        And if multiple agencies are in flight at the same time — which they
+        always are — we lose visibility into who's on track to make the 30-day
+        deadline and who's going to miss it.
+
+
+        We also get questions like "Did we already resubmit that grant?" or "Is
+        this a new rejection or the same one from last week?" We should be able
+        to pull a submission history and see exactly what was submitted, when,
+        and what feedback was given. Right now that requires digging through
+        emails or calling someone.
+
+
+        A consolidated submission tracking system with clear error attribution —
+        that would cut our admin overhead in half.
+    - id: stakeholder-elaboration-stakeholder_005-0-extraction-r0
+      value:
+        responseInterpretation: "Agency workflow operators receive validation feedback
+          (error reports, rejection notices) from the system and must route them
+          to the correct people within each agency — some agencies have
+          dedicated data teams, others have grants managers juggling multiple
+          responsibilities. They triage by urgency and type: entity validation
+          issues (names, addresses against SAM), amount discrepancies, and
+          compliance rule violations. They assign corrections to program teams
+          or contact agencies directly with specifics on what failed and what
+          needs fixing. The critical gap: no centralized tracking system.
+          Current state relies on email, spreadsheets, and shared drives that
+          are hard to locate. When agencies submit corrections, operators cannot
+          reliably confirm whether the correction made it into the system or is
+          stuck in a queue. With multiple agencies in flight simultaneously,
+          they lose visibility into who will meet the 30-day deadline and who
+          will miss it. Operators frequently face questions like 'Did we already
+          resubmit that grant?' or 'Is this a new rejection or the same one from
+          last week?' Retrieving submission history and seeing what was
+          submitted, when, and what feedback was given currently requires
+          digging through emails or making phone calls. A consolidated
+          submission tracking system with clear error attribution would cut
+          administrative overhead in half."
+        role: Receive validation feedback from the system in the form of error reports
+          and rejection notices; triage validation failures by urgency and type
+          (entity validation issues, amount discrepancies, compliance rule
+          violations); assign corrections to program teams or contact agencies
+          directly with error details and remediation steps; track corrections
+          across multiple agencies simultaneously; confirm whether submitted
+          corrections actually entered the system or remain in queue; maintain
+          visibility into submission deadlines and agency progress toward 30-day
+          correction windows; retrieve submission history including what was
+          submitted, when, and what feedback was provided
+        concerns:
+          - No centralized tracking system for validation feedback and
+            corrections; currently rely on email, spreadsheets, and shared
+            drives that are difficult to locate
+          - Cannot reliably confirm whether an agency's submitted correction
+            actually made it into the system versus sitting in a queue
+          - Lose visibility into multiple agencies in flight simultaneously and
+            cannot easily track who is on pace to meet 30-day deadlines versus
+            who will miss them
+          - Cannot quickly answer whether a submission was already resubmitted
+            or whether a rejection is new versus recurring
+          - Retrieving submission history and seeing what was submitted, when,
+            and what feedback was given requires manual searching through emails
+            or phone calls
+          - Administrative overhead is high due to lack of consolidated tracking
+        contradictions: []
+        waitingRoomItems: []
+        responseClass: answer
+    - id: stakeholder-followup-assessment-stakeholder_005
+      value:
+        needed: false
+        question: null
+        suggestions: null
+    - id: stakeholder-elaboration-stakeholder_008-0-composition-r0
+      value:
+        question: What does your team need from the submission pipeline to keep
+          **USAspending.gov reporting** current and accurate?
+        suggestions:
+          - Timely delivery of validated submission data so we can publish
+            within our SLA (e.g., within 48 hours of agency certification)
+          - Clear audit trail showing what was submitted, when corrections were
+            made, and which version is live — so we can answer public inquiries
+            about data accuracy
+          - Reliable notification when submissions are rejected or corrected, so
+            we know whether published data needs to be unpublished or updated
+    - id: stakeholder-elaboration-stakeholder_008-0-question-r0
+      value: >-
+        We need validated, certified data flowing to us automatically — no
+        manual handoffs, no waiting for someone to batch files and email them
+        over.
+
+
+        Right now there's lag between when an agency certifies a submission and
+        when it shows up on USAspending.gov. Some of that's just the pipeline
+        architecture, some of it is manual steps where someone has to QA the
+        data before it goes live. If the new system publishes automatically once
+        a submission passes validation and gets certified, that cuts weeks down
+        to days.
+
+
+        We also need to know when data changes. If an agency corrects a grant
+        award amount after it's already public, we need notification so we can
+        update or flag the change. And we need to be able to answer questions
+        when someone calls asking "why does this grant show two different
+        amounts?" We pull the audit trail and say "it was submitted as X on date
+        A, corrected to Y on date B, certified on date C."
+
+
+        The big one though — we need PII redacted before it reaches us. Awardee
+        names and addresses come through in submissions, but we can't publish
+        that per Privacy Act rules. So either the submission system redacts
+        before sending to us, or we have a clear data contract showing which
+        fields are restricted. Right now it's fuzzy, and we've had near-misses
+        on publishing sensitive information.
+
+
+        Basically: clean data, automatic flow, clear audit history, and no PII
+        surprises.
+    - id: stakeholder-elaboration-stakeholder_008-0-extraction-r0
+      value:
+        responseInterpretation: USAspending.gov operators need validated, certified data
+          flowing automatically with no manual handoffs or batching delays.
+          Current lag between agency certification and publication (weeks)
+          should compress to days once submissions pass validation and
+          certification. They need automated notification when data changes so
+          they can update or flag corrections publicly. They need audit trails
+          to answer public inquiries about why data shows multiple versions
+          (e.g., 'why does this grant show two different amounts?'). Most
+          critically, they need PII redacted before data reaches them — awardee
+          names and addresses cannot be published per Privacy Act rules, and the
+          current fuzzy responsibility for redaction has created near-misses on
+          sensitive information publication.
+        role: Receive validated submission data automatically; publish to
+          USAspending.gov within SLA (e.g., 48 hours of agency certification);
+          maintain audit trail to answer public inquiries about data changes and
+          versions; ensure PII is redacted before publication
+        concerns:
+          - Lag between agency certification and USAspending.gov publication
+            (currently weeks); manual QA steps and pipeline architecture delays
+            cause multi-week delays
+          - No automated notification when agencies correct or change data; need
+            visibility into what changed, when, and what version is live for
+            public response
+          - Cannot reliably answer public inquiries about why data shows
+            different versions or amounts without audit trail access
+          - PII (awardee names and addresses) may reach USAspending.gov despite
+            Privacy Act restrictions; unclear data contract on which fields are
+            restricted and who is responsible for redaction
+          - Near-misses on publishing sensitive information due to fuzzy
+            responsibility and unclear redaction handoff between submission
+            system and USAspending.gov
+        contradictions: []
+        waitingRoomItems: []
+        responseClass: answer
+    - id: stakeholder-elaboration-stakeholder_009-0-composition-r0
+      value:
+        question: What does SAM entity validation do for the submission system, and what
+          would SAM's team care most about in a modernization?
+        suggestions:
+          - SAM validates that recipient entities (vendors, nonprofits,
+            grantees) are registered and compliant; they'd care about staying in
+            the validation chain without latency increases or breaking the
+            contract on what data fields trigger entity checks.
+          - SAM checks entity eligibility and sanctions status; they'd want
+            clear API contracts so we don't change which fields we send or how
+            often we call them without coordination.
+          - SAM is external — they maintain their own system and we integrate
+            with it; they'd care about not adding new validation rules on our
+            side that duplicate what SAM already does, or creating circular
+            dependencies.
+    - id: stakeholder-elaboration-stakeholder_009-0-question-r0
+      value: >-
+        SAM is the authoritative source for entity data — they validate that
+        recipients (grantees, contractors, nonprofits, whatever) are actually
+        registered, eligible, not debarred or sanctioned. When we submit data,
+        we check the entity against SAM before we certify.
+
+
+        The constraint we have to design around: SAM validation isn't instant.
+        New registrations can take up to 48 hours to clear. So if an agency
+        submits a grant to a newly registered entity, we can't certify that
+        submission immediately — we're blocked waiting for SAM.
+
+
+        SAM's team would care about us not creating duplicate validation logic
+        on our side. They don't want us second-guessing their data or adding
+        rules that conflict with what they maintain. They also want clear API
+        contracts — which fields we're sending them, how often we call them,
+        what we expect back. If we change the contract without coordination, we
+        break their integration too.
+
+
+        From our side, the key is: SAM is a dependency we don't control. The
+        modernization has to acknowledge that some validation steps have latency
+        we can't eliminate. We need to handle submissions that are *waiting* on
+        SAM validation differently from ones that are *blocked* by validation
+        failures we can control. Otherwise agencies think we're slow when really
+        we're just waiting for an external system.
+    - id: stakeholder-elaboration-stakeholder_009-0-extraction-r0
+      value:
+        responseInterpretation: "SAM is the authoritative source for entity data
+          validation — they verify that recipients (grantees, contractors,
+          nonprofits) are registered, eligible, and not debarred or sanctioned.
+          The submission system checks entities against SAM before
+          certification. SAM validation has inherent latency (up to 48 hours for
+          new registrations to clear), which blocks certification of submissions
+          with newly registered entities. SAM's team priorities are: (1) no
+          duplicate validation logic on the submission system side that
+          second-guesses or conflicts with SAM's data, (2) clear API contracts
+          specifying which fields are sent, call frequency, and expected
+          responses, and (3) coordination before contract changes to avoid
+          breaking their integration. From the submission system perspective,
+          the modernization must treat submissions waiting on SAM validation
+          differently from submissions blocked by validation failures the system
+          controls — otherwise agencies perceive slowness when the delay is
+          actually external dependency latency."
+        role: Maintain authoritative entity data (registration, eligibility,
+          debarment/sanctions status) for federal financial assistance
+          recipients; provide validation services to the submission system with
+          defined API contract and latency expectations
+        concerns:
+          - SAM validation is not instant — new registrations take up to 48
+            hours to clear
+          - Submission system cannot certify submissions with newly registered
+            entities until SAM validation completes
+          - Do not want duplicate validation logic on submission system side
+            that conflicts with or second-guesses SAM's data
+          - Need clear API contracts specifying which fields are sent, how often
+            calls occur, and what to expect in responses
+          - Contract changes to API without coordination break SAM's integration
+        contradictions: []
+        waitingRoomItems:
+          - content: Submission system must handle submissions waiting on SAM validation
+              differently from submissions blocked by validation failures the
+              system controls — this is an architectural requirement to manage
+              external dependency latency
+          - content: Some validation steps have latency the submission system cannot
+              eliminate — this is a constraint on what the validation engine can
+              promise to agencies
+        responseClass: answer
+    - id: stakeholder-elaboration-stakeholder_010-0-composition-r0
+      value:
+        question: What does **FPDS integration** need to work reliably within this
+          modernized submission system?
+        suggestions:
+          - Procurement data must sync automatically when agencies submit
+            financial assistance awards so FPDS has up-to-date records without
+            manual re-entry.
+          - Clear API contract specifying which fields map between the
+            submission system and FPDS, and how often data flows so we don't
+            duplicate validation logic.
+          - Validation feedback that distinguishes procurement-related errors
+            from financial assistance errors, so agencies know which system to
+            contact for corrections.
+    - id: stakeholder-elaboration-stakeholder_010-0-question-r0
+      value: >-
+        FPDS handles procurement — contracts, purchases, that side of federal
+        spending. We handle financial assistance — grants, loans, direct
+        payments. They're separate systems, but they overlap.
+
+
+        Sometimes an agency submits both a grant and a procurement action for
+        the same recipient or project. We need read-only access to FPDS data for
+        context — to know "this entity also has procurement activity" — but
+        we're not writing to FPDS. FPDS stays autonomous.
+
+
+        The integration is really about not stepping on each other. If an entity
+        fails validation because of a sanctions issue, that's SAM's problem, not
+        FPDS's. But if there's a cross-reference between a grant and a
+        procurement action that needs alignment, we need to be able to pull that
+        context from FPDS without duplicating their validation rules.
+
+
+        What matters: clear API contract so we know which fields we can read
+        from FPDS, how often we can call without hammering their system, and
+        what the response format is. We're not coordinating submissions — we're
+        just checking the record for context.
+
+
+        From an agency perspective, validation errors should be clear about
+        which system the problem lives in. "This entity is flagged in SAM" is
+        different from "This looks like procurement activity, you may need to
+        check FPDS separately." We're not the single source of truth for
+        everything — we just need to know our lane and point agencies to the
+        right place when we're not the problem.
+    - id: stakeholder-elaboration-stakeholder_010-0-extraction-r0
+      value:
+        responseInterpretation: "FPDS handles procurement (contracts, purchases); the
+          financial assistance system handles grants, loans, direct payments.
+          These are separate systems but overlap when an agency submits both a
+          grant and a procurement action for the same recipient or project. FPDS
+          integration requires: read-only access to FPDS data for context (to
+          know 'this entity also has procurement activity') without writing to
+          FPDS or duplicating FPDS validation rules. The integration is about
+          not stepping on each other's toes. Clear API contract specifying which
+          fields can be read, call frequency limits to avoid overloading FPDS,
+          and response format are essential. Agencies need validation errors
+          that clearly distinguish which system the problem lives in (e.g.,
+          'entity flagged in SAM' versus 'this looks like procurement activity,
+          check FPDS separately'). The submission system is not the single
+          source of truth for everything—it needs to know its lane and point
+          agencies to the right place when the problem is elsewhere."
+        role: Maintain procurement data autonomy; provide read-only API access to FPDS
+          records for context on cross-referenced grant and procurement
+          activity; preserve clear system boundaries so validation errors point
+          agencies to the correct system for remediation
+        concerns:
+          - FPDS must remain autonomous — submission system must not write to
+            FPDS or duplicate FPDS validation rules
+          - Need read-only access to FPDS data to check for cross-reference
+            context when an entity has both grant and procurement activity
+          - Unclear API contract on which FPDS fields can be read, how often the
+            submission system can call without overloading FPDS, and what
+            response format to expect
+          - Validation error messages must distinguish between FPDS problems and
+            submission system problems so agencies know which system to contact
+            for corrections
+          - Risk of validation rule duplication between systems if API contract
+            is not clear
+        contradictions: []
+        waitingRoomItems:
+          - content: Read-only access pattern for external system integration—submission
+              system queries FPDS for context without modifying data, no API
+              writes to FPDS
+          - content: Validation error categorization requirement—errors must be labeled by
+              which system owns the problem so agencies can route corrections
+              correctly
+        responseClass: answer
+    - id: stakeholder-elaboration-stakeholder_011-0-composition-r0
+      value:
+        question: What specific **audit trail requirements** must the modernized system
+          satisfy to pass your compliance reviews?
+        suggestions:
+          - Every submission, correction, and certification action needs to be
+            logged with user identity and timestamp — and those logs have to be
+            immutable and queryable for audit inquiries.
+          - "We need to trace the chain of custody for data corrections: who
+            submitted what, when, what feedback they received, and what they
+            resubmitted in response."
+          - Auditors ask us to prove that published data matches what agencies
+            actually certified — right now we can't reliably answer that
+            question because the audit trail is spread across email,
+            spreadsheets, and multiple systems.
+    - id: stakeholder-elaboration-stakeholder_011-0-question-r0
+      value: >-
+        All of those, honestly. It's (a) + (b) + (c) combined.
+
+
+        Every action — submission, correction, certification — has to be logged
+        with who did it, when, and what changed. And that log can't be altered
+        retroactively. If an auditor asks "show me the chain of custody for this
+        grant award," I need to pull a report and say "submitted by Jane on Sept
+        1, rejected for entity mismatch on Sept 2, resubmitted by Jane on Sept
+        3, certified by Bob on Sept 5."
+
+
+        Right now that information is scattered. Submission timestamps might be
+        in FABS, email threads have the feedback, a spreadsheet tracks
+        corrections, and certification happens in another system entirely.
+        Auditors ask for the story and I have to reconstruct it from fragments.
+
+
+        The modernized system has to make that reconstruction automatic. One
+        authoritative log. If there's ever a question about what was published
+        on USAspending.gov versus what was actually certified, I pull the audit
+        trail and we have the answer.
+
+
+        Also — the log has to be tamper-proof. Someone can't go back and change
+        a timestamp or hide who made a correction. And auditors need to be able
+        to query it themselves without needing DBA access or calling me to pull
+        a database snapshot.
+
+
+        It's not just nice-to-have governance. It's regulatory requirement. If
+        we can't prove the chain of custody, we fail the audit.
+    - id: stakeholder-elaboration-stakeholder_011-0-extraction-r0
+      value:
+        responseInterpretation: The respondent confirmed all three audit trail
+          requirements (a + b + c combined). Every action—submission,
+          correction, certification—must be logged with identity, timestamp, and
+          what changed. The log must be immutable and tamper-proof. The
+          respondent emphasized that audit trail information is currently
+          scattered across FABS, email, spreadsheets, and multiple systems,
+          making reconstruction manual and unreliable. The modernized system
+          must create one authoritative log so that auditors can independently
+          query it to verify the chain of custody for any submission and confirm
+          that published data on USAspending.gov matches what was actually
+          certified. The respondent framed this as a regulatory requirement, not
+          optional governance.
+        role: Conduct compliance reviews and audit inquiries; request and verify audit
+          trail documentation to prove chain of custody for submissions,
+          corrections, and certifications; verify that published data matches
+          certified data; determine whether the organization can satisfy audit
+          requirements
+        concerns:
+          - Audit trail information is currently scattered across FABS, email,
+            spreadsheets, and multiple systems
+          - Cannot reliably reconstruct the chain of custody for a submission
+            without manual effort across fragments
+          - Need to verify that published data on USAspending.gov matches what
+            agencies actually certified
+          - Auditors cannot independently query audit logs without DBA access or
+            custom database snapshots
+          - Risk of failure on audit if chain of custody cannot be proven
+          - Audit trail must be tamper-proof so someone cannot retroactively
+            change timestamps or hide who made corrections
+        contradictions: []
+        waitingRoomItems: []
+        responseClass: answer
+    - id: stakeholder-elaboration-stakeholder_013-0-composition-r0
+      value:
+        question: What does your team do with **agency data submissions**, and what
+          matters most to you when they arrive?
+        suggestions:
+          - We validate submissions against federal rules and send feedback back
+            to agencies before their correction deadlines hit.
+          - We receive submissions from multiple agencies, track which ones
+            passed or failed validation, and maintain records for audit
+            requests.
+          - We extract submission data and feed it into downstream systems like
+            USAspending.gov or procurement tracking platforms.
+    - id: stakeholder-elaboration-stakeholder_013-0-question-r0
+      value: >-
+        We receive submissions — could be CSV uploads from smaller agencies, API
+        pushes from larger ones with integrated systems. We validate them
+        against the current ruleset, send back clear feedback on what failed and
+        why, and track whether they come back with corrections.
+
+
+        What matters: speed and clarity. An agency submits on Monday, we need
+        validation feedback by Tuesday or Wednesday so they have time to fix it
+        and resubmit before the 30-day window closes. And the feedback has to be
+        actionable — not just "field X is invalid" but "field X should be a
+        valid SAM entity ID, you provided Y which doesn't match any registered
+        entity."
+
+
+        We also track the submission history. Did they resubmit after feedback?
+        Did the correction actually fix the problem, or are they submitting the
+        same bad data again? That visibility helps us spot patterns — like
+        "grants team consistently gets entity validation wrong, maybe they need
+        training" or "this particular agency's accounting system is mapping data
+        incorrectly."
+
+
+        Once submissions pass validation and get certified by the agency, we
+        hand them off downstream — to USAspending.gov for public reporting, to
+        audit teams for compliance review. But until that handoff, we own the
+        feedback loop.
+
+
+        The constraint I mentioned earlier applies here too: validation rules
+        change year to year per DATA Act requirements. So submissions validated
+        under FY25 rules stay valid even after FY26 rules go live. We have to
+        version the rules and keep the submission-to-rule mapping immutable.
+    - id: stakeholder-elaboration-stakeholder_013-0-extraction-r0
+      value:
+        responseInterpretation: "Stakeholder 013 receives submissions in multiple
+          formats (CSV uploads from smaller agencies, API pushes from larger
+          integrated systems). They validate against current rulesets, send
+          detailed feedback explaining what failed and why (not just error
+          codes—actionable guidance like \"field X should be a valid SAM entity
+          ID, you provided Y which doesn't match\"), and track whether agencies
+          resubmit corrections. They hand off validated, certified submissions
+          downstream to USAspending.gov and audit teams. Critical constraint:
+          validation rules change yearly per DATA Act requirements, so
+          submissions validated under FY25 rules must remain valid after FY26
+          rules go live—rules and submission-to-rule mappings must be versioned
+          and immutable."
+        role: Receive submissions in CSV and API formats; validate against versioned
+          rulesets; send detailed, actionable validation feedback; track
+          submission history and corrections; hand off certified submissions to
+          downstream systems (USAspending.gov, audit teams) while owning the
+          feedback loop until certification
+        concerns:
+          - Validation feedback must reach agencies by Tuesday or Wednesday
+            after Monday submission so they have time to fix and resubmit before
+            30-day window closes
+          - Feedback must be actionable—not just 'field X is invalid' but 'field
+            X should be a valid SAM entity ID, you provided Y which doesn't
+            match any registered entity'
+          - Must track submission history to spot patterns, e.g., 'grants team
+            consistently gets entity validation wrong, maybe they need training'
+            or 'agency's accounting system is mapping data incorrectly'
+          - Must see whether agencies resubmit after feedback and whether
+            corrections actually fix the problem or represent repeated bad
+            submissions
+          - Validation rules change year to year per DATA Act requirements;
+            submissions validated under FY25 rules must stay valid after FY26
+            rules go live
+          - Must maintain immutable submission-to-rule mapping so rule
+            versioning doesn't retroactively invalidate previously certified
+            submissions
+        contradictions: []
+        waitingRoomItems:
+          - content: Validation rules change year to year per DATA Act requirements;
+              submissions validated under FY25 rules stay valid even after FY26
+              rules go live—rule versioning and immutable submission-to-rule
+              mapping is a regulatory requirement
+        responseClass: answer
+    - id: stakeholder-followup-assessment-stakeholder_013
+      value:
+        needed: false
+        question: null
+        suggestions: null
+    - id: stakeholder-dedup
+      value:
+        duplicateGroups: []
+    - id: stakeholders-confirmation-r0
+      value: >-
+        This is thorough. One small thing to clarify:
+
+
+        On **data validation teams** — you listed them as primary but didn't
+        elaborate. They're actually the ones *building* the validation logic and
+        maintaining the ruleset. They're not stakeholders in the traditional
+        sense; they're part of the delivery team. Same with **system integration
+        teams** and **accounting system vendors** — vendors are external
+        partners but they're more of a dependency than a stakeholder with
+        concerns we need to surface here.
+
+
+        If you want to keep those three, I'd say:
+
+        - **Data validation teams** are part of our internal delivery — they own
+        the validation engine and the ruleset versioning.
+
+        - **System integration teams** are also internal delivery — they own the
+        SAM/FPDS/USAspending.gov integrations.
+
+        - **Accounting system vendors** are external dependencies, but they're
+        not decision-makers in this project. They're affected by our data
+        contracts, but we don't need their buy-in.
+
+
+        So really, the stakeholders with actual concerns and leverage are the
+        ones you've already elaborated: financial assistance oversight (me),
+        grants/loans administrators, agency workflow operators, USAspending
+        operators, auditors, and the external system maintainers (SAM, FPDS).
+
+
+        Everything else looks right.
+    - id: stakeholders-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: "Reclassify data validation teams, system integration teams,
+          and accounting system vendors from primary stakeholders to delivery
+          team members / external dependencies; remove their elaborated roles
+          and concerns since they lack decision-making authority and stakeholder
+          concerns; keep the six stakeholders with actual leverage: financial
+          assistance oversight, grants/loans administrators, agency workflow
+          operators, USAspending operators, auditors, and external system
+          maintainers (SAM, FPDS)"
+        targetId: stakeholder_004, stakeholder_007, stakeholder_012
+        responseClass: answer
+    - id: stakeholders-revision
+      value:
+        responseInterpretation: "The respondent is clarifying the nature of three
+          stakeholders that were listed as primary: data validation teams,
+          system integration teams, and accounting system vendors. The
+          respondent argues these three should not be treated as traditional
+          stakeholders with concerns to surface. Data validation teams and
+          system integration teams are part of the internal delivery
+          organization, not decision-makers. Accounting system vendors are
+          external dependencies but lack decision-making authority in this
+          project—they are affected by data contracts but do not need buy-in.
+          The respondent confirms that the actual stakeholders with concerns and
+          leverage are: financial assistance oversight (respondent),
+          grants/loans administrators, agency workflow operators, USAspending
+          operators, auditors, and external system maintainers (SAM, FPDS)."
+        role: null
+        concerns: []
+        contradictions: []
+        waitingRoomItems:
+          - content: Data validation teams own the validation engine and the ruleset
+              versioning
+          - content: System integration teams own the SAM/FPDS/USAspending.gov integrations
+          - content: Accounting system vendors are affected by our data contracts but do not
+              require buy-in
+        responseClass: answer
+    - id: scope-seed-extraction
+      value:
+        inScope:
+          - description: Validation engine that processes both API and CSV submissions
+              against versioned rulesets
+            relatedGoals:
+              - goal_001
+              - goal_004
+          - description: Immutable audit trail logging submission, correction, and
+              certification actions with user identity and timestamp
+            relatedGoals:
+              - goal_001
+          - description: Validation feedback workflow delivering actionable error messages
+              to agencies within statutory deadline windows
+            relatedGoals:
+              - goal_001
+          - description: Validation rule versioning system keyed to fiscal year with
+              immutable submission-to-rule mapping
+            relatedGoals:
+              - goal_001
+          - description: Read-only integration with SAM for entity validation with handling
+              of external latency constraints
+            relatedGoals:
+              - goal_003
+          - description: Read-only integration with FPDS for procurement context with error
+              categorization by owning system
+            relatedGoals:
+              - goal_003
+          - description: Submission history tracking and correction workflow visibility for
+              agencies and workflow operators
+            relatedGoals:
+              - goal_001
+              - goal_004
+          - description: Support for both origination and servicing data submission paths
+              with distinct validation rule sets
+            relatedGoals:
+              - goal_004
+          - description: Centralized tracking of validation feedback and correction status
+              across multiple agencies
+            relatedGoals:
+              - goal_001
+          - description: Certified submission handoff to USAspending.gov with audit trail
+              documentation
+            relatedGoals:
+              - goal_003
+          - description: Error categorization distinguishing submission system problems from
+              external system problems (SAM/FPDS)
+            relatedGoals:
+              - goal_003
+          - description: CSV submission with human-readable validation feedback on monthly
+              or quarterly schedule
+            relatedGoals:
+              - goal_004
+          - description: API submission with programmatic validation feedback for
+              high-frequency submission cadences
+            relatedGoals:
+              - goal_004
+        outOfScope:
+          - description: PII redaction logic for USAspending.gov publication
+            reason: Ownership boundary—USAspending.gov operators own redaction
+              responsibility per stakeholder_008 role; submission system hands
+              off certified data
+            relatedGoals: []
+          - description: SAM entity registration process or registration approval workflows
+            reason: External system boundary—SAM maintainers own entity data and
+              registration lifecycle
+            relatedGoals:
+              - goal_003
+          - description: FPDS procurement data updates or write operations
+            reason: External system boundary—FPDS must remain autonomous; submission system
+              is read-only consumer
+            relatedGoals:
+              - goal_003
+          - description: Internal grant program management workflows or award decision logic
+            reason: Out of bounds—submission system is downstream of grant program
+              management; does not own program decisions
+            relatedGoals: []
+          - description: Accounting system mapping or accounting system vendor training
+            reason: External responsibility—vendor and agency owners responsible for data
+              quality at source
+            relatedGoals: []
+        ambiguous:
+          - description: Turnaround time SLA for validation feedback—waiting_023 specifies
+              30-day correction window as hard constraint but does not specify
+              when feedback must be delivered within that window to give
+              agencies actionable time
+            relatedGoals:
+              - goal_001
+          - description: Scope of validation rule changes per DATA Act—waiting_021 and
+              waiting_030 specify rules change year-to-year and must remain
+              immutable, but do not specify whether this system owns rule change
+              authoring, deployment sequencing, or only immutable storage and
+              versioning
+            relatedGoals:
+              - goal_001
+          - description: Definition of 'actionable' validation feedback—stakeholder_005 and
+              waiting_018 require human-readable feedback but do not specify
+              what level of detail qualifies as actionable (e.g., field-level
+              hints vs. narrative remediation steps)
+            relatedGoals:
+              - goal_001
+          - description: Responsibility for latency handling when SAM validation blocks
+              certification—waiting_026 specifies this is an architectural
+              requirement but does not specify whether submission system queues
+              submissions, returns provisional status, or delegates queuing to
+              agency workflow operators
+            relatedGoals:
+              - goal_001
+              - goal_003
+          - description: Scope of USAspending.gov integration—waiting_032 assigns ownership
+              to system integration teams but does not specify whether
+              submission system owns publication SLA (stakeholder_008 mentions
+              48-hour SLA) or only data handoff
+            relatedGoals:
+              - goal_003
+        drainedWaitingRoomIds:
+          - waiting_009
+          - waiting_010
+          - waiting_012
+          - waiting_013
+          - waiting_016
+          - waiting_017
+          - waiting_018
+          - waiting_019
+          - waiting_021
+          - waiting_022
+          - waiting_023
+          - waiting_024
+          - waiting_025
+          - waiting_026
+          - waiting_027
+          - waiting_028
+          - waiting_029
+          - waiting_030
+          - waiting_031
+          - waiting_032
+    - id: scope-seed-present-r0
+      value: >-
+        This is solid. A few clarifications:
+
+
+        **Reclassify (s) — turnaround time SLA:** This isn't unclear to me.
+        Agencies have 30 days total to correct and resubmit. So feedback needs
+        to come back within days, not weeks — I'd say 2-3 business days max. If
+        it takes a week to get feedback, they only have 3-4 weeks left to
+        diagnose and fix. That's the hard constraint. You don't need a formal
+        SLA spec, but "within 2-3 business days" should be the bar.
+
+
+        **Keep (t) as unclear:** Rule authoring and deployment sequencing —
+        that's policy-side, not our call. We own immutable versioning and
+        storage. Someone else (probably compliance or policy team) owns deciding
+        what rules change and when. We just need to know: "Here are the FY26
+        rules, effective Oct 1" and we version them accordingly.
+
+
+        **Reclassify (u) — actionable feedback:** Not really unclear. It means
+        "tell them the specific field that failed, what it should be, and
+        ideally an example." "Entity mismatch" isn't actionable. "Entity ID
+        'ACME Corp LLC' doesn't match SAM records; try 'ACME Corporation LLC'"
+        is actionable.
+
+
+        **Keep (v) as unclear:** That one does need design clarity. If SAM
+        validation is pending, do we tell the agency "your submission is waiting
+        on entity validation, check back tomorrow" or do we queue it invisibly
+        and notify when it's done?
+
+
+        **Keep (w) as unclear:** USAspending integration — that's a system
+        integration team call on publication SLA and ownership.
+
+
+        Rest looks good.
+    - id: scope-seed-classification-r0
+      value:
+        responseInterpretation: "Respondent reviewed the scope list and provided
+          clarifications on three items flagged as unclear: reclassified two as
+          actually clear (with specific constraints), confirmed one remains
+          unclear, and confirmed three others remain unclear. Respondent
+          affirmed the rest of the list."
+        confirmedInScope:
+          - scope_001
+          - scope_002
+          - scope_003
+          - scope_004
+          - scope_005
+          - scope_006
+          - scope_007
+          - scope_008
+          - scope_009
+          - scope_010
+          - scope_011
+          - scope_012
+          - scope_013
+        confirmedOutOfScope:
+          - scope_014
+          - scope_015
+          - scope_016
+          - scope_017
+          - scope_018
+        removedIds: []
+        newItems: []
+        waitingRoomItems:
+          - content: Agencies have 30 days total to correct and resubmit
+          - content: Feedback needs to come back within 2-3 business days max
+          - content: If it takes a week to get feedback, they only have 3-4 weeks left to
+              diagnose and fix
+          - content: Rule authoring and deployment sequencing — policy-side, not our call
+          - content: Compliance or policy team owns deciding what rules change and when
+          - content: Actionable feedback means tell them the specific field that failed,
+              what it should be, and ideally an example
+          - content: Entity mismatch is not actionable
+          - content: If SAM validation is pending, do we tell the agency your submission is
+              waiting on entity validation, check back tomorrow or do we queue
+              it invisibly and notify when it's done
+          - content: USAspending integration — system integration team call on publication
+              SLA and ownership
+        responseClass: answer
+    - id: scope-constraint-composition-r0
+      value:
+        question: What **hard constraints** (budget, timeline, regulatory, or technical)
+          must this modernization work within?
+        suggestions:
+          - Statutory deadlines for validation feedback and corrections tied to
+            DATA Act compliance windows
+          - Limited budget or staffing to manage parallel operation of old and
+            new systems during transition
+          - Integration APIs from SAM and FPDS have fixed SLAs and cannot be
+            modified to match our submission timeline
+    - id: scope-constraint-question-r0
+      value: >-
+        The big ones:
+
+
+        **DATA Act compliance rules change every fiscal year.** We have to
+        support submissions under the rules in effect at submission time, not
+        retroactively apply new rules. That's non-negotiable from a regulatory
+        perspective.
+
+
+        **30-day correction window is hard.** Agencies have 30 days from
+        submission to fix rejections before public reporting deadlines hit. If
+        we're slow on feedback, we eat into that window. This isn't a
+        nice-to-have timeline — it's statutory.
+
+
+        **SAM validation latency is real.** New entity registrations take up to
+        48 hours. We can't speed that up; we have to design around it.
+        Submissions waiting on SAM validation can't be certified immediately,
+        but we can't leave agencies hanging either.
+
+
+        **Submission files are huge.** Agencies submit files with millions of
+        records, 500MB+. Bulk validation can't block the API. We need async
+        processing, not synchronous validation that locks up the submission
+        endpoint.
+
+
+        **Agency technical maturity varies wildly.** Some can do API
+        integration; others need CSV upload. We have to support both paths
+        without building two separate systems.
+
+
+        And yeah — immutable audit trail is regulatory, not optional. If we
+        can't prove the chain of custody, we fail compliance review.
+
+
+        Those are the walls. Everything else is solvable with good design.
+    - id: scope-constraint-extraction-r0
+      value:
+        responseInterpretation: "The respondent confirmed the DATA Act compliance
+          constraint and the 30-day correction window, then added four
+          additional hard constraints: SAM validation latency (48 hours for new
+          registrations), large file processing (500MB+ submissions requiring
+          async validation), agency technical heterogeneity (must support both
+          API and CSV without building separate systems), and immutable audit
+          trail (regulatory requirement for chain of custody)."
+        constraints:
+          - description: DATA Act compliance rules change every fiscal year; submissions
+              must be validated under rules in effect at submission time, not
+              retroactively apply new rules
+          - description: 30-day correction window is statutory; agencies have 30 days from
+              submission to fix rejections before public reporting deadlines
+          - description: SAM validation latency up to 48 hours for new entity registrations;
+              this latency cannot be modified and must be designed around
+          - description: Submission files are huge (500MB+, millions of records); bulk
+              validation cannot block the API and must use async processing, not
+              synchronous validation
+          - description: Agency technical maturity varies; must support both API integration
+              and CSV upload without building two separate systems
+          - description: Immutable audit trail is regulatory requirement; must prove chain
+              of custody for compliance review
+        waitingRoomItems: []
+        responseClass: answer
+    - id: scope-ambiguous-sort
+      value:
+        rankedAmbiguousIds:
+          - "1"
+          - "3"
+          - "0"
+          - "2"
+        autoClassifications:
+          - index: "4"
+            classification: out
+            relatedGoals:
+              - goal_003
+            reason: Publication SLA and timing belong to USAspending.gov operations and
+              policy, not submission system design. System owns 'data handoff'
+              (already IN); USAspending.gov owns publication timing.
+    - id: scope-contrast-0-composition-r0
+      value:
+        question: Does this project own **rule change authoring and deployment**, or
+          only maintain immutable storage and versioning of rules that change
+          externally?
+        suggestions:
+          - We own rule authoring—this system determines which rules are valid
+            each fiscal year and deploys them
+          - We own versioning and storage only—rule changes come from
+            policy/compliance teams; we version them and keep submission-to-rule
+            mappings immutable
+          - Hybrid—we own deployment sequencing and immutable storage, but rule
+            content comes from policy teams
+    - id: scope-contrast-0-question-r0
+      value: >-
+        We own versioning and storage only. Rule content comes from compliance
+        and policy teams — they decide what's valid in FY26 based on DATA Act
+        requirements and agency feedback.
+
+
+        Our job is: they say "here are the FY26 rules, effective Oct 1," we
+        ingest them, version them, and make sure submissions validated under
+        FY25 rules stay valid even after Oct 1. We're the immutable keeper, not
+        the author.
+
+
+        Deployment sequencing is theirs too — they decide when rules go live
+        relative to submission windows. We just need clear notice and a clean
+        handoff process.
+
+
+        If we start authoring rules, we're making compliance decisions we
+        shouldn't be making. That's policy work, not submission system work.
+    - id: scope-contrast-0-extraction-r0
+      value:
+        responseInterpretation: This organization owns only validation rule versioning
+          and immutable storage. Rule content authoring and deployment
+          sequencing belong to compliance and policy teams. The submission
+          system ingests rules with an effective date, versions them, and
+          ensures submissions validated under prior-year rules remain valid
+          after rule changes take effect. The system must not author rules
+          because that constitutes policy and compliance decision-making, which
+          is outside submission system scope.
+        classification: in
+        reason: ""
+        relatedGoals:
+          - goal_001
+        waitingRoomItems:
+          - content: Rule deployment sequencing and notice protocol owned by
+              compliance/policy teams; submission system needs 'clear notice and
+              a clean handoff process' but the specification of what 'clear
+              notice' and 'clean handoff' mean is deferred.
+          - content: Respondent explicitly rejects hybrid option (c) — stated 'If we start
+              authoring rules, we're making compliance decisions we shouldn't be
+              making.' This signals a firm boundary that should be captured as a
+              constraint or architectural decision, not as an open choice.
+        responseClass: answer
+    - id: scope-contrast-1-composition-r0
+      value:
+        question: When SAM validation blocks certification, should the submission system
+          queue submissions awaiting entity data, or should **responsibility for
+          queuing** rest with your workflow operators?
+        suggestions:
+          - The submission system should queue submissions automatically and
+            notify us when SAM validation completes
+          - We (workflow operators) should manage the queue—hold submissions in
+            our tracking system until we confirm SAM cleared them
+          - "We need both: the system queues automatically, but we retain
+            visibility and can manually override or expedite"
+    - id: scope-contrast-1-question-r0
+      value: >-
+        I'd go with (c) — the system queues automatically, but we need
+        visibility and override capability.
+
+
+        Here's why: if the system just queues invisibly and notifies when it's
+        done, agencies get confused about what happened to their submission.
+        They see it accepted but not certified, and they don't know if it's
+        pending SAM or sitting in some black box. We'd get calls asking "where's
+        my data?"
+
+
+        But if *we* manage the queue manually in a separate tracking system,
+        we're back to spreadsheets and email. We'd lose the single source of
+        truth.
+
+
+        So the system should:
+
+        - Accept the submission
+
+        - Detect the SAM validation is pending
+
+        - Queue it with a clear status: "Waiting on entity validation from SAM,
+        expected by [date]"
+
+        - Notify the agency: "Your submission is accepted and queued; we're
+        validating your entities with SAM"
+
+        - Notify us when SAM clears or rejects the entity
+
+        - Let us see the queue and manually intervene if needed — like "SAM is
+        taking too long, let me escalate" or "reject this one, the entity isn't
+        going to clear"
+
+
+        That way agencies know what's happening, we have visibility and control,
+        and the system isn't a black box.
+    - id: scope-contrast-1-extraction-r0
+      value:
+        responseInterpretation: "The respondent chose option (c): the submission system
+          should queue submissions automatically when SAM validation is pending,
+          provide clear status messaging to agencies about the reason for
+          queueing and expected timeline, notify both the agency and workflow
+          operators, and grant workflow operators visibility into the queue with
+          manual override and escalation capabilities. The core requirement is
+          eliminating the 'black box' problem where agencies lose visibility
+          into submitted-but-not-certified submissions, while simultaneously
+          preventing workflow operators from having to manage queuing in
+          separate manual systems."
+        classification: in
+        reason: ""
+        relatedGoals:
+          - goal_001
+        waitingRoomItems:
+          - content: The system should detect when SAM validation is pending and queue
+              submissions with a clear status message indicating the reason
+              ('Waiting on entity validation from SAM, expected by [date]').
+              This assumes waiting_026 requires the system to distinguish
+              between 'awaiting SAM validation' and other blocking conditions;
+              clarify whether other external system latencies (FPDS reads,
+              downstream SLA checks) also trigger queueing with explanatory
+              messaging.
+          - content: Workflow operators need manual override capability to 'escalate' or
+              'reject' queued submissions. This assumes escalation means either
+              expediting SAM validation (unclear if that's technically feasible)
+              or bypassing SAM validation (unclear if compliance permits).
+              Define what 'escalate' means operationally and what conditions
+              permit override.
+          - content: Agencies receive notification that their submission is 'accepted and
+              queued' with expected validation completion date. This assumes the
+              system can predict SAM validation latency reliably (respondent
+              noted 'expected by [date]'). clarify whether latency estimates are
+              deterministic or ranges, and what happens if SAM exceeds the
+              estimate.
+        responseClass: answer
+    - id: scope-contrast-2-composition-r0
+      value:
+        question: Should the submission system own the **SLA for delivering validation
+          feedback** to agencies, or does that belong to workflow operators and
+          agency processes?
+        suggestions:
+          - "In scope: submission system must deliver feedback within a defined
+            window (e.g., 24-48 hours) so agencies have actionable time to
+            correct before the 30-day deadline"
+          - "Out of scope: submission system delivers feedback as soon as
+            validation completes; workflow operators and agencies own the SLA
+            for receiving and acting on it"
+          - "Hybrid: submission system owns technical delivery (feedback
+            generated and queued); workflow operators own the SLA for routing it
+            to agencies"
+    - id: scope-contrast-2-question-r0
+      value: >-
+        It's (a) — the submission system owns the SLA for delivering feedback.
+
+
+        Here's the thing: if we say "we'll validate as fast as we can and hand
+        it off to operators," we're kicking the accountability down the line.
+        Operators get swamped, feedback sits in an inbox for a week, agencies
+        miss their window. Then auditors ask "why did this agency miss the
+        correction deadline?" and we don't have a good answer.
+
+
+        The system needs to commit to: validation feedback reaches the agency
+        within 2-3 business days of submission. Not "validation completes," but
+        "feedback is delivered." That means the system has to handle
+        notifications — email, API callback, whatever the submission method was.
+
+
+        If validation takes 30 minutes, feedback should be out same day. If
+        validation is queued behind a backlog, the system tells the agency "we
+        received your submission, validation is queued, you'll hear from us by
+        [date]" — not silence.
+
+
+        That SLA is how we prove to auditors that agencies had time to correct.
+        It's also how we keep them from panicking and calling us every day
+        asking "where's my feedback?"
+
+
+        Workflow operators still have a role — they triage and route feedback to
+        the right people in each agency. But that's operational, not
+        SLA-critical. The system commits to delivery; operators commit to
+        routing.
+    - id: scope-contrast-2-extraction-r0
+      value:
+        responseInterpretation: The submission system owns the SLA for delivering
+          validation feedback to agencies. Feedback must reach agencies within
+          2-3 business days of submission, not just when validation completes.
+          The system must handle notifications (email, API callback, matching
+          the submission method). If validation completes same day, feedback
+          goes out same day. If validation is queued, the system sends immediate
+          acknowledgment with expected delivery date. This SLA is critical for
+          audit accountability—it proves agencies had actionable time to correct
+          before the 30-day deadline. Workflow operators handle triage and
+          routing (operational, not SLA-critical), but the system commits to
+          delivery.
+        classification: in
+        reason: ""
+        relatedGoals:
+          - goal_001
+        waitingRoomItems: []
+        responseClass: answer
+    - id: scope-contradiction-check
+      value:
+        contradictions: []
+        orphans: []
+    - id: scope-dedup
+      value:
+        duplicateGroups:
+          - keepId: scope_002
+            removeIds:
+              - scope_007
+          - keepId: scope_003
+            removeIds:
+              - scope_023
+          - keepId: scope_004
+            removeIds:
+              - scope_021
+          - keepId: scope_009
+            removeIds:
+              - scope_022
+          - keepId: scope_011
+            removeIds:
+              - scope_006
+    - id: scope-confirmation-r0
+      value: >-
+        This is solid. One thing to add under **Constraints**:
+
+
+        **Versioned validation rules must persist.** Not just "rules change year
+        to year" — but once a rule version is live, we can't modify it
+        retroactively. FY25 rules stay locked. If there's a bug in FY25
+        validation or a rule clarification needed, we either patch it forward to
+        FY26 or we accept that FY25 submissions were validated under that rule
+        set, period. This affects how you architect the rules engine — you're
+        not maintaining one set of rules that evolve; you're maintaining
+        versioned snapshots.
+
+
+        That's the immutability constraint that shapes the technical design.
+        Worth calling out explicitly.
+
+
+        Everything else tracks.
+    - id: scope-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: "Add explicit constraint under **Constraints**: Versioned
+          validation rules must persist and be immutable. Once a rule version is
+          live (e.g., FY25 rules), it cannot be modified retroactively. If a bug
+          or clarification is needed, it either patches forward to the next
+          fiscal year or the prior year's submissions remain validated under the
+          original rule set. This immutability constraint shapes validation
+          engine architecture."
+        targetId: constraints
+        responseClass: answer
+    - id: scope-revision
+      value:
+        responseInterpretation: "The respondent affirmed the existing artifacts and
+          added a critical constraint: versioned validation rules must be
+          immutable once deployed. FY25 rules cannot be modified retroactively;
+          if bugs or clarifications arise, they roll forward to FY26 or the
+          organization accepts that FY25 submissions were validated under the
+          original rule set. This immutability requirement shapes the technical
+          architecture of the rules engine—it must maintain versioned snapshots,
+          not a single evolving rule set."
+        inScope: []
+        outOfScope: []
+        removedIds: []
+        reclassifiedItems: []
+        waitingRoomItems: []
+        constraints:
+          - id: constraint_007
+            description: Versioned validation rules must be immutable once deployed. FY25
+              rules stay locked and cannot be modified retroactively. If a bug
+              exists in FY25 validation or a rule clarification is needed, the
+              organization either patches it forward to FY26 or accepts that
+              FY25 submissions were validated under that rule set. This
+              constraint shapes rules engine architecture to maintain versioned
+              snapshots rather than a single evolving rule set.
+        responseClass: answer
+    - id: scope-dedup-post-revision
+      value:
+        duplicateGroups:
+          - keepId: scope_001
+            removeIds:
+              - scope_008
+          - keepId: scope_002
+            removeIds:
+              - scope_010
+          - keepId: scope_003
+            removeIds:
+              - scope_009
+          - keepId: scope_004
+            removeIds:
+              - scope_001
+    - id: validation-wr-classify
+      value:
+        routed:
+          - id: waiting_033
+            target: assumption
+            content: Accounting system vendors are affected by data contracts but do not
+              require explicit buy-in for the submission system to proceed with
+              integration design.
+            reason: This is a boundary assumption about vendor autonomy and integration
+              responsibility. It's testable (does the design work without vendor
+              pre-approval?) and affects scope and integration sequencing.
+              Captures a firm stakeholder_012 constraint.
+          - id: waiting_034
+            target: residual
+            content: Agencies have 30 days total to correct and resubmit.
+            reason: Already captured as constraint_002 ('30-day correction window is
+              statutory'). This is duplication.
+          - id: waiting_035
+            target: assumption
+            content: Validation feedback must return within 2–3 business days maximum to
+              give agencies sufficient time to diagnose and fix within the
+              30-day window.
+            reason: This is a derived constraint that ties feedback latency to the 30-day
+              statutory deadline. It's a testable assumption about system
+              responsiveness requirements and directly affects goal_001 ('Enable
+              agencies to resolve validation errors within statutory
+              deadlines'). Not yet captured.
+          - id: waiting_036
+            target: finding
+            content: If validation feedback takes a week instead of 2–3 business days,
+              agencies are left with only 3–4 weeks to diagnose and fix within
+              the 30-day window, reducing margin for error and escalation.
+            reason: This is a risk observation showing the consequence of latency breach. It
+              flags the tight coupling between feedback turnaround and statutory
+              deadline pressure and supports the urgency of waiting_035.
+          - id: waiting_037
+            target: assumption
+            content: Rule authoring and deployment sequencing is owned by policy teams, not
+              the submission system.
+            reason: This is a boundary assumption about system responsibility. It affects
+              validation engine architecture (the system receives rules, does
+              not author them) and is a firm constraint per respondent feedback.
+          - id: waiting_038
+            target: assumption
+            content: Compliance or policy teams own deciding which rules change and when,
+              including fiscal-year transitions.
+            reason: Reinforces waiting_037 as a boundary constraint. The submission system
+              must support rule versioning (constraint_001) but not own the
+              versioning schedule. Testable and architectural.
+          - id: waiting_039
+            target: assumption
+            content: "Actionable validation feedback requires three elements: (1) the
+              specific field that failed, (2) what the correct value should be,
+              and (3) an example or reference standard."
+            reason: This operationalizes 'actionable feedback' (mentioned in inScope but
+              left vague). It's a testable quality criterion for validation
+              error messages and directly supports goal_001 and stakeholder_005
+              concerns. Tightens the definition needed for validation message
+              design.
+          - id: waiting_040
+            target: assumption
+            content: Entity mismatch errors (e.g., agency claims an entity is registered in
+              SAM but SAM validation rejects it) are not actionable feedback—the
+              agency cannot fix a SAM registration mismatch within the
+              submission system.
+            reason: This is a boundary assumption clarifying what the submission system
+              should and should not report as actionable feedback. It affects
+              error categorization and inScope item on 'Error categorization
+              distinguishing submission system problems from external system
+              problems.'
+          - id: waiting_041
+            target: finding
+            content: Unclear whether submissions waiting on external validation (e.g., SAM
+              entity validation pending) should receive immediate status
+              notification ('check back tomorrow') or be silently queued with
+              deferred notification once validation completes. This affects user
+              experience and agency visibility.
+            reason: This is an unresolved design choice that affects both stakeholder_005
+              (operators need visibility) and agency submitters (need to know
+              submission status). It's a gap requiring design decision, not a
+              settled assumption.
+          - id: waiting_042
+            target: assumption
+            content: USAspending.gov publication SLA and ownership of the SLA are determined
+              by system integration teams, not the submission system team.
+            reason: This is a boundary assumption about responsibility. It clarifies that
+              submission system owns 'data handoff' (already in inScope) but not
+              publication timing. Aligns with outOfScope item on USAspending.gov
+              integration scope.
+          - id: waiting_043
+            target: assumption
+            content: Compliance/policy teams own rule deployment sequencing and notification
+              protocol. The submission system must provide a 'clear notice and
+              clean handoff process' to operators, but the detailed
+              specification of what 'clear notice' and 'clean handoff' mean is
+              deferred to policy teams.
+            reason: This is a boundary assumption that defers detail specification to
+              another team while establishing the submission system's
+              responsibility to support the handoff. It's architectural (affects
+              integration points) and testable (can verify handoff mechanism
+              works).
+          - id: waiting_044
+            target: assumption
+            content: "The submission system must not author or deploy compliance rules. This
+              is a firm architectural boundary per respondent: 'If we start
+              authoring rules, we're making compliance decisions we shouldn't be
+              making.'"
+            reason: Respondent explicitly rejected the hybrid option. This is a constraint
+              on system scope and role. It reinforces waiting_037 and
+              waiting_038 and should be captured as a binding architectural
+              decision, not an open choice. Affects goal_001 and validation
+              engine design.
+          - id: waiting_045
+            target: finding
+            content: Assumption that submissions waiting on SAM validation should be queued
+              with explanatory status messages depends on clarifying whether
+              other external system latencies (e.g., FPDS reads, downstream SLA
+              checks) also trigger queueing with similar messaging. Current
+              design assumes SAM is special; may need generalized queueing
+              protocol for all external validation delays.
+            reason: This is a gap in requirements. waiting_041 surfaces the queueing choice;
+              this item flags that the design space is larger than just SAM.
+              Affects integration architecture and error handling.
+          - id: waiting_046
+            target: finding
+            content: "Workflow operators may need manual override capability to 'escalate'
+              or 'reject' queued submissions, but the semantics are undefined:
+              does escalation mean expediting SAM validation (technically
+              infeasible?) or bypassing it (compliance-permitted?). Define what
+              'escalate' means and what conditions permit override."
+            reason: This is an unresolved requirement for operator workflows
+              (stakeholder_005). The term is ambiguous and its feasibility is
+              unclear. Requires design decision and compliance review before
+              implementation.
+          - id: waiting_047
+            target: finding
+            content: Agencies are notified that submissions are 'accepted and queued' with
+              an expected SAM validation completion date, but the system's
+              ability to predict SAM latency reliably is unclear. Clarify
+              whether estimates are deterministic, probabilistic, or ranges, and
+              define what happens if SAM exceeds the estimated completion date
+              (e.g., notification update, escalation option).
+            reason: This is a gap in requirements for user-facing notifications and external
+              dependency management. It affects both agency submitter experience
+              (stakeholder_013) and stakeholder_005 visibility. SAM
+              constraint_003 says latency goes up to 48 hours; unclear if that's
+              a cap or if variance is larger.
+    - id: validation-consistency-check
+      value:
+        contradictions:
+          - description: Goal goal_001 requires validation feedback within statutory
+              deadlines (measurement states 30-day window), but assumption_002
+              states feedback must return in 2–3 business days. No explicit
+              connection exists between the 30-day correction window and the 2–3
+              day feedback turnaround. If feedback takes 10 days instead of 3,
+              agencies still have 20 days to fix—within the 30-day window.
+              Assumption_002 appears to impose a stricter deadline than goal_001
+              demands. Clarify whether the 2–3 day target is derived from
+              regulatory requirement or operational preference.
+          - description: Stakeholder_013 (agency data submitters) concerns state 'Validation
+              rules change year to year per DATA Act requirements; submissions
+              validated under FY25 rules must stay valid after FY26 rules go
+              live,' but no corresponding in-scope item or goal addresses rule
+              versioning migration policy. Constraint_001 captures that
+              submissions must be validated under rules in effect at submission
+              time, but does not address the operational challenge of
+              maintaining backward compatibility or communicating rule
+              transitions to agencies. This gap may leave agencies without
+              guidance on how their FY25 submissions behave after FY26 rules
+              deploy.
+          - description: "Goal goal_003 requires standardized integration contracts for SAM,
+              FPDS, and USAspending.gov, but out-of-scope definition for
+              USAspending.gov explicitly excludes scope of USAspending.gov
+              integration, citing that 'Publication SLA and timing belong to
+              USAspending.gov operations.' This creates a boundary tension:
+              goal_003 demands standardized contracts with USAspending.gov, but
+              the out-of-scope boundary prevents the submission system from
+              owning the contract detail needed to achieve the goal. Clarify
+              whether goal_003 applies only to SAM and FPDS, or whether a
+              different framing is needed for USAspending.gov integration."
+          - description: Stakeholder_005 (agency workflow operators) concerns include
+              'Confirm whether submitted corrections actually entered the system
+              or remain in queue,' implying the submission system must provide
+              visibility into submission queue state. However, no in-scope item
+              explicitly captures submission queue visibility or status
+              reporting requirements. This concern references a capability that
+              is not tracked as in-scope, creating risk that queue visibility is
+              forgotten during implementation.
+          - description: Assumption_006 states 'Entity mismatch errors are not actionable
+              feedback—the agency cannot fix a SAM registration mismatch within
+              the submission system,' but in-scope item 'Error categorization
+              distinguishing submission system problems from external system
+              problems' does not clarify the downstream workflow when SAM
+              validation fails. If errors are not actionable within the
+              submission system, what does the system tell the agency?
+              Assumption_006 identifies a gap in error handling that the
+              in-scope item does not fully address.
+    - id: validation-summary-present-r0
+      value: >-
+        This is comprehensive. I have one substantive push-back and one
+        clarification:
+
+
+        **Push back on finding_006:** The 2-3 day feedback target isn't just
+        operational preference — it's derived from the 30-day window math. If
+        agencies have 30 days total and feedback takes 10 days, they have 20
+        days left to fix. But if the fix itself is complex (requires vendor
+        coordination, accounting system changes, SAM escalation), 20 days gets
+        tight fast. 2-3 days gives them a real buffer to diagnose, coordinate
+        fixes, and resubmit without panic. It's not arbitrary — it's the minimum
+        turnaround that makes the 30-day window operationally realistic. That
+        should be in the justification.
+
+
+        **Clarification on finding_009:** Submission queue visibility — yes, we
+        need it. Agencies and workflow operators both need to see "your
+        submission is queued, position 5 of 12, estimated completion [date]."
+        That's not optional. Add it to in-scope.
+
+
+        Everything else I can live with. The findings are fair — they're the
+        design questions that need answering. The assumption about rule
+        authoring belongs to policy teams, not us. The SAM escalation semantics
+        — yeah, that's undefined and needs clarification before build starts.
+
+
+        Ready to wrap?
+    - id: validation-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: "Two substantive revisions: (1) finding_006 justification
+          must explain that the 2-3 day feedback target derives from 30-day
+          window math (30 days total minus 10 days for feedback = 20 days to
+          fix, which gets tight if fixes require vendor coordination, accounting
+          system changes, or SAM escalation; 2-3 days provides buffer to
+          diagnose, coordinate, and resubmit without panic); (2) finding_009
+          submission queue visibility is not optional—add to in-scope: agencies
+          and workflow operators both need to see 'your submission is queued,
+          position 5 of 12, estimated completion [date]'"
+        targetId: finding_006, finding_009
+        responseClass: answer
+title: Modernize federal financial assistance systems by replacing or upgrading
+  the FABS submission pipeline while maintaining integration with SAM (entity
+  validation), FPDS (procurement alignment), and USAspending.gov (public
+  reporting)
+userConcern: "Two substantive revisions: (1) finding_006 justification must
+  explain that the 2-3 day feedback target derives from 30-day window math (30
+  days total minus 10 days for feedback = 20 days to fix, which gets tight if
+  fixes require vendor coordination, accounting system changes, or SAM
+  escalation; 2-3 days provides buffer to diagnose, coordinate, and resubmit
+  without panic); (2) finding_009 submission queue visibility is not
+  optional—add to in-scope: agencies and workflow operators both need to see
+  'your submission is queued, position 5 of 12, estimated completion [date]'"

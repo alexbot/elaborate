@@ -1,0 +1,1011 @@
+sessionId: sess_2026-05-15_klljzz
+createdAt: 2026-05-15T08:41:12.627Z
+lastModified: 2026-05-15T08:46:58.830Z
+workflow:
+  status: completed
+  entries:
+    - id: opening-greet-r0
+      value: >-
+        I'm building an AI tool that helps people think through their project
+        ideas before they start building. Like a Socratic interviewer — it asks
+        questions to help you figure out what you actually need, instead of
+        jumping straight to code or generating a spec from a one-line prompt.
+
+
+        The problem is that people often start with a vague idea, rush into
+        implementation, and realize halfway through they misunderstood the
+        requirements or built the wrong thing. This tool sits in the middle —
+        it's supposed to be the thinking phase, the sense-making phase.
+    - id: opening-greet-extraction-r0
+      value:
+        purpose: Helps people think through project ideas before building by asking
+          Socratic questions to clarify what they actually need, instead of
+          jumping to implementation or generating specs from vague prompts. Sits
+          in the thinking phase to catch misunderstood requirements before they
+          result in building the wrong thing.
+        stakeholders:
+          - people with vague project ideas
+          - people who tend to rush into implementation
+        domainHints:
+          - AI tool
+          - requirements elicitation
+          - Socratic interviewing
+          - project planning
+          - sense-making
+        responseClass: answer
+    - id: opening-brownfield-screen
+      value:
+        greenfieldConfidence: 9
+        reasoning: User describes purpose, stakeholders, and domain hints with no
+          mention of existing artifacts, prior versions, legacy systems,
+          institutional infrastructure, prototypes, or documents this project
+          would build on or integrate with. The description is purely about
+          problem space (requirements elicitation, Socratic interviewing,
+          project planning) and target users. No inheritance layer mentioned.
+          Confidence is 9 rather than 10 only because the user hasn't explicitly
+          stated 'this is brand-new' — but artifact absence at this description
+          level strongly indicates greenfield.
+    - id: opening-summary-r0
+      value: "Yes, that's right. Though I'd add: it's not just for people who *tend*
+        to rush — it's for anyone starting with a vague idea, regardless of
+        discipline. Even careful planners often skip the clarity phase because
+        they don't have a structured way to do it. The tool makes that phase
+        concrete and useful."
+    - id: opening-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: Stakeholder scope is too narrow. The tool is for anyone
+          starting with a vague idea regardless of discipline, not just people
+          who tend to rush. Even careful planners skip the clarity phase because
+          they lack a structured way to do it.
+        targetId: stakeholder_002
+        responseClass: answer
+    - id: purpose-initial-extraction
+      value:
+        purpose: Helps anyone starting with a vague idea think through project ideas
+          before building by asking Socratic questions to clarify what they
+          actually need, regardless of discipline. The tool makes the clarity
+          phase concrete and useful, especially for careful planners who often
+          skip this phase because they lack a structured way to do it.
+        advantage: null
+        measurement: null
+        responseInterpretation: The respondent affirmed the existing purpose statement
+          but expanded the target audience scope. They clarified that the tool
+          addresses not just people who tend to rush, but anyone with a vague
+          idea regardless of planning discipline. They emphasized that even
+          careful planners skip the clarity phase due to lacking a structured
+          approach, and the tool makes that phase concrete and useful.
+        contradictions: []
+        responseClass: answer
+    - id: purpose-advantage-0-composition-r0
+      value:
+        question: What would **structured elicitation** give you that your current
+          approach to planning doesn't?
+        suggestions:
+          - A way to catch scope creep or conflicting goals before I start coding
+          - Confidence that I've actually thought through the problem instead of
+            just diving in
+          - A record of my reasoning so I can revisit assumptions later without
+            starting from scratch
+    - id: purpose-advantage-0-question-r0
+      value: >-
+        It's closer to (c), but with a twist.
+
+
+        Right now when I plan something, I think it through in my head or jot
+        notes — but there's no *external pressure* forcing me to be precise. I
+        can gloss over contradictions because I'm not explaining to anyone else.
+        A structured interview makes those gaps visible. If the AI asks "wait,
+        you said X but also said Y — which is it?" I can't hand-wave it.
+
+
+        And that record matters. Not just for revisiting later, but because the
+        *act of articulating it to someone else* — even an AI — changes what I
+        think. Half the value is the conversation itself, not the artifact at
+        the end.
+    - id: purpose-advantage-0-extraction-r0
+      value:
+        purpose: null
+        advantage: Structured elicitation forces external articulation that exposes gaps
+          and contradictions the respondent would otherwise gloss over. The act
+          of explaining to another party — even an AI — changes thinking and
+          reveals assumptions that internal planning masks. The record enables
+          revisiting reasoning without reconstruction.
+        measurement: null
+        responseInterpretation: "The respondent values structured elicitation primarily
+          for option (c) — the artifact and record — but with a critical
+          addition: the external pressure of having to explain to someone else
+          makes imprecision visible and untenable. Contradictions that survive
+          internal planning (where the respondent can hand-wave) become exposed
+          when articulated. The conversation itself, not just the final
+          artifact, is where value is created."
+        contradictions: []
+        responseClass: answer
+    - id: purpose-measurement-0-composition-r0
+      value:
+        question: How would you know if this tool helped you **clarify your project**
+          before you started building?
+        suggestions:
+          - I'd have written down what problem I'm solving and who needs it
+            solved, instead of just having a vague feeling
+          - I'd catch contradictions in my thinking — like realizing I'm
+            actually solving two different problems, not one
+          - I'd be able to explain my project to someone else without
+            backtracking or saying 'well, actually' five times
+    - id: purpose-measurement-0-question-r0
+      value: >-
+        All three, actually. But the real test is (b) — if I walk away having
+        *discovered* something I didn't know I was confused about, the tool
+        worked. 
+
+
+        The contradiction catch is the proof point. If the interview surfaces a
+        conflict I didn't see (like "you want this to be domain-agnostic but
+        you're designing it for software developers" or "you care about
+        durability but you're treating sessions as ephemeral"), that's when I
+        know the tool forced real clarity, not just documentation.
+    - id: purpose-measurement-0-extraction-r0
+      value:
+        purpose: null
+        advantage: null
+        measurement: "The tool succeeds when it surfaces contradictions the respondent
+          didn't know existed — proof that the interview forced real clarity
+          rather than just documentation. Specific examples: discovering
+          domain-agnostic intent conflicts with designing for a specific
+          audience (software developers), or finding that durability goals
+          contradict treating sessions as ephemeral."
+        responseInterpretation: The respondent affirmed all three success criteria
+          offered (writing down the problem and who needs it, catching
+          contradictions in thinking, being able to explain the project
+          coherently), but identified contradiction-discovery as the real
+          validation point. The tool worked if the interview surfaces a conflict
+          the respondent was unconsciously glossing over—evidence that the act
+          of articulation exposed hidden assumptions rather than merely
+          documenting existing clarity.
+        contradictions: []
+        responseClass: answer
+    - id: purpose-confirmation-r0
+      value: >-
+        This is solid. One small addition to **Measurement**: the contradiction
+        has to be *actionable* — something that changes how I'd build the thing,
+        not just an interesting logical puzzle. "You said X but also Y" is only
+        valuable if resolving it actually shifts the design.
+
+
+        Otherwise this captures it. Let's move on.
+    - id: purpose-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: Measurement criterion needs to require that contradictions be
+          actionable — they must change how the project would be built, not just
+          be logically interesting. A contradiction is only valuable if
+          resolving it shifts the design.
+        targetId: measurement
+        responseClass: answer
+    - id: purpose-revision
+      value:
+        purpose: null
+        advantage: null
+        measurement: "The tool succeeds when it surfaces contradictions the respondent
+          didn't know existed — proof that the interview forced real clarity
+          rather than just documentation. Specific examples: discovering
+          domain-agnostic intent conflicts with designing for a specific
+          audience (software developers), or finding that durability goals
+          contradict treating sessions as ephemeral. Contradictions must be
+          actionable — something that changes how the respondent would build the
+          thing, not just an interesting logical puzzle. 'You said X but also Y'
+          is only valuable if resolving it actually shifts the design."
+        responseInterpretation: "The measurement artifact is solid. Adding one
+          constraint: contradictions captured must be actionable — they must
+          change design decisions, not remain as interesting logical puzzles. A
+          contradiction only counts if resolving it shifts how the thing gets
+          built."
+        contradictions: []
+        responseClass: answer
+    - id: goal-seed-extraction
+      value:
+        goals:
+          - title: Surface hidden contradictions in project thinking
+            description: "The tool succeeds when it reveals conflicts between stated goals
+              that the respondent didn't know existed — conflicts that are
+              actionable (they change how the project would be built, not just
+              logical puzzles). Examples: discovering that domain-agnostic
+              intent conflicts with designing for a specific audience, or
+              finding that durability goals contradict treating sessions as
+              ephemeral."
+            rationale: The measurement criterion defines this as the core success signal. It
+              moves beyond documentation ('we captured what you said') to
+              transformative insight ('we found something that changes your
+              approach'). This is the outcome that justifies the structured
+              interview over unguided thinking.
+          - title: Create a durable external record of project reasoning
+            description: The tool produces a persistent artifact of the clarification
+              process — the reasoning chain, assumptions, and decisions — that
+              the respondent can revisit without reconstruction. This enables
+              them to return to the work later, share context with
+              collaborators, or trace how earlier decisions influenced later
+              ones.
+            rationale: The advantage statement emphasizes that 'the record enables
+              revisiting reasoning without reconstruction' — this is a distinct
+              outcome from the moment of clarity itself. It's infrastructure for
+              sustained thinking, especially valuable for projects that have
+              long design cycles or involve multiple stakeholders.
+          - title: Remove activation friction for the clarity phase
+            description: The tool makes structured elicitation concrete and accessible
+              enough that people who normally skip clarity work (because they
+              lack a structured process) will actually use it. Success means
+              careful planners move from skipping clarity to treating it as a
+              normal part of starting a project.
+            rationale: "The purpose identifies a real barrier: people know clarity matters
+              but lack a concrete, usable method, so they skip it and jump to
+              implementation. This goal captures the behavioral shift the tool
+              enables — not just offering clarity, but making it the default
+              path."
+        drainedWaitingRoomIds: []
+    - id: goal-seed-present-r0
+      value: >-
+        These three are right. I'd add one more:
+
+
+        **d) Enable resumption without context loss** — If I close the tool
+        mid-interview, I should be able to pick it back up exactly where I left
+        off without re-answering questions or losing the thread. The session
+        state persists, so interruptions don't reset progress.
+
+
+        The other three stand as-is.
+    - id: goal-seed-classification-r0
+      value:
+        responseInterpretation: "The respondent confirmed the three existing goals as
+          correct and added a fourth goal: the tool should enable users to close
+          and resume interviews without losing context or re-answering
+          questions, with session state persisting across interruptions."
+        confirmedGoalIds:
+          - goal_001
+          - goal_002
+          - goal_003
+        removedGoalIds: []
+        newGoals:
+          - title: Enable resumption without context loss
+            description: If the user closes the tool mid-interview, they should be able to
+              pick it back up exactly where they left off without re-answering
+              questions or losing the thread. Session state persists, so
+              interruptions don't reset progress.
+        waitingRoomItems: []
+        responseClass: answer
+    - id: goal-sort
+      value:
+        rankedGoalIds:
+          - goal_004
+          - goal_001
+          - goal_002
+          - goal_003
+    - id: goal-refinement-goal_004-clarify-0-composition-r0
+      value:
+        question: When you come back to a session weeks later, what would it take for
+          you to pick up where you left off without starting over?
+        suggestions:
+          - Being able to see exactly which questions I answered and what I
+            said, so I can recall my own thinking without re-reading the whole
+            transcript.
+          - Having a summary of what we decided and what was still unclear, so I
+            know what changed since I last looked at it.
+          - Access to the artifacts we built together — the goals, stakeholders,
+            assumptions — so I can see the concrete outputs and don't have to
+            reconstruct them from memory.
+    - id: goal-refinement-goal_004-clarify-0-question-r0
+      value: (a) and (c) together. I need to see my own answers to know what I was
+        thinking, and I need the artifacts so I don't have to reverse-engineer
+        them from the conversation. If I come back in three weeks, I want to
+        jump straight to "here's what we captured" without re-reading 40
+        messages.
+    - id: goal-refinement-goal_004-clarify-0-extraction-r0
+      value:
+        responseInterpretation: "The respondent needs two specific things together to
+          resume a session weeks later: (1) visibility into their own answers
+          and stated thinking throughout the transcript so they can recall their
+          reasoning without re-reading all 40 messages, and (2) access to the
+          built artifacts (goals, stakeholders, assumptions) in concrete form so
+          they don't have to reverse-engineer them from conversation. The goal
+          is to jump directly to a summary artifact view rather than re-traverse
+          the entire dialog."
+        title: Enable resumption without context loss
+        description: When returning to a session after weeks, the respondent can quickly
+          recall their own thinking and access the captured artifacts without
+          re-reading the full transcript or reconstructing outputs from memory.
+        rationale: Long design cycles and project interruptions mean sessions are
+          revisited weeks later. The respondent's own words and the concrete
+          outputs (artifacts) are the minimal set needed to restore context.
+          This directly supports goal_002 (durable external record) by making
+          the record *usable* under realistic time gaps.
+        contradictions: []
+        waitingRoomItems: []
+        responseClass: answer
+    - id: goals-confirmation-r0
+      value: >-
+        This is good. I'd tweak the wording of goal #3 slightly — it's not just
+        about *my* resumption, it's about resumption *without the AI re-asking
+        the same questions*. The distinction matters because it means the tool
+        needs to know what it already asked, not just store the answers.
+
+
+        Otherwise these three stand. Let's move on.
+    - id: goals-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: "Goal #3 wording needs adjustment. Not just about resumption,
+          but about resumption without the AI re-asking the same questions. The
+          tool needs to know what it already asked, not just store the answers."
+        targetId: goal_004
+        responseClass: answer
+    - id: goals-revision
+      value:
+        responseInterpretation: "The respondent affirms goals 1, 2, and 4 as stated. For
+          goal 4, they clarify that 'resumption without context loss' must
+          specifically mean the tool avoids re-asking questions it has already
+          posed in prior sessions. The distinction is functional: the tool must
+          track what it previously asked, not just store answers. This is a
+          refinement of scope, not a rejection of the goal itself."
+        title: null
+        description: null
+        rationale: null
+        contradictions: []
+        waitingRoomItems:
+          - content: The tool needs to know what it already asked (in prior sessions), not
+              just store the answers
+        responseClass: answer
+    - id: stakeholder-seed-extraction
+      value:
+        stakeholders:
+          - name: careful planners who skip clarity phases
+            type: primary
+          - name: people building iteratively without documented reasoning
+            type: primary
+          - name: projects with long design cycles or interruptions
+            type: secondary
+          - name: multi-stakeholder projects needing shared context
+            type: secondary
+        drainedWaitingRoomIds:
+          - waiting_001
+          - waiting_002
+    - id: stakeholder-review-present-r0
+      value: >-
+        (e) and (f) aren't stakeholders — they're *contexts* or *scenarios*.
+        Stakeholders are people.
+
+
+        For (a)-(d): they're all variations of the same person. The real
+        distinction is simpler: **people starting projects with unclear scope**
+        (primary). That covers all four.
+
+
+        I'd add: **AI coding assistants or developer tools** (secondary) —
+        because this isn't a standalone web app, it integrates into existing
+        workflows. The tool needs to fit into their environment, not ask them to
+        context-switch to a separate interface.
+    - id: stakeholder-review-classification-r0
+      value:
+        responseInterpretation: "The respondent corrected the stakeholder list by
+          distinguishing between stakeholders (people) and contexts/scenarios.
+          Items (e) and (f) from the original list are not stakeholders but
+          environmental factors. Items (a)-(d) are variations of a single
+          stakeholder type: people starting projects with unclear scope. The
+          respondent consolidated these into one primary stakeholder group.
+          Additionally, the respondent identified a secondary stakeholder: AI
+          coding assistants or developer tools, because the tool must integrate
+          into existing developer workflows rather than operate as a standalone
+          application."
+        updatedTypes: []
+        removedIds:
+          - stakeholder_002
+          - stakeholder_004
+          - stakeholder_005
+          - stakeholder_006
+        newStakeholders:
+          - name: AI coding assistants or developer tools
+            type: secondary
+        responseClass: answer
+    - id: stakeholder-respondent-present-r0
+      value: >-
+        I'm the person with a vague idea who's a careful planner. I *know* I
+        should do clarity work, I have the discipline to do it — I just don't
+        have a structured process, so I either skip it or do it informally in my
+        head. That's the gap this tool fills for me.
+
+
+        The AI coding assistant angle is different — that's *how* people will
+        use it, not who I am in this moment.
+    - id: stakeholder-respondent-present-extraction-r0
+      value:
+        responseInterpretation: The respondent identifies as a careful planner with
+          discipline but without a structured clarity process. They either skip
+          clarity work or do it informally in their head. This tool fills that
+          gap by providing the structured process they lack. They are
+          distinguishing themselves from the 'AI coding assistant'
+          stakeholder—that's a use case for how others will use the tool, not
+          who they are.
+        respondentId: stakeholder_003
+        responseClass: answer
+    - id: stakeholder-elaboration-stakeholder_001-0-composition-r0
+      value:
+        question: As someone planning a project, what would **careful planners like
+          you** most need from a structured thinking process?
+        suggestions:
+          - A way to catch contradictions in my own thinking before I start
+            building
+          - A record I can come back to weeks later without having to rebuild my
+            reasoning from scratch
+          - Help articulating vague ideas clearly enough to explain them to a
+            technical team
+    - id: stakeholder-elaboration-stakeholder_001-0-question-r0
+      value: >-
+        (a) and (b), but with a specific angle: I need the process to *not waste
+        my time*. I'm disciplined, so I'll do the work — but only if it's
+        efficient. A 90-minute interview where half the questions are obvious or
+        repetitive would frustrate me. The tool has to respect that I'm capable;
+        it should ask what matters and stop when it's done.
+
+
+        So it's not just (a) and (b) — it's (a) and (b) *delivered in a lean,
+        focused way that doesn't pad the process*.
+    - id: stakeholder-elaboration-stakeholder_001-0-extraction-r0
+      value:
+        responseInterpretation: The respondent needs (a) catching contradictions in
+          their own thinking before building and (b) a record they can return to
+          weeks later without rebuilding reasoning. But both must be delivered
+          efficiently — a 90-minute interview with obvious or repetitive
+          questions would frustrate them. They are disciplined and will do the
+          work, but only if the process respects their capability by asking what
+          matters and stopping when done. The efficiency requirement is not
+          separate from (a) and (b); it's integral to making those outcomes
+          valuable.
+        role: null
+        concerns:
+          - Process efficiency — avoiding wasted time through obvious or
+            repetitive questions
+          - Respect for capability — the tool should not over-explain or
+            over-guide capable planners
+          - Lean, focused delivery — ask what matters and stop when done, not
+            padding the process
+        contradictions: []
+        waitingRoomItems: []
+        responseClass: answer
+    - id: stakeholder-followup-assessment-stakeholder_001
+      value:
+        needed: true
+        question: When you're planning a project yourself, what usually trips you up —
+          or what do you wish you'd thought through earlier?
+        suggestions:
+          - Realizing midway that what I wanted to build didn't match who I was
+            building it for
+          - Discovering that my scope kept growing because I hadn't defined what
+            'done' actually meant
+          - Starting to code before I understood what problem I was really
+            solving
+    - id: stakeholder-followup-stakeholder_001-question-r0
+      value: >-
+        (a) is closest. I've built things that worked technically but were
+        solving the wrong problem or solving it for the wrong audience. The
+        mismatch didn't surface until I was deep in implementation.
+
+
+        But the root cause is usually (c) — I *thought* I knew the problem, but
+        I hadn't interrogated it closely enough. I'd skip the "what problem am I
+        actually solving?" phase and jump to "here's how I'll solve it."
+    - id: stakeholder-followup-stakeholder_001-extraction-r0
+      value:
+        responseInterpretation: The respondent has experienced shipping technically
+          functional products that solved the wrong problem or served the wrong
+          audience, with the mismatch only becoming visible deep in
+          implementation. However, they trace the root cause to inadequate
+          problem interrogation before implementation — they assumed they
+          understood the problem without questioning it closely enough, and
+          skipped the 'what problem am I actually solving?' phase in favor of
+          jumping to 'here's how I'll solve it.'
+        role: null
+        concerns:
+          - Avoiding wasted implementation effort on solutions to the wrong
+            problem
+          - Avoiding mismatch between solution and audience
+          - Need for structured problem interrogation before solution design
+        contradictions: []
+        waitingRoomItems: []
+        responseClass: answer
+    - id: stakeholder-elaboration-stakeholder_003-0-composition-r0
+      value:
+        question: What does a **clarity phase** look like for you right now, and what
+          stops you from doing it?
+        suggestions:
+          - I skip it because it feels like overthinking before I have enough
+            information to think about
+          - I do some planning but not systematically — I think through key
+            decisions in my head rather than writing them down
+          - I'd do it if there were a structured framework that didn't take
+            hours, but I don't know what a good one looks like
+    - id: stakeholder-elaboration-stakeholder_003-0-question-r0
+      value: >-
+        (b) mostly, with (c) as the underlying reason. I *do* think things
+        through — but it's scattered. I'll think about users in one context,
+        scope in another, constraints somewhere else. There's no systematic
+        order, no forcing function that says "you haven't actually clarified
+        this yet."
+
+
+        A structured framework would help, but only if it's *designed for
+        iteration*, not ceremony. I don't want a form to fill out. I want a
+        conversation that adapts based on what I've already said and steers me
+        toward the gaps I haven't noticed.
+    - id: stakeholder-elaboration-stakeholder_003-0-extraction-r0
+      value:
+        responseInterpretation: The respondent identifies with option (b) — they do
+          think things through, but the thinking is scattered across different
+          contexts (users in one place, scope elsewhere, constraints somewhere
+          else) with no systematic order or forcing function to verify clarity.
+          The underlying reason (option c) is that they lack a structured
+          framework. They want a framework designed for iteration that adapts
+          based on what's already been said and steers toward gaps, not a
+          form-filling ceremony.
+        role: null
+        concerns:
+          - Scattered thinking across disconnected contexts — users, scope, and
+            constraints discussed in isolation rather than as an integrated
+            system
+          - No forcing function or systematic check to confirm 'you haven't
+            actually clarified this yet'
+          - Risk of missing gaps in thinking without external structure to
+            reveal them
+          - Framework must adapt iteratively, not operate as static ceremony or
+            form
+          - Framework must steer toward undiscovered gaps, not just document
+            what's already been thought
+        contradictions: []
+        waitingRoomItems: []
+        responseClass: answer
+    - id: stakeholder-elaboration-stakeholder_004-0-composition-r0
+      value:
+        question: What **problems or constraints** would AI coding assistants need to
+          understand about your project to be genuinely useful?
+        suggestions:
+          - They'd need to know the target audience so they don't suggest
+            architecture patterns that don't fit who'll actually use it
+          - They'd need clarity on non-negotiable constraints — like whether
+            this needs to run offline or handle certain data sensitivity
+            requirements
+          - They'd need to understand what gaps or contradictions we discovered
+            during planning so they don't build around assumptions we already
+            rejected
+    - id: stakeholder-elaboration-stakeholder_004-0-question-r0
+      value: >-
+        All three matter, but (c) is the linchpin. If the assistant doesn't know
+        what we *rejected* or *debated*, it'll confidently build around
+        assumptions we already decided were wrong. That's worse than starting
+        from scratch.
+
+
+        So the tool's output — the structured artifacts — has to be consumable
+        by downstream tools. An AI assistant coding this project needs to read
+        the assumptions we captured, the contradictions we resolved, the scope
+        boundaries we set. Without that, it's just another code generator making
+        guesses.
+    - id: stakeholder-elaboration-stakeholder_004-0-extraction-r0
+      value:
+        responseInterpretation: All three suggestions matter, but the critical one is
+          that the tool's output must be consumable by downstream AI tools. An
+          AI assistant coding this project needs to read the captured
+          assumptions, contradictions that were resolved, and scope boundaries —
+          otherwise it will confidently build around assumptions that were
+          already rejected. Without access to the structured artifacts capturing
+          what was rejected or debated, the assistant is just another code
+          generator making guesses, which is worse than starting from scratch.
+        role: Consumer of structured artifacts and decision history; must understand
+          what was rejected and debated to avoid rebuilding around abandoned
+          assumptions
+        concerns:
+          - Without access to captured contradictions and rejected assumptions,
+            will confidently build around decisions already deemed wrong
+          - Needs clarity on what was debated and rejected during planning to
+            avoid reinventing discarded approaches
+          - Requires consumable structured artifacts — assumptions, resolved
+            contradictions, scope boundaries — to be genuinely useful rather
+            than speculative
+          - Risk of producing worse output than starting from scratch if it
+            lacks the decision context
+        contradictions: []
+        waitingRoomItems:
+          - content: The tool's output — the structured artifacts — has to be consumable by
+              downstream tools. This is a design requirement for the artifact
+              format/shape, not a stakeholder concern per se.
+        responseClass: answer
+    - id: stakeholder-dedup
+      value:
+        duplicateGroups: []
+    - id: stakeholders-confirmation-r0
+      value: >-
+        This is accurate. One addition for the AI assistant stakeholder: it
+        needs to know *why* things were rejected, not just *that* they were. "We
+        rejected offline-first architecture" is less useful than "we rejected it
+        because the user base is always on wifi and the complexity wasn't worth
+        it."
+
+
+        The reasoning matters downstream — it prevents the assistant from
+        proposing the same thing again in a different form, or applying it in a
+        different context where it might actually fit.
+
+
+        Otherwise, this stands. Let's move on.
+    - id: stakeholders-confirmation-classification-0-r0
+      value:
+        approved: false
+        revisionRequested: AI assistant stakeholder needs to understand why things were
+          rejected, not just that they were rejected. Requires capturing
+          rejection reasoning (e.g., 'rejected offline-first because user base
+          is always on wifi and complexity wasn't worth it') so the assistant
+          can avoid proposing the same thing again in different forms or
+          applying it in contexts where it might fit.
+        targetId: stakeholder_004
+        responseClass: answer
+    - id: stakeholders-revision
+      value:
+        responseInterpretation: "The stakeholder approves the existing artifacts as
+          accurate. They add a requirement for the AI assistant stakeholder: it
+          must know the *reasoning* behind rejections, not just that something
+          was rejected. Example: 'We rejected offline-first architecture because
+          the user base is always on wifi and the complexity wasn't worth it' is
+          more useful than 'We rejected offline-first architecture.' This
+          reasoning prevents the assistant from proposing the same rejected
+          approach again in different forms or applying it in contexts where it
+          might actually fit."
+        role: null
+        concerns:
+          - Without understanding *why* decisions were rejected, the AI
+            assistant will confidently reproduce rejected approaches in
+            different forms
+          - Reasoning about rejected decisions is necessary to prevent applying
+            abandoned approaches in contexts where they might actually be valid
+          - The AI assistant needs captured decision rationale, not just
+            decision outcome, to avoid wasting effort on approaches already
+            deemed unsuitable
+        contradictions: []
+        waitingRoomItems: []
+        responseClass: answer
+    - id: scope-seed-extraction
+      value:
+        inScope:
+          - description: Structured interview flow using Socratic dialog to elicit project
+              goals, stakeholders, scope, and assumptions
+            relatedGoals:
+              - goal_001
+              - goal_002
+          - description: Detection and surfacing of contradictions between stated goals,
+              stakeholder needs, scope boundaries, and constraints
+            relatedGoals:
+              - goal_001
+          - description: Creation of durable session record capturing conversation,
+              artifacts, and reasoning provenance
+            relatedGoals:
+              - goal_002
+              - goal_004
+          - description: Session resumption mechanics to restore context across time gaps
+              without reconstruction
+            relatedGoals:
+              - goal_004
+          - description: Artifact format and schema design to support downstream consumption
+              by AI assistants and other tools
+            relatedGoals:
+              - goal_002
+          - description: Capture of rejected approaches and decision rationale to prevent
+              reinvention of abandoned assumptions
+            relatedGoals:
+              - goal_001
+              - goal_002
+        outOfScope:
+          - description: Implementation of the actual project ideas discussed — the tool
+              stops at clarity and structured artifacts
+            reason: Tool is pre-implementation; execution is the user's responsibility
+              post-interview
+          - description: Domain-specific guidance or templates (e.g., SaaS metrics, game
+              design mechanics, scientific method)
+            reason: Tool is domain-agnostic; disciplinary expertise lives outside this tool
+          - description: Real-time collaborative multi-stakeholder interviews
+            reason: Current design centers on individual respondent + AI; group facilitation
+              is separate scope
+        ambiguous:
+          - description: Degree of guidance vs. letting respondent drive — how prescriptive
+              should the Socratic dialog be? Should the tool adaptively throttle
+              or expand the framework based on respondent capability?
+            relatedGoals:
+              - goal_001
+          - description: Success measurement specificity — what constitutes 'actionable
+              contradiction'? Is discovery of a single contradiction success, or
+              should the tool target a minimum number or depth of
+              contradictions?
+            relatedGoals:
+              - goal_001
+          - description: Artifact consumption by downstream tools — what is the contract?
+              Does the tool need to output in a specific schema, or is
+              plain-language structured text sufficient?
+            relatedGoals:
+              - goal_002
+        drainedWaitingRoomIds:
+          - waiting_001
+    - id: scope-seed-present-r0
+      value: >-
+        This is mostly right. I'd move (j) and (k) from Unclear to In Scope —
+        they're not questions to resolve later, they're core design decisions I
+        need to make now.
+
+
+        For (j): the tool should *never self-resolve ambiguity*. When the
+        respondent is vague or contradicts themselves, the tool flags it and
+        asks them to decide — it never picks an interpretation silently. That's
+        non-negotiable.
+
+
+        For (k): a single actionable contradiction is success. The tool doesn't
+        need to hit a quota. One genuine insight that changes how I'd build the
+        thing is enough.
+
+
+        Everything else stands — including the out-of-scope items and the
+        artifact consumption question under (l).
+    - id: scope-seed-classification-r0
+      value:
+        responseInterpretation: The respondent accepts most of the scope list but moves
+          two items from unclear/ambiguous to firmly in-scope. Item (j) — that
+          the tool must flag ambiguity and never self-resolve — is a
+          non-negotiable core design constraint. Item (k) — that a single
+          actionable contradiction is sufficient success, not a quota —
+          redefines the success criterion. The respondent confirmed all other
+          items stand, including out-of-scope designations and the artifact
+          consumption question.
+        confirmedInScope:
+          - scope_001
+          - scope_002
+          - scope_003
+          - scope_004
+          - scope_005
+          - scope_006
+        confirmedOutOfScope:
+          - scope_007
+          - scope_008
+          - scope_009
+        removedIds: []
+        newItems:
+          - description: Tool must never self-resolve ambiguity — when respondent is vague
+              or contradicts themselves, the tool flags it and asks them to
+              decide, never picking an interpretation silently
+            classification: in
+          - description: Success criterion is a single actionable contradiction that changes
+              how the respondent would build the thing — tool does not need to
+              hit a quota or surface multiple insights
+            classification: in
+        waitingRoomItems: []
+        responseClass: answer
+    - id: scope-constraint-composition-r0
+      value:
+        question: What **hard constraints** must your tool work within?
+        suggestions:
+          - Limited token budget or API costs for running interviews at scale
+          - Sessions must complete in a single conversation (no resumption
+            across multiple interactions)
+          - Tool output must integrate with existing workflows or systems
+            already in use
+    - id: scope-constraint-question-r0
+      value: >-
+        (c) is the hard constraint. This is a CLI tool that lives inside
+        existing developer workflows — it integrates into AI coding assistants
+        like Claude's Code skill, or runs from the terminal in an existing dev
+        environment. It's not a standalone web app or SaaS platform.
+
+
+        That shapes everything: how users invoke it, where session state lives,
+        what formats it outputs, how it fits into the user's existing toolchain.
+    - id: scope-constraint-extraction-r0
+      value:
+        responseInterpretation: The hard constraint is that the tool must be a CLI that
+          integrates into existing developer workflows — specifically AI coding
+          assistants like Claude's Code skill or terminal environments in dev
+          setups. It cannot be a standalone web app or SaaS platform. This
+          constraint shapes invocation patterns, session state storage, output
+          formats, and toolchain integration.
+        constraints:
+          - description: Tool must be a CLI, not a standalone web app or SaaS platform
+          - description: Tool must integrate into existing developer workflows (AI coding
+              assistants like Claude's Code skill, or terminal in existing dev
+              environments)
+          - description: Tool must fit into the user's existing toolchain
+        waitingRoomItems: []
+        responseClass: answer
+    - id: scope-contrast-0-composition-r0
+      value:
+        question: Should the **dialog framework** adapt its prescriptiveness based on
+          what you demonstrate, or stay consistent throughout?
+        suggestions:
+          - Stay consistent — use the same structured sequence every time so I
+            know what to expect
+          - Adapt — throttle back detailed scaffolding if I'm articulate; expand
+            if I'm circling or stuck
+          - Hybrid — follow a consistent skeleton but adjust the depth of
+            questions within each phase
+    - id: scope-contrast-0-question-r0
+      value: >-
+        (c) — consistent skeleton, variable depth. I need predictability (I know
+        we're moving through purpose → goals → stakeholders → scope →
+        assumptions), but the tool should recognize when I'm being vague and
+        drill deeper, or when I've already been precise and move on.
+
+
+        The skeleton is the forcing function; the depth adjusts to avoid wasting
+        time.
+    - id: scope-contrast-0-extraction-r0
+      value:
+        responseInterpretation: "The dialog framework should maintain a consistent
+          structural skeleton (purpose → goals → stakeholders → scope →
+          assumptions phases) that respondents can predict and rely on. Within
+          that predictable structure, the depth and granularity of questions
+          should vary based on demonstrated clarity: throttle back detailed
+          scaffolding when the respondent articulates clearly, expand and drill
+          deeper when responses are vague or circular. The skeleton provides
+          forcing function and predictability; depth adjustment prevents time
+          waste."
+        classification: in
+        reason: ""
+        relatedGoals:
+          - goal_001
+          - goal_002
+        waitingRoomItems: []
+        responseClass: answer
+    - id: scope-contrast-1-composition-r0
+      value:
+        question: Is the tool successful if it surfaces one **actionable
+          contradiction**, or should it target a minimum number of
+          contradictions per session?
+        suggestions:
+          - One solid contradiction that changes how I'd build it — that's
+            enough.
+          - I'd want at least 2-3 contradictions to feel like the tool earned
+            the time investment.
+          - Depends on the project — complex projects need more, simple ones
+            might need just one.
+    - id: scope-contrast-1-question-r0
+      value: >-
+        (a) — one solid contradiction is enough. If I walk away having
+        discovered something that changes my approach, the tool worked. Chasing
+        a quota would push toward forcing contradictions that don't matter,
+        which defeats the purpose.
+
+
+        That said, in practice I expect most sessions will surface multiple
+        insights naturally. But success isn't measured by hitting a number.
+    - id: scope-contrast-1-extraction-r0
+      value:
+        responseInterpretation: Success is measured by surfacing one solid, actionable
+          contradiction that changes the respondent's approach to building the
+          project. Hitting a quota of contradictions is counterproductive — it
+          would force artificial contradictions that don't matter. The
+          respondent expects multiple insights will naturally emerge in most
+          sessions, but the success criterion is not a numerical target.
+        classification: in
+        reason: ""
+        relatedGoals:
+          - goal_001
+        waitingRoomItems:
+          - content: In practice, most sessions will surface multiple insights naturally
+        responseClass: answer
+    - id: scope-contrast-2-composition-r0
+      value:
+        question: Should the tool output artifacts in a specific schema, or is
+          structured plain text sufficient for downstream tools?
+        suggestions:
+          - Specific schema (JSON, YAML, or similar) — tools consuming the
+            artifacts need predictable structure to parse and reason about them
+          - Structured plain text with clear conventions (headings, sections,
+            bullet points) — human-readable and AI-consumable without rigid
+            constraints
+          - Both — human-facing outputs in plain text, machine-facing outputs in
+            schema format
+    - id: scope-contrast-2-question-r0
+      value: >-
+        (c) — both. The artifacts need to be machine-readable for downstream
+        tools (an AI assistant shouldn't have to parse prose), but the
+        human-facing record should be plain text with clear structure so I can
+        actually read and reason about it without needing a parser.
+
+
+        The schema is the canonical form; plain text is the readable projection
+        of it.
+    - id: scope-contrast-2-extraction-r0
+      value:
+        responseInterpretation: "Artifact output should use both formats: schema
+          (JSON/YAML) as the canonical, machine-readable form for downstream
+          tools and AI assistants; plain text with clear structure (headings,
+          sections, bullets) as the human-readable projection. The schema
+          enables tool consumption without prose parsing; the plain text
+          projection maintains human readability and reasoning capability."
+        classification: in
+        reason: ""
+        relatedGoals:
+          - goal_002
+        waitingRoomItems: []
+        responseClass: answer
+    - id: scope-contradiction-check
+      value:
+        contradictions: []
+        orphans:
+          - scopeItemId: scope_010
+            description: Tool must never self-resolve ambiguity — when respondent is vague
+              or contradicts themselves, the tool flags it and asks them to
+              decide, never picking an interpretation silently. No goal
+              connection; this is a design principle/constraint on dialog
+              behavior.
+          - scopeItemId: scope_011
+            description: Success criterion is a single actionable contradiction that changes
+              how the respondent would build the thing — tool does not need to
+              hit a quota or surface multiple insights. No goal connection; this
+              is a success metric/evaluation criterion.
+    - id: scope-dedup
+      value:
+        duplicateGroups:
+          - keepId: scope_011
+            removeIds:
+              - scope_013
+    - id: scope-confirmation-r0
+      value: >-
+        This is solid. The two items flagged as having no goal connection — they
+        don't need connections. The first is a design principle (how the tool
+        behaves), the second is a success metric (how you measure whether it
+        worked). Not everything traces to a goal; some things are constraints or
+        evaluation criteria that sit alongside goals.
+
+
+        Everything else stands. Let's move on.
+    - id: scope-confirmation-classification-0-r0
+      value:
+        approved: true
+        revisionRequested: null
+        targetId: null
+        responseClass: answer
+    - id: validation-wr-classify
+      value:
+        routed:
+          - id: waiting_001
+            target: residual
+            content: In practice, most sessions will surface multiple insights naturally
+            reason: "This statement is already absorbed into existing artifacts. The
+              measurement criterion explicitly rejects quota-based success
+              ('surface multiple insights') in favor of actionable
+              contradiction: 'The tool succeeds when it surfaces
+              contradictions... Contradictions must be actionable — something
+              that changes how the respondent would build the thing.' The
+              in-scope item 'Success criterion is a single actionable
+              contradiction that changes how the respondent would build the
+              thing — tool does not need to hit a quota or surface multiple
+              insights' directly negates the premise of waiting_001. The item is
+              not a testable assumption (it's aspirational observation, not a
+              structural belief required for success) and not a finding (the
+              design has already rejected this framing). It's a residual
+              statement that conflicts with settled design decisions."
+    - id: validation-consistency-check
+      value:
+        contradictions: []
+    - id: validation-summary-present-r0
+      value: >-
+        This is accurate. The two findings aren't unresolved — they're just
+        notes that those items don't trace to goals. That's fine; not everything
+        needs to. They're design principles and success criteria that stand
+        independently.
+
+
+        No assumptions to add. Everything looks right. Let's wrap up.
+    - id: validation-confirmation-classification-0-r0
+      value:
+        approved: true
+        revisionRequested: null
+        targetId: null
+        responseClass: answer
+title: Helps anyone starting with a vague idea think through project ideas
+  before building by asking Socratic questions to clarify what they actually
+  need, regardless of discipline. The tool makes the clarity phase concrete and
+  useful, especially for careful planners who often skip this phase because they
+  lack a structured way to do it.
