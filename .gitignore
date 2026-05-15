@@ -30,7 +30,7 @@ logs/
 tests/results/
 
 # Private documentation (separate repo)
-private/
+docs/private/
 
 # Claude Code personal config
 .claude/
