@@ -29,5 +29,8 @@ logs/
 # Evaluation results (generated per-run)
 tests/results/
 
+# Private documentation (separate repo)
+private/
+
 # Claude Code personal config
 .claude/
