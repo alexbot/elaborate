@@ -7,6 +7,7 @@ argument-hint: "[path-to-session.yaml]"
 # Project Brief
 
 Read the session file (argument). Walk `workflow.entries` in order to reconstruct the final state of each artifact — purpose, advantage, measurement, goals, stakeholders, in-scope/out-of-scope items, assumptions, findings. Later entries overwrite earlier ones for the same artifact.
+
 ## Structure
 
 Two heading levels: `#` (title) and `##` (sections). Merge thin sections, split heavy ones. Omit empty sections.

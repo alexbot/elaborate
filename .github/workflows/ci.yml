@@ -35,6 +35,14 @@ jobs:
       - name: Build skill bundle
         run: npm run build:skill
 
+      - name: Verify skill bundle is up to date
+        run: |
+          if ! git diff --quiet skills/; then
+            echo "::error::skills/ directory is out of date. Run 'npm run build:skill' and commit the result."
+            git diff --stat skills/
+            exit 1
+          fi
+
       - name: Test
         run: npm run test:run
 

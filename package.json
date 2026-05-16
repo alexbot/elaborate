@@ -1,7 +1,7 @@
 {
   "name": "@alexbot/elaborate",
   "version": "0.1.0",
-  "description": "AI Socratic interviewer that turns vague ideas into structured intent",
+  "description": "Agent skill that runs a Socratic interview inside your coding agent — turning vague ideas into structured intent",
   "type": "module",
   "exports": {
     "./durable": {
@@ -27,7 +27,7 @@
   "scripts": {
     "build": "tsc",
     "build:skill": "node scripts/build-skill.mjs",
-    "deploy:skill": "node scripts/build-skill.mjs && node -e \"const fs=require('fs');fs.mkdirSync('.claude/skills/elaborate',{recursive:true});['elaborate.cjs','SKILL.md'].forEach(f=>fs.copyFileSync('dist/skill/'+f,'.claude/skills/elaborate/'+f));const map=JSON.parse(fs.readFileSync('dist/skill/elaborate.cjs.map','utf8'));map.sources=map.sources.map(s=>s.replace('../../','../../../'));fs.writeFileSync('.claude/skills/elaborate/elaborate.cjs.map',JSON.stringify(map))\" && echo Deployed to .claude/skills/elaborate/",
+    "deploy:skill": "node scripts/build-skill.mjs && node -e \"const fs=require('fs');fs.mkdirSync('.claude/skills/elaborate/scripts',{recursive:true});fs.copyFileSync('skills/elaborate/SKILL.md','.claude/skills/elaborate/SKILL.md');fs.copyFileSync('skills/elaborate/scripts/elaborate.cjs','.claude/skills/elaborate/scripts/elaborate.cjs');fs.copyFileSync('skills/elaborate/scripts/elaborate.cjs.map','.claude/skills/elaborate/scripts/elaborate.cjs.map')\" && echo Deployed to .claude/skills/elaborate/",
     "dev": "tsc --watch",
     "test": "vitest",
     "test:run": "vitest run",
