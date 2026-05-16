@@ -6,7 +6,7 @@ on:
 
 jobs:
   take:
-    if: github.event.issue.pull_request == null && github.event.comment.body == '/take'
+    if: github.event.issue.pull_request == null && startsWith(github.event.comment.body, '/take')
     runs-on: ubuntu-latest
     permissions:
       issues: write
