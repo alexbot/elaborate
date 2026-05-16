@@ -2,6 +2,7 @@
 
 AI Socratic interviewer that turns vague ideas into structured intent.
 
+[![CI](https://github.com/alexbot/elaborate/actions/workflows/ci.yml/badge.svg)](https://github.com/alexbot/elaborate/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ![Elaborate demo — library revival interview](docs/examples/library-demo.gif)
