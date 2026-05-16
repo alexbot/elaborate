@@ -1,0 +1,21 @@
+name: Feature request
+description: Suggest something to add or improve
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: Describe the use case before the solution.
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use case
+      description: What are you trying to do? What currently blocks or limits you?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed approach (optional)
+      description: How might this be addressed? Leave blank if you don't have a specific idea.
+    validations:
+      required: false

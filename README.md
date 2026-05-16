@@ -89,9 +89,7 @@ npx vitest run         # Run tests
 
 ## Contributing
 
-<!-- TODO: link to CONTRIBUTING.md (see public-repository-contributor-infra) -->
-
-Contributions welcome.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for setup, architecture, and how to pick up work.
 
 ## License
 
