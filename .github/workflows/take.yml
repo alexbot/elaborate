@@ -1,0 +1,28 @@
+name: Take issue
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  take:
+    if: github.event.issue.pull_request == null && github.event.comment.body == '/take'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.addAssignees({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              assignees: [context.actor],
+            });
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `Assigned to @${context.actor}.`,
+            });
