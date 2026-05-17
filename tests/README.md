@@ -21,4 +21,4 @@ npx vitest run --config vitest.eval.config.ts
 
 ## Related datasets
 
-The scenario corpus draws on user stories originally collected alongside the [LLM-REI dataset](https://github.com/lm-rei/lm-rei) (Rodeghero et al.), a set of 30 interview transcripts exploring how LLMs conduct requirements elicitation. The dataset informed early scenario design but is not included in this repository.
+The scenario corpus draws on user stories originally collected alongside the [LLM-REI dataset](https://github.com/lm-rei/lm-rei) (Rodeghero et al.), a set of 30 interview transcripts exploring how LLMs conduct structured interviews for project clarification. The dataset informed early scenario design but is not included in this repository.

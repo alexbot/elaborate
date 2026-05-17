@@ -1,6 +1,6 @@
 # Modernize federal financial assistance submission pipeline
 
-> *"I'm playing a federal financial assistance stakeholder in an interview about a modernization project that's already defined. I'm not the one with a vague idea needing elicitation."*
+> *"I'm playing a federal financial assistance stakeholder in an interview about a modernization project that's already defined. I'm not the one with a vague idea needing clarification."*
 
 ## Summary
 

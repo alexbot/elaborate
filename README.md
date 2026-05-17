@@ -96,6 +96,8 @@ See [docs/decisions/](docs/decisions/) for the full architecture story.
 
 ## Development
 
+Requires **Node 22+**.
+
 ```bash
 npm install
 npm run build          # TypeScript compilation

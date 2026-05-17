@@ -19,7 +19,7 @@ Success is measured by surfacing actionable contradictions the respondent didn't
 1. **Enable resumption without context loss** — users pick up sessions weeks later without re-reading transcripts or re-answering questions. The tool must track what it already asked, not just store answers.
 2. **Surface hidden contradictions** — reveal conflicts between stated goals that the respondent didn't see, where resolving them changes how the project would be built.
 3. **Create a durable external record** — capture the reasoning chain, assumptions, and decisions so the respondent can revisit without reconstruction or share context with collaborators.
-4. **Remove activation friction for the clarity phase** — make structured elicitation concrete enough that people who normally skip it treat it as a normal part of starting a project.
+4. **Remove activation friction for the clarity phase** — make structured clarification concrete enough that people who normally skip it treat it as a normal part of starting a project.
 
 ## Stakeholders
 
