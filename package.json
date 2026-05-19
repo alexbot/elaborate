@@ -1,8 +1,16 @@
 {
   "name": "@alexbot/elaborate",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Agent skill that runs a Socratic interview inside your coding agent — turning vague ideas into structured intent",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexbot/elaborate.git"
+  },
+  "homepage": "https://github.com/alexbot/elaborate#readme",
+  "bugs": {
+    "url": "https://github.com/alexbot/elaborate/issues"
+  },
   "exports": {
     "./durable": {
       "types": "./dist/durable/index.d.ts",
@@ -21,9 +29,12 @@
       "import": "./dist/skill/index.js"
     }
   },
-  "bin": {
-    "elaborate": "./dist/skill/adapter.js"
-  },
+  "files": [
+    "dist/",
+    "skills/",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc",
     "build:skill": "node scripts/build-skill.mjs",
@@ -36,10 +47,16 @@
     "typecheck": "tsc --noEmit"
   },
   "keywords": [
-    "project-elaboration",
-    "interview",
     "ai",
-    "socratic"
+    "agent-skill",
+    "claude-code",
+    "discovery",
+    "elaboration",
+    "interview",
+    "project-scoping",
+    "requirements",
+    "socratic",
+    "specification"
   ],
   "license": "MIT",
   "devDependencies": {
