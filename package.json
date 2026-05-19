@@ -1,5 +1,5 @@
 {
-  "name": "@alexbot/elaborate",
+  "name": "@alex.botez/elaborate",
   "version": "1.0.0",
   "description": "Agent skill that runs a Socratic interview inside your coding agent — turning vague ideas into structured intent",
   "type": "module",
