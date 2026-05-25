@@ -366,7 +366,7 @@ describe("chokepoint enforcement", () => {
         ],
       });
 
-      expect(captured!.message).toContain("[2/6 Purpose]\n\nWhat makes opening a pet shop");
+      expect(captured!.message).toContain("[2/6 Purpose · r0]\n\nWhat makes opening a pet shop");
       expect(captured!.message).toContain(
         "For example:\n\na) I want to work with animals directly\n\nb) There is demand in my area\n\nc) I am not sure yet\n\n...or better yet",
       );
