@@ -350,7 +350,26 @@ describe("chokepoint enforcement", () => {
       const ctx = makeCtx();
       ctx.setProgress(3, 7, "Goals");
       await ctx.promptStep({ id: "goals-confirmation-r0", message: "Summary here" });
-      expect(captured!.message).toBe("[3/7 Goals · confirmation]\nSummary here");
+      expect(captured!.message).toBe("[3/7 Goals · confirmation]\n\nSummary here");
+    });
+
+    it("uses blank lines between prompt sections", async () => {
+      const ctx = makeCtx();
+      ctx.setProgress(2, 6, "Purpose");
+
+      await ctx.promptQuestion("purpose-r0", {
+        question: "What makes opening a pet shop more appealing to you than other paths you could take?",
+        suggestions: [
+          "I want to work with animals directly",
+          "There is demand in my area",
+          "I am not sure yet",
+        ],
+      });
+
+      expect(captured!.message).toContain("[2/6 Purpose · r0]\n\nWhat makes opening a pet shop");
+      expect(captured!.message).toContain(
+        "For example:\n\na) I want to work with animals directly\n\nb) There is demand in my area\n\nc) I am not sure yet\n\n...or better yet",
+      );
     });
 
     it("consumes transition once", async () => {

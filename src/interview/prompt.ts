@@ -26,7 +26,7 @@ WorkflowContext.prototype.promptStep = async function (step) {
     this.pendingTransition = null;
   }
   const prefix = progressPrefix(this.progress, step.id);
-  return this.prompt({ ...step, message: prefix ? `${prefix}\n${message}` : message });
+  return this.prompt({ ...step, message: prefix ? `${prefix}\n\n${message}` : message });
 };
 
 /** Format a QuestionContext with lettered suggestions and prompt the respondent. */
@@ -36,16 +36,16 @@ WorkflowContext.prototype.promptQuestion = async function (id: string, ask: Ques
     const letters = "abcdefghijklmnopqrstuvwxyz";
     message += "\n\nFor example:";
     for (let i = 0; i < ask.suggestions.length; i++) {
-      message += `\n${letters[i]}) ${ask.suggestions[i]}`;
+      message += `\n\n${letters[i]}) ${ask.suggestions[i]}`;
     }
-    if (suggestionCloser()) message += `\n${suggestionCloser()}`;
+    if (suggestionCloser()) message += `\n\n${suggestionCloser()}`;
   }
   if (this.pendingTransition) {
     message = this.pendingTransition + "\n\n" + message;
     this.pendingTransition = null;
   }
   const prefix = progressPrefix(this.progress, id);
-  return this.prompt({ id, message: prefix ? `${prefix}\n${message}` : message, suggestions: ask.suggestions });
+  return this.prompt({ id, message: prefix ? `${prefix}\n\n${message}` : message, suggestions: ask.suggestions });
 };
 
 /** Present detected contradictions to the respondent and ask for clarification. */
@@ -61,7 +61,7 @@ WorkflowContext.prototype.promptContradiction = async function (id: string, cont
     this.pendingTransition = null;
   }
   const prefix = progressPrefix(this.progress, id);
-  return this.prompt({ id, message: prefix ? `${prefix}\n${message}` : message });
+  return this.prompt({ id, message: prefix ? `${prefix}\n\n${message}` : message });
 };
 
 const REQUIRED_PROTOTYPE_METHODS = ["promptStep", "promptQuestion", "promptContradiction"] as const;

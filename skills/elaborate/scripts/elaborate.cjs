@@ -211,19 +211,24 @@ ${t.comment}`:t.comment}this.doc.range[2]=t.offset;break}default:this.errors.pus
   `}function cn(){return"...or better yet, describe in your own words \u2014 your phrasing captures nuances that pre-made options can't"}function ce(){return"What would you change or add? If this looks right as-is, let me know and we'll move on."}j.prototype.promptStep=async function(s){let e=s.message;this.pendingTransition&&(e=this.pendingTransition+`
 
 `+e,this.pendingTransition=null);let t=an(this.progress,s.id);return this.prompt({...s,message:t?`${t}
+
 ${e}`:e})};j.prototype.promptQuestion=async function(s,e){let t=e.question;if(e.suggestions&&e.suggestions.length>0){let r="abcdefghijklmnopqrstuvwxyz";t+=`
 
 For example:`;for(let i=0;i<e.suggestions.length;i++)t+=`
+
 ${r[i]}) ${e.suggestions[i]}`;cn()&&(t+=`
+
 ${cn()}`)}this.pendingTransition&&(t=this.pendingTransition+`
 
 `+t,this.pendingTransition=null);let n=an(this.progress,s);return this.prompt({id:s,message:n?`${n}
+
 ${t}`:t,suggestions:e.suggestions})};j.prototype.promptContradiction=async function(s,e){let t=["I noticed something that might be inconsistent with what you said earlier:"];for(let i of e)t.push(`
 - ${i}`);t.push(`
 
 Could you help me understand what changed?`);let n=t.join("");this.pendingTransition&&(n=this.pendingTransition+`
 
 `+n,this.pendingTransition=null);let r=an(this.progress,s);return this.prompt({id:s,message:r?`${r}
+
 ${n}`:n})};var lf=["promptStep","promptQuestion","promptContradiction"];for(let s of lf)if(typeof j.prototype[s]!="function")throw new Error(`interview/prompt.ts self-check failed: WorkflowContext.prototype.${s} is not a function.`);j.prototype.compose=async function(s){let e=es(),t=e?{...s,message:e+`
 
 `+s.message}:s,{question:n,suggestions:r}=await this.infer(t);return n?{question:n,suggestions:r}:{question:s.fallback}};if(typeof j.prototype.compose!="function")throw new Error("interview/composition.ts self-check failed: WorkflowContext.prototype.compose is not a function.");var ha=c.object({question:c.string().describe("the question to ask the stakeholder"),suggestions:c.array(c.string()).describe("2-3 suggested answers")});function ts(s,e=""){if(s instanceof Z)return ts(s._def.innerType,e);if(s instanceof ne)return`${ts(s._def.innerType,e)} | null`;if(s instanceof ge)return"string";if(s instanceof Ae)return"number";if(s instanceof Ce)return"boolean";if(s instanceof Oe)return s._def.values.map(n=>`"${n}"`).join(" | ");if(s instanceof de)return`${ts(s._def.type,`${e}[]`)}[]`;if(s instanceof H){let n=s._def.shape();return`{ ${Object.entries(n).map(([i,o])=>{let a=o instanceof Z?"?":"",l=ga(o),u=e?`${e}.${i}`:i,p=ts(o,u);return l?`${i}${a}: ${p} - ${l}`:`${i}${a}: ${p}`}).join(", ")} }`}let t=e?` at "${e}"`:"";throw new Error(`zodTypeToString: unsupported Zod type ${s._def?.typeName??"unknown"}${t}`)}function ga(s){return s.description?s.description:s instanceof Z&&s._def.innerType.description||s instanceof ne&&s._def.innerType.description?s._def.innerType.description:""}function W(s){let{id:e,message:t,schema:n}=s;return{id:e,message:t,schema:ya(n)}}function J(s){let{fallback:e,...t}=s;return{...W({schema:ha,...t}),fallback:e}}function ya(s){let e=s._def.shape(),t={};for(let[n,r]of Object.entries(e)){let i=ga(r),o=ts(r);t[n]=i?`${o} - ${i}`:o}return t}var uf=c.enum(["answer","confusion","off_topic","pushback","topic_change","frustration"]).describe("Classify the respondent's response: answer (addressed the question, even partially \u2014 includes disagreeing with content, pointing out conflicts, suggesting corrections, or challenging captured artifacts), confusion (asked what you mean or expressed confusion), off_topic (unrelated information), pushback (rejected the interview process itself \u2014 e.g. 'why are you asking me this' or 'this is pointless'), topic_change (steered to different subject), frustration (expressed fatigue/impatience). If in doubt, classify as answer.");function df(s,e,t){let n=[];if(t?.question&&(n.push(`Question asked: "${t.question}"`),t.suggestions&&t.suggestions.length>0)){let r="abcdefghijklmnopqrstuvwxyz",i=t.suggestions.map((o,a)=>`${r[a]}) ${o}`).join(", ");n.push(`Suggestions offered: ${i}`)}return n.push(`Their response: "${s}"`),n.push(""),n.push(`Existing artifacts: ${e}`),n}j.prototype.extract=async function(s){let e=ff(s),t=s.schema.extend({responseClass:uf}),n=await this.infer(W({id:s.id,message:e,schema:t}));return pf(n,s.response)};function ff(s){let{response:e,artifactsContext:t,asked:n,focus:r,guidance:i}=s,o=[],a=Ir();return a&&o.push(a),o.push(`<response_classification>
