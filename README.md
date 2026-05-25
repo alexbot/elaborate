@@ -64,11 +64,17 @@ The interview produces two artifacts:
 - **Session file** (`.elaborate/session.yaml`). YAML with every goal, stakeholder, scope item, and assumption traced to its conversation turn. Designed as input for spec-driven development tools or any pipeline that needs structured intent.
 - **Project brief.** Run `/project-brief` on the session to generate a readable markdown summary for stakeholder pitches, project kickoffs, or business plans.
 
+The session file lives in your project directory. AI coding agents (Claude Code, Cursor, Aider, etc.) can read it directly — no conversion or extra setup needed. Point your agent at the file and it has the full structured context from the interview.
+
 ## How It Works
 
 The interview is complex: 7 phases, state persistence, extraction cycles, deviation handling. The phases are opening, purpose, goals, stakeholders, scope, assumptions, and validation. Rather than relying on the model to follow a long prompt correctly, Elaborate splits the work. A compiled script handles all process decisions (what to ask, when to transition, how to store artifacts) while the model handles only semantic work (understanding what you said, extracting meaning, composing follow-ups). The model can't skip phases or lose track; the script drives.
 
 Interview techniques draw on Kvale & Patton (semi-structured interviewing), Miller & Rollnick (motivational interviewing), Reynolds & Gutman (means-end laddering), and KAOS (goal decomposition). See [docs/decisions/](docs/decisions/) for the full architecture story.
+
+## Security
+
+Elaborate runs locally. No telemetry, no analytics, no data sent anywhere. There are no postinstall scripts — `npm install` runs nothing. All writes go to `.elaborate/` inside your project directory; nothing touches shared caches, home directories, or system paths.
 
 ## Development
 
