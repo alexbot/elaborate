@@ -1,98 +1,74 @@
 # Elaborate
 
-An agent skill that runs a Socratic interview inside your coding agent — turning vague ideas into structured intent before you write a line of code.
-
-Works with Claude Code, Cursor, GitHub Copilot, and any agent that supports the [agentskills.io](https://agentskills.io) standard.
+An agent skill that helps you turn vague ideas into structured requirements.
 
 [![CI](https://github.com/alexbot/elaborate/actions/workflows/ci.yml/badge.svg)](https://github.com/alexbot/elaborate/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/@alex.botez/elaborate)](https://www.npmjs.com/package/@alex.botez/elaborate)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-
-![Elaborate demo — library revival interview](docs/examples/library-demo.gif)
 
 ## The Problem
 
-Most projects start with a gap between "I have an idea" and "I know what to build." People either jump straight to code or hand an AI a one-line prompt and hope for a spec. Both skip the hard part: figuring out what success looks like, who cares, where the boundaries are, and which assumptions will bite you later.
+Most people either vibe-code, start building and figure it out along the way, or paste a one-line prompt and hope what comes back is a spec. Both skip the step before planning: figuring out what success looks like, who cares, where the boundaries are, and which assumptions will bite you later.
 
-Traditional methods for this exist — but they depend on trained facilitators and structured workshops. Solo developers, founders, and small teams skip them entirely. The result: projects start with vague goals and discover critical gaps mid-build.
+```
+             Most projects start here
+                        ↓
+        ┌──────┐    ┌────────┐    ┌───────┐    ┌──────┐    ┌────────┐
+  ?  →  │ Plan │ →  │ Design │ →  │ Build │ →  │ Test │ →  │ Launch │
+        └──────┘    └────────┘    └───────┘    └──────┘    └────────┘
+  ↑
+  Elaborate sits here.
+```
 
-## What Elaborate Does
-
-Elaborate runs a structured interview — 25-32 questions across seven phases — that moves you from a vague idea to a scoped project definition.
-
-| Phase | What it covers |
-|-------|---------------|
-| **Opening** | Context and framing — greenfield or existing project? |
-| **Purpose** | What problem are you solving? What does success look like? |
-| **Goals** | Concrete, measurable outcomes with rationale |
-| **Stakeholders** | Who cares, what they need, where interests conflict |
-| **Scope** | What's in, what's out, why the boundary sits there |
-| **Assumptions** | What you're taking for granted that could invalidate everything |
-| **Validation** | Review and confirm — or revise before you build |
-
-Every goal, stakeholder, scope decision, and assumption in the output traces back to the conversation turn that produced it.
+That step has methods (qualitative research, goal modeling, structured interviews) but they depend on trained facilitators and workshops. Solo developers, founders, and small teams skip it entirely, and discover the gaps mid-build.
 
 ## Quick Start
 
-Requires **Node.js 18+**.
-
 ```bash
-npx skills add alexbot/elaborate
+npx skills add alexbot/elaborate -a claude-code      # Claude Code
+npx skills add alexbot/elaborate -a cursor            # Cursor
+npx skills add alexbot/elaborate -a github-copilot    # GitHub Copilot
 ```
 
-To install for a specific agent:
+Then `/elaborate` in your agent. Any agent that supports [agentskills.io](https://agentskills.io) works. See the [full list](https://www.npmjs.com/package/skills#supported-agents).
 
-```bash
-npx skills add alexbot/elaborate -a claude-code   # Claude Code only
-npx skills add alexbot/elaborate -a cursor   # Cursor only
-npx skills add alexbot/elaborate -a github-copilot  # GitHub Copilot only
-```
+## What It Does
 
-Then:
+Elaborate asks the right questions, 25–32 across seven phases, and you control every answer. It moves you from a vague idea to a scoped project definition.
 
-```bash
-/elaborate
-# or just say it naturally:
-"I'd like to elaborate my latest idea about a neighborhood recycling app"
-```
+- Catches gaps you'd miss on your own: undefined success criteria, wrong assumptions, conflicting premises nobody stated
+- Every goal, stakeholder, scope decision, and assumption traces back to the conversation turn that produced it
+- AI flags ambiguity, never self-resolves. You decide everything
 
-Elaborate responds to both the slash command and natural language that signals intent to elaborate an idea.
+## Example
 
-> **Note on model quality:** The interview process completes reliably on any model, but the depth of insight depends on model capability. Stronger models extract more nuance and produce richer artifacts. Smaller models may miss subtlety or generate shallow extractions.
+The vague idea:
 
-## Example: Saving a Library Branch
+> *"Our local library branch is losing visitors and the city might close it. I want to help revive it."*
 
-A volunteer wants to save their neighborhood library from closure. The input:
+What AI generates from that prompt, versus what emerges after 28 Elaborate questions:
 
-> *"The city's talking about closing it because foot traffic has dropped. I don't want to see that happen — the library's been part of this neighborhood for a long time. I want to figure out how to bring people back."*
+| | AI-generated | After Elaborate |
+|---|---|---|
+| **Purpose** | **Increase traffic by 40%** through events, outreach, and digital resources | **Determine whether the library is what the neighborhood actually needs** |
+| **Goals** | 8 goals with **invented metrics**: 2,500 monthly visitors, $15K fundraising, 30% card registration increase | 3 goals that **flag unknowns**: what patrons actually need, what the city's closure criteria are, who the target visitors should be |
+| **Scope** | **Execution**: launch 5 programs, recruit 15 volunteers, secure grants | **Research**: talk to families, interview city council, assess whether the library is even the right solution |
+| **Insight** | "The library is **a critical community asset**" (stated as fact) | "I never stopped to ask **whether the library is actually what the neighborhood needs**" |
 
-After 28 questions, the respondent had reversed their own premise: "I've been working backwards — I never stopped to ask whether the library is actually what the neighborhood needs." What started as "bring people back" became a research phase that could confirm or kill the original idea — and the respondent was the one who got there, not the tool.
+[AI-generated brief](docs/examples/library.brief.generated.md) · [Elaborate brief](docs/examples/library.brief.md) · [More examples](docs/examples/)
 
-[Read the full brief →](docs/examples/library.brief.md)
+## Output
 
-See also: [Elaborate interviews itself](docs/examples/elaborate.brief.md) (the tool pointed at its own premise) and [selling cookies at the farmers market](docs/examples/cookies.brief.md) (a $500 hobby that might be a business). More examples across domains — from [federal spending oversight](docs/examples/federalspending.brief.md) to [elderly independent living](docs/examples/alfred.brief.md) — in [docs/examples/](docs/examples/).
+The interview produces two artifacts:
 
-### Output
-
-The interview produces a session file (`.elaborate/session.yaml`) — a structured YAML artifact with every goal, stakeholder, scope item, and assumption traced to the conversation turn that produced it. This is machine-consumable: designed as input for spec-driven development tools, code generators, or any pipeline that needs structured intent.
-
-If you want something presentable — for a business plan, a stakeholder pitch, or a project kickoff — run `/project-brief` on the session file to generate a readable markdown brief. The skill prompt is in [`skills/project-brief/SKILL.md`](skills/project-brief/SKILL.md).
-
-All examples above are generated by the automated test suite using a simulated respondent (an LLM playing the person with the idea). The briefs are generated from those sessions using the project-brief skill. You can reproduce both by running the scenario harness yourself.
+- **Session file** (`.elaborate/session.yaml`). YAML with every goal, stakeholder, scope item, and assumption traced to its conversation turn. Designed as input for spec-driven development tools or any pipeline that needs structured intent.
+- **Project brief.** Run `/project-brief` on the session to generate a readable markdown summary for stakeholder pitches, project kickoffs, or business plans.
 
 ## How It Works
 
-The interview is complex — 7 phases, state persistence, extraction cycles, deviation handling. Rather than relying on the model to follow a long prompt correctly, Elaborate splits the work: a compiled Node.js script handles all process decisions (what to ask, when to transition, how to store artifacts) while the model handles only semantic work (understanding what you said, extracting meaning, composing follow-up questions). The model can't skip phases or lose track — the script drives.
+The interview is complex: 7 phases, state persistence, extraction cycles, deviation handling. The phases are opening, purpose, goals, stakeholders, scope, assumptions, and validation. Rather than relying on the model to follow a long prompt correctly, Elaborate splits the work. A compiled script handles all process decisions (what to ask, when to transition, how to store artifacts) while the model handles only semantic work (understanding what you said, extracting meaning, composing follow-ups). The model can't skip phases or lose track; the script drives.
 
-The interview techniques draw on qualitative research traditions:
-
-- **Kvale & Patton** — semi-structured interview design
-- **Miller & Rollnick** — motivational interviewing (surfacing ambivalence without pushing)
-- **Reynolds & Gutman** — means-end laddering (climbing from features to underlying values)
-- **KAOS** — goal decomposition (structuring what emerges into testable hierarchies)
-
-The AI asks questions, flags ambiguity, and structures what you say. It never fills gaps on its own — you decide everything.
-
-See [docs/decisions/](docs/decisions/) for the full architecture story.
+Interview techniques draw on Kvale & Patton (semi-structured interviewing), Miller & Rollnick (motivational interviewing), Reynolds & Gutman (means-end laddering), and KAOS (goal decomposition). See [docs/decisions/](docs/decisions/) for the full architecture story.
 
 ## Development
 

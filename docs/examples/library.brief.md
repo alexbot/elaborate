@@ -1,6 +1,6 @@
 # Bring people back to the library branch
 
-> *"The city's talking about closing it because foot traffic has dropped. I don't want to see that happen — the library's been part of this neighborhood for a long time. I want to figure out how to bring people back."*
+> *"Our local library branch is losing visitors and the city might close it. I want to help revive it."*
 
 ## Summary
 

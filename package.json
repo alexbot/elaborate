@@ -1,7 +1,7 @@
 {
   "name": "@alex.botez/elaborate",
   "version": "1.0.0",
-  "description": "Agent skill that runs a Socratic interview inside your coding agent — turning vague ideas into structured intent",
+  "description": "An agent skill that helps you turn vague ideas into structured requirements",
   "type": "module",
   "repository": {
     "type": "git",
